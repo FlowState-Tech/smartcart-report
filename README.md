@@ -142,6 +142,18 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 ### 1.1.1. Descripción de la Startup
 ### 1.1.2. Perfiles de los integrantes del equipo
 
+# Startup Profile
+
+**Descripción de la Startup:** [Inserta aquí la descripción de la startup]
+
+| Foto | Nombres y Apellidos | Código deEstudiante | Carrera | Resumen de Conocimientos y Habilidades |
+| --- | --- | --- | --- | --- |
+|     |     |     |     |     | 
+|     |     |     |     |     | 
+|     |     |     |     |     | 
+|     |     |     |     |     | 
+|     |     |     |     |     | 
+
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
 ### 1.2.2. Lean UX Process
