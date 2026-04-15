@@ -175,6 +175,69 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
+
+Esta sección presenta el banco de preguntas estructurado para los dos segmentos identificados. Las preguntas han sido diseñadas para extraer información no solo sobre la problemática, sino también sobre el perfil conductual, tecnológico y demográfico necesario para la construcción de los arquetipos de usuario.
+
+#### Segmento 1: Usuarios Consumidores
+
+#### A. Información Demográfica y Antecedentes 
+
+¿Podría indicarnos su edad, ocupación actual y en qué distrito reside?
+
+¿Cómo está compuesta su familia y quién es el principal responsable de realizar las compras del hogar?
+
+¿Cómo describiría su personalidad al momento de comprar? (Ej. metódico, impulsivo, buscador de ofertas, práctico).
+
+#### B. Objetivos y Frustraciones
+
+¿Qué es lo que más le genera malestar o pérdida de tiempo al momento de hacer las compras de la semana?
+
+¿Cuál es su objetivo principal al planificar sus compras: ahorrar dinero, ahorrar tiempo o encontrar calidad premium?
+
+¿Qué marcas de productos o supermercados prefiere y por qué siente afinidad hacia ellos?
+
+#### C. Tecnología y Canales de Interacción
+
+¿Qué dispositivos utiliza con mayor frecuencia en su día a día (Smartphone, Laptop) y qué sistema operativo prefiere?
+
+¿Qué aplicaciones móviles utiliza con regularidad para informarse o realizar gestiones del hogar?
+
+¿A través de qué canales digitales prefiere recibir información sobre ofertas o precios (WhatsApp, Redes Sociales, Email)?
+
+#### D. Comportamiento frente a la solución
+
+Si existiera una herramienta que le permitiera armar una ruta de compra optimizada para ahorrar, ¿qué funciones serían indispensables para que usted la descargue?
+
+#### Segmento 2: Comerciantes Minoristas 
+
+#### A. Perfil y Ocupación
+
+¿Cuántos años tiene y desde hace cuánto tiempo gestiona su negocio?
+
+¿Cómo describiría su nivel de habilidad con herramientas digitales y aplicaciones móviles?
+
+¿Qué lo motiva a mantener su negocio competitivo frente a las grandes cadenas de supermercados?
+
+#### B. Operación y Frustraciones
+
+¿Cuál es el mayor desafío que enfrenta al momento de fijar los precios de sus productos diariamente?
+
+¿Siente que la falta de visibilidad de sus precios en internet le hace perder clientes frente a los supermercados?
+
+¿Qué marcas o proveedores son sus principales aliados y cuáles influyen más en su inventario?
+
+#### C. Entorno Tecnológico
+
+¿Cuenta con un dispositivo móvil propio en su puesto? ¿Qué modelo y navegador (browser) suele utilizar para buscar información?
+
+¿Utiliza actualmente alguna plataforma digital para atraer clientes o prefiere los métodos tradicionales?
+
+#### D. Objetivos y Antecedentes
+
+¿Cuál es su meta principal para su negocio en los próximos 2 años?
+
+¿En qué condiciones estaría dispuesto a dedicar 5 minutos al día para actualizar sus precios en una plataforma digital?
+
 ### 2.2.2. Registro de entrevistas
 ### 2.2.3. Análisis de entrevistas
 
