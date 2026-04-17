@@ -387,9 +387,32 @@ Si existiera una herramienta que le permitiera armar una ruta de compra optimiza
 ### 2.2.3. Análisis de entrevistas
 
 ## 2.3. Needfinding
+
+A partir del análisis de las entrevistas realizadas y del Lean UX Canvas presentado en el capítulo 1, se han identificado las necesidades y motivaciones críticas de los segmentos objetivo. Los hallazgos confirman la problemática detectada: el impacto negativo de la inflación, la alta dispersión de precios y la ineficiencia logística en los traslados, lo cual genera un desperdicio de recursos económicos y temporales en los hogares.
+
+De esta manera, se presentan a continuación los hallazgos clave que guiarán el desarrollo de la solución para maximizar el valor entregado al usuario:
+
+#### Segmento #1: Consumidores (Hogares y Jefes de Familia)
+
+* **Comparar precios en tiempo real** entre diversos establecimientos (mercados y supermercados) para combatir el alza del costo de vida.
+* **Optimizar rutas de compra** para reducir el tiempo de desplazamiento y los costos de transporte por la ciudad.
+* **Acceder a información veraz** mediante datos validados por la comunidad que reduzcan la incertidumbre antes de salir de casa.
+* **Usar una herramienta móvil ágil** que sea fácil de navegar en entornos de alta movilidad como los mercados de abastos.
+
+#### Segmento #2: Comerciantes Minoristas (Dueños de puestos y tiendas)
+
+* **Visibilizar precios competitivos** de manera digital para atraer a clientes que priorizan el ahorro.
+* **Gestionar de forma sencilla** sus catálogos y ofertas para competir en igualdad de condiciones con las grandes cadenas.
+* **Atraer clientes locales** mediante un sistema de geolocalización que conecte su negocio con el radio de búsqueda de los consumidores.
+* **Reducir la brecha digital** mediante una interfaz adaptada a su ritmo de trabajo diario sin procesos burocráticos complejos.
+
 ### 2.3.1. User Personas
 ### 2.3.2. User Task Matrix
 ### 2.3.3. User Journey Mapping
+
+
+
+
 ### 2.3.4. Empathy Mapping
 ### 2.3.5. Ubiquitous Language
 
