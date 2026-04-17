@@ -225,9 +225,87 @@ La problemática económica en Lima Metropolitana se ve agravada por una inflaci
 
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
+
+La declaración del problema es un enunciado claro y conciso que describe los síntomas de la problemática a tratar.Siguiendo los lineamientos de la unidad, este punto se compone de tres elementos fundamentales que delimitan el alcance del trabajo:
+
+**1. Los objetivos actuales del sistema/producto:**
+El producto **SmartCart** busca facilitar herramientas tecnológicas prácticas que ayuden a los integrantes del hogar a gestionar mejor sus gastos diarios y optimizar sus recorridos de abastecimiento mediante información veraz sobre la oferta local. Su propósito es consolidarse como una alternativa moderna que aporte simplicidad, transparencia informativa y un impacto positivo y directo en la economía familiar.
+
+**2. El problema que las partes interesadas quieren abordar:**
+Se ha observado que los miembros del hogar enfrentan una ineficiencia económica y pérdida de tiempo al realizar sus compras debido a la alta dispersión de precios y la falta de una secuencia organizada de visitas a establecimientos. 
+* **Perspectiva del negocio:** Esta situación representa una brecha crítica, ya que el ahorro obtenido en productos suele verse anulado por ineficiencias logísticas que generan sobrecostos de hasta un **20 % en transporte y tiempo** de desplazamiento.
+* **Perspectiva del usuario:** La asimetría de información y la falta de transparencia informativa agravan el impacto de la inflación acumulada, perjudicando la estabilidad económica de los hogares y generando frustración al no contar con una herramienta que refleje su realidad económica.
+
+**3. [cite_start]Una solicitud explícita de mejora:**
+¿Cómo mejorar la eficacia en el acceso a la información de precios y la logística de los recorridos de compra, logrando que los miembros del hogar cumplan su objetivo de ahorro, optimicen sus recursos y se encuentren satisfechos con el servicio? 
+
+**Oportunidades y restricciones:**
+La oportunidad radica en un mercado con carencia de herramientas que integren el factor económico con el logístico. Entre las principales restricciones identificadas se encuentran el nivel de alfabetización digital de los usuarios, la veracidad de los datos actualizados por terceros y la conectividad limitada en determinados puntos de venta minoristas.
+
 #### 1.2.2.2. Lean UX Assumptions
+
+En esta etapa inicial del proceso, se identifican y declaran los supuestos fundamentales que sustentan la propuesta de valor de **SmartCart**. Este ejercicio permite reconocer los riesgos críticos del proyecto para priorizar su validación experimental antes de proceder con el desarrollo. 
+
+**Assumptions Worksheet**
+
+1. **¿Quién es el usuario?**
+   * [cite_start]El usuario principal está compuesto por jefes de hogar, familias y jóvenes independientes responsables del abastecimiento doméstico que poseen un smartphone y buscan maximizar su presupuesto frente a la inflación. 
+
+2. **¿Dónde encaja nuestro producto en su trabajo o vida?**
+   * [cite_start]Se integra en la rutina semanal de planificación financiera y durante la ejecución física de las compras en diversos canales de venta minoristas (mercados y supermercados). 
+
+3. **¿Qué problemas resuelve nuestro producto?**
+   * [cite_start]Resuelve la ineficiencia económica por la dispersión de precios, la falta de logística en las rutas de compra y el "costo de búsqueda" físico y temporal que actualmente enfrentan los consumidores. 
+
+4. **¿Cuándo y cómo es usado el producto?**
+   * [cite_start]Es utilizado de forma secuencial: inicialmente desde el hogar para configurar presupuestos y, posteriormente, en exteriores mediante navegación geolocalizada para optimizar el recorrido entre establecimientos. 
+
+5. **¿Qué características son importantes?**
+   * [cite_start]La comparación multicanal de precios en tiempo real, el motor de generación de rutas logísticas eficientes y el sistema de validación de datos mediante la comunidad. 
+
+6. **¿Cómo debe verse nuestro producto y cómo comportarse?**
+   * [cite_start]Debe presentar una interfaz intuitiva, con tiempos de respuesta rápidos y un diseño accesible optimizado para entornos de alta movilidad como los mercados de abastos. 
+
+---
+
+**Business Assumptions**
+
+1. **Necesidad del cliente:** Existe una carencia de herramientas que centralicen la información de precios locales para combatir el alza del costo de vida. 
+2. **Propuesta de solución:** Estas necesidades se resuelven mediante una plataforma de comparación de costos y optimización de rutas de compra geolocalizadas. 
+3. **Clientes iniciales:** Familias y responsables de compras en zonas urbanas con acceso a dispositivos móviles. 
+4. **Valor principal esperado:** El ahorro neto real de dinero y tiempo en la canasta básica familiar. 
+5. **Beneficios adicionales:** Mayor claridad en la planificación del presupuesto y reducción del estrés por incertidumbre económica. 
+6. **Estrategia de adquisición:** Mayoritariamente a través de campañas en redes sociales enfocadas en economía doméstica y visibilidad en mercados locales. 
+7. **Generación de ingresos:** Mediante una versión premium para comerciantes que requieran análisis de tendencias y una versión gratuita con anuncios locales para usuarios. 
+8. **Competencia principal:** Métodos tradicionales de búsqueda manual y aplicaciones de catálogos de supermercados genéricas. 
+9. **Ventaja competitiva:** Capacidad de integrar tanto el ahorro en productos como la optimización logística de transporte en una sola interfaz. 
+10. **Mayor riesgo de producto:** Posible desactualización de los precios si los comerciantes o la comunidad no participan activamente en la plataforma. 
+11. **Estrategia de mitigación:** Implementación de un sistema de incentivos por validación comunitaria y herramientas de gestión ágil para los comerciantes minoristas. 
+12. **Suposición crítica de viabilidad:** Se asume que los usuarios valorarán más el beneficio económico final que el esfuerzo adicional de visitar múltiples establecimientos cercanos. 
+
+
 #### 1.2.2.3. Lean UX Hypothesis
+
+**Hipótesis 1: Optimización del presupuesto familiar**
+Creemos que facilitar la comparación de precios en tiempo real entre diversos establecimientos permitirá que los integrantes del hogar reduzcan significativamente su gasto mensual en la canasta básica. 
+* **Sabremos que hemos tenido éxito:** Cuando veamos que el 75 % de los usuarios activos reporta un ahorro de al menos el 15 % en sus compras totales tras completar su primer mes de uso recurrente en la plataforma.
+
+**Hipótesis 2: Eficiencia en la logística de compra**
+Creemos que proporcionar rutas de compra optimizadas mediante geolocalización reducirá el tiempo y dinero invertido por los usuarios en traslados innecesarios entre mercados y supermercados.
+* **Sabremos que hemos tenido éxito:** Cuando las métricas de navegación de la aplicación muestren una reducción promedio del 25 % en el tiempo total de desplazamiento registrado por los usuarios para completar una lista de compras multicanal.
+
+**Hipótesis 3: Veracidad de la información comunitaria**
+Creemos que implementar un sistema de validación de precios basado en la comunidad (crowdsourcing) garantizará que la información del ecosistema se mantenga veraz y competitiva frente a los cambios del mercado.
+* **Sabremos que hemos tenido éxito:** Cuando el 80 % de los precios consultados por los usuarios en la plataforma coincidan con el valor real verificado en el establecimiento físico al momento de la compra.
+
+**Hipótesis 4: Adopción del sistema en entornos minoristas**
+Creemos que una interfaz diseñada para alta movilidad y facilidad de uso incrementará la adopción de la herramienta incluso en entornos de compra tradicionales como los mercados de abastos.
+* **Sabremos que hemos tenido éxito:** Cuando el 90 % de los usuarios que inician una ruta de compra logren completarla y registrar sus transacciones sin requerir asistencia técnica o reportar errores de usabilidad.
+
+
+
 #### 1.2.2.4. Lean UX Canvas
+![Lean UX Canvas](./assets/images/lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo
 
