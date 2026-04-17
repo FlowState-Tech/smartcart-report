@@ -305,7 +305,7 @@ Creemos que una interfaz diseñada para alta movilidad y facilidad de uso increm
 
 
 #### 1.2.2.4. Lean UX Canvas
-![Lean UX Canvas](./assets/images/lean-ux-canvas.png)
+![Lean UX Canvas](./assets/imagenes/lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo
 
