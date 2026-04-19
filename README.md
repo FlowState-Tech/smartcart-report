@@ -434,7 +434,15 @@ En esta sección se presenta la *User Task Matrix*, enfocado en los dos segmento
 
 ### 2.3.3. User Journey Mapping
 
+En esta sección se describen los procesos actuales y puntos de contacto de nuestros segmentos objetivo, identificando los momentos de frustración y las oportunidades de mejora que SmartCart resolverá.
 
+#### Segmento #1: Consumidor - Jorge Retuerto
+
+![User Journey Consumidor](<./assets/imagenes/Segmento_ Consumidor (Jorge Retuerto).png>)
+
+#### Segmento #2: Comerciante - Martha Rojas
+
+![User Journey Comerciante](<./assets/imagenes/Segmento_ Comerciante (Martha Rojas).png>)
 
 
 ### 2.3.4. Empathy Mapping
