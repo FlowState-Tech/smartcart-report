@@ -418,6 +418,20 @@ En esta sección se presentan los arquetipos de usuario diseñados a partir de l
 
 ### 2.3.2. User Task Matrix
 
+
+En esta sección se presenta la *User Task Matrix*, enfocado en los dos segmentos clave: consumidores (estudiantes y jefes de hogar) y comerciantes minoristas. Este instrumento permite identificar las tareas habituales, su nivel de importancia y frecuencia, asegurando que la solución se centre en los beneficios esperados por el usuario.
+
+| Persona | Tarea | Importancia | Frecuencia | Beneficio / Outcome |
+| :--- | :--- | :--- | :--- | :--- |
+| **Jorge (Consumidor)** | Comparar precios de la canasta básica en tiempo real | Alta | Alta | Permite identificar el ahorro neto inmediato antes de realizar la compra. |
+| | Generar ruta de compra optimizada por geolocalización | Alta | Media | Reduce el tiempo de desplazamiento y el gasto en transporte. |
+| | Validar precios reportados por otros usuarios | Media | Alta | Aumenta la confianza en la veracidad de la información comunitaria. |
+| | Consultar histórico de ahorros mensuales | Baja | Media | Permite visualizar el impacto positivo en el presupuesto personal. |
+| **Martha (Comerciante)** | Actualizar precios de productos estratégicos del día | Alta | Alta | Incrementa la visibilidad frente a clientes que buscan ofertas inmediatas. |
+| | Visualizar métricas de alcance y visualización de precios | Media | Baja | Ayuda a entender el interés de los usuarios en su stock actual. |
+| | Gestionar inventario digital de ofertas flash | Alta | Media | Permite rotar productos frescos y evitar desperdicios. |
+| | Recibir alertas sobre variaciones de precios de proveedores | Media | Media | Facilita la toma de decisiones para ajustar precios competitivos. |
+
 ### 2.3.3. User Journey Mapping
 
 
