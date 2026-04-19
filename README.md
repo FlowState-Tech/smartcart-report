@@ -275,35 +275,27 @@ Esta sección presenta el banco de preguntas estructurado para los dos segmentos
 
 Si existiera una herramienta que le permitiera armar una ruta de compra optimizada para ahorrar, ¿qué funciones serían indispensables para que usted la descargue?
 
-#### Segmento 2: Comerciantes Minoristas 
+#### Segmento 2: Establecimientos de Consumo Masivo
 
-#### A. Perfil y Ocupación
+#### A. Gestión de Catálogo y Visibilidad Digital
+¿Qué tan complejo es hoy para su sede actualizar sus ofertas en plataformas digitales externas para que el cliente las vea antes de salir de casa?
 
-¿Cuántos años tiene y desde hace cuánto tiempo gestiona su negocio?
+¿De qué manera se aseguran de que el catálogo de productos que ofrecen en línea sea lo suficientemente atractivo para competir con otros locales de la zona?
 
-¿Cómo describiría su nivel de habilidad con herramientas digitales y aplicaciones móviles?
+#### B. Atracción y Eventos Promocionales
+Cuando lanzan un "evento" (oferta relámpago, cierre de puertas), ¿cómo miden cuántas personas nuevas atrajeron específicamente por esa promoción?
 
-¿Qué lo motiva a mantener su negocio competitivo frente a las grandes cadenas de supermercados?
+¿Qué herramientas utilizan para incentivar que un usuario que está comparando precios decida finalmente venir a esta tienda y no a la competencia?
 
-#### B. Operación y Frustraciones
+#### C. Engagement y Analítica de Datos
+¿Qué tan valioso sería para su gestión saber exactamente cuántos usuarios pusieron un producto de su tienda en su "canasta de compra" pero al final no vinieron a comprarlo?
 
-¿Cuál es el mayor desafío que enfrenta al momento de fijar los precios de sus productos diariamente?
+¿Actualmente cuentan con datos sobre el "alcance" real de su tienda (cuánta gente los ve en el mapa vs. cuántos entran)?
 
-¿Siente que la falta de visibilidad de sus precios en internet le hace perder clientes frente a los supermercados?
+#### D. Objetivos de Conversión y SmartPrice
+¿En qué medida cree que mostrar sus precios en tiempo real en una plataforma de comparación directa impactaría en su meta de atraer clientes de otros distritos o zonas?
 
-¿Qué marcas o proveedores son sus principales aliados y cuáles influyen más en su inventario?
-
-#### C. Entorno Tecnológico
-
-¿Cuenta con un dispositivo móvil propio en su puesto? ¿Qué modelo y navegador (browser) suele utilizar para buscar información?
-
-¿Utiliza actualmente alguna plataforma digital para atraer clientes o prefiere los métodos tradicionales?
-
-#### D. Objetivos y Antecedentes
-
-¿Cuál es su meta principal para su negocio en los próximos 2 años?
-
-¿En qué condiciones estaría dispuesto a dedicar 5 minutos al día para actualizar sus precios en una plataforma digital?
+¿Qué tipo de estadísticas sobre el comportamiento del consumidor (qué buscan, qué comparan) le ayudarían a tomar mejores decisiones sobre sus ofertas semanales?
 
 ### 2.2.2. Registro de entrevistas
 
@@ -410,23 +402,23 @@ Si existiera una herramienta que le permitiera armar una ruta de compra optimiza
 * **Preferencia por canales directos:** **100% (3/3)** manifiestan interés en recibir información, ofertas o métricas de calidad a través de canales digitales ágiles como WhatsApp o redes sociales, evitando medios saturados como el correo electrónico.
 * **Expectativa de valor en la solución:** Los entrevistados valoran funciones específicas según su perfil: el profesional busca **optimización de rutas y stock**, el estudiante foráneo busca **validación de calidad (reseñas)** y el estudiante con ingresos variables busca la **cuantificación histórica de su ahorro**.
 
-**Segmento:** Comerciantes
+**Segmento:** Establecimientos de Consumo Masivo  
 **Total de entrevistados:** 3  
-**Edades:** 28, 33 y 46 años  
-**Ubicación:** Surquillo, Lince y distritos de Lima Metropolitana  
+**Edades:** 45, 28 y 35 años  
+**Distritos:** San Borja, Surco y Villa El Salvador  
 
 #### **Características Objetivas**
-* **Uso de dispositivos móviles y navegación:** **100% (3/3)** poseen smartphones con sistema operativo Android (Samsung, Xiaomi, Gama media-alta) y utilizan Google Chrome como navegador principal para realizar consultas de precios de referencia.
-* **Adopción de herramientas digitales básicas:** **100% (3/3)** ya integran tecnología en la operación de sus negocios, destacando el uso cotidiano de WhatsApp Business, redes sociales (Facebook, TikTok e Instagram) y soluciones de pago digital como Yape o banca móvil.
-* **Vulnerabilidad ante la volatilidad de precios:** **100% (3/3)** manifiestan que sus costos dependen directamente de la inestabilidad de precios de grandes proveedores y distribuidores locales (Alicorp, Nestlé, Gloria, Laive), lo que dificulta la fijación de precios fija.
-* **Gestión de inventario tradicional:** **67% (2/3)** admiten que el registro de sus productos y la actualización de catálogos sigue siendo un proceso manual que consume tiempo considerable y carece de automatización.
+* **Responsabilidad en la gestión operativa:** **100% (3/3)** poseen autoridad directa sobre la supervisión de stock y la actualización de precios en el piso de venta, aunque bajo lineamientos de una central corporativa.
+* **Brecha de actualización digital:** **100% (3/3)** operan con sistemas internos robustos (ERP/SAP) que carecen de una conexión en tiempo real con plataformas externas, obligándolos a procesos de verificación manuales.
+* **Entorno tecnológico:** **100% (3/3)** utilizan sus dispositivos móviles personales como herramienta de apoyo crítica para monitorear la reputación digital de su sede (Google Maps) y las acciones de la competencia.
+* **Perfil de competitividad local:** **100% (3/3)** centran su estrategia de atracción en un radio menor a 1 km, priorizando la rotación rápida de inventario y la visibilidad de ofertas de corto plazo (ofertas relámpago).
 
 #### **Características Subjetivas**
-* **Percepción de "invisibilidad digital":** **100% (3/3)** coinciden en que la falta de presencia digital de sus precios les hace perder competitividad frente a los supermercados, especialmente con el público joven que prefiere consultar ofertas desde el celular.
-* **Motivación por la diferenciación competitiva:** **100% (3/3)** buscan posicionarse frente a las grandes cadenas resaltando atributos de valor como la frescura de los productos, el trato personalizado ("caserismo"), la agilidad en el cambio de stock y la calidad artesanal.
-* **Interés en métricas de visualización:** **100% (3/3)** expresan disposición para invertir tiempo diario (promedio 5 minutos) en una plataforma digital, siempre que esta les brinde reportes claros sobre el alcance de sus precios y se traduzca en una captación real de nuevos clientes.
-* **Rechazo a la complejidad técnica:** **67% (2/3)** enfatizan que cualquier herramienta tecnológica debe ser intuitiva, rápida y libre de formularios extensos, priorizando la estabilidad de la aplicación para evitar interrupciones en su jornada laboral.
-* **Apertura a la transformación digital:** **67% (2/3)** proyectan como meta a mediano plazo la digitalización total de sus pedidos y la implementación de sistemas de inventario online para escalar sus ventas.
+* **Frustración por "Ceguera de Datos":** **100% (3/3)** manifiestan una alta frustración al no poder cuantificar el flujo de usuarios que consideran su tienda en el mundo digital pero no concretan la visita física (el "carrito abandonado" del retail físico).
+* **Dolor por inconsistencia de información:** **100% (3/3)** identifican las discrepancias entre los precios anunciados en plataformas digitales y los flejes físicos como el principal generador de fricción con el cliente y estrés operativo para el equipo.
+* **Valoración de la Inteligencia de Mercado:** **100% (3/3)** consideran que el mayor valor de una herramienta externa no es la publicidad, sino la obtención de métricas de intención de compra y comparativas directas de competitividad en la zona.
+* **Apertura a la transparencia de precios:** **67% (2/3)** perciben la comparación directa de precios como una oportunidad para ganar mercado basándose en su eficiencia, mientras que el perfil más corporativo lo ve como un reto de agilidad operativa.
+* **Expectativa de valor en la solución:** Los entrevistados proyectan beneficios específicos según su perfil: el gerente corporativo busca **trazabilidad de conversión y analítica avanzada**, la administradora de conveniencia busca **visibilidad inmediata y geofencing**, y el jefe de tienda de descuento busca **alcance masivo sin costos de marketing tradicional**.
 
 ## 2.3. Needfinding
 ### 2.3.1. User Personas
