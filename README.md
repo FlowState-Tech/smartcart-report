@@ -410,11 +410,16 @@ De esta manera, se presentan a continuación los hallazgos clave que guiarán el
 En esta sección se presentan los arquetipos de usuario diseñados a partir de la síntesis de datos obtenidos en las entrevistas. Estos perfiles representan los comportamientos, necesidades y frustraciones de los dos segmentos clave del proyecto.
 
 ##### Segmento #1: Consumidor - Jorge Retuerto
-![User Persona - Consumidor](./assets/imagenes/persona-consumidor.png)
+
+<p align="center">
+  <img src="./assets/imagenes/Persona_Jorge_UXPressia.png" width="850">
+</p>
 
 ##### Segmento #2: Comerciante - Martha Rojas
 
-![User Persona - Comerciante](./assets/imagenes/persona-comerciante.png)
+<p align="center">
+  <img src="./assets/imagenes/Persona_Martha_UXPressia.png" width="850">
+</p>
 
 ### 2.3.2. User Task Matrix
 
