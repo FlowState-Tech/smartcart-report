@@ -407,7 +407,17 @@ De esta manera, se presentan a continuación los hallazgos clave que guiarán el
 * **Reducir la brecha digital** mediante una interfaz adaptada a su ritmo de trabajo diario sin procesos burocráticos complejos.
 
 ### 2.3.1. User Personas
+En esta sección se presentan los arquetipos de usuario diseñados a partir de la síntesis de datos obtenidos en las entrevistas. Estos perfiles representan los comportamientos, necesidades y frustraciones de los dos segmentos clave del proyecto.
+
+##### Segmento #1: Consumidor - Jorge Retuerto
+![User Persona - Consumidor](./assets/imagenes/persona-consumidor.png)
+
+##### Segmento #2: Comerciante - Martha Rojas
+
+![User Persona - Comerciante](./assets/imagenes/persona-comerciante.png)
+
 ### 2.3.2. User Task Matrix
+
 ### 2.3.3. User Journey Mapping
 
 
