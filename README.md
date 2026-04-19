@@ -163,65 +163,62 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 
 #### What? (¿Qué?)
 
-#### ¿Cuál es el problema?
+**¿Cuál es el problema?**
 
-El problema central es la ineficiencia económica y la pérdida de tiempo que enfrentan las familias en Lima al realizar sus compras de primera necesidad. Esta problemática surge debido a la alta dispersión de precios entre supermercados y mercados tradicionales, sumada a la falta de herramientas que permitan calcular una ruta de compra optimizada que combine múltiples establecimientos para obtener el menor costo total por una canasta completa.
+El problema central es la asincronía informativa y la ineficiencia logística en el consumo masivo dentro del canal moderno (supermercados y tiendas de conveniencia) en Lima. A pesar de la digitalización, existe una brecha crítica entre los precios/promociones anunciados en plataformas corporativas y la realidad física en las góndolas, sumada a la incapacidad de los consumidores para comparar canastas completas entre distintos competidores de proximidad.
 
-Esta ineficiencia se ve respaldada por investigaciones que identifican la dispersión de precios como una falla de mercado crítica en el sector minorista peruano, donde productos idénticos presentan variaciones de costo significativas dependiendo del canal de venta y la ubicación geográfica del establecimiento (Banco Central de Reserva del Perú [BCRP], 2025). A esta situación se suma la ineficiencia en la movilidad del consumidor, quien al no contar con una secuencia organizada de visitas a los establecimientos, incurre en gastos innecesarios de transporte y una pérdida de tiempo considerable (ResearchGate, 2024). Esta desinformación logística impide que las familias logren un beneficio neto real, ya que el ahorro obtenido en los productos suele verse anulado por los costos de traslado dentro de la compleja red vial de la capital. De esta manera, la falta de transparencia informativa agrava el impacto de la inflación acumulada en el rubro de alimentos básicos, perjudicando la estabilidad económica de los hogares limeños (Instituto Nacional de Estadística e Informática [INEI], 2026).
+Esta ineficiencia se ve respaldada por investigaciones que identifican la dispersión de precios como una falla de mercado crítica en el sector minorista peruano, donde productos idénticos presentan variaciones de costo significativas dependiendo del canal de venta y la ubicación geográfica del establecimiento (Banco Central de Reserva del Perú [BCRP], 2025). En el canal moderno, esta problemática se agrava por el "incumplimiento de oferta" en punto de venta, donde la falta de stock o el etiquetado erróneo anula el beneficio del consumidor. A esto se suma la ineficiencia en la movilidad, incurriendo en gastos innecesarios de transporte y una pérdida de tiempo considerable al no contar con una secuencia organizada de visitas (ResearchGate, 2024). Esta falta de transparencia logística impide que las familias logren un beneficio neto real frente a la inflación acumulada en el rubro de alimentos básicos (Instituto Nacional de Estadística e Informática [INEI], 2026).
 
 #### When? (¿Cuándo?)
 
-#### ¿Cuándo ocurre el problema?
+**¿Cuándo ocurre el problema?**
 
-El problema se manifiesta de forma recurrente durante la planificación y ejecución de las compras semanales o quincenales del hogar. Se intensifica en periodos de volatilidad económica, donde los precios de productos básicos fluctúan rápidamente, invalidando la información de días anteriores.
+Se manifiesta recurrentemente durante la planificación de compras semanales o de reposición inmediata (compras de impulso o conveniencia). El problema se intensifica durante los fines de semana o campañas de "ofertas relámpago", donde la alta rotación de productos genera discrepancias rápidas entre el stock real de la tienda y la información disponible para el usuario.
 
 #### Where? (¿Dónde?)
+**¿Dónde surge el problema?**
 
-#### ¿Dónde surge el problema?
- 
-Surge en los hogares de Lima Metropolitana, donde la oferta de canales de venta (bodegas, mercados de abastos y grandes cadenas) es sumamente fragmentada.
+Surge en las zonas de alta densidad comercial de Lima Metropolitana, donde conviven múltiples cadenas de conveniencia (Tambo, Oxxo, Listo) y supermercados (Mass, Plaza Vea, Metro).
 
-#### ¿A dónde se dirige?
+**¿A dónde se dirige?**
 
-Esta propuesta está enfocada en las familias de Lima y los comercios minoristas que buscan modernizar la planificación de sus compras y ventas mediante una herramienta tecnológica sencilla, accesible y adaptada a la realidad económica actual, permitiendo optimizar tanto el ahorro como el tiempo de desplazamiento por la ciudad.
+Esta propuesta se dirige a consumidores jóvenes (estudiantes y profesionales) que buscan eficiencia tecnológica, y a gestores de tiendas del canal moderno que necesitan herramientas de analítica y geofencing para atraer tráfico cualificado a sus sedes y reducir el margen de error en sus precios exhibidos.
 
 #### Who? (¿Quién?)
 
-#### ¿Quiénes están involucrados? 
+**¿Quiénes están involucrados?**
 
-**Consumidores:** Jefes de hogar y familias que buscan maximizar su presupuesto.
+* **Consumidores:** Estudiantes universitarios y jóvenes profesionales responsables de su propio abastecimiento que valoran el tiempo tanto como el ahorro.
+* **Comerciantes (Retailers):** Administradores y jefes de tienda de cadenas de conveniencia y supermercados que buscan optimizar su alcance local y reducir la pérdida de ventas por precios desactualizados.
 
-**Comerciantes:** Dueños de puestos en mercados y administradores de tiendas que necesitan visibilizar sus precios para atraer clientes.
+**¿Quién lo utilizará?**
 
-#### ¿Quién lo utilizará?
-
-El producto será utilizado principalmente por personas responsables de las compras del hogar que poseen un smartphone y buscan una solución tecnológica para ahorrar. Asimismo, será usado por comerciantes que deseen gestionar su stock y precios de manera digital.
+El producto será utilizado por compradores con alta adopción tecnológica que planifican sus rutas de compra mediante smartphones. Por otro lado, será utilizado por los gestores de retail como un panel de control para actualizar ofertas locales, gestionar eventos promocionales y recibir métricas sobre el comportamiento y engagement de los consumidores en su zona de influencia.
 
 #### Why? (¿Por qué?)
+**¿Cuál es la causa del problema?**
 
-#### ¿Cuál es la causa del problema?
-
-La causa principal es la asimetría de información. Los consumidores no tienen una forma centralizada de comparar precios en tiempo real de distintos formatos de tienda. A esto se suma el "costo de búsqueda", que es el tiempo y esfuerzo físico necesario para visitar varios locales para comparar precios, lo que usualmente desincentiva el ahorro.
+La causa principal es la rigidez de los sistemas corporativos de retail, que no permiten una comunicación fluida entre el precio en estante y el consumidor cercano en tiempo real. Esto genera un alto "costo de búsqueda" y una frustración del usuario al encontrar ofertas inexistentes, mientras que el comerciante sufre de "ceguera de datos" al no saber cuántas ventas pierde frente a competidores directos situados a pocos metros de distancia.
 
 #### How? (¿Cómo?)
 
-#### ¿En qué condiciones los usuarios usarán nuestro producto?
+**¿En qué condiciones los usuarios usarán nuestro producto?**
 
-Los consumidores utilizarán el producto inicialmente desde sus hogares para planificar sus presupuestos y consultar las predicciones de ahorro antes de salir de casa, y posteriormente en exteriores para navegar por las rutas de compra optimizadas mediante el sistema de geolocalización en tiempo real de sus dispositivos móviles. Por su parte, los comerciantes emplearán la aplicación directamente en sus puestos de mercado o establecimientos para gestionar de manera ágil el stock y realizar actualizaciones dinámicas de precios, asegurando que la información del ecosistema se mantenga veraz y competitiva mientras gestionan sus ventas diarias y responden a las variaciones del mercado local.
+Los consumidores lo usarán en una modalidad mixta: desde casa para comparar la canasta total y en exteriores para seguir la ruta optimizada hacia las tiendas seleccionadas. Los comerciantes lo emplearán de manera dinámica en sus estaciones de trabajo para validar alertas de inconsistencias reportadas por usuarios y para activar promociones de proximidad (geofencing) que incentiven la visita inmediata al local cuando detecten baja rotación de stock.
 
-#### ¿Cómo nos conocieron nuestros compradores?
+**¿Cómo nos conocieron nuestros compradores?**
 
-A través de campañas en redes sociales enfocadas en ahorro doméstico, recomendaciones en comunidades universitarias y mediante la visibilidad en las tiendas y mercados locales que ya utilizan la plataforma administrativa.
+A través de estrategias de marketing digital enfocadas en comunidades universitarias, alianzas estratégicas con cadenas de conveniencia interesadas en visibilidad de marca y la integración de códigos QR en los puntos de venta físicos para validar la veracidad de los precios.
 
-#### ¿Cómo prefieren nuestros consumidores acceder a nuestro producto?
+**¿Cómo prefieren nuestros consumidores acceder a nuestro producto?**
 
-Prefieren el acceso mediante una aplicación móvil, ya que permite la portabilidad necesaria durante el recorrido de compras y la recepción de alertas de precios en tiempo real.
+Mediante una aplicación móvil nativa que permita la integración de mapas en tiempo real, notificaciones push personalizadas según sus hábitos de consumo y acceso rápido al panel de control para el perfil del comerciante.
 
 #### How much? (¿Cuánto?)
 
-#### Estadísticas que sustentan la problemática.
+**Estadísticas que sustentan la problemática.**
 
-La problemática económica en Lima Metropolitana se ve agravada por una inflación que, según el Instituto Nacional de Estadística e Informática (INEI, 2026), registró un incremento del 2.38% en el Índice de Precios al Consumidor durante marzo de 2026. Esta situación impacta severamente la economía doméstica, considerando que el sueldo mínimo actual resulta insuficiente para cubrir el costo de vida real, donde gran parte del ingreso se diluye rápidamente entre el pago de vivienda y la adquisición de alimentos básicos (Infobae, 2025). Asimismo, la actual Remuneración Mínima Vital de S/ 1,130 enfrenta un escenario donde el gasto promedio mensual para cubrir una canasta básica familiar ya supera significativamente los ingresos percibidos por los trabajadores (Banco Central de Reserva del Perú [BCRP], 2025). Ante este panorama, el 41% de los responsables de las compras en el hogar prioriza la búsqueda de ofertas y el ahorro como su principal estrategia de consumo (Kantar Worldpanel, 2025). Finalmente, la falta de una planificación logística adecuada en los recorridos de compra genera ineficiencias que provocan sobrecostos innecesarios de hasta un 20% en transporte y tiempo de desplazamiento (ResearchGate, 2024).
+La problemática económica en Lima Metropolitana se ve agravada por una inflación que registró un incremento del 2.38% en marzo de 2026 (INEI, 2026). Esta situación impacta severamente la economía doméstica, considerando que el gasto promedio para cubrir una canasta básica familiar ya supera significativamente los ingresos percibidos por los trabajadores (BCRP, 2025), incluso con la Remuneración Mínima Vital de S/ 1,130 (Infobae, 2025). Ante este panorama, el 41% de los responsables de compra prioriza la búsqueda de ofertas (Kantar Worldpanel, 2025). Finalmente, la falta de planificación logística genera sobrecostos de hasta un 20% en transporte y tiempo de desplazamiento (ResearchGate, 2024), una cifra crítica para el segmento de jóvenes que operan con presupuestos ajustados y tiempos limitados.
 
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
