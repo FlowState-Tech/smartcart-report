@@ -101,7 +101,8 @@ Las principales ramas del repositorio son las siguientes:
         - [2.3.2. User Task Matrix](#232-user-task-matrix)
         - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
         - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-        - [2.3.5. Ubiquitous Language](#235-ubiquitous-language)
+        - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
+        - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
     - [2.4. Requirements specification](#24-requirements-specification)
         - [2.4.1. User Stories](#241-user-stories)
         - [2.4.2. Impact Mapping](#242-impact-mapping)
@@ -422,7 +423,33 @@ Cuando lanzan un "evento" (oferta relámpago, cierre de puertas), ¿cómo miden 
 ### 2.3.2. User Task Matrix
 ### 2.3.3. User Journey Mapping
 ### 2.3.4. Empathy Mapping
-### 2.3.5. Ubiquitous Language 
+### 2.3.5. Big Picture EventStorming
+
+En esta sección se introduce y resume el proceso realizado por el equipo para el Big Picture Event Storming, que fue realizado mediante una llamada en discord y plasmado con la ayuda de la herramienta Miro. A continuación, se explica el proceso:
+
+### 1. Open:
+En esta etapa el equipo se concentró en generar la mayor cantidad de eventos de dominio posibles (cosas que suceden en el negocio) escribiendo en los post-its naranjas.
+
+![big-picture-open](./assets/ddd/big-picture/big-picture-open.png)
+
+### 2. Explore:
+Después de la anterior etapa, en esta se concentró en ordenar cronológicamente los eventos, eliminar los eventos repetidos, identificar sus actores y posibles sistemas externos, y finalmente algunos puntos de dolor en post-its morados.
+
+![big-picture-explore](./assets/ddd/big-picture/big-picture-explore.png)
+
+### 3. Close: 
+En esta última etapa, se documentaron en post-its rosados los problemas más relevantes detectados, junto con aspectos que debíamos investigar más a fondo o descartar según el alcance definido.
+
+![big-picture-close](./assets/ddd/big-picture/big-picture-close.png)
+
+Luego de conversar un poco, el equipo descartó algunos eventos y identificó mejor un sistema externo:
+
+![big-picture-final](./assets/ddd/big-picture/big-picture-final.png)
+
+_Enlace del Miro:_ [Big Picture EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=24630775329)
+
+
+### 2.3.6. Ubiquitous Language 
 ## 2.4. Requirements specification
 ### 2.4.1. User Stories
 ### 2.4.2. Impact Mapping
