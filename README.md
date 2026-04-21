@@ -228,6 +228,53 @@ En base al análisis **Start-with-Value**, los contextos se clasifican estratég
 * **Supporting:** Experience, Notification.
 * **Generic:** IAM, Verification.
 #### 2.5.1.2. Domain Message Flows Modeling
+El **Domain Message Flow Modeling** es una técnica colaborativa que busca unificar el conocimiento del negocio y el equipo técnico sobre los flujos de interacción entre **Bounded Contexts**. Su fin es establecer una comprensión compartida de cómo se comunican los diferentes componentes del sistema.
+
+Para la plataforma **SmartCart**, se modelaron las interacciones entre los contextos de IAM, Verification, Store Management, Shopping Planning, Shopping Journey, Experience y Notification. Este proceso permitió clarificar la lógica de negocio y definir con precisión los contratos de comunicación entre cada uno de estos dominios.
+
+#### Escenario 1: Registro y verificación de tienda
+**Objetivo:** Una tienda nueva desea registrarse y ser verificada en el sistema SmartCart para comenzar a operar y ser visible para los consumidores.
+> ![Diagrama Escenario 1](espacio_para_imagen)
+
+---
+
+#### Escenario 2: Planificación de ruta de compra
+**Objetivo:** Un consumidor desea crear una lista de compras, añadir productos y comparar precios entre distintas tiendas para optimizar su gasto.
+> ![Diagrama Escenario 2](espacio_para_imagen)
+
+---
+
+#### Escenario 3: Ejecución del Shopping Journey y alertas
+**Objetivo:** El consumidor desea recorrer físicamente las tiendas siguiendo la ruta óptima generada a partir de su lista de compras planificada.
+> ![Diagrama Escenario 3](espacio_para_imagen)
+
+---
+
+#### Escenario 4: Reporte de incidencias y feedback
+**Objetivo:** El consumidor desea calificar las tiendas visitadas, verificar la exactitud de precios y publicar una reseña de su experiencia de compra.
+> ![Diagrama Escenario 4](espacio_para_imagen)
+
+---
+
+#### Escenario 5: Inicio de sesión y gestión de catálogo
+**Objetivo:** El Store Manager desea actualizar el inventario de productos y los precios de su tienda en tiempo real para que los consumidores siempre accedan a información correcta.
+> ![Diagrama Escenario 5](espacio_para_imagen)
+
+---
+
+#### Escenario 6: Actualización de la experiencia del usuario
+**Objetivo:** El consumidor desea conocer el ahorro total generado en su recorrido de compra comparado con los precios de referencia, y acceder a un análisis de sus hábitos de consumo.
+> ![Diagrama Escenario 6](espacio_para_imagen)
+
+---
+
+#### Escenario 7: Alerta de oferta personalizada
+**Objetivo:** El consumidor desea suscribirse a alertas de ofertas en productos de su lista de compras para ser notificado cuando haya cambios favorables de precio.
+> ![Diagrama Escenario 7](espacio_para_imagen)
+
+El modelado de flujos de mensajes de dominio permitió identificar con claridad las responsabilidades de cada **bounded context** y los puntos de integración críticos dentro de la plataforma **SmartCart**. Los contextos de *Shopping Planning*, *Shopping Journey* y *Experience* conforman el núcleo diferenciador del negocio, mientras que *IAM*, *Verification* y *Notification* actúan como servicios de soporte transversal. *Store Management* cumple un rol estratégico al ser el repositorio central de información de tiendas, productos y precios, siendo consumido por múltiples contextos.
+
+Estos flujos servirán de base para el diseño de los **Bounded Context Canvases** en la sección 2.5.1.3, garantizando coherencia y alineación entre la arquitectura estratégica y la lógica del negocio.
 #### 2.5.1.3. Bounded Context Canvases
 ### 2.5.2. Context Mapping
 ### 2.5.3. Software Architecture
