@@ -821,10 +821,140 @@ _Enlace del Miro:_ [Big Picture EventStorming](https://miro.com/app/board/uXjVGg
 #### 2.5.1.2. Domain Message Flows Modeling
 #### 2.5.1.3. Bounded Context Canvases
 ### 2.5.2. Context Mapping
+Identificación de las Relaciones Iniciales y Patrones
+##### 1. IAM -> Verification
+   - Patrón: Open Host Service (OHS)
+   - Relación IAM (U) -> Verification (D)
+   - Justificación: IAM centraliza la creación de usuarios y el inicio de sesión.
+     Verification depende de que exista una identidad validada para proceder con sus procesos (como la verificación de identidad contra SUNAT o la validación de la tienda). IAM se expone como un servicio abierto (OHS) para que Verification consuma el estado de la sesión y el ID del usuario sin acoplarse a la forma en que IAM encripta o almacena credenciales.
+##### 2. Verification -> Store Management
+   - Patrón: Customer/Supplier + Anticorruption Layer (ACL) 
+   - Relación: Verification (U) → Store Management (D)
+   - Justificación: Store Management requiere que una tienda esté  previamente validada para permitirle cargar inventario, registrar productos  y generar reportes. Verification actúa como proveedor del estado "Tienda Verificada". Se utiliza un ACL en Store Management para traducir este evento de verificación en la habilitación operativa de la tienda, manteniendo separados los dominios legales/tributarios de los operativos. 
+##### 3. Store Management -> Notification
+   - Patrón: Publisher/Subscriber + Open Host Service (OHS)
+   - Relación: Store Management (U) → Notification (D) 
+   - Justificación: Cuando ocurren eventos en Store Management (como falta de stock, reportes o nuevas ofertas), Notification necesita enterarse para enviar alertas push a los usuarios o administradores. Store Management publica estos eventos (Publisher) y Notification (Subscriber) los consume mediante una interfaz estándar (OHS) para transformar la data de inventario en mensajes legibles sin conocer la estructura interna del almacén.
+##### 4.  Shopping Planning → Shopping journey 
+   - Patrón: Customer/Supplier + Anticorruption Layer (ACL) 
+   - Relación: Shopping Planning (U) → Shopping journey (D)  
+   - Justificación: Shopping journey necesita la información de la lista de compras, la tienda seleccionada y los precios proyectados (definidos en Shopping Planning) para calcular la ruta óptima y la navegación. Shopping Planning provee esta data. Se usa un ACL en Shopping journey para traducir la "lista de deseos/carrito" a "coordenadas y puntos de recolección" (lógica de mapas y ubicación), aislando el dominio de decisión de compra del dominio de geolocalización.
+##### 5. Shopping journey → Experience 
+   - Patrón: Customer/Supplier + Anticorruption Layer (ACL) 
+   - Relación: Shopping Planning (U) → Experience (D)  
+   - Justificación: El contexto de Experience (que incluye calificar la tienda y calcular el ahorro final) solo puede iniciar una vez que la ruta de compra finaliza (ruta completada en Shopping journey). Shopping journey envía el evento de finalización, y Experience lo consume. El ACL traduce los datos del viaje a métricas de satisfacción y financieras, evitando que el módulo de experiencia se contamine con datos GPS o de navegación.
+
+#### Análisis de alternativas y preguntas clave:
+
+### 1. ¿Qué pasaría si Verification y Store Management compartieran la misma 
+base de datos (Shared Kernel)? 
+#### Alternativa A: Customer/Supplier + ACL (Modelo Actual)
+- Ventajas: Autonomía de dominios. Las reglas de validación de 
+SUNAT o identidad (Verification) pueden cambiar sin romper el 
+módulo de inventario.
+- Desventajas: Requiere sincronización de eventos y mantener una 
+capa de traducción (ACL).
+#### Alternativa B: Shared Kernel 
+- Ventajas: Consistencia inmediata; si una tienda es bloqueada por 
+SUNAT, el inventario se bloquea instantáneamente. 
+- Desventajas: Acoplamiento fuerte. Si la lógica de verificación 
+cambia, los desarrolladores de Store Management tendrían que 
+coordinar obligatoriamente, enlenteciendo el desarrollo. 
+#### Decisión Sustentada: Mantener Customer/Supplier + ACL. 
+- Razón crítica: Las validaciones legales/tributarias tienen un ciclo 
+de vida y riesgo muy distinto al manejo de stock de productos.
+- Mitigación: Asegurar que los eventos de cambio de estado (ej. 
+"Tienda suspendida") se transmitan con alta prioridad al módulo de 
+inventario. 
+### 2. ¿Qué pasaría si Store Management llamara directamente a los servicios de 
+Notification sin usar eventos (Acoplamiento directo)?
+#### Alternativa A: Publisher/Subscriber + OHS (Modelo Actual) 
+- Ventajas: Store Management no necesita saber cómo se envían los 
+correos o push notifications. Solo emite el evento "Falta de stock". 
+- Desventajas: Complejidad inicial al configurar el bus de eventos o 
+colas de mensajería.
+#### Alternativa B: Integración directa (Llamada síncrona) 
+- Ventajas: Desarrollo inicial muy rápido. 
+- Desventajas: Si el servidor de notificaciones cae, Store 
+Management podría fallar al intentar registrar un producto. Alto 
+acoplamiento. 
+#### Decisión Sustentada: Mantener Publisher/Subscriber.
+- Razón crítica: Las notificaciones son procesos asíncronos por 
+naturaleza. El inventario no debe depender de la disponibilidad del 
+sistema de envío de mensajes. 
+- Mitigación: Monitorear la cola de eventos para evitar retrasos en las 
+alertas a los usuarios.
+### 3. ¿Qué pasaría si Shopping Planning y Shopping journey fueran un solo 
+Bounded Context? 
+#### Alternativa A: Contextos separados (Modelo Actual) 
+- Ventajas: Claridad de responsabilidades. Planificar y comparar 
+precios es un problema de comercio electrónico; trazar rutas en 
+GPS es un problema de logística.
+- Desventajas: Mayor sobrecarga arquitectónica por tener dos 
+dominios separados para un proceso que el usuario percibe como 
+continuo. 
+#### Alternativa B: Unificar en un solo Bounded Context ("Shopping")
+- Ventajas: Menos integraciones y despliegue más sencillo. 
+- Desventajas: Se crearía un "Big Ball of Mud". Las entidades de 
+producto, precio y mapa interactuarían caóticamente, dificultando 
+el mantenimiento a medida que la app crezca. 
+#### Decisión Sustentada: Mantener contextos separados.
+- Razón crítica: Las reglas de negocio de armar un carrito 
+(presupuestos, sugerencias) son radicalmente distintas a las de 
+navegar físicamente en un mapa. Requieren lógicas y quizás 
+tecnologías distintas. 
+- Mitigación: Diseñar una UI fluida en el Frontend para que el usuario 
+no note el salto entre el planificador y el navegador de rutas.
+#### Decisión Final
+Luego de analizar las alternativas y sus implicancias en SmartCart, el equipo decidió mantener una arquitectura desacoplada y basada en patrones de integración definidos por Domain-Driven Design (DDD). Se priorizó la independencia de cada Bounded Context para facilitar la escalabilidad, el mantenimiento y la evolución de un sistema que integra validaciones externas, e-commerce físico y geolocalización.
+- IAM (Identidad): Funciona como Open Host Service (OHS), sirviendo como un núcleo de autenticación centralizado y estándar para el resto de los contextos.
+- Validaciones y Operaciones (Verification / Store Management): Se utiliza una relación Customer/Supplier con ACL (Anticorruption Layer). Esto protege la lógica del inventario de la rigidez de las normativas externas (como SUNAT).
+- Experiencia de Compra (Shopping Planning / Journey): Implementa también ACL, permitiendo que la planificación de compras evolucione sin depender directamente de la complejidad de los motores de mapas y rutas.
+- Comunicación Eficiente: La relación entre la gestión de tienda y las notificaciones es asíncrona (basada en eventos), lo que evita cuellos de botella y asegura que el sistema siga operativo incluso si hay retrasos en los envíos.
 ### 2.5.3. Software Architecture
 #### 2.5.3.1. Software Architecture Context Level Diagrams
+<div style="text-align: center;">
+  <img src="./assets/softwarearchitecture/2.5.3.1.png" alt="Context Level Diagram style="width: 180px; height: auto;">
+</div>
+El objetivo del este diagrama es establecer los límites del ecosistema, identificando a los actores principales y los sistemas externos necesarios para cumplir con los objetivos del negocio.
+#### Descripción de los elementos:
+
+- SmartCart System: El sistema central que orquesta la planificación de compras, la gestión de inventarios y la navegación dentro de las tiendas.
+  
+- Buyer: El usuario final (comprador) que utiliza la plataforma para optimizar sus rutas de compras y gestionar sus listas personales.
+  
+- Merchant: El administrador de la tienda (vendedor) responsable de las actualizaciones de stock y la verificación de los datos del establecimiento.
+
+- Sistemas externos: 
+  SUNAT: Sistema externo para la validación legal y tributaria de las tiendas.
+  Google Maps API: Proveedor de los datos de geolocalización y trazado de rutas necesarios.
+  Push Notification Service: Infraestructura de terceros utilizada para el envío de alertas en tiempo real y correos electrónicos a los usuarios.
+  
 #### 2.5.3.2. Software Architecture Container Level Diagrams
+<div style="text-align: center;">
+  <img src="./assets/softwarearchitecture/2.5.3.2.png" alt="Container Level Diagram" style="width: 180 px; height: auto;">
+</div>
+
+El objetivo de este diagrama es descomponer el sistema SmartCart en contenedores de software independientes. Esta vista detalla las responsabilidades internas, las tecnologías elegidas y los patrones de comunicación estratégicos definidos en el análisis de Context Mapping.
+
+- Gestión de Identidad (OHS): El IAM Service funciona como un Open Host Service, proporcionando un punto de autenticación unificado tanto para la Mobile App como para la Web App.
+- Desacoplamiento Asíncrono (Pub/Sub): Para asegurar la alta disponibilidad, el Store Management Service publica eventos en el RabbitMQ. El Notification Service opera como un Subscriber, procesando alertas sin bloquear las operaciones de inventario.
+- Protección del Dominio (ACL): Tanto el Shopping Journey Service como el Experience Service implementan capas de anticorrupción (Anticorruption Layers - ACL) para traducir los modelos de datos externos (de Google Maps o métricas de feedback) a la lógica interna del dominio.
+- Autonomía de Servicios: Cada servicio gestiona su propia lógica e interactúa con la infraestructura de Database manteniendo los límites lógicos entre los contextos delimitados (Bounded Contexts).
+
 #### 2.5.3.3. Software Architecture Deployment Diagrams
+<div style="text-align: center;">
+  <img src="./assets/softwarearchitecture/2.5.3.3.png" alt="Deployment Diagram" style="width: 180 px; height: auto;">
+</div>
+
+Este Diagrama de Despliegue muestra los contenedores de software en una infraestructura basada en la nube. Destaca cómo el sistema garantiza la escalabilidad y seguridad mediante la distribución de componentes en diversos nodos de hardware.
+
+Detalles de la Infraestructura:
+
+- Nodos de Cliente: Representan el hardware del usuario final (Smartphone y Laptop/PC) donde residen las aplicaciones frontend, comunicándose con la nube a través de protocolos seguros HTTPS.
+- Cloud Server (AWS/Azure): Un entorno distribuido donde se alojan los microservicios. El diagrama muestra la separación física de los servicios centrales para facilitar el escalado independiente.
+- Capa de Persistencia: Se despliegan múltiples instancias de Database para asegurar que los datos del dominio permanezcan aislados, apoyando la decisión de evitar un Shared Kernel y manteniendo la integridad de los datos de cada servicio.
+- Interoperabilidad: La integración con entidades externas como SUNAT y Google Maps API se realiza mediante protocolos estándar HTTPS/REST, mientras que la comunicación interna entre servicios utiliza REST y AMQP para la mensajería asíncrona.
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
