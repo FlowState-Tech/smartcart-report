@@ -307,9 +307,91 @@ La problemática económica en Lima Metropolitana se ve agravada por una inflaci
 
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
+
+La declaración del problema es un enunciado claro y conciso que describe los síntomas de la problemática a tratar. Siguiendo los lineamientos de la unidad, este punto se compone de tres elementos fundamentales que delimitan el alcance del trabajo:
+
+**1. Los objetivos actuales del sistema/producto:**
+
+El producto **SmartCart** busca facilitar herramientas tecnológicas prácticas que ayuden a los integrantes del hogar a gestionar mejor sus gastos diarios y optimizar sus recorridos de abastecimiento.Simultáneamente, el sistema tiene como objetivo proporcionar a los **establecimientos de consumo masivo** una plataforma ágil para la visibilidad de sus precios, la gestión de ofertas relámpago para reducir mermas y la obtención de métricas de conversión real del entorno digital al piso de venta[cite: 13, 17].
+
+**2. El problema que las partes interesadas quieren abordar:**
+* **Perspectiva del usuario (Consumidor):** Los miembros del hogar enfrentan una ineficiencia económica y pérdida de tiempo debido a la asimetría de información de precios y la falta de una logística organizada en sus compras.
+* **Perspectiva del negocio (Establecimientos):** Los gerentes de sede carecen de autonomía para actualizar ofertas locales en tiempo real, dependiendo de procesos manuales o de oficinas centrales que no viven el día a día[cite: 5, 24]. Esto genera una falta de sincronización de stock que destruye la confianza del cliente [cite: 7] y una "caja negra" informativa, donde se desconoce si el alcance digital realmente atrae "pies a la tienda"[cite: 9, 15].
+
+**3. Una solicitud explícita de mejora:**
+¿Cómo mejorar la eficacia en el acceso a la información de precios para el consumidor y, al mismo tiempo, brindar a los gerentes de establecimientos herramientas de **trazabilidad de conversión** y gestión de stock en tiempo real  para optimizar sus recursos, reducir desperdicios y asegurar la satisfacción de ambos segmentos?
+
+**Oportunidades y restricciones:**
+La oportunidad radica en un mercado que carece de herramientas que integren el factor económico del hogar con la inteligencia de mercado para el vendedor[cite: 19]. [Entre las principales restricciones identificadas se encuentran la dependencia de sistemas centrales corporativos (SAP/Marketing Central), la veracidad de los datos actualizados por la comunidad y la necesidad de conectividad constante para reflejar el stock en tiempo real[cite: 7, 16].
+
 #### 1.2.2.2. Lean UX Assumptions
+
+En esta etapa inicial del proceso, se identifican y declaran los supuestos fundamentales que sustentan la propuesta de valor de **SmartCart**. Este ejercicio permite reconocer los riesgos críticos del proyecto para priorizar su validación experimental antes de proceder con el desarrollo. 
+
+**Assumptions Worksheet**
+
+1. **¿Quién es el usuario?**
+   * El ecosistema de usuarios está compuesto por dos segmentos clave: por un lado, **jefes de hogar, familias y jóvenes** que buscan optimizar su presupuesto frente a la inflación ; y por otro, **gerentes y administradores de establecimientos masivos** (supermercados y tiendas de conveniencia) que necesitan gestionar su oferta local de forma ágil.
+
+2. **¿Dónde encaja nuestro producto en su trabajo o vida?**
+   * Para el consumidor, se integra en su rutina de planificación financiera y ejecución de compras semanales[cite: 1]. Para el gerente de tienda, encaja en su gestión operativa diaria, permitiéndole liquidar sobrestock y atraer clientes digitales al piso de venta físico.
+
+3. **¿Qué problemas resuelve nuestro producto?**
+   * Resuelve la ineficiencia logística y el "costo de búsqueda" de precios para los consumidores[cite: 1]. Simultáneamente, soluciona la falta de trazabilidad digital ("caja negra" de visitas) y la dependencia de oficinas centrales para la actualización de ofertas en los grandes establecimientos.
+
+4. **¿Cuándo y cómo es usado el producto?**
+   * Es usado de forma secuencial: el consumidor lo utiliza en el hogar para planificar y en exteriores para navegar[cite: 1]. El gerente de tienda lo utiliza durante su turno laboral para publicar "ofertas relámpago" y monitorear el alcance de sus productos en la zona.
+
+5. **¿Qué características son importantes?**
+   * La comparación multicanal de precios y generación de rutas optimizadas para el ahorro[cite: 1]. Asimismo, son críticos el dashboard de analítica para tiendas (conversión de visitas), la sincronización con inventarios locales y el sistema de validación comunitaria.
+
+6. **¿Cómo debe verse nuestro producto y cómo comportarse?**
+   * Debe presentar una interfaz intuitiva y rápida, optimizada para la alta movilidad de los usuarios en calle[cite: 1]. Para el perfil corporativo, debe ofrecer una visualización de datos profesional y robusta que facilite la toma de decisiones comerciales inmediatas.
+---
+
+#### Business Assumptions
+
+1. **Necesidad del cliente:** Existe una carencia de herramientas que centralicen la información de precios locales para combatir el alza del costo de vida y una falta de autonomía en gerentes de tienda para comunicar ofertas locales y reducir mermas de productos perecibles.
+2. **Propuesta de solución:** Estas necesidades se resuelven mediante una plataforma de comparación de costos y optimización logística para usuarios, junto con un panel de gestión ágil y analítica de conversión para establecimientos masivos.
+3. **Clientes iniciales:** Familias y responsables de compras en zonas urbanas con acceso a dispositivos móviles y gerentes de sedes de supermercados o tiendas de conveniencia que buscan agilidad comercial.
+4. **Valor principal esperado:** El ahorro neto real de dinero y tiempo en la canasta básica familiar y la eliminación de la "caja negra" informativa mediante la trazabilidad del mundo digital al piso de venta para el establecimiento.
+5. **Beneficios adicionales:** Mayor claridad en la planificación del presupuesto y capacidad de los gerentes de sede para justificar ajustes de precios agresivos ante sus gerencias regionales basados en datos de mercado.
+6. **Estrategia de adquisición:** Mayoritariamente a través de campañas en redes sociales enfocadas en economía doméstica y alianzas directas con administradores de sedes que buscan mejorar su visibilidad digital.
+7. **Generación de ingresos:** Mediante una versión premium para establecimientos que requieran análisis de tendencias, reportes de "carritos abandonados" físicos y mapas de calor de búsqueda.
+8. **Competencia principal:** Métodos tradicionales de búsqueda manual, aplicaciones de catálogos de una sola marca y la inercia de los procesos burocráticos de marketing central.
+9. **Ventaja competitiva:** Capacidad de integrar tanto el ahorro logístico del transporte como la necesidad de rotación de stock en tiempo real del establecimiento en una sola interfaz.
+10. **Mayor riesgo de producto:** Resistencia de las oficinas centrales corporativas a permitir que los gerentes de sede utilicen herramientas externas de actualización de precios locales.
+11. **Estrategia de mitigación:** Implementación de herramientas de gestión simplificadas que demuestren resultados inmediatos en conversión de ventas para ganar el respaldo de las gerencias regionales.
+12. **Suposición crítica de viabilidad:** Se asume que los gerentes de establecimientos valorarán la trazabilidad digital lo suficiente como para mantener sus precios actualizados de forma constante.
+
+
 #### 1.2.2.3. Lean UX Hypothesis
+
+**Hipótesis 1: Optimización del presupuesto familiar**
+Creemos que facilitar la comparación de precios en tiempo real entre diversos establecimientos permitirá que los integrantes del hogar reduzcan significativamente su gasto mensual en la canasta básica. 
+* **Sabremos que hemos tenido éxito:** Cuando veamos que el 75 % de los usuarios activos reporta un ahorro de al menos el 15 % en sus compras totales tras completar su primer mes de uso recurrente en la plataforma.
+
+**Hipótesis 2: Eficiencia en la logística de compra**
+Creemos que proporcionar rutas de compra optimizadas mediante geolocalización reducirá el tiempo y dinero invertido por los usuarios en traslados innecesarios entre mercados y supermercados.
+* **Sabremos que hemos tenido éxito:** Cuando las métricas de navegación de la aplicación muestren una reducción promedio del 25 % en el tiempo total de desplazamiento registrado por los usuarios para completar una lista de compras multicanal.
+
+**Hipótesis 3: Veracidad de la información comunitaria**
+Creemos que implementar un sistema de validación de precios basado en la comunidad (crowdsourcing) garantizará que la información del ecosistema se mantenga veraz y competitiva frente a los cambios del mercado.
+* **Sabremos que hemos tenido éxito:** Cuando el 80 % de los precios consultados por los usuarios en la plataforma coincidan con el valor real verificado en el establecimiento físico al momento de la compra.
+
+**Hipótesis 4: Autonomía y reducción de mermas (Segmento Corporativo)**
+Creemos que brindar a los gerentes de sede herramientas para publicar ofertas relámpago de forma autónoma permitirá reducir la merma de productos perecibles[cite: 5, 24].
+* **Sabremos que hemos tenido éxito:** Cuando los establecimientos aliados reporten una disminución del 20 % en el desperdicio de productos frescos identificados como sobrestock local tras implementar la actualización de precios en tiempo real.
+
+**Hipótesis 5: Trazabilidad de conversión digital a tienda**
+Creemos que proporcionar métricas sobre el "alcance digital vs. entradas a tienda" permitirá que los gerentes justifiquen cambios de precios agresivos ante sus gerencias regionales basados en datos reales de comportamiento de zona.
+
+* **Sabremos que hemos tenido éxito:** Cuando el 70 % de los gerentes de sede utilicen los reportes de SmartCart para ejecutar ajustes estratégicos en sus "productos gancho" para evitar el abandono de la canasta física.
+
+
+
 #### 1.2.2.4. Lean UX Canvas
+![Lean UX Canvas](./assets/imagenes/lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo
 
@@ -503,9 +585,73 @@ Cuando lanzan un "evento" (oferta relámpago, cierre de puertas), ¿cómo miden 
 * **Expectativa de valor en la solución:** Los entrevistados proyectan beneficios específicos según su perfil: el gerente corporativo busca **trazabilidad de conversión y analítica avanzada**, la administradora de conveniencia busca **visibilidad inmediata y geofencing**, y el jefe de tienda de descuento busca **alcance masivo sin costos de marketing tradicional**.
 
 ## 2.3. Needfinding
+
+A partir del análisis de las entrevistas realizadas y del Lean UX Canvas presentado en el capítulo 1, se han identificado las necesidades y motivaciones críticas de los segmentos objetivo. Los hallazgos confirman la problemática detectada: el impacto negativo de la inflación, la alta dispersión de precios y la ineficiencia logística en los traslados, lo cual genera un desperdicio de recursos económicos y temporales en los hogares.
+
+De esta manera, se presentan a continuación los hallazgos clave que guiarán el desarrollo de la solución para maximizar el valor entregado al usuario:
+
+#### Segmento #1: Consumidores (Hogares y Jefes de Familia)
+
+* **Comparar precios en tiempo real** entre diversos establecimientos (mercados y supermercados) para combatir el alza del costo de vida.
+* **Optimizar rutas de compra** para reducir el tiempo de desplazamiento y los costos de transporte por la ciudad.
+* **Acceder a información veraz** mediante datos validados por la comunidad que reduzcan la incertidumbre antes de salir de casa.
+* **Usar una herramienta móvil ágil** que sea fácil de navegar en entornos de alta movilidad como los mercados de abastos.
+
+#### Segmento #2: Establecimientos de Consumo Masivo (Gerentes de Sede)
+
+* **Lograr trazabilidad digital a tienda:** Necesidad de medir cuántas transacciones en caja fueron impulsadas por promociones visualizadas en la plataforma.
+* **Sincronizar stock y liquidar mermas:** Capacidad de publicar ofertas relámpago de productos perecibles (como carnes o verduras) de forma autónoma sin depender de la oficina central.
+* **Obtener inteligencia de mercado local:** Acceder a datos sobre "carritos abandonados" físicos (usuarios que compararon pero no visitaron) para justificar ajustes de precios ante la gerencia regional.
+* **Eliminar procesos manuales:** Reducir la carga operativa de actualizar precios en plataformas externas mediante una integración ágil con sus sistemas de inventario.
+
 ### 2.3.1. User Personas
+En esta sección se presentan los arquetipos de usuario diseñados a partir de la síntesis de datos obtenidos en las entrevistas. Estos perfiles representan los comportamientos, necesidades y frustraciones de los dos segmentos clave del proyecto.
+
+##### Segmento #1: Consumidor - Jorge Retuerto
+
+<p align="center">
+  <img src="./assets/imagenes/Persona_Jorge_UXPressia.png" width="850">
+</p>
+
+##### Segmento #2: Establecimiento Masivo - Carlos Valdivia
+
+<p align="center">
+  <img src="./assets/imagenes/Persona_Carlos_Valdivia.png" width="850">
+</p>
+
 ### 2.3.2. User Task Matrix
+
+
+En esta sección se presenta la *User Task Matrix*, enfocado en los dos segmentos clave: consumidores (estudiantes y jefes de hogar) y comerciantes minoristas. Este instrumento permite identificar las tareas habituales, su nivel de importancia y frecuencia, asegurando que la solución se centre en los beneficios esperados por el usuario.
+
+| Persona | Tarea | Importancia | Frecuencia | Beneficio / Outcome |
+| :--- | :--- | :--- | :--- | :--- |
+| **Jorge (Consumidor)** | Comparar precios de la canasta básica en tiempo real | Alta | Alta | Permite identificar el ahorro neto inmediato antes de realizar la compra. |
+| | Generar ruta de compra optimizada por geolocalización | Alta | Media | Reduce el tiempo de desplazamiento y el gasto en transporte. |
+| | Validar precios reportados por otros usuarios | Media | Alta | Aumenta la confianza en la veracidad de la información comunitaria. |
+| | Consultar histórico de ahorros mensuales | Baja | Media | Permite visualizar el impacto positivo en el presupuesto personal. |
+| **Carlos (Gerente)** | Sincronizar stock de perecibles para ofertas relámpago | Alta | Alta | Evita merma de productos y recupera la confianza del cliente[cite: 5, 7]. |
+| | Analizar reportes de "pies en tienda" vs. alcance digital | Alta | Media | Permite medir el retorno real de la inversión en ofertas[cite: 15]. |
+| | Justificar ajustes de precio locales ante la gerencia regional | Media | Baja | Permite reaccionar a la competencia del distrito en 24h. |
+| | Identificar "productos gancho" mediante búsquedas de zona | Media | Media | Optimiza el margen de ganancia de la canasta total. |
+
 ### 2.3.3. User Journey Mapping
+
+En esta sección se describen los procesos actuales y puntos de contacto de nuestros segmentos objetivo, identificando los momentos de frustración y las oportunidades de mejora que SmartCart resolverá.
+
+#### Segmento #1: Consumidor - Jorge Retuerto
+
+<p align="center">
+  <img src="./assets/imagenes/Segmento_%20Consumidor%20(Jorge%20Retuerto).png" width="850">
+</p>
+
+#### Segmento #2: Establecimiento Masivo - Carlos Valdivia
+
+<p align="center">
+  <img src="./assets/imagenes/Journey_Carlos_UXPressia.png.png" width="850">
+</p>
+
+
 ### 2.3.4. Empathy Mapping
 
 #### Segmento #1: Consumidor - Jorge Retuerto
