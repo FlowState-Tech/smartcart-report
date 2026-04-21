@@ -68,6 +68,15 @@ Los integrantes son:
 
 Las principales ramas del repositorio son las siguientes:
 
+* `main`: Rama principal que contiene la versión estable del proyecto.
+* `develop`: Rama de desarrollo donde se integran las nuevas características antes de ser fusionadas a `main`.
+* `feature/X-anjali`: Rama utilizada por Anjali para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
+* `feature/X-(joseph)`: Rama utilizada por Joseph para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
+* `feature/X-katherine`: Rama utilizada por Katherine para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
+* `feature/X-kevin`: Rama utilizada por Kevin para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
+* `feature/X-stephano`: Rama utilizada por Stephano para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
+* `realese/vX.X.X`: Rama creada para preparar versiones candidatas al reporte final, siguiendo Semantic Versioning 2.0.0. En esta rama se realizan ajustes finales como correcciones menores y revisiones antes de integrarla a `main`.
+* `hotfix/urgent-fix`: Rama utilizada para aplicar correcciones urgentes a la rama `main` en caso de detectar errores críticos.
 
 
 
@@ -178,10 +187,36 @@ Las principales ramas del repositorio son las siguientes:
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 7
 
+|Criterio específico | Acciones realizadas | Conclusiones |
+|-----|-----|-----|
+|**Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.**|||
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  |||
 
 <hr class="page-break">
 
 # Objetivos SMART
+
+A continuación, cada miembro del equipo expone sus objetivos SMART, orientados a su desarrollo profesional tras finalizar la carrera universitaria.
+
+**Integrante 1: Anjali Amaro**  
+**Objetivo 1:**
+**Objetivo 2:**
+
+**Integrante 2: Joseph Chavez**  
+**Objetivo 1:**
+**Objetivo 2:**
+
+**Integrante 3: Katherine Mejia**  
+**Objetivo 1:**
+**Objetivo 2:**
+
+**Integrante 4: Kevin Pardo**  
+**Objetivo 1:**
+**Objetivo 2:**
+
+**Integrante 5: Stephano Valdivia**  
+**Objetivo 1:**
+**Objetivo 2:**
 
 
 <hr class="page-break">
@@ -200,13 +235,13 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 
 ### 1.1.2. Perfiles de los integrantes del equipo
 
-| Foto | Nombres y Apellidos | Código deEstudiante | Carrera | Resumen de Conocimientos y Habilidades |
-| --- | --- | --- | --- | --- |
-|     |     |     |     |     | 
-|     |     |     |     |     | 
-|     |     |     |     |     | 
-|     |     |     |     |     | 
-|     |     |     |     |     | 
+| Foto | Nombres y Apellidos | Código de Estudiante | Carrera | Resumen de Conocimientos y Habilidades |
+| :---: | :--- | :---: | :---: | :--- |
+| | Anjali Amaro Villar | U20221G044 | Ingeniería de Software | |
+| | Joseph Manuel Chavez Viera | U202314019 | Ingeniería de Software | |
+| | Katherine Maryory Mejia Aliaga | U20221A118 | Ingeniería de Software | |
+| | Kevin Patrick Pardo Chumpitazi | U20221A525 | Ingeniería de Software | |
+| | Stephano Renan Valdivia Quispe | U202311294 | Ingeniería de Software | |
 
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
@@ -478,14 +513,17 @@ En esta sección se introduce y resume el proceso realizado por el equipo para e
 
 ### 1. Open:
 En esta etapa el equipo se concentró en generar la mayor cantidad de eventos de dominio posibles (cosas que suceden en el negocio) escribiendo en los post-its naranjas.
+
 ![big-picture-open](./assets/ddd/big-picture/big-picture-open.png)
 
 ### 2. Explore:
 Después de la anterior etapa, en esta se concentró en ordenar cronológicamente los eventos, eliminar los eventos repetidos, identificar sus actores y posibles sistemas externos, y finalmente algunos puntos de dolor en post-its morados.
+
 ![big-picture-explore](./assets/ddd/big-picture/big-picture-explore.png)
 
 ### 3. Close: 
 En esta última etapa, se documentaron en post-its rosados los problemas más relevantes detectados, junto con aspectos que debíamos investigar más a fondo o descartar según el alcance definido.
+
 ![big-picture-close](./assets/ddd/big-picture/big-picture-close.png)
 
 Luego de conversar un poco, el equipo descartó algunos eventos y identificó mejor un sistema externo:
