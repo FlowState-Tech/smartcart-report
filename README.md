@@ -419,7 +419,7 @@ Luego de analizar las alternativas y sus implicancias en SmartCart, el equipo de
 ### 2.5.3. Software Architecture
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 <div style="text-align: center;">
-  <img src="./assets/SoftwareArchitecture/2.5.3.1.png" alt="UPC Logo" style="width: 250px; height: auto;">
+  <img src="./assets/softwarearchitecture/2.5.3.1.png" alt="Context Level Diagram style="width: 180px; height: auto;">
 </div>
 El objetivo del este diagrama es establecer los límites del ecosistema, identificando a los actores principales y los sistemas externos necesarios para cumplir con los objetivos del negocio.
 #### Descripción de los elementos:
@@ -437,7 +437,7 @@ El objetivo del este diagrama es establecer los límites del ecosistema, identif
   
 #### 2.5.3.2. Software Architecture Container Level Diagrams
 <div style="text-align: center;">
-  <img src="./assets/SoftwareArchitecture/2.5.3.2.png" alt="UPC Logo" style="width: 250px; height: auto;">
+  <img src="./assets/softwarearchitecture/2.5.3.2.png" alt="Container Level Diagram" style="width: 180 px; height: auto;">
 </div>
 
 El objetivo de este diagrama es descomponer el sistema SmartCart en contenedores de software independientes. Esta vista detalla las responsabilidades internas, las tecnologías elegidas y los patrones de comunicación estratégicos definidos en el análisis de Context Mapping.
@@ -449,7 +449,7 @@ El objetivo de este diagrama es descomponer el sistema SmartCart en contenedores
 
 #### 2.5.3.3. Software Architecture Deployment Diagrams
 <div style="text-align: center;">
-  <img src="./assets/SoftwareArchitecture/2.5.3.3.png" alt="UPC Logo" style="width: 250px; height: auto;">
+  <img src="./assets/softwarearchitecture/2.5.3.3.png" alt="Deployment Diagram" style="width: 180 px; height: auto;">
 </div>
 
 Este Diagrama de Despliegue muestra los contenedores de software en una infraestructura basada en la nube. Destaca cómo el sistema garantiza la escalabilidad y seguridad mediante la distribución de componentes en diversos nodos de hardware.
