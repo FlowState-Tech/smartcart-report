@@ -118,6 +118,55 @@ Las principales ramas del repositorio son las siguientes:
             - [2.5.3.2. Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
             - [2.5.3.3. Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
     - [2.6. Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
+        - [2.6.1. Bounded Context: IAM](#261-bounded-context-iam)
+            - [2.6.1.1. Domain Layer](#2611-domain-layer)
+            - [2.6.1.2. Interface Layer](#2612-interface-layer)
+            - [2.6.1.3. Application Layer](#2613-application-layer)
+            - [2.6.1.4. Infrastructure Layer](#2614-infrastructure-layer)
+            - [2.6.1.5. Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.1.6. Code Level Diagrams](#2616-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.2. Bounded Context: Verification](#262-bounded-context-verification)
+            - [2.6.2.1. Domain Layer](#2621-domain-layer-1)
+            - [2.6.2.2. Interface Layer](#2622-interface-layer-1)
+            - [2.6.2.3. Application Layer](#2623-application-layer-1)
+            - [2.6.2.4. Infrastructure Layer](#2624-infrastructure-layer-1)
+            - [2.6.2.5. Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.2.6. Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.3. Bounded Context: Store Management](#263-bounded-context-store-management)
+            - [2.6.3.1. Domain Layer](#2631-domain-layer)
+            - [2.6.3.2. Interface Layer](#2632-interface-layer)
+            - [2.6.3.3. Application Layer](#2633-application-layer)
+            - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
+            - [2.6.3.5. Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.3.6. Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.4. Bounded Context: Notification](#264-bounded-context-notification)
+            - [2.6.4.1. Domain Layer](#2641-domain-layer)
+            - [2.6.4.2. Interface Layer](#2642-interface-layer)
+            - [2.6.4.3. Application Layer](#2643-application-layer)
+            - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
+            - [2.6.4.5. Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.4.6. Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.5. Bounded Context: Shopping Planning](#265-bounded-context-shopping-planning)
+            - [2.6.5.1. Domain Layer](#2651-domain-layer)
+            - [2.6.5.2. Interface Layer](#2652-interface-layer)
+            - [2.6.5.3. Application Layer](#2653-application-layer)
+            - [2.6.5.4. Infrastructure Layer](#2654-infrastructure-layer)
+            - [2.6.5.5. Component Level Diagrams](#2655-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.5.6. Code Level Diagrams](#2656-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.6. Bounded Context: Shopping Journey](#266-bounded-context-shopping-journey)
+            - [2.6.6.1. Domain Layer](#2661-domain-layer)
+            - [2.6.6.2. Interface Layer](#2662-interface-layer)
+            - [2.6.6.3. Application Layer](#2663-application-layer)
+            - [2.6.6.4. Infrastructure Layer](#2664-infrastructure-layer)
+            - [2.6.6.5. Component Level Diagrams](#2665-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.6.6. Code Level Diagrams](#2666-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.7. Bounded Context: Experience](#267-bounded-context-experience)
+            - [2.6.7.1. Domain Layer](#2671-domain-layer)
+            - [2.6.7.2. Interface Layer](#2672-interface-layer)
+            - [2.6.7.3. Application Layer](#2673-application-layer)
+            - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
+            - [2.6.7.5. Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
+            - [2.6.7.6. Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
     - [Conclusiones](#conclusiones)
         - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Bibliografía](#bibliografía)
@@ -429,17 +478,14 @@ En esta sección se introduce y resume el proceso realizado por el equipo para e
 
 ### 1. Open:
 En esta etapa el equipo se concentró en generar la mayor cantidad de eventos de dominio posibles (cosas que suceden en el negocio) escribiendo en los post-its naranjas.
-
 ![big-picture-open](./assets/ddd/big-picture/big-picture-open.png)
 
 ### 2. Explore:
 Después de la anterior etapa, en esta se concentró en ordenar cronológicamente los eventos, eliminar los eventos repetidos, identificar sus actores y posibles sistemas externos, y finalmente algunos puntos de dolor en post-its morados.
-
 ![big-picture-explore](./assets/ddd/big-picture/big-picture-explore.png)
 
 ### 3. Close: 
 En esta última etapa, se documentaron en post-its rosados los problemas más relevantes detectados, junto con aspectos que debíamos investigar más a fondo o descartar según el alcance definido.
-
 ![big-picture-close](./assets/ddd/big-picture/big-picture-close.png)
 
 Luego de conversar un poco, el equipo descartó algunos eventos y identificó mejor un sistema externo:
