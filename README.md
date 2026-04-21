@@ -418,8 +418,48 @@ Luego de analizar las alternativas y sus implicancias en SmartCart, el equipo de
 - Comunicación Eficiente: La relación entre la gestión de tienda y las notificaciones es asíncrona (basada en eventos), lo que evita cuellos de botella y asegura que el sistema siga operativo incluso si hay retrasos en los envíos.
 ### 2.5.3. Software Architecture
 #### 2.5.3.1. Software Architecture Context Level Diagrams
+<div style="text-align: center;">
+  <img src="./assets/SoftwareArchitecture/2.5.3.1.png" alt="UPC Logo" style="width: 250px; height: auto;">
+</div>
+El objetivo del este diagrama es establecer los límites del ecosistema, identificando a los actores principales y los sistemas externos necesarios para cumplir con los objetivos del negocio.
+#### Descripción de los elementos:
+
+- SmartCart System: El sistema central que orquesta la planificación de compras, la gestión de inventarios y la navegación dentro de las tiendas.
+  
+- Buyer: El usuario final (comprador) que utiliza la plataforma para optimizar sus rutas de compras y gestionar sus listas personales.
+  
+- Merchant: El administrador de la tienda (vendedor) responsable de las actualizaciones de stock y la verificación de los datos del establecimiento.
+
+- Sistemas externos: 
+  SUNAT: Sistema externo para la validación legal y tributaria de las tiendas.
+  Google Maps API: Proveedor de los datos de geolocalización y trazado de rutas necesarios.
+  Push Notification Service: Infraestructura de terceros utilizada para el envío de alertas en tiempo real y correos electrónicos a los usuarios.
+  
 #### 2.5.3.2. Software Architecture Container Level Diagrams
+<div style="text-align: center;">
+  <img src="./assets/SoftwareArchitecture/2.5.3.2.png" alt="UPC Logo" style="width: 250px; height: auto;">
+</div>
+
+El objetivo de este diagrama es descomponer el sistema SmartCart en contenedores de software independientes. Esta vista detalla las responsabilidades internas, las tecnologías elegidas y los patrones de comunicación estratégicos definidos en el análisis de Context Mapping.
+
+- Gestión de Identidad (OHS): El IAM Service funciona como un Open Host Service, proporcionando un punto de autenticación unificado tanto para la Mobile App como para la Web App.
+- Desacoplamiento Asíncrono (Pub/Sub): Para asegurar la alta disponibilidad, el Store Management Service publica eventos en el RabbitMQ. El Notification Service opera como un Subscriber, procesando alertas sin bloquear las operaciones de inventario.
+- Protección del Dominio (ACL): Tanto el Shopping Journey Service como el Experience Service implementan capas de anticorrupción (Anticorruption Layers - ACL) para traducir los modelos de datos externos (de Google Maps o métricas de feedback) a la lógica interna del dominio.
+- Autonomía de Servicios: Cada servicio gestiona su propia lógica e interactúa con la infraestructura de Database manteniendo los límites lógicos entre los contextos delimitados (Bounded Contexts).
+
 #### 2.5.3.3. Software Architecture Deployment Diagrams
+<div style="text-align: center;">
+  <img src="./assets/SoftwareArchitecture/2.5.3.3.png" alt="UPC Logo" style="width: 250px; height: auto;">
+</div>
+
+Este Diagrama de Despliegue muestra los contenedores de software en una infraestructura basada en la nube. Destaca cómo el sistema garantiza la escalabilidad y seguridad mediante la distribución de componentes en diversos nodos de hardware.
+
+Detalles de la Infraestructura:
+
+- Nodos de Cliente: Representan el hardware del usuario final (Smartphone y Laptop/PC) donde residen las aplicaciones frontend, comunicándose con la nube a través de protocolos seguros HTTPS.
+- Cloud Server (AWS/Azure): Un entorno distribuido donde se alojan los microservicios. El diagrama muestra la separación física de los servicios centrales para facilitar el escalado independiente.
+- Capa de Persistencia: Se despliegan múltiples instancias de Database para asegurar que los datos del dominio permanezcan aislados, apoyando la decisión de evitar un Shared Kernel y manteniendo la integridad de los datos de cada servicio.
+- Interoperabilidad: La integración con entidades externas como SUNAT y Google Maps API se realiza mediante protocolos estándar HTTPS/REST, mientras que la comunicación interna entre servicios utiliza REST y AMQP para la mensajería asíncrona.
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
