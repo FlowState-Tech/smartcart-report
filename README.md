@@ -196,7 +196,37 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 
 ## 2.5. Strategic-Level Domain-Driven Design
 ### 2.5.1. EventStorming
-#### 2.5.1.1. Candidate Context Discovery
+## 2.5.1.1. Candidate Context Discovery
+
+En esta sección se presenta el proceso seguido por el equipo para la descubierta y clasificación de los **Bounded Contexts** candidatos a partir del taller de **EventStorming** realizado previamente. El objetivo es identificar los límites naturales del dominio de SmartCart y determinar las partes core del negocio para priorizar los esfuerzos de diseño.
+
+### Preparación de la sesión
+La sesión se desarrolló utilizando como insumos principales:
+* La línea de tiempo de eventos y clusters identificados en el mural de **Miro**.
+* Los eventos clave (*pivotal events*) que marcan cambios de estado relevantes en el flujo de compra.
+
+### Técnica aplicada: Start-with-Value
+Se aplicó la técnica **Start-with-Value**, priorizando las partes del dominio que representan el mayor valor estratégico y diferenciación para la plataforma. Esto permitió categorizar los contextos según su impacto en el negocio y la complejidad de su modelo.
+
+### Candidate Contexts identificados
+A partir del análisis del mural de Miro, se identificaron los siguientes bounded contexts candidatos:
+
+| Candidate Context | Eventos Clave Asociados | Clasificación | Descripción | Justificación |
+| :--- | :--- | :--- | :--- | :--- |
+| **Store Management** | Inventario cargado, Producto registrado, Alcance de precio analizado. | **Core** | Gestión de catálogos, stocks y analítica de precios de las tiendas. | Es el motor de datos del sistema y permite la analítica de precios diferenciadora. |
+| **Shopping Journey** | Ruta buscada, Optimización de ruta iniciada, Llegada a local registrada. | **Core** | Ejecución y seguimiento del proceso de compra física en tiempo real. | Constituye la propuesta de valor central: ahorro de tiempo y dinero mediante rutas optimizadas. |
+| **Shopping Planning** | Lista de compras creada, Producto añadido a canasta, Presupuesto definido. | **Core** | Fase de planificación y configuración de intenciones de compra del usuario. | Es el punto de entrada crítico donde se capturan las reglas y metas de ahorro del usuario. |
+| **Experience** | Error de precio reportado, Calificar tienda, Reseña publicada. | **Supporting** | Sistema de validación comunitaria, reseñas y reputación de establecimientos. | Apoya la veracidad de la información del Core mediante la validación colectiva. |
+| **Notification** | Alerta de variación de precio, Alerta de cercanía enviada. | **Supporting** | Gestión de alertas y comunicaciones automáticas con el usuario. | Facilita la interacción y fidelización, pero su complejidad es secundaria frente al motor de rutas. |
+| **IAM** | Usuario creado, Sesión iniciada, Usuario activado. | **Generic** | Gestión de identidad, autenticación y roles de usuario (Identity & Access Management). | Es necesario para la operación, pero no es un diferenciador tecnológico del negocio. |
+| **Verification** | Solicitud de afiliación enviada, Tienda verificada. | **Generic** | Proceso administrativo de validación legal de los establecimientos afiliados. | Proceso de cumplimiento estándar que no aporta un valor competitivo único al dominio. |
+
+### Clasificación Estratégica
+En base al análisis **Start-with-Value**, los contextos se clasifican estratégicamente para concentrar el diseño táctico en las áreas de mayor valor:
+
+* **Core:** Store Management, Shopping Journey, Shopping Planning.
+* **Supporting:** Experience, Notification.
+* **Generic:** IAM, Verification.
 #### 2.5.1.2. Domain Message Flows Modeling
 #### 2.5.1.3. Bounded Context Canvases
 ### 2.5.2. Context Mapping
