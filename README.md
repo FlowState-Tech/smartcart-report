@@ -198,8 +198,10 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 A continuación, cada miembro del equipo expone sus objetivos SMART, orientados a su desarrollo profesional tras finalizar la carrera universitaria.
 
-**Integrante 1: Anjali Amaro**  
+**Integrante 1: Anjali Amaro**
+
 **Objetivo 1:**
+
 **Objetivo 2:**
 
 **Integrante 2: Joseph Chavez**  
@@ -312,17 +314,17 @@ La declaración del problema es un enunciado claro y conciso que describe los s�
 
 **1. Los objetivos actuales del sistema/producto:**
 
-El producto **SmartCart** busca facilitar herramientas tecnológicas prácticas que ayuden a los integrantes del hogar a gestionar mejor sus gastos diarios y optimizar sus recorridos de abastecimiento.Simultáneamente, el sistema tiene como objetivo proporcionar a los **establecimientos de consumo masivo** una plataforma ágil para la visibilidad de sus precios, la gestión de ofertas relámpago para reducir mermas y la obtención de métricas de conversión real del entorno digital al piso de venta[cite: 13, 17].
+El producto **SmartCart** busca facilitar herramientas tecnológicas prácticas que ayuden a los integrantes del hogar a gestionar mejor sus gastos diarios y optimizar sus recorridos de abastecimiento.Simultáneamente, el sistema tiene como objetivo proporcionar a los **establecimientos de consumo masivo** una plataforma ágil para la visibilidad de sus precios, la gestión de ofertas relámpago para reducir mermas y la obtención de métricas de conversión real del entorno digital al piso de venta.
 
 **2. El problema que las partes interesadas quieren abordar:**
 * **Perspectiva del usuario (Consumidor):** Los miembros del hogar enfrentan una ineficiencia económica y pérdida de tiempo debido a la asimetría de información de precios y la falta de una logística organizada en sus compras.
-* **Perspectiva del negocio (Establecimientos):** Los gerentes de sede carecen de autonomía para actualizar ofertas locales en tiempo real, dependiendo de procesos manuales o de oficinas centrales que no viven el día a día[cite: 5, 24]. Esto genera una falta de sincronización de stock que destruye la confianza del cliente [cite: 7] y una "caja negra" informativa, donde se desconoce si el alcance digital realmente atrae "pies a la tienda"[cite: 9, 15].
+* **Perspectiva del negocio (Establecimientos):** Los gerentes de sede carecen de autonomía para actualizar ofertas locales en tiempo real, dependiendo de procesos manuales o de oficinas centrales que no viven el día a día. Esto genera una falta de sincronización de stock que destruye la confianza del cliente y una "caja negra" informativa, donde se desconoce si el alcance digital realmente atrae "pies a la tienda".
 
 **3. Una solicitud explícita de mejora:**
 ¿Cómo mejorar la eficacia en el acceso a la información de precios para el consumidor y, al mismo tiempo, brindar a los gerentes de establecimientos herramientas de **trazabilidad de conversión** y gestión de stock en tiempo real  para optimizar sus recursos, reducir desperdicios y asegurar la satisfacción de ambos segmentos?
 
 **Oportunidades y restricciones:**
-La oportunidad radica en un mercado que carece de herramientas que integren el factor económico del hogar con la inteligencia de mercado para el vendedor[cite: 19]. [Entre las principales restricciones identificadas se encuentran la dependencia de sistemas centrales corporativos (SAP/Marketing Central), la veracidad de los datos actualizados por la comunidad y la necesidad de conectividad constante para reflejar el stock en tiempo real[cite: 7, 16].
+La oportunidad radica en un mercado que carece de herramientas que integren el factor económico del hogar con la inteligencia de mercado para el vendedor. Entre las principales restricciones identificadas se encuentran la dependencia de sistemas centrales corporativos (SAP/Marketing Central), la veracidad de los datos actualizados por la comunidad y la necesidad de conectividad constante para reflejar el stock en tiempo real.
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -334,20 +336,20 @@ En esta etapa inicial del proceso, se identifican y declaran los supuestos funda
    * El ecosistema de usuarios está compuesto por dos segmentos clave: por un lado, **jefes de hogar, familias y jóvenes** que buscan optimizar su presupuesto frente a la inflación ; y por otro, **gerentes y administradores de establecimientos masivos** (supermercados y tiendas de conveniencia) que necesitan gestionar su oferta local de forma ágil.
 
 2. **¿Dónde encaja nuestro producto en su trabajo o vida?**
-   * Para el consumidor, se integra en su rutina de planificación financiera y ejecución de compras semanales[cite: 1]. Para el gerente de tienda, encaja en su gestión operativa diaria, permitiéndole liquidar sobrestock y atraer clientes digitales al piso de venta físico.
+   * Para el consumidor, se integra en su rutina de planificación financiera y ejecución de compras semanales. Para el gerente de tienda, encaja en su gestión operativa diaria, permitiéndole liquidar sobrestock y atraer clientes digitales al piso de venta físico.
 
 3. **¿Qué problemas resuelve nuestro producto?**
-   * Resuelve la ineficiencia logística y el "costo de búsqueda" de precios para los consumidores[cite: 1]. Simultáneamente, soluciona la falta de trazabilidad digital ("caja negra" de visitas) y la dependencia de oficinas centrales para la actualización de ofertas en los grandes establecimientos.
+   * Resuelve la ineficiencia logística y el "costo de búsqueda" de precios para los consumidores. Simultáneamente, soluciona la falta de trazabilidad digital ("caja negra" de visitas) y la dependencia de oficinas centrales para la actualización de ofertas en los grandes establecimientos.
 
 4. **¿Cuándo y cómo es usado el producto?**
    * Es usado de forma secuencial: el consumidor lo utiliza en el hogar para planificar y en exteriores para navegar[cite: 1]. El gerente de tienda lo utiliza durante su turno laboral para publicar "ofertas relámpago" y monitorear el alcance de sus productos en la zona.
 
 5. **¿Qué características son importantes?**
-   * La comparación multicanal de precios y generación de rutas optimizadas para el ahorro[cite: 1]. Asimismo, son críticos el dashboard de analítica para tiendas (conversión de visitas), la sincronización con inventarios locales y el sistema de validación comunitaria.
+   * La comparación multicanal de precios y generación de rutas optimizadas para el ahorro. Asimismo, son críticos el dashboard de analítica para tiendas (conversión de visitas), la sincronización con inventarios locales y el sistema de validación comunitaria.
 
 6. **¿Cómo debe verse nuestro producto y cómo comportarse?**
-   * Debe presentar una interfaz intuitiva y rápida, optimizada para la alta movilidad de los usuarios en calle[cite: 1]. Para el perfil corporativo, debe ofrecer una visualización de datos profesional y robusta que facilite la toma de decisiones comerciales inmediatas.
----
+   * Debe presentar una interfaz intuitiva y rápida, optimizada para la alta movilidad de los usuarios en calle. Para el perfil corporativo, debe ofrecer una visualización de datos profesional y robusta que facilite la toma de decisiones comerciales inmediatas.
+
 
 #### Business Assumptions
 
@@ -380,7 +382,7 @@ Creemos que implementar un sistema de validación de precios basado en la comuni
 * **Sabremos que hemos tenido éxito:** Cuando el 80 % de los precios consultados por los usuarios en la plataforma coincidan con el valor real verificado en el establecimiento físico al momento de la compra.
 
 **Hipótesis 4: Autonomía y reducción de mermas (Segmento Corporativo)**
-Creemos que brindar a los gerentes de sede herramientas para publicar ofertas relámpago de forma autónoma permitirá reducir la merma de productos perecibles[cite: 5, 24].
+Creemos que brindar a los gerentes de sede herramientas para publicar ofertas relámpago de forma autónoma permitirá reducir la merma de productos perecibles.
 * **Sabremos que hemos tenido éxito:** Cuando los establecimientos aliados reporten una disminución del 20 % en el desperdicio de productos frescos identificados como sobrestock local tras implementar la actualización de precios en tiempo real.
 
 **Hipótesis 5: Trazabilidad de conversión digital a tienda**
@@ -407,6 +409,8 @@ El entorno retail en Perú se ha digitalizado, pero sigue existiendo una brecha:
 # Competitive Analysis Landscape - SmartCart
 
 | **¿Por qué llevar a cabo este análisis?** | **Identificar las ventajas competitivas de SmartCart frente a soluciones de delivery y catálogos estáticos, permitiendo posicionarnos como la única herramienta que integra ahorro real con logística de rutas optimizadas en el mercado peruano.** |
+|---|---|
+|||
 
 | Perfil | Atributo | SmartCart | Rappi / Fazil | Tiendeo / Ofertia | Apps Supermercados |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -917,6 +921,7 @@ Luego de analizar las alternativas y sus implicancias en SmartCart, el equipo de
   <img src="./assets/softwarearchitecture/2.5.3.1.png" alt="Context Level Diagram style="width: 180px; height: auto;">
 </div>
 El objetivo del este diagrama es establecer los límites del ecosistema, identificando a los actores principales y los sistemas externos necesarios para cumplir con los objetivos del negocio.
+
 #### Descripción de los elementos:
 
 - SmartCart System: El sistema central que orquesta la planificación de compras, la gestión de inventarios y la navegación dentro de las tiendas.
