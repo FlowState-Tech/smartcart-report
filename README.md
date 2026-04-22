@@ -188,7 +188,44 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 ### 2.3.3. User Journey Mapping
 ### 2.3.4. Empathy Mapping
 ### 2.3.5. Ubiquitous Language
+### 2.3.5. Ubiquitous Language
 
+Esta sección establece el **Ubiquitous Language** (Lenguaje Ubicuo) de la plataforma **SmartCart**, unificando el vocabulario entre el equipo técnico y los expertos de negocio para evitar ambigüedades en el desarrollo del sistema. Este glosario se deriva directamente de las responsabilidades y procesos definidos en los contextos estratégicos de la solución, permitiendo que todos los involucrados compartan una visión clara del dominio.
+
+* **Activación**: Proceso de verificación requerido para habilitar formalmente la cuenta de un usuario en el sistema.
+* **Alerta de oferta**: Notificación enviada al consumidor cuando se detecta una reducción de precio en un producto de su interés.
+* **AnalyticsReport**: Conjunto de métricas de ventas y comportamiento de tráfico generado para cada tienda.
+* **Ahorro total**: Diferencia calculada entre el precio de referencia del mercado y el monto real pagado por el consumidor.
+* **Calificación**: Puntuación numérica y comentario breve otorgado por el consumidor a un establecimiento visitado.
+* **Canal**: Medio técnico (notificación push o correo electrónico) utilizado para la entrega de alertas.
+* **Canasta**: Agrupación de productos seleccionados cuyos precios y stock son comparados entre múltiples tiendas.
+* **Canasta familiar**: Variante de la lista de compras que puede ser compartida y editada por un grupo familiar específico.
+* **Confirmación**: Aviso enviado al usuario tras completar con éxito una acción crítica en la plataforma.
+* **Credencial**: Datos de autenticación compuestos por el correo electrónico y la contraseña del usuario.
+* **Error de precio**: Discrepancia identificada y reportada entre el precio digital de la app y el precio físico en tienda.
+* **Inventario**: Catálogo detallado de productos, existencias y precios pertenecientes a una tienda verificada.
+* **Lista de compras**: Conjunto organizado de productos que el consumidor planea adquirir en su recorrido.
+* **Llegada**: Registro físico del consumidor en las instalaciones de un local dentro de su ruta.
+* **Oferta**: Reducción de carácter temporal aplicada al precio regular de un producto.
+* **Presupuesto máximo**: Límite de gasto monetario definido por el usuario para su planificación de compra.
+* **Punto de parada**: Cada una de las tiendas específicas que integran el itinerario de compra planificado.
+* **Rate limiting**: Restricción técnica sobre la frecuencia de mensajes enviados para evitar la saturación del usuario.
+* **Recorrido finalizado**: Estado del sistema que indica la conclusión de las visitas y activa la fase de feedback post-compra.
+* **Reseña**: Opinión detallada publicada por el usuario sobre su experiencia de servicio y calidad de productos.
+* **Rol**: Clasificación de usuario (Consumer o StoreManager) que determina sus permisos y accesos.
+* **RUC**: Número de identificación tributaria utilizado para la validación legal de los establecimientos.
+* **Ruta óptima**: Itinerario de compra calculado para minimizar distancias y maximizar la disponibilidad de productos.
+* **Sesión**: Periodo de tiempo durante el cual un usuario permanece autenticado de forma activa.
+* **ShoppingList**: Evento técnico que consolida los productos y activa el inicio del recorrido de compra.
+* **ShoppingRoute**: Entidad de software que almacena el recorrido completo, incluyendo paradas y tiempos estimados.
+* **SKU**: Código identificador único asignado a un producto dentro del inventario de una tienda.
+* **Solicitud de afiliación**: Pedido formal realizado por una tienda para integrarse a la red de SmartCart.
+* **Suscripción**: Preferencia registrada por el usuario para recibir alertas sobre variaciones en productos o tiendas.
+* **Tienda**: Local físico que ha sido validado y se encuentra operativo dentro de la plataforma.
+* **Tienda verificada**: Estado administrativo que confirma la validez legal y fiscal de un establecimiento.
+* **Trust Profile**: Índice de reputación de una tienda construido a partir de las valoraciones de la comunidad.
+* **Usuario**: Individuo registrado y autenticado bajo un perfil específico en el sistema.
+* **Validación**: Procedimiento de contrastación de datos de la tienda contra fuentes oficiales como Sunat.
 ## 2.4. Requirements specification
 ### 2.4.1. User Stories
 ### 2.4.2. Impact Mapping
@@ -276,6 +313,54 @@ El modelado de flujos de mensajes de dominio permitió identificar con claridad 
 
 Estos flujos servirán de base para el diseño de los **Bounded Context Canvases** en la sección 2.5.1.3, garantizando coherencia y alineación entre la arquitectura estratégica y la lógica del negocio.
 #### 2.5.1.3. Bounded Context Canvases
+En esta sección el equipo presenta sus Bounded Context Canvases, empezando por los importantes para el núcleo del negocio.
+
+#### IAM
+Encargado de gestionar la identidad, el registro y el inicio de sesión de los usuarios en la plataforma.
+
+> ![Bounded Context Canvas - IAM](assets/canvases/iam.png)
+
+---
+
+#### Verification
+Encargado de validar la legitimidad de las tiendas y sus datos fiscales para habilitar su operación.
+
+> ![Bounded Context Canvas - Verification](assets/canvases/verification.png)
+
+---
+
+#### Store Management
+Encargado de gestionar los catálogos de productos, inventarios y la actualización de precios de las tiendas.
+
+> ![Bounded Context Canvas - Store Management](assets/canvases/store-management.png)
+
+---
+
+#### Shopping Planning
+Encargado de permitir a los consumidores crear listas de compras y comparar precios para optimizar su ahorro.
+
+> ![Bounded Context Canvas - Shopping Planning](assets/canvases/shopping-planning.png)
+
+---
+
+#### Shopping Journey
+Encargado de gestionar el recorrido físico del usuario y la optimización de rutas dentro de los locales.
+
+> ![Bounded Context Canvas - Shopping Journey](assets/canvases/shopping-journey.png)
+
+---
+
+#### Experience
+Encargado de gestionar el feedback post-compra, el cálculo de ahorros reales y el perfil de confianza de las tiendas.
+
+> ![Bounded Context Canvas - Experience](assets/canvases/experience.png)
+
+---
+
+#### Notification
+Encargado del envío de alertas de ofertas, confirmaciones y notificaciones transversales del sistema.
+
+> ![Bounded Context Canvas - Notification](assets/canvases/notification.png)
 ### 2.5.2. Context Mapping
 ### 2.5.3. Software Architecture
 #### 2.5.3.1. Software Architecture Context Level Diagrams
