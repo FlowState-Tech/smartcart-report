@@ -202,9 +202,9 @@ A continuación, cada miembro del equipo expone sus objetivos SMART, orientados 
 **Objetivo 1:**
 **Objetivo 2:**
 
-**Integrante 2: Joseph Chavez**  
-**Objetivo 1:**
-**Objetivo 2:**
+**Integrante 2: Joseph Manuel Chavez Viera**
+* **Objetivo 1:** Obtener una certificación oficial en lenguaje Python o C++ de nivel intermedio-avanzado en un plazo máximo de 6 meses tras el egreso, con el fin de validar técnicamente sus habilidades y aumentar su competitividad laboral.
+* **Objetivo 2:** Realizar un curso de especialización o certificación técnica en el extranjero durante el primer año post-graduación para fortalecer su perfil internacional en ingeniería de software.
 
 **Integrante 3: Katherine Mejia**  
 **Objetivo 1:**
@@ -238,7 +238,7 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 | Foto | Nombres y Apellidos            | Código de Estudiante |        Carrera         | Resumen de Conocimientos y Habilidades |
 | :--: | :----------------------------- | :------------------: | :--------------------: | :------------------------------------- |
 |      | Anjali Amaro Villar            |      U20221G044      | Ingeniería de Software |                                        |
-|      | Joseph Manuel Chavez Viera     |      U202314019      | Ingeniería de Software |                                        |
+|![Joseph Chavez](./assets/perfiles/Joseph.jpg)| Joseph Manuel Chavez Viera     |      U202314019      | Ingeniería de Software | Mi nombre es Joseph Chavez, tengo 19 años y actualmente curso el séptimo ciclo de la carrera de Ingeniería de Software en la UPC. Poseo habilidades en los lenguajes C++, Python y conocimientos básicos de JavaScript. Considero que el desempeño académico se refleja directamente en la vida profesional; por ello, me esfuerzo en obtener todas las experiencias necesarias para mi formación técnica y profesional. |
 |      | Katherine Maryory Mejia Aliaga |      U20221A118      | Ingeniería de Software |                                        |
 |      | Kevin Patrick Pardo Chumpitazi |      U20221A525      | Ingeniería de Software |                                        |
 |      | Stephano Renan Valdivia Quispe |      U202311294      | Ingeniería de Software |                                        |
@@ -394,6 +394,23 @@ Creemos que proporcionar métricas sobre el "alcance digital vs. entradas a tien
 ![Lean UX Canvas](./assets/imagenes/lean-ux-canvas.png)
 
 ## 1.3. Segmentos objetivo
+
+### Segmentación del Dominio del Problema
+
+Esta sección analiza los dos pilares fundamentales del ecosistema de **SmartCart**. Se contextualiza la necesidad de una solución tecnológica basada en el comportamiento del consumidor peruano frente a la inflación y la evolución de las estrategias de venta en el canal moderno de retail.
+
+#### 1. Consumidores Finales (Shoppers Planificadores)
+El segmento de consumidores finales en el Perú actual se define por una marcada transición hacia la omnicanalidad y la búsqueda estratégica de eficiencia presupuestaria. Compuesto principalmente por una población urbana de entre 25 y 50 años perteneciente a los niveles socioeconómicos B y C —quienes representan el 54.6% del gasto en consumo masivo—, este perfil ha fragmentado su proceso de compra realizando un promedio de 8 visitas trimestrales a distintos canales de venta (Kantar, 2025). 
+
+Ante una inflación de alimentos estabilizada en 1.97% hacia finales de 2024, el comportamiento económico de este grupo ha priorizado las compras de tipo "despensa" (más de 10 categorías), las cuales ya constituyen el 21.5% del gasto total del hogar (BCRP, 2025). En consecuencia, surge una necesidad tecnológica crítica por herramientas que reduzcan la asimetría de información entre establecimientos, facilitando una planificación que podría generar un ahorro directo de hasta un 7.1% en el valor de la canasta trimestral mediante la selección optimizada del canal de venta (Kantar, 2025).
+
+#### 2. Establecimientos de Retail (Supermercados y Tiendas de Conveniencia)
+Este segmento abarca a los actores del canal moderno, sector que ha experimentado una recuperación notable y se divide estratégicamente en formatos de proximidad y de volumen que compiten por la frecuencia de visita del usuario. 
+
+* **Formatos de Proximidad:** Liderados por marcas como Tambo+ y Mass, las tiendas de conveniencia y discounters han triplicado su participación de mercado recientemente, capturando el 29.1% del gasto en compras de proximidad de pocas categorías (Euromonitor, 2024). 
+* **Formatos de Volumen:** Las cadenas de supermercados han reforzado su lealtad mediante marcas blancas, las cuales son preferidas por el 61% de los peruanos para mitigar el alza de precios en productos tradicionales (KPMG, 2025). 
+
+Para estos establecimientos, la plataforma **SmartCart** actúa como un dinamizador de tráfico esencial: mientras las tiendas de conveniencia ganan visibilidad para sus ofertas relámpago, los supermercados logran posicionar su competitividad en compras de volumen, elevando el ticket promedio frente a un consumidor que hoy gasta de forma mucho más consciente y planificada.
 
 ---
 <hr class="page-break">
@@ -796,6 +813,13 @@ _Enlace del Miro:_ [Big Picture EventStorming](https://miro.com/app/board/uXjVGg
 | **TS10** | Developer | Media | EP07 | API Moderador | Como Developer, deseo un endpoint para que los administradores gestionen las denuncias de precios falsos en supermercados. | **E1:** Dado un ID de denuncia, cuando el admin envía un PUT con el veredicto, entonces el sistema actualiza el registro y notifica al usuario denunciante. <br> **E2:** Dado que la denuncia requiere más pruebas, cuando el admin cambia el estado a "En espera", entonces el sistema bloquea el cierre automático del ticket. <br> **E3:** Dado que se resuelve a favor del usuario, cuando el sistema cierra la denuncia, entonces otorga un bono de puntos de gratitud al consumidor. |
 ### 2.4.2. Impact Mapping
 
+## Segmento #1: Consumidor - Jorge Retuerto
+![Impact Mapping Jorge Retuerto](./assets/imagenes/Impact%20Mapping%20Jorge%20Retuerto.png)
+
+## Segmento #2: Establecimiento Masivo - Carlos Valdivia
+![Impact Mapping Carlos Valdivia](./assets/imagenes/Impact%20Mapping%20Carlos%20Valdivia.png)
+
+
 ### 2.4.3. Product Backlog
 | Orden | ID | Título | Story Points | Epic | Prioridad |
 | :--- | :--- | :--- | :---: | :--- | :--- |
@@ -1046,5 +1070,15 @@ Instituto Nacional de Estadística e Informática. (2026). Variación de los Ind
 Kantar Worldpanel. (2025). Consumer Insights Perú: Comportamiento y Perfiles de Compra del 'Power Adult'. https://www.kantarworldpanel.com/pe/news/Consumer-Insights-Peru-Power-Adult-2025
 
 ResearchGate. (2024). Optimization of the Traveling Salesman Problem (TSP) in Urban Retail Environments: A study on consumer behavior in emerging markets. https://www.researchgate.net/publication/380000_Optimization_TSP_Urban_Retail
+
+Banco Central de Reserva del Perú [BCRP]. (2025, 9 de enero). Inflación: Diciembre 2024 (Nota de Estudios N° 03-2025). https://www.bcrp.gob.pe/docs/Publicaciones/Notas-Estudios/2025/nota-de-estudios-03-2025.pdf
+
+Euromonitor International. (2024, 7 de marzo). Tiendas de conveniencia y discounters en Perú: Impacto en el retail. Forbes Perú. https://forbes.pe/negocios/2024-03-07/tiendas-de-conveniencia-y-discounters-en-peru
+
+Instituto Nacional de Estadística e Informática [INEI]. (2025). Precios al consumidor de Lima Metropolitana subieron 1,51% en el año 2025. Plataforma del Estado Peruano. https://www.gob.pe/institucion/inei/noticias/1325052-inei-precios-al-consumidor-de-lima-metropolitana-subieron-1-51-en-el-ano-2025
+
+Kantar Division Worldpanel. (2024). El rol de las marcas propias en la canasta familiar peruana: Reporte Anual. https://www.kantarworldpanel.com/pe/news/marcas-propias-peru-2024
+
+Kantar Division Worldpanel. (2025, 15 de octubre). Hogares peruanos con varios integrantes recuperan gasto en consumo masivo. https://www.kantar.com/latin-america/inspiracion/consumo-masivo/2025/crecimiento-consumo-masivo-2025-peru
 
 # Anexos
