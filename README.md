@@ -271,43 +271,43 @@ Para la plataforma **SmartCart**, se modelaron las interacciones entre los conte
 
 #### Escenario 1: Registro y verificación de tienda
 **Objetivo:** Una tienda nueva desea registrarse y ser verificada en el sistema SmartCart para comenzar a operar y ser visible para los consumidores.
-> ![Diagrama Escenario 1](espacio_para_imagen)
+> ![Diagrama Escenario 1](assets/domain-message-flows/inventory-management.png)
 
 ---
 
-#### Escenario 2: Planificación de ruta de compra
+#### Escenario 2: Planificación de compra del consumidor
 **Objetivo:** Un consumidor desea crear una lista de compras, añadir productos y comparar precios entre distintas tiendas para optimizar su gasto.
-> ![Diagrama Escenario 2](espacio_para_imagen)
+> ![Diagrama Escenario 2](assets/domain-message-flows/shopping-planning.png)
 
 ---
 
-#### Escenario 3: Ejecución del Shopping Journey y alertas
+#### Escenario 3: Ejecución del recorrido de compra
 **Objetivo:** El consumidor desea recorrer físicamente las tiendas siguiendo la ruta óptima generada a partir de su lista de compras planificada.
-> ![Diagrama Escenario 3](espacio_para_imagen)
+> ![Diagrama Escenario 3](assets/domain-message-flows/shopping-journey.png)
 
 ---
 
-#### Escenario 4: Reporte de incidencias y feedback
+#### Escenario 4: Calificación y experiencia post-compra
 **Objetivo:** El consumidor desea calificar las tiendas visitadas, verificar la exactitud de precios y publicar una reseña de su experiencia de compra.
-> ![Diagrama Escenario 4](espacio_para_imagen)
+> ![Diagrama Escenario 4](assets/domain-message-flows/post-purchase-experience.png)
 
 ---
 
-#### Escenario 5: Inicio de sesión y gestión de catálogo
+#### Escenario 5: Gestión de inventario y precios de tienda
 **Objetivo:** El Store Manager desea actualizar el inventario de productos y los precios de su tienda en tiempo real para que los consumidores siempre accedan a información correcta.
-> ![Diagrama Escenario 5](espacio_para_imagen)
+> ![Diagrama Escenario 5](assets/domain-message-flows/inventory-management.png)
 
 ---
 
-#### Escenario 6: Actualización de la experiencia del usuario
+#### Escenario 6: Cálculo de ahorro y análisis de compra
 **Objetivo:** El consumidor desea conocer el ahorro total generado en su recorrido de compra comparado con los precios de referencia, y acceder a un análisis de sus hábitos de consumo.
-> ![Diagrama Escenario 6](espacio_para_imagen)
+> ![Diagrama Escenario 6](assets/domain-message-flows/savings-analysis.png)
 
 ---
 
-#### Escenario 7: Alerta de oferta personalizada
+#### Escenario 7: Sistema de alertas y notificaciones de ofertas
 **Objetivo:** El consumidor desea suscribirse a alertas de ofertas en productos de su lista de compras para ser notificado cuando haya cambios favorables de precio.
-> ![Diagrama Escenario 7](espacio_para_imagen)
+>> ![Diagrama Escenario 7](assets/domain-message-flows/07-notifications-alerts.png)
 
 El modelado de flujos de mensajes de dominio permitió identificar con claridad las responsabilidades de cada **bounded context** y los puntos de integración críticos dentro de la plataforma **SmartCart**. Los contextos de *Shopping Planning*, *Shopping Journey* y *Experience* conforman el núcleo diferenciador del negocio, mientras que *IAM*, *Verification* y *Notification* actúan como servicios de soporte transversal. *Store Management* cumple un rol estratégico al ser el repositorio central de información de tiendas, productos y precios, siendo consumido por múltiples contextos.
 
