@@ -301,13 +301,13 @@ Para la plataforma **SmartCart**, se modelaron las interacciones entre los conte
 
 #### Escenario 6: Cálculo de ahorro y análisis de compra
 **Objetivo:** El consumidor desea conocer el ahorro total generado en su recorrido de compra comparado con los precios de referencia, y acceder a un análisis de sus hábitos de consumo.
-> ![Diagrama Escenario 6](assets/domain-message-flows/savings-analysis.png)
+> ![Diagrama Escenario 6](assets/domain-message-flows/saving-analysis.png)
 
 ---
 
 #### Escenario 7: Sistema de alertas y notificaciones de ofertas
 **Objetivo:** El consumidor desea suscribirse a alertas de ofertas en productos de su lista de compras para ser notificado cuando haya cambios favorables de precio.
->> ![Diagrama Escenario 7](assets/domain-message-flows/07-notifications-alerts.png)
+>> ![Diagrama Escenario 7](assets/domain-message-flows/notifications-alerts.png)
 
 El modelado de flujos de mensajes de dominio permitió identificar con claridad las responsabilidades de cada **bounded context** y los puntos de integración críticos dentro de la plataforma **SmartCart**. Los contextos de *Shopping Planning*, *Shopping Journey* y *Experience* conforman el núcleo diferenciador del negocio, mientras que *IAM*, *Verification* y *Notification* actúan como servicios de soporte transversal. *Store Management* cumple un rol estratégico al ser el repositorio central de información de tiendas, productos y precios, siendo consumido por múltiples contextos.
 
