@@ -1182,10 +1182,405 @@ Detalles de la Infraestructura:
 ##### 2.6.6.6.2. Bounded Context Database Design Diagram
 
 ### 2.6.7. Bounded Context: Experience
+
+El bounded context **Experience** constituye el núcleo del valor post-compra dentro de SmartCart. Su misión estratégica es capturar, procesar y consolidar la retroalimentación del Buyer tras completar un recorrido de compra, transformando esa información en inteligencia comunitaria útil: el **Trust Profile** de las tiendas, el **Ahorro total** real obtenido, los **Errores de precio** detectados y las **Reseñas** publicadas. Clasificado como dominio **Core** con modelo de negocio de **Engagement**, este contexto se construye completamente a medida (*Custom built*) y opera como un *Analysis Context* dentro del mapa de contextos del sistema.
+
+La comunicación con el bounded context **Shopping Journey** se realiza a través de un patrón **Customer/Supplier acompañado de una Anti-Corruption Layer (ACL)**, que garantiza que los modelos externos no contaminen el modelo de dominio propio de Experience.
+
+---
+
 #### 2.6.7.1. Domain Layer
+
+La capa de dominio de Experience concentra toda la lógica de negocio relacionada con la experiencia post-compra. A continuación se detallan los principales bloques de construcción tácticos identificados a partir del EventStorming y del Bounded Context Canvas.
+
+##### Aggregates
+
+Un **Aggregate** es un clúster de objetos de dominio que se trata como una única unidad de consistencia. Experience define dos aggregates raíz:
+
+| Aggregate Root | Descripción | Responsabilidad principal |
+|---|---|---|
+| `StoreExperience` | Representa la experiencia completa que un Buyer registra sobre una tienda tras finalizar un recorrido. Actúa como raíz de consistencia que agrupa Calificación, Reseña y Errores de Precio dentro de un mismo contexto de visita. | Garantizar que todos los elementos de feedback pertenecientes a un mismo recorrido finalizado sean consistentes y completos antes de ser persistidos. |
+| `TrustProfile` | Representa el perfil de confiabilidad acumulado de una tienda, calculado a partir del historial de calificaciones y errores de precio confirmados de la comunidad. | Mantener actualizado el índice de confiabilidad de la tienda (`trustScore`) y gestionar el otorgamiento de insignias de confianza. |
+
+##### Entities
+
+Las **Entities** son objetos con identidad propia que persisten a lo largo del tiempo y pueden cambiar de estado.
+
+| Entidad | Aggregate al que pertenece | Atributos clave | Comportamientos |
+|---|---|---|---|
+| `Calificacion` | `StoreExperience` | `calificacionId`, `puntuacion: Puntuacion`, `fechaRegistro: LocalDateTime`, `buyerId: BuyerId`, `storeId: StoreId` | `registrar()`, `estaAprobada()` |
+| `Reseña` | `StoreExperience` | `reseñaId`, `comentario: ComentarioTexto`, `estadoPublicacion: EstadoPublicacion`, `fechaCreacion: LocalDateTime` | `publicar()`, `marcarParaRevision()`, `contienePalabraInapropiada()` |
+| `ErrorDePrecio` | `StoreExperience` | `errorId`, `productoId`, `precioDigital: Monto`, `precioFisico: Monto`, `estadoError: EstadoError`, `fechaReporte: LocalDateTime` | `confirmar()`, `rechazar()`, `calcularDiscrepancia()` |
+| `AhorroTotal` | `StoreExperience` | `ahorroId`, `montoAhorrado: MontoAhorro`, `precioReferencia: Monto`, `precioPagado: Monto`, `recorridoId: RecorridoId` | `calcular()`, `esAhorroPositivo()` |
+| `InsigniaConfianza` | `TrustProfile` | `insigniaId`, `tipo: TipoInsignia`, `fechaOtorgamiento: LocalDateTime`, `criteriosCumplidos: List<String>` | `otorgar()`, `esVigente()` |
+
+##### Value Objects
+
+Los **Value Objects** son objetos sin identidad propia que se definen únicamente por sus atributos. Son inmutables y encapsulan reglas de validación del dominio.
+
+| Value Object | Atributos | Reglas de validación / invariantes |
+|---|---|---|
+| `Puntuacion` | `valor: int` | Debe estar en el rango cerrado [1, 5]. Lanza `PuntuacionInvalidaException` si se viola. |
+| `ComentarioTexto` | `texto: String` | No puede ser nulo ni vacío. Longitud máxima: 500 caracteres. Provee método `contienePalabraInapropiada(Set<String> blacklist): boolean`. |
+| `MontoAhorro` | `monto: BigDecimal`, `moneda: Currency` | Debe ser mayor o igual a cero. Representa la diferencia entre `precioReferencia` y `precioPagado`. |
+| `BuyerId` | `valor: UUID` | Identificador inmutable del Buyer, recibido del contexto IAM vía ACL. |
+| `StoreId` | `valor: UUID` | Identificador inmutable de la tienda. Recibido desde Shopping Journey vía ACL. |
+| `RecorridoId` | `valor: UUID` | Identificador del recorrido finalizado que origina el ciclo de feedback. Clave de correlación con Shopping Journey. |
+| `TrustScore` | `valor: double` | Valor entre 0.0 y 5.0, calculado mediante media ponderada de calificaciones. Expuesto al exterior como indicador de veracidad de precios. |
+| `EstadoPublicacion` | `estado: Enum{PENDIENTE, PUBLICADA, EN_REVISION, RECHAZADA}` | Controla el ciclo de vida de una `Reseña`. Transiciones válidas: `PENDIENTE → PUBLICADA`, `PENDIENTE → EN_REVISION`, `EN_REVISION → PUBLICADA`, `EN_REVISION → RECHAZADA`. |
+| `EstadoError` | `estado: Enum{REPORTADO, CONFIRMADO, RECHAZADO}` | Controla el ciclo de vida de un `ErrorDePrecio`. |
+
+##### Domain Events
+
+Los **Domain Events** son hechos relevantes que han ocurrido dentro del dominio. En Experience, se producen como resultado de las acciones del usuario o del sistema y son publicados al Message Broker para que otros contextos puedan reaccionar.
+
+| Domain Event | Aggregate origen | Atributos del payload | Significado de negocio |
+|---|---|---|---|
+| `TiendaCalificada` | `StoreExperience` | `storeId`, `buyerId`, `puntuacion`, `recorridoId`, `fechaOcurrencia` | Un Buyer ha registrado una calificación numérica sobre una tienda visitada al finalizar su recorrido. |
+| `ReseñaPublicada` | `StoreExperience` | `reseñaId`, `storeId`, `buyerId`, `comentario`, `fechaPublicacion` | Una reseña ha pasado las validaciones de contenido y ha sido publicada en el perfil de la tienda. |
+| `ReseñaMarcadaParaRevision` | `StoreExperience` | `reseñaId`, `storeId`, `motivo` | Una reseña contiene palabras inapropiadas y requiere revisión humana antes de ser publicada. |
+| `ErrorDePrecioReportado` | `StoreExperience` | `errorId`, `storeId`, `productoId`, `precioDigital`, `precioFisico`, `recorridoId` | Un Buyer ha detectado y reportado una discrepancia entre el precio digital mostrado y el precio físico en tienda. |
+| `ErrorDePrecioConfirmado` | `StoreExperience` | `errorId`, `storeId`, `cantidadErroresAcumulados` | Un error de precio ha sido validado. Si la tienda acumula ≥3 errores confirmados, se notifica a Store Management. |
+| `AhorroTotalCalculado` | `StoreExperience` | `ahorroId`, `buyerId`, `recorridoId`, `montoAhorrado`, `moneda` | El sistema ha calculado el ahorro real obtenido por el Buyer durante el recorrido, comparando precio de referencia vs. precio pagado. |
+| `InsigniaConfianzaOtorgada` | `TrustProfile` | `insigniaId`, `storeId`, `tipoInsignia`, `fechaOtorgamiento` | Una tienda ha alcanzado los umbrales de confiabilidad requeridos y se le ha otorgado una insignia de confianza. |
+| `TrustProfileActualizado` | `TrustProfile` | `storeId`, `nuevoTrustScore`, `totalCalificaciones` | El índice de confiabilidad de una tienda ha sido recalculado tras recibir nueva retroalimentación. |
+
+##### Domain Services
+
+Los **Domain Services** encapsulan lógica de negocio que no pertenece naturalmente a ningún Aggregate o Entity en particular, ya que opera sobre múltiples objetos o requiere información de varias fuentes.
+
+| Domain Service | Método principal | Descripción |
+|---|---|---|
+| `TrustProfileCalculatorService` | `recalcular(StoreId storeId, List<Calificacion> calificaciones): TrustScore` | Calcula el nuevo `TrustScore` de una tienda utilizando una media ponderada que pondera más las calificaciones recientes. Aplica penalización automática si el conteo de errores de precio confirmados supera el umbral definido por política. |
+| `ContentModerationService` | `validar(ComentarioTexto comentario): ResultadoModeracion` | Analiza el texto de una reseña contra una lista configurable de palabras inapropiadas y patrones de spam. Determina si la reseña puede publicarse directamente o debe pasar a revisión humana. |
+| `AhorroCalculatorService` | `calcular(RecorridoId recorridoId, List<ItemCompra> items): MontoAhorro` | Calcula el ahorro total real del Buyer comparando el precio de referencia del mercado (proveniente del ACL de Shopping Journey) contra el precio efectivamente pagado por cada ítem del recorrido. |
+| `InsigniaEvaluatorService` | `evaluar(TrustProfile profile): Optional<InsigniaConfianza>` | Evalúa si el `TrustProfile` actualizado de una tienda cumple los criterios de negocio para recibir una insignia de confianza (e.g., TrustScore ≥ 4.5 con al menos 50 calificaciones acumuladas). |
+
+---
+
 #### 2.6.7.2. Interface Layer
+
+La capa de interfaz de Experience expone sus capacidades hacia el exterior mediante una API REST consumida principalmente por la **Mobile App** (Buyer) y la **Web App** (Merchant). Todos los endpoints están prefijados con `/api/v1/experience`.
+
+##### ExperienceController
+
+| Método HTTP | Endpoint | Descripción | Request DTO | Response DTO |
+|---|---|---|---|---|
+| `POST` | `/stores/{storeId}/ratings` | Permite a un Buyer calificar una tienda tras finalizar un recorrido. | `CalificarTiendaRequest` | `CalificacionResponse` |
+| `POST` | `/stores/{storeId}/reviews` | Permite a un Buyer publicar una reseña de texto sobre una tienda. | `PublicarReseñaRequest` | `ReseñaResponse` |
+| `GET` | `/stores/{storeId}/reviews` | Obtiene el listado paginado de reseñas publicadas de una tienda. | — (query params: `page`, `size`) | `Page<ReseñaSummaryResponse>` |
+| `POST` | `/stores/{storeId}/price-errors` | Permite a un Buyer reportar un error de precio detectado en tienda. | `ReportarErrorPrecioRequest` | `ErrorDePrecioResponse` |
+| `POST` | `/journeys/{recorridoId}/savings` | Solicita el cálculo del ahorro total al finalizar un recorrido. | `CalcularAhorroRequest` | `AhorroTotalResponse` |
+| `GET` | `/journeys/{recorridoId}/savings` | Obtiene el ahorro total calculado para un recorrido específico. | — | `AhorroTotalResponse` |
+| `GET` | `/stores/{storeId}/trust-profile` | Obtiene el Trust Profile público de una tienda. | — | `TrustProfileResponse` |
+
+##### DTOs de Request y Response
+
+**`CalificarTiendaRequest`**
+```json
+{
+  "buyerId": "uuid",
+  "recorridoId": "uuid",
+  "puntuacion": 4
+}
+```
+
+**`CalificacionResponse`**
+```json
+{
+  "calificacionId": "uuid",
+  "storeId": "uuid",
+  "puntuacion": 4,
+  "fechaRegistro": "2026-04-21T12:30:00"
+}
+```
+
+**`PublicarReseñaRequest`**
+```json
+{
+  "buyerId": "uuid",
+  "recorridoId": "uuid",
+  "comentario": "Excelente variedad de productos y precios actualizados."
+}
+```
+
+**`ReseñaResponse`**
+```json
+{
+  "reseñaId": "uuid",
+  "storeId": "uuid",
+  "comentario": "Excelente variedad de productos y precios actualizados.",
+  "estadoPublicacion": "PUBLICADA",
+  "fechaCreacion": "2026-04-21T12:31:00"
+}
+```
+
+**`ReportarErrorPrecioRequest`**
+```json
+{
+  "buyerId": "uuid",
+  "recorridoId": "uuid",
+  "productoId": "uuid",
+  "precioDigital": 5.99,
+  "precioFisico": 7.50,
+  "moneda": "PEN"
+}
+```
+
+**`ErrorDePrecioResponse`**
+```json
+{
+  "errorId": "uuid",
+  "storeId": "uuid",
+  "productoId": "uuid",
+  "discrepancia": 1.51,
+  "estadoError": "REPORTADO",
+  "fechaReporte": "2026-04-21T12:32:00"
+}
+```
+
+**`TrustProfileResponse`**
+```json
+{
+  "storeId": "uuid",
+  "trustScore": 4.3,
+  "totalCalificaciones": 128,
+  "erroresDePrecioConfirmados": 1,
+  "insignias": ["TIENDA_CONFIABLE"],
+  "ultimaActualizacion": "2026-04-21T10:00:00"
+}
+```
+
+**`AhorroTotalResponse`**
+```json
+{
+  "ahorroId": "uuid",
+  "recorridoId": "uuid",
+  "buyerId": "uuid",
+  "montoAhorrado": 12.35,
+  "moneda": "PEN",
+  "precioReferencia": 85.00,
+  "precioPagado": 72.65
+}
+```
+
+---
+
 #### 2.6.7.3. Application Layer
+
+La capa de aplicación orquesta los flujos de negocio coordinando los objetos del dominio, los repositorios y los servicios de infraestructura. No contiene lógica de dominio propia; su responsabilidad es dirigir el flujo de trabajo (orchestration).
+
+##### Application Services
+
+| Application Service | Responsabilidad |
+|---|---|
+| `ExperienceApplicationService` | Punto de entrada principal para las operaciones de feedback. Recibe comandos desde la Interface Layer, delega en los aggregates y domain services correspondientes, y publica los domain events generados. |
+| `TrustProfileApplicationService` | Orquesta la actualización del `TrustProfile` de una tienda en respuesta a nuevas calificaciones, errores de precio confirmados o solicitudes de evaluación de insignias. |
+
+##### Command Handlers
+
+Los **Command Handlers** reciben un Command Object y ejecutan la operación de escritura correspondiente sobre el dominio.
+
+| Command | Command Handler | Flujo de ejecución |
+|---|---|---|
+| `CalificarTiendaCommand` | `CalificarTiendaCommandHandler` | 1) Valida el `BuyerId` y `StoreId`. 2) Crea o recupera el `StoreExperience` del recorrido. 3) Llama a `storeExperience.registrarCalificacion(puntuacion)`. 4) Persiste el aggregate. 5) Publica `TiendaCalificada`. 6) Dispara la actualización asíncrona del `TrustProfile`. |
+| `PublicarReseñaCommand` | `PublicarReseñaCommandHandler` | 1) Recupera el `StoreExperience` activo. 2) Invoca `ContentModerationService.validar(comentario)`. 3) Si pasa moderación: llama a `reseña.publicar()` y publica `ReseñaPublicada`. 4) Si falla moderación: llama a `reseña.marcarParaRevision()` y publica `ReseñaMarcadaParaRevision`. |
+| `ReportarErrorDePrecioCommand` | `ReportarErrorDePrecioCommandHandler` | 1) Crea un nuevo `ErrorDePrecio` con estado `REPORTADO`. 2) Calcula la discrepancia mediante `errorDePrecio.calcularDiscrepancia()`. 3) Persiste. 4) Publica `ErrorDePrecioReportado`. 5) Consulta al `TrustProfileApplicationService` si el umbral de ≥3 errores ha sido alcanzado para notificar a Store Management. |
+| `CalcularAhorroTotalCommand` | `CalcularAhorroTotalCommandHandler` | 1) Recibe los ítems del recorrido finalizado (traducidos por el ACL desde Shopping Journey). 2) Invoca `AhorroCalculatorService.calcular(recorridoId, items)`. 3) Crea la entidad `AhorroTotal`. 4) Persiste. 5) Publica `AhorroTotalCalculado`. |
+| `ActualizarTrustProfileCommand` | `ActualizarTrustProfileCommandHandler` | 1) Recupera el `TrustProfile` de la tienda. 2) Obtiene las últimas calificaciones del repositorio. 3) Invoca `TrustProfileCalculatorService.recalcular(storeId, calificaciones)`. 4) Actualiza el `trustScore`. 5) Invoca `InsigniaEvaluatorService.evaluar(profile)`. 6) Si corresponde, otorga la insignia. 7) Publica `TrustProfileActualizado`. |
+
+##### Query Handlers
+
+Los **Query Handlers** se encargan exclusivamente de las operaciones de lectura, sin modificar el estado del sistema (principio CQRS).
+
+| Query | Query Handler | Descripción |
+|---|---|---|
+| `GetTrustProfileQuery` | `GetTrustProfileQueryHandler` | Recupera el `TrustProfile` público de una tienda dado su `StoreId`. Utiliza una proyección de lectura optimizada (Read Model) para evitar cargar el aggregate completo. |
+| `GetReseñasByStoreQuery` | `GetReseñasByStoreQueryHandler` | Obtiene la lista paginada de `Reseña` con estado `PUBLICADA` para una tienda. Ordena por fecha de publicación descendente. |
+| `GetAhorroTotalByRecorridoQuery` | `GetAhorroTotalByRecorridoQueryHandler` | Recupera el `AhorroTotal` calculado para un `RecorridoId` específico. Retorna error 404 si el cálculo aún no se ha completado. |
+
+##### Integración con el evento de finalización de recorrido
+
+El flujo que detona el ciclo de feedback post-compra se inicia cuando Shopping Journey publica el evento de dominio `RecorridoFinalizado`. La Application Layer de Experience actúa como consumidor de este evento a través del Message Broker (RabbitMQ):
+
+```
+[Shopping Journey] --publica--> RecorridoFinalizado (AMQP)
+        |
+        v
+[ExperienceEventConsumer] --traduce via ACL--> RecorridoFinalizadoDTO
+        |
+        v
+[ExperienceApplicationService]
+        ├── dispatch(CalcularAhorroTotalCommand)
+        └── dispatch(SolicitarFeedbackCommand)  ← dispara notificación push al Buyer
+```
+
+Al recibir el evento `RecorridoFinalizado`, el `ExperienceApplicationService`:
+1. Traduce el evento externo a su modelo interno mediante el `ShoppingJourneyACL`.
+2. Despacha el `CalcularAhorroTotalCommand` para procesar el ahorro real del recorrido.
+3. Despacha el `SolicitarFeedbackCommand` que, a través del `NotificationService` (vía AMQP), envía una notificación push al Buyer invitándole a calificar la tienda y reportar errores de precio.
+
+---
+
 #### 2.6.7.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios, mensajería, persistencia) y la capa anticorrupción que aísla a Experience de los modelos externos.
+
+##### Repositories (Implementación)
+
+Las interfaces de repositorio se definen en la capa de dominio y se implementan en infraestructura siguiendo el principio de inversión de dependencias.
+
+| Interfaz (Dominio) | Implementación (Infraestructura) | Tecnología |
+|---|---|---|
+| `StoreExperienceRepository` | `StoreExperienceJpaRepository` | Spring Data JPA + PostgreSQL |
+| `TrustProfileRepository` | `TrustProfileJpaRepository` | Spring Data JPA + PostgreSQL |
+| `ReseñaReadModelRepository` | `ReseñaMongoReadRepository` | Spring Data MongoDB (Read Model optimizado para consultas paginadas) |
+
+##### Mapeo a Base de Datos (Persistencia)
+
+La persistencia utiliza una estrategia híbrida conforme al modelo visto en el diagrama de arquitectura de contenedores: **PostgreSQL** para los aggregates transaccionales y **MongoDB** para los read models de alta frecuencia de lectura.
+
+**Tabla `store_experiences` (PostgreSQL)**
+
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | `UUID` (PK) | Identificador único del aggregate `StoreExperience` |
+| `store_id` | `UUID` | Identificador de la tienda |
+| `buyer_id` | `UUID` | Identificador del Buyer |
+| `recorrido_id` | `UUID` | Identificador del recorrido que originó la experiencia |
+| `puntuacion` | `SMALLINT` | Valor de la calificación (1-5) |
+| `estado_publicacion_resena` | `VARCHAR(20)` | Estado de la reseña: PENDIENTE, PUBLICADA, EN_REVISION, RECHAZADA |
+| `comentario_resena` | `TEXT` | Contenido textual de la reseña |
+| `monto_ahorro` | `DECIMAL(10,2)` | Ahorro calculado en la moneda de la tienda |
+| `moneda` | `VARCHAR(3)` | Código ISO 4217 de la moneda (e.g., PEN) |
+| `created_at` | `TIMESTAMP` | Fecha de creación del registro |
+| `updated_at` | `TIMESTAMP` | Fecha de última modificación |
+
+**Tabla `trust_profiles` (PostgreSQL)**
+
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | `UUID` (PK) | Identificador único del aggregate `TrustProfile` |
+| `store_id` | `UUID` (UNIQUE) | Identificador de la tienda |
+| `trust_score` | `DECIMAL(3,2)` | Índice de confiabilidad actual (0.00 - 5.00) |
+| `total_calificaciones` | `INT` | Número total de calificaciones recibidas |
+| `errores_precio_confirmados` | `INT` | Contador de errores de precio confirmados |
+| `updated_at` | `TIMESTAMP` | Fecha del último recálculo |
+
+**Tabla `price_errors` (PostgreSQL)**
+
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | `UUID` (PK) | Identificador del error de precio |
+| `experience_id` | `UUID` (FK → store_experiences) | Vínculo con el aggregate padre |
+| `producto_id` | `UUID` | Producto con discrepancia |
+| `precio_digital` | `DECIMAL(10,2)` | Precio mostrado en la app |
+| `precio_fisico` | `DECIMAL(10,2)` | Precio real encontrado en tienda |
+| `estado_error` | `VARCHAR(15)` | REPORTADO, CONFIRMADO, RECHAZADO |
+| `fecha_reporte` | `TIMESTAMP` | Fecha del reporte |
+
+**Colección `resenas_read_model` (MongoDB)**
+
+```json
+{
+  "_id": "uuid",
+  "storeId": "uuid",
+  "buyerId": "uuid",
+  "puntuacion": 4,
+  "comentario": "Excelente tienda...",
+  "estadoPublicacion": "PUBLICADA",
+  "fechaPublicacion": "2026-04-21T12:31:00",
+  "storeNombre": "Plaza Vea San Isidro"
+}
+```
+> Esta colección es un **Read Model** desnormalizado y eventualmente consistente, actualizado mediante un event handler que escucha `ReseñaPublicada`. Permite consultas paginadas de alta performance sin impactar el modelo transaccional.
+
+##### Integración con RabbitMQ (Mensajería Asíncrona)
+
+La integración con el Message Broker se realiza mediante Spring AMQP. Experience actúa como **consumidor (Subscriber)** del evento `RecorridoFinalizado` y como **productor (Publisher)** de sus propios domain events.
+
+**Configuración de colas y exchanges:**
+
+| Exchange | Queue | Routing Key | Dirección | Descripción |
+|---|---|---|---|---|
+| `shopping-journey.events` | `experience.recorrido-finalizado` | `recorrido.finalizado` | **Inbound** (Consumer) | Experience consume el evento de finalización de recorrido publicado por Shopping Journey. |
+| `experience.events` | `store-management.resena-publicada` | `resena.publicada` | **Outbound** (Publisher) | Experience publica la `ReseñaPublicada` para que Store Management actualice el perfil de la tienda. |
+| `experience.events` | `notifications.ahorro-calculado` | `ahorro.calculado` | **Outbound** (Publisher) | Experience publica el `AhorroTotalCalculado` para que el Notification Service informe al Buyer. |
+| `experience.events` | `store-management.errores-precio` | `error.precio.confirmado` | **Outbound** (Publisher) | Cuando se alcanzan ≥3 errores confirmados, se notifica a Store Management. |
+
+**Consumer (ExperienceEventConsumer):**
+```java
+@RabbitListener(queues = "experience.recorrido-finalizado")
+public void handleRecorridoFinalizado(RecorridoFinalizadoMessage message) {
+    RecorridoFinalizadoDTO dto = shoppingJourneyACL.traducir(message);
+    experienceApplicationService.iniciarCicloFeedback(dto);
+}
+```
+
+##### Anti-Corruption Layer (ACL) — Integración con Shopping Journey
+
+La **Anti-Corruption Layer** es el componente más crítico de la infraestructura de Experience. Actúa como un traductor bidireccional que convierte los modelos del dominio externo (Shopping Journey) al lenguaje ubicuo propio de Experience, evitando que conceptos ajenos contaminen el modelo interno.
+
+**Estructura de la ACL:**
+
+```
+[Shopping Journey Event] ─────────────────────────────┐
+        │                                              │
+        ▼                                              │
+┌─────────────────────────────────────────────────────┐│
+│          ShoppingJourneyACL                         ││
+│                                                     ││
+│  RecorridoFinalizadoMessage  →  RecorridoFinalizadoDTO  │
+│  ItemRecorridoMessage        →  ItemCompra              │
+│  StoreMessage                →  StoreId (ValueObject)   │
+│  BuyerMessage                →  BuyerId (ValueObject)   │
+└─────────────────────────────────────────────────────┘│
+        │                                              │
+        ▼                                              │
+[Experience Domain Model] ◄────────────────────────────┘
+```
+
+**Contrato de traducción del ACL:**
+
+| Concepto externo (Shopping Journey) | Traducción interna (Experience) | Notas |
+|---|---|---|
+| `RecorridoFinalizado.journeyId` | `RecorridoId` (Value Object) | Preserva el UUID como identificador de correlación. |
+| `RecorridoFinalizado.userId` | `BuyerId` (Value Object) | Renombrado para alinearse con el Ubiquitous Language de Experience. |
+| `RecorridoFinalizado.tiendaId` | `StoreId` (Value Object) | Validado contra el repositorio interno de tiendas conocidas. |
+| `RecorridoFinalizado.itemsComprados[]` | `List<ItemCompra>` | Incluye `productoId`, `precioPagado` y `precioReferencia` necesarios para calcular el ahorro. |
+| `RecorridoFinalizado.timestamp` | `fechaFinalizacion: LocalDateTime` | Convertido a zona horaria de Perú (America/Lima) para consistencia. |
+
+**Implementación del ACL:**
+```java
+@Component
+public class ShoppingJourneyACL {
+
+    public RecorridoFinalizadoDTO traducir(RecorridoFinalizadoMessage msg) {
+        return RecorridoFinalizadoDTO.builder()
+            .recorridoId(new RecorridoId(msg.getJourneyId()))
+            .buyerId(new BuyerId(msg.getUserId()))
+            .storeId(new StoreId(msg.getTiendaId()))
+            .items(msg.getItemsComprados().stream()
+                .map(this::mapItem)
+                .collect(Collectors.toList()))
+            .fechaFinalizacion(
+                msg.getTimestamp().atZone(ZoneId.of("America/Lima")).toLocalDateTime()
+            )
+            .build();
+    }
+
+    private ItemCompra mapItem(ItemCompradoMessage item) {
+        return new ItemCompra(
+            item.getProductoId(),
+            new Monto(item.getPrecioPagado(), Currency.getInstance("PEN")),
+            new Monto(item.getPrecioReferencia(), Currency.getInstance("PEN"))
+        );
+    }
+}
+```
+
+> **Decisión de diseño:** El ACL se implementa exclusivamente en la capa de infraestructura de Experience, garantizando que ninguna dependencia del modelo de Shopping Journey cruce la frontera hacia las capas de aplicación o dominio. Ante cualquier cambio en el contrato de Shopping Journey, sólo el ACL requiere modificación, protegiendo la integridad del modelo de dominio de Experience.
+
 #### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
