@@ -1074,7 +1074,11 @@ Luego de analizar las alternativas y sus implicancias en SmartCart, el equipo de
 - Validaciones y Operaciones (Verification / Store Management): Se utiliza una relación Customer/Supplier con ACL (Anticorruption Layer). Esto protege la lógica del inventario de la rigidez de las normativas externas (como SUNAT).
 - Experiencia de Compra (Shopping Planning / Journey): Implementa también ACL, permitiendo que la planificación de compras evolucione sin depender directamente de la complejidad de los motores de mapas y rutas.
 - Comunicación Eficiente: La relación entre la gestión de tienda y las notificaciones es asíncrona (basada en eventos), lo que evita cuellos de botella y asegura que el sistema siga operativo incluso si hay retrasos en los envíos.
-  <img src="./assets/softwarearchitecture/contextmapping.png" alt="Deployment Diagram" style="width: 180 px; height: auto;">
+
+<div style="text-align: center;">
+  <img src="./assets/softwarearchitecture/contextmapping.png" alt="Context Level Diagram style="width: 180px; height: auto;">
+</div>
+  
 ### 2.5.3. Software Architecture
 #### 2.5.3.1. Software Architecture Context Level Diagrams
 <div style="text-align: center;">
