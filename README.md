@@ -208,7 +208,21 @@ A continuación, cada miembro del equipo expone sus objetivos SMART, orientados 
 
 **Integrante 3: Katherine Mejia**  
 **Objetivo 1:**
+Obtener una certificación básica de Azure o AWS en los primeros 12 meses después de graduarme.
+
+- S: Aprobar un examen oficial de fundamentos de nube para validar mis conocimientos técnicos.
+- M: Se cumple al recibir el certificado oficial de la plataforma elegida.
+- A: Es viable aprovechando la base en diagramas de despliegue y contenedores que aprendí en el proyecto.
+- R: Vital para trabajar en empresas que manejan sistemas a gran escala.
+- T: Plazo máximo de un año tras terminar la carrera.
 **Objetivo 2:**
+Implementar un proyecto personal con arquitectura limpia y publicarlo en GitHub en mis primeros 6 meses como profesional.
+
+- S: Desarrollar una API robusta que use principios de DDD y Clean Architecture.
+- M: Medible mediante el repositorio público con un README detallado.
+- A: Factible usando la experiencia de SmartCart y los patrones de diseño aplicados.
+- R: Sirve para demostrar a los reclutadores que sé escribir código profesional y mantenible.
+- T: Meta a cumplir en medio año tras el egreso.
 
 **Integrante 4: Kevin Pardo**  
 **Objetivo 1:**
