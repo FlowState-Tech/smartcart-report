@@ -239,7 +239,7 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 | :--: | :----------------------------- | :------------------: | :--------------------: | :------------------------------------- |
 |      | Anjali Amaro Villar            |      U20221G044      | Ingeniería de Software |                                        |
 |      | Joseph Manuel Chavez Viera     |      U202314019      | Ingeniería de Software |                                        |
-|      | Katherine Maryory Mejia Aliaga |      U20221A118      | Ingeniería de Software |                                        |
+|   <img src="./assets/logos/fotokatherine.png">   | Katherine Maryory Mejia Aliaga |      U20221A118      | Ingeniería de Software |  Mi nombre es Katherine Mejia, tengo 21 años, curso el sexto ciclo de la carrera de ingeniería de software, Tengo conocimientos en C++, Phyton y HTML. Me gusta trabajar en equipo y a la vez sacar lo mejor de mis compañeros para hacer un buen trabajo. Además, tengo capacidad y aptitud para generar nuevas e innovadoras ideas y siempre estoy dispuesta a adquirir nuevas habilidades y conocimientos. |
 |      | Kevin Patrick Pardo Chumpitazi |      U20221A525      | Ingeniería de Software |                                        |
 |      | Stephano Renan Valdivia Quispe |      U202311294      | Ingeniería de Software |                                        |
 
