@@ -1587,8 +1587,17 @@ En esta sección se presentan los **diagramas de nivel componente** que ilustran
 > ![Diagrama de componente - Experience](assets/component-level-diagrams/experience-component-diagram.png)
 
 #### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
+En esta sección se presentan los **diagramas de nivel código** que detallan la estructura interna del contexto de **Experience**. Se incluyen diagramas de clases y diseño de base de datos que reflejan cómo se implementan los elementos del dominio y cómo se gestionan las relaciones entre ellos.
+
 ##### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
+El diagrama de clases del **Domain Layer** del contexto de **Experience** ilustra las entidades, objetos de valor y servicios que componen este bounded context. Se muestran las relaciones entre los diferentes elementos del dominio, así como sus atributos y métodos principales
+
+ ![Diagrama de domain layer - Experience](assets/domain-layer-diagrams/experience-domain-layer-diagram.png)
+
 ##### 2.6.7.6.2. Bounded Context Database Design Diagram
+El diagrama de **diseño de base de datos** del contexto de **Experience** muestra la estructura de las tablas y sus relaciones en la base de datos relacional. Se detallan las tablas principales, sus columnas, tipos de datos y claves primarias/foráneas que permiten gestionar la información relacionada con los usuarios.
+
+![Diagrama de base de datos - Experience](assets/database-diagrams/experience-database-diagram.png)
 
 <hr class="page-break">
 
@@ -1597,7 +1606,7 @@ En esta sección se presentan los **diagramas de nivel componente** que ilustran
 
 <hr class="page-break">
 
-## Bibliografía       
+## Bibliografía
 
 Banco Central de Reserva del Perú. (2025). Reporte de Inflación: Panorama actual y proyecciones macroeconómicas. https://www.bcrp.gob.pe/publicaciones/reporte-de-inflacion.html
 
