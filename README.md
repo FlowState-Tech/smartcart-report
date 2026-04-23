@@ -1582,6 +1582,10 @@ public class ShoppingJourneyACL {
 > **Decisión de diseño:** El ACL se implementa exclusivamente en la capa de infraestructura de Experience, garantizando que ninguna dependencia del modelo de Shopping Journey cruce la frontera hacia las capas de aplicación o dominio. Ante cualquier cambio en el contrato de Shopping Journey, sólo el ACL requiere modificación, protegiendo la integridad del modelo de dominio de Experience.
 
 #### 2.6.7.5. Bounded Context Software Architecture Component Level Diagrams
+En esta sección se presentan los **diagramas de nivel componente** que ilustran la arquitectura de software del contexto de **Experience**. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context. Se integra con la base de datos relacional definida en el diagrama de contenedores.
+
+> ![Diagrama de componente - Experience](assets/component-level-diagrams/experience-component-diagram.png)
+
 #### 2.6.7.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.7.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 2.6.7.6.2. Bounded Context Database Design Diagram
