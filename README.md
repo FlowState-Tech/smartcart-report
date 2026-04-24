@@ -241,8 +241,7 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 |      | Joseph Manuel Chavez Viera     |      U202314019      | Ingeniería de Software |                                        |
 |      | Katherine Maryory Mejia Aliaga |      U20221A118      | Ingeniería de Software |                                        |
 |      | Kevin Patrick Pardo Chumpitazi |      U20221A525      | Ingeniería de Software |                                        |
-|      | Stephano Renan Valdivia Quispe |      U202311294      | Ingeniería de Software |                                        |
-
+| ![Stephano Valdivia](./assets/profiles/stephano.png) | Stephano Renan Valdivia Quispe |      U202311294      | Ingeniería de Software | Estudiante y desarrollador Fullstack con sólida visión arquitectónica. Experto en backend (Java/Spring Boot, C#/.NET Core) y frontend (Vue.js, Angular, Next.js). Dominio en diseño de sistemas modernos aplicando Domain-Driven Design (DDD), arquitecturas de microservicios y bases de datos relacionales/NoSQL. Experiencia práctica trabajando bajo metodologías ágiles para transformar requerimientos complejos en soluciones tecnológicas robustas. |
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
 
