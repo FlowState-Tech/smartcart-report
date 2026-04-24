@@ -1131,24 +1131,76 @@ Detalles de la Infraestructura:
 ## 2.6. Tactical-Level Domain-Driven Design
 
 ### 2.6.1. Bounded Context: IAM
-#### 2.6.1.1. Domain Layer
-#### 2.6.1.2. Interface Layer
-#### 2.6.1.3. Application Layer
-#### 2.6.1.4. Infrastructure Layer
+##### 2.6.1.1. Domain Layer
+Este contexto gestiona la identidad, autenticación y niveles de acceso para consumidores y *Store Managers*, asegurando la seguridad del ecosistema SmartCart.
+
+* **Entities:**
+    * **User:** Root Aggregate que centraliza la identidad y el estado de la cuenta.
+    * **Role:** Define si el usuario opera como `Consumer` o `StoreManager`.
+* **Value Objects:**
+    * **UserEmail:** Valida el formato y unicidad del correo electrónico.
+    * **UserPassword:** Gestiona el cifrado (hashing) y la seguridad de las credenciales.
+    * **Session:** Estado temporal que representa la autenticación activa.
+* **Aggregates:**
+    * **UserAggregate:** Garantiza que cada perfil de usuario esté correctamente vinculado a un rol y estado de activación.
+* **Business Decisions:**
+    * **Seguridad:** Bloqueo automático de cuenta tras **3 intentos fallidos** de inicio de sesión con credenciales inválidas.
+##### 2.6.1.2. Interface Layer
+Expone los servicios de gestión de identidad hacia las aplicaciones cliente.
+* **Controllers:** `IdentityController` (Inicio de sesión, registro y recuperación de contraseña).
+* **DTOs:** `AuthRequest`, `RegisterUserRequest`, `TokenResponse`.
+
+##### 2.6.1.3. Application Layer
+Coordina los casos de uso sin imponer lógica de negocio.
+* **Application Services:** `AuthApplicationService` (Orquesta la verificación de identidad y generación de tokens).
+* **Command Handlers:** `RegisterUserCommandHandler`, `ResetPasswordCommandHandler`.
+
+##### 2.6.1.4. Infrastructure Layer
+* **Persistence:** Implementado con **Entity Framework Core** y SQL Server para el almacenamiento de perfiles.
+* **Security:** Uso de **JWT (JSON Web Tokens)** para el manejo de sesiones *stateless*.
+
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
 
 ### 2.6.2. Bounded Context: Verification
-#### 2.6.2.1. Domain Layer
-#### 2.6.2.2. Interface Layer
-#### 2.6.2.3. Application Layer
-#### 2.6.2.4. Infrastructure Layer
+##### 2.6.2.1. Domain Layer
+Encargado de validar la legitimidad de las tiendas y sus datos fiscales para habilitar su operación en la plataforma.
+
+* **Entities:**
+    * **Tienda:** Representa el local comercial físico que desea afiliarse.
+    * **Solicitud de Afiliación:** Documento que rastrea el ciclo de vida de la validación legal.
+* **Value Objects:**
+    * **RUC:** Identificador tributario de la tienda, validado externamente.
+    * **VerificationToken:** Código de seguridad de un solo uso enviado para confirmar el contacto.
+* **Aggregates:**
+    * **VerificationAggregate:** Asegura que la validación del RUC y el estado de la tienda sean consistentes antes de permitir operaciones.
+* **Business Decisions:**
+    * **Validación Externa:** Si los datos fiscales no coinciden con los registros de **SUNAT**, la solicitud se rechaza y se notifica al *Store Manager*.
+
+##### 2.6.2.2. Interface Layer
+* **Controllers:** `AffiliationController` (Envío de solicitudes y validación de documentación).
+* **DTOs:** `SubmitVerificationRequest`, `StoreStatusDTO`.
+
+##### 2.6.2.3. Application Layer
+* **Services:** `StoreVerificationService` (Coordina la consulta a la base de datos y fuentes externas).
+
+##### 2.6.2.4. Infrastructure Layer
+* **External API:** Integración con la **SUNAT API** para la validación de RUC en tiempo real.
+* **Services:** Implementación de servicio de mensajería para el envío de tokens de validación.
+
 #### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
 ##### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+
+
+
+
+
+
 
 ### 2.6.3. Bounded Context: Store Management
 #### 2.6.3.1. Domain Layer
