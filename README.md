@@ -1003,25 +1003,654 @@ Detalles de la Infraestructura:
 ##### 2.6.2.6.2. Bounded Context Database Design Diagram
 
 ### 2.6.3. Bounded Context: Store Management
+El Bounded Context Store Management constituye la infraestructura operativa y el pilar de veracidad de datos dentro del ecosistema de SmartCart. Su misión estratégica es la gobernanza integral de los establecimientos comerciales y la sincronización precisa de sus inventarios, transformando la gestión manual en una ventaja competitiva digital. Este contexto opera bajo un modelo de negocio de Efficiency & Reliability, clasificándose como un dominio Core debido a que la exactitud de sus datos (precios y stock) es lo que garantiza el éxito del proceso de ahorro del usuario final.
+
+La comunicación con otros contextos, como Shopping Journey o Experience, se realiza mediante un patrón Customer/Supplier, donde Store Management actúa como el proveedor de la "verdad de campo" (precios verificados y disponibilidad). Para proteger la integridad del dominio, se implementa una Anti-Corruption Layer (ACL) que filtra las actualizaciones masivas de inventario, asegurando que los modelos externos no contaminen la lógica de negocio interna.
+
 #### 2.6.3.1. Domain Layer
+La capa de dominio de Store Management concentra toda la lógica de negocio relacionada con la administración de locales y la gestión de catálogos. A continuación, se detallan los bloques de construcción tácticos identificados a partir del Impact Mapping y los requerimientos operativos del sistema:
+
+La capa de dominio de **Store Management** concentra toda la lógica de negocio relacionada con la administración de locales y la gestión de catálogos. A continuación, se detallan los bloques de construcción tácticos identificados:
+
+##### Aggregates
+
+Un **Aggregate** es un clúster de objetos de dominio que se trata como una única unidad de consistencia.
+
+| Aggregate Root | Descripción | Responsabilidad principal |
+|---|---|---|
+| `Store` | Representa la unidad física y legal del comercio en el sistema. | Garantizar la validez legal del comercio (RUC) y la precisión de sus datos operativos como ubicación y horarios de atención. |
+| `Inventory` | Representa el conjunto dinámico de productos, precios y disponibilidad por local. | Mantener la consistencia atómica de precios y stock, especialmente durante procesos de actualización masiva mediante archivos externos. |
+
+##### Entities
+
+Las **Entities** son objetos con identidad propia que persisten a lo largo del tiempo y pueden cambiar de estado.
+
+| Entidad | Aggregate al que pertenece | Atributos clave | Comportamientos |
+|---|---|---|---|
+| `Merchant` | `Store` | `merchantId`, `fullName: String`, `dni: String`, `email: String`, `lastLogin: LocalDateTime` | `updateProfile()`, `verifyIdentity()`, `trackActivity()` |
+| `StoreBranch` | `Store` | `branchId`, `address: Address`, `openingHours: List<Hours>`, `isActive: boolean` | `openBranch()`, `closeBranch()`, `updateLocation()` |
+| `Product` | `Inventory` | `productId`, `sku: Sku`, `name: String`, `brand: String`, `categoryId: Long` | `updateDetails()`, `assignCategory()`, `deactivate()` |
+| `PriceItem` | `Inventory` | `priceId`, `amount: Money`, `isPromotional: boolean`, `expiryDate: LocalDate` | `applyClearance()`, `validateVigency()`, `markAsExpired()` |
+| `StockPoint` | `Inventory` | `stockId`, `quantity: int`, `minThreshold: int`, `lastChecked: LocalDateTime` | `updateStock()`, `replenish()`, `checkLowStock()` |
+
+##### Value Objects
+
+Los **Value Objects** son objetos sin identidad propia que se definen únicamente por sus atributos. Son inmutables y encapsulan reglas de validación del dominio.
+
+| Value Object | Atributos | Reglas de validación / invariantes |
+|---|---|---|
+| `Ruc` | `value: String` | Debe tener exactamente 11 dígitos numéricos. Lanza `InvalidRucException` si el formato legal de SUNAT no es válido. |
+| `Money` | `amount: BigDecimal`, `currency: String` | El monto debe ser mayor o igual a cero. Soporta operaciones para el cálculo de ahorro neto. |
+| `Address` | `street: String`, `latitude: double`, `longitude: double`, `district: String` | Las coordenadas GPS son obligatorias y deben estar dentro de rangos geográficos válidos. |
+| `Sku` | `code: String` | Identificador alfanumérico único para sincronización. No puede ser nulo ni vacío. |
+| `OpeningHours` | `openTime: LocalTime`, `closeTime: LocalTime`, `dayOfWeek: Day` | Invariante: La hora de cierre debe ser posterior a la de apertura. |
+| `StockStatus` | `status: Enum{AVAILABLE, LOW_STOCK, OUT_OF_STOCK}` | Controla la visibilidad del producto en la vitrina digital según la cantidad actual. |
+
+##### Domain Events
+
+Los **Domain Events** son hechos relevantes que han ocurrido dentro del dominio y son publicados para que otros contextos puedan reaccionar.
+
+| Domain Event | Aggregate origen | Atributos del payload | Significado de negocio |
+|---|---|---|---|
+| `StoreVerified` | `Store` | `storeId`, `ruc`, `merchantId`, `verifiedAt` | Un comercio ha superado las validaciones legales y puede empezar a publicar ofertas oficiales. |
+| `PriceUpdated` | `Inventory` | `productId`, `storeId`, `newAmount`, `oldAmount`, `isPromotional` | Se ha detectado un cambio de precio que debe notificar a los usuarios interesados en el ahorro. |
+| `InventoryBulkSyncCompleted` | `Inventory` | `inventoryId`, `storeId`, `totalItemsProcessed`, `timestamp` | Se ha completado con éxito la carga masiva de precios y stock desde un archivo externo. |
+| `LowStockDetected` | `Inventory` | `productId`, `storeId`, `currentQuantity`, `sku` | La existencia de un producto ha caído por debajo del umbral mínimo configurado. |
+| `ProductClearanceStarted` | `Inventory` | `productId`, `storeId`, `discountRate`, `expiryDate` | Se ha iniciado una liquidación de productos perecibles para evitar mermas en el local. |
+
+##### Domain Services
+
+Los **Domain Services** encapsulan lógica de negocio que no pertenece naturalmente a ningún Aggregate, ya que opera sobre múltiples objetos o requiere información de varias fuentes.
+
+| Domain Service | Método principal | Descripción |
+|---|---|---|
+| `InventoryBulkProcessorService` | `process(StoreId id, DataStream source): BulkResult` | Orquesta la carga y validación de miles de registros de productos, asegurando la consistencia del `Inventory`. |
+| `LegalComplianceService` | `validateRuc(Ruc ruc): VerificationStatus` | Coordina la validación del estado del comercio (Activo/Habido) interactuando con la ACL de servicios gubernamentales. |
+| `PerformanceAnalyticsService` | `generateConversionMetrics(StoreId id): Report` | Analiza el impacto de los precios en las visitas reales para justificar ajustes estratégicos de mercado. |
+| `StoreGeofencingService` | `isWithinOperationalRange(Address addr): boolean` | Valida si la ubicación de una sucursal se encuentra dentro de las zonas de cobertura logística permitidas. |
+
 #### 2.6.3.2. Interface Layer
+
+La capa de interfaz de **Store Management** expone las capacidades operativas y de gestión de comercios mediante una API REST. Esta es consumida por la **Web App** del Merchant para la administración de inventarios y por la **Mobile App** del Buyer para la consulta de productos y precios verificados. Todos los endpoints están prefijados con `/api/v1/store-management`.
+
+##### StoreManagementController
+
+| Método HTTP | Endpoint | Descripción | Request DTO | Response DTO |
+|---|---|---|---|---|
+| POST | `/stores` | Registra una nueva tienda y su Merchant administrador. | `RegisterStoreRequest` | `StoreResponse` |
+| GET | `/stores/{storeId}` | Obtiene la información administrativa y estado de verificación legal (RUC). | — | `StoreProfileResponse` |
+| POST | `/stores/{storeId}/inventory/bulk` | Carga masiva de productos y precios mediante archivos CSV/Excel. | `MultipartFile` | `BulkUploadResponse` |
+| POST | `/stores/{storeId}/inventory/clearance` | Registra productos en liquidación por fecha de vencimiento próxima. | `CreateClearanceRequest` | `ClearanceResponse` |
+| GET | `/stores/{storeId}/inventory` | Obtiene el catálogo de productos con stock y precios vigentes. | — (query params: `category`, `sku`) | `Page<ProductStockResponse>` |
+| GET | `/stores/{storeId}/analytics` | Provee métricas de conversión y carritos abandonados para el Merchant. | — | `StoreAnalyticsResponse` |
+
+##### DTOs de Request y Response
+
+**RegisterStoreRequest**
+```json
+{
+  "merchantId": "uuid",
+  "name": "Bodega Don Carlos",
+  "ruc": "20123456789",
+  "address": {
+    "street": "Av. Petit Thouars 123",
+    "district": "Lince",
+    "latitude": -12.084,
+    "longitude": -77.035
+  },
+  "operatingHours": [
+    { "day": "MONDAY", "open": "08:00", "close": "22:00" }
+  ]
+}
+```
+**BulkUploadResponse**
+```json
+{
+  "jobId": "uuid",
+  "status": "COMPLETED",
+  "totalItemsProcessed": 1250,
+  "errorsCount": 0,
+  "timestamp": "2026-04-23T15:30:00"
+}
+```
+**CreateClearanceRequest**
+```json
+{
+  "productId": "uuid",
+  "discountPercentage": 30,
+  "expiryDate": "2026-04-30",
+  "reason": "FECHA_PROXIMA_VENCIMIENTO"
+}
+```
+**StoreAnalyticsResponse**
+```json
+{
+  "storeId": "uuid",
+  "metrics": {
+    "totalViews": 1200,
+    "abandonedCarts": 150,
+    "conversionRate": 0.12,
+    "topProducts": ["SKU-9921", "SKU-1022"]
+  }
+}
+```
+
 #### 2.6.3.3. Application Layer
+
+La capa de aplicación orquesta los flujos de negocio coordinando los objetos del dominio, los repositorios y los servicios de infraestructura. Su responsabilidad es dirigir el flujo de trabajo sin contener lógica de decisión de negocio (orquestación pura).
+
+##### Application Services
+
+| Application Service | Responsabilidad |
+|---|---|
+| `StoreApplicationService` | Orquesta los procesos de registro, actualización de sucursales y validación legal ante entes gubernamentales (SUNAT). |
+| `InventoryApplicationService` | Gestiona la lógica de sincronización de inventarios, procesando cargas masivas y gestionando el ciclo de vida de los precios y stock. |
+
+##### Command Handlers
+
+Los **Command Handlers** reciben un Command Object y ejecutan la operación de escritura correspondiente sobre el dominio.
+
+| Command | Command Handler | Flujo de ejecución |
+|---|---|---|
+| `RegisterStoreCommand` | `RegisterStoreCommandHandler` | 1) Valida RUC único en el repositorio. 2) Invoca `LegalComplianceService`. 3) Crea el Aggregate `Store`. 4) Persiste en base de datos. 5) Publica el evento `StoreVerified`. |
+| `ProcessBulkInventoryCommand` | `ProcessBulkInventoryCommandHandler` | 1) Recibe el archivo del Merchant. 2) Invoca `InventoryBulkProcessorService`. 3) Actualiza el Aggregate `Inventory`. 4) Publica `BulkInventoryUpdated`. |
+| `ApplyProductClearanceCommand` | `ApplyProductClearanceCommandHandler` | 1) Identifica ítems próximos a vencer. 2) Llama a `priceItem.applyClearance()`. 3) Actualiza el estado promocional. 4) Publica `ClearanceSaleStarted`. |
+| `UpdateStockLevelCommand` | `UpdateStockLevelCommandHandler` | 1) Recupera el `StockPoint`. 2) Ejecuta `updateQuantity()`. 3) Si la cantidad es menor al umbral, publica `LowStockDetected`. 4) Persiste los cambios. |
+
+##### Query Handlers
+
+Los **Query Handlers** se encargan exclusivamente de las operaciones de lectura, optimizando la respuesta hacia la interfaz (CQRS).
+
+| Query | Query Handler | Descripción |
+|---|---|---|
+| `GetStoreProfileQuery` | `GetStoreProfileQueryHandler` | Recupera el perfil administrativo y legal de una tienda específica mediante un Read Model. |
+| `GetInventoryByStoreQuery` | `GetInventoryByStoreQueryHandler` | Obtiene el catálogo de productos y precios optimizado para paginación y búsqueda rápida. |
+| `GetStoreMetricsQuery` | `GetStoreMetricsQueryHandler` | Consulta las proyecciones de analítica para mostrar conversiones y carritos abandonados al Merchant. |
+
+##### Integración con procesos de Inventario
+
+El flujo de actualización de inventario permite que el Merchant mantenga su oferta competitiva de forma ágil mediante una arquitectura dirigida por eventos:
+
+```text
+[Merchant Web App] --sube archivo--> BulkInventory (REST)
+        |
+        v
+[InventoryApplicationService]
+        ├──> [InventoryBulkProcessorService] (Domain Service)
+        ├──> [Inventory Aggregate] .updatePriceAndStock()
+        └──> publica PriceChanged (Event) --capturado por--> [Shopping Journey]
+
+```
+**Al finalizar una carga masiva exitosa:**
+
+* El **`InventoryApplicationService`** confirma la persistencia de los nuevos precios en el repositorio de datos.
+* Se emite el evento **`PriceChanged`**, el cual es capturado asíncronamente por el contexto de **Shopping Journey** para actualizar el cálculo de ahorro en las rutas activas de los usuarios.
+* Se recalcula el **`StockStatus`**, notificando mediante un servicio de mensajería a los usuarios que tengan el producto en su lista de favoritos si este vuelve a estar disponible.
+
 #### 2.6.3.4. Infrastructure Layer
-#### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
-#### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
-##### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
-##### 2.6.3.6.2. Bounded Context Database Design Diagram
+#### 2.6.3.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios, mensajería, persistencia) y la capa anticorrupción (ACL) que aísla a **Store Management** de los modelos externos y servicios gubernamentales.
+
+##### Repositories (Implementación)
+
+Las interfaces de repositorio se definen en la capa de dominio y se implementan en infraestructura siguiendo el principio de inversión de dependencias.
+
+| Interfaz (Dominio) | Implementación (Infraestructura) | Tecnología |
+|---|---|---|
+| `StoreRepository` | `StoreJpaRepository` | Spring Data JPA + PostgreSQL |
+| `InventoryRepository` | `InventoryJpaRepository` | Spring Data JPA + PostgreSQL |
+| `MerchantReadRepository` | `MerchantMongoReadRepository` | Spring Data MongoDB (Read Model optimizado para analítica) |
+
+##### Mapeo a Base de Datos (Persistencia)
+
+La persistencia utiliza una estrategia híbrida: **PostgreSQL** para los aggregates transaccionales (seguridad ACID para stock y precios) y **MongoDB** para los read models de alta frecuencia de lectura y analítica de conversión.
+
+**Tabla `stores` (PostgreSQL)**
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID (PK) | Identificador único del aggregate `Store`. |
+| `ruc` | VARCHAR(11) | Registro Único de Contribuyente (Unique). |
+| `legal_status` | VARCHAR(20) | Estado: PENDING, VERIFIED, REJECTED. |
+| `latitude` | DECIMAL(10, 8) | Coordenada para geolocalización de rutas. |
+| `longitude` | DECIMAL(11, 8) | Coordenada para geolocalización de rutas. |
+| `created_at` | TIMESTAMP | Fecha de registro en la plataforma. |
+
+**Tabla `inventory_items` (PostgreSQL)**
+| Columna | Tipo | Descripción |
+|---|---|---|
+| `id` | UUID (PK) | Identificador único del ítem de inventario. |
+| `store_id` | UUID (FK) | Vínculo con el aggregate `Store`. |
+| `sku` | VARCHAR(50) | Código único de producto para el Merchant. |
+| `price_amount` | DECIMAL(10, 2) | Precio actual del producto. |
+| `is_clearance` | BOOLEAN | Indica si el producto está en liquidación. |
+| `expiry_date` | DATE | Fecha de vencimiento para productos perecibles. |
+
+**Colección `store_analytics_model` (MongoDB)**
+```json
+{
+  "_id": "uuid",
+  "storeId": "uuid",
+  "totalViews": 1540,
+  "abandonedCartsCount": 42,
+  "conversionRate": 0.12,
+  "topProductSkus": ["SKU-001", "SKU-099"],
+  "lastSync": "2026-04-23T18:00:00"
+}
+```
+##### Consumer (StoreManagementEventConsumer)
+
+El consumidor de eventos se encarga de escuchar los mensajes provenientes de otros contextos o servicios externos (como la validación de SUNAT) y delegar la ejecución a la capa de aplicación.
+
+```java
+@Component
+public class StoreManagementEventConsumer {
+
+    private final StoreApplicationService storeApplicationService;
+    private final LegalComplianceACL legalComplianceACL;
+
+    @RabbitListener(queues = "store.ruc-validation")
+    public void handleRucValidationResponse(SunatResponse message) {
+        // La ACL traduce la respuesta externa a un DTO interno
+        LegalStatusDTO statusDto = legalComplianceACL.traducirRegistro(message);
+        
+        // Se despacha la acción a la capa de aplicación
+        storeApplicationService.actualizarEstadoLegal(statusDto);
+    }
+}
+```
+#### Anti-Corruption Layer (ACL) — Integración con External Legal API & Merchant Systems
+
+La **Anti-Corruption Layer** es el componente más crítico de la infraestructura. Actúa como un traductor bidireccional que convierte los modelos externos (APIs de SUNAT o archivos de Merchants) al lenguaje ubicuo propio de SmartCart, evitando que conceptos ajenos contaminen el modelo interno.
+
+##### Estructura de la ACL
+
+```text
+[External API / Merchant File] ────────────────────────┐
+        │                                              │
+        ▼                                              │
+┌─────────────────────────────────────────────────────┐│
+│          StoreManagementACL                         ││
+│                                                     ││
+│  SunatStatusResponse     →  LegalStatus (Enum)      ││
+│  ExternalProductRow      →  Product (Entity)        ││
+│  RawCoordinate           →  Address (ValueObject)   ││
+│  MerchantCatalogItem     →  Sku (ValueObject)       ││
+└─────────────────────────────────────────────────────┘│
+        │                                              │
+        ▼                                              │
+[Store Management Domain Model] ◄──────────────────────┘
+```
+#### Contrato de traducción del ACL
+
+El contrato define las reglas de transformación entre los esquemas externos y el modelo de dominio interno, asegurando que el **Ubiquitous Language** de Store Management se mantenga consistente.
+
+| Concepto Externo (SUNAT / Merchant) | Traducción Interna (Store Management) | Notas |
+|:---|:---|:---|
+| `ddp_numruc` / `tax_id` | `Ruc` (Value Object) | Valida formato de 11 dígitos antes de crear el objeto. |
+| `desc_estado` (ACTIVO/HABIDO) | `legalStatus` (Enum) | Mapea estados externos al lenguaje de verificación interno. |
+| `item_sku_code` | `Sku` (Value Object) | Normaliza el código para asegurar unicidad en el inventario. |
+| `raw_lat` / `raw_lng` | `Address` (Value Object) | Convierte coordenadas a dobles precisos para el motor de rutas. |
+
+#### Implementación del ACL
+
+La implementación técnica utiliza el patrón **Adapter** para transformar las respuestas de la API de SUNAT en objetos de transferencia de datos (DTOs) que la capa de aplicación pueda procesar.
+
+```java
+@Component
+public class StoreManagementACL {
+
+    /**
+     * Traduce la respuesta técnica de SUNAT al lenguaje del dominio de SmartCart.
+     * @param msg Respuesta cruda de la API externa.
+     * @return DTO con información normalizada.
+     */
+    public StoreProfileDTO traducirRegistro(SunatResponse msg) {
+        return StoreProfileDTO.builder()
+            .ruc(new Ruc(msg.getDdpNumruc()))
+            .name(msg.getDdpNombre().trim())
+            .status(mapLegalStatus(msg.getDescEstado(), msg.getDescCondicion()))
+            .lastVerified(LocalDateTime.now(ZoneId.of("America/Lima")))
+            .build();
+    }
+
+    /**
+     * Lógica de mapeo para proteger el dominio de cambios en la API de SUNAT.
+     */
+    private LegalStatus mapLegalStatus(String estado, String condicion) {
+        return ("ACTIVO".equalsIgnoreCase(estado) && "HABIDO".equalsIgnoreCase(condicion)) 
+            ? LegalStatus.VERIFIED 
+            : LegalStatus.REJECTED;
+    }
+}
+``` 
+> **Decisión de diseño: El ACL se implementa exclusivamente en la capa de infraestructura, garantizando que ninguna dependencia de modelos externos (como el esquema de la SUNAT) cruce la frontera hacia el dominio. Ante cualquier cambio del proveedor, solo el ACL requiere modificación, protegiendo la integridad del sistema ante la inestabilidad de servicios externos. 
+
+
+### 2.6.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los diagramas de nivel componente que ilustran la arquitectura de software del contexto de **Store Management**. Se detalla la interacción entre los controladores de API que atienden al Merchant, los servicios de aplicación encargados de orquestar la carga masiva de inventarios (Bulk Load) y los componentes de infraestructura que gestionan la persistencia transaccional. Asimismo, se muestra la integración con la **Anti-Corruption Layer (ACL)** para la validación de datos externos de la SUNAT y la comunicación asíncrona mediante el broker de mensajería para notificar cambios de precios al sistema de optimización de rutas.
+
+### 2.6.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas de nivel código que detallan la estructura interna y la implementación técnica del contexto de **Store Management**. Estos diagramas reflejan la transición del modelo conceptual a la construcción del software, integrando los principios de **Domain-Driven Design (DDD)** para garantizar que la lógica de negocio, centrada en el cumplimiento legal del comercio y la integridad del stock, se mantenga aislada de las preocupaciones tecnológicas y de persistencia.
+> ![Diagrama de Componentes - Store Management](assets/diagramas/Diagrama_Component_Store_Management.png)
+#### 2.6.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del **Domain Layer** del contexto de **Store Management** ilustra los agregados, entidades y objetos de valor que constituyen el núcleo del negocio. Se muestran las relaciones de composición dentro de los agregados de `Store` e `Inventory`, definiendo los límites de consistencia para el registro de comercios, la gestión de horarios de atención y la actualización de catálogos. Además, se detallan los métodos de negocio encargados de aplicar reglas críticas, como la normalización de SKUs, la validación de formatos de RUC y la lógica de liquidación para productos perecibles.
+
+> ![Diagrama de Clases - Store Management](assets/diagramas/Diagrama_Clases_Store_Management.png)
+
+#### 2.6.3.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos del contexto de **Store Management** muestra la estructura de las tablas y sus restricciones de integridad en el motor relacional **PostgreSQL**. Se detallan las tablas principales que soportan el ciclo de vida del Merchant, las relaciones de clave foránea que vinculan los locales con sus respectivos ítems de inventario y la tabla de horarios de operación. Este diseño físico incluye índices espaciales para la ubicación geográfica de las tiendas y garantiza la consistencia ACID necesaria para manejar actualizaciones masivas de precios y disponibilidad de stock en tiempo real.
+
+> ![Diagrama de Base de Datos - Store Management](assets/diagramas/Diagrama_Database_Store_Management.png)
 
 ### 2.6.4. Bounded Context: Notification
-#### 2.6.4.1. Domain Layer
-#### 2.6.4.2. Interface Layer
-#### 2.6.4.3. Application Layer
-#### 2.6.4.4. Infrastructure Layer
+
+El bounded context **Notification** constituye el motor de comunicación omnicanal de SmartCart. Su misión estratégica es gestionar el envío de alertas, recordatorios y notificaciones transaccionales a través de diversos canales como Push, Email y SMS. Clasificado como un dominio de **Soporte (Supporting Subdomain)**, su valor reside en mantener el engagement del usuario y proporcionar confirmaciones críticas del sistema.
+
+La comunicación con otros contextos como **Shopping Journey** o **Store Management** se realiza a través de un patrón **Customer/Supplier** acompañado de una **Anti-Corruption Layer (ACL)**, que garantiza que los eventos externos se traduzcan correctamente a plantillas de notificación sin contaminar el modelo de dominio propio.
+
+---
+
+### 2.6.4.1. Domain Layer
+
+La capa de dominio de Notification concentra toda la lógica de negocio relacionada con la personalización y despacho de comunicaciones. A continuación se detallan los principales bloques de construcción tácticos identificados a partir del EventStorming y del Bounded Context Canvas.
+
+#### Aggregates
+
+Un **Aggregate** es un clúster de objetos de dominio que se trata como una única unidad de consistencia. Notification define dos aggregates raíz:
+
+| Aggregate Root | Descripción | Responsabilidad principal |
+| :--- | :--- | :--- |
+| **Notification** | Representa una instancia de comunicación única enviada a un destinatario. Actúa como raíz de consistencia que agrupa el Contenido, los Intentos de Envío y el Estado. | Garantizar que el mensaje sea procesado, renderizado y entregado, manteniendo la integridad del historial de intentos y estados. |
+| **UserPreference** | Representa el perfil de configuración de comunicaciones de un usuario (Buyer o Merchant). | Validar y filtrar qué notificaciones pueden ser enviadas según los canales permitidos y los horarios de silencio definidos. |
+
+#### Entities
+
+Las **Entities** son objetos con identidad propia que persisten a lo largo del tiempo y pueden cambiar de estado.
+
+| Entidad | Aggregate al que pertenece | Atributos clave | Comportamientos |
+| :--- | :--- | :--- | :--- |
+| **Template** | Notification | `templateId`, `nombre`, `asuntoBase`, `cuerpoBase`, `tipoCanal: ChannelType` | `renderizarContenido()`, `validarVariables()`, `esVigente()` |
+| **DeliveryAttempt** | Notification | `attemptId`, `fechaIntento`, `errorLog`, `proveedorUtilizado`, `duracionMs` | `registrarFallo()`, `esReintentable()`, `marcarExito()` |
+| **ChannelConfig** | UserPreference | `canalId`, `tipo: ChannelType`, `estaHabilitado: boolean`, `tokenContacto: String` | `activar()`, `desactivar()`, `actualizarToken()`, `esValido()` |
+
+#### Value Objects
+
+Los **Value Objects** son objetos sin identidad propia que se definen únicamente por sus atributos. Son inmutables y encapsulan reglas de validación del dominio.
+
+| Value Object | Atributos | Reglas de validación / invariantes |
+| :--- | :--- | :--- |
+| **NotificationId** | `valor: UUID` | Identificador inmutable generado al inicio del proceso de notificación. |
+| **Recipient** | `email: String`, `phone: String`, `fcmToken: String` | Debe validar el formato de email o estructura de token de Firebase según el canal. Lanza `InvalidRecipientException` si falla. |
+| **MessageContent** | `asunto: String`, `cuerpo: String` | No puede ser nulo ni vacío. El cuerpo se genera tras inyectar variables en la Template. |
+| **EstadoEnvio** | `estado: Enum {PENDIENTE, ENVIADO, FALLIDO, LEIDO}` | Controla el ciclo de vida del mensaje. Transiciones válidas: `PENDIENTE` → `ENVIADO`, `FALLIDO` → `PENDIENTE` (si reintentos < 3). |
+| **ScheduleWindow** | `horaInicio: LocalTime`, `horaFin: LocalTime` | Define el rango horario permitido para comunicaciones. Valida que `horaInicio` < `horaFin`. |
+
+#### Domain Events
+
+Los **Domain Events** son hechos relevantes que han ocurrido dentro del dominio y son publicados al Message Broker para que otros contextos reaccionen.
+
+| Domain Event | Aggregate origen | Atributos del payload | Significado de negocio |
+| :--- | :--- | :--- | :--- |
+| **NotificacionCreada** | Notification | `id`, `templateId`, `recipientId`, `priority` | El sistema ha registrado una nueva necesidad de comunicación para ser procesada. |
+| **NotificacionEnviada** | Notification | `id`, `gatewayReference`, `fechaEnvio` | El mensaje ha sido aceptado con éxito por el proveedor externo (FCM, AWS SES). |
+| **EnvioFallido** | Notification | `id`, `ultimoError`, `intentoActual` | Se ha registrado un fallo en el envío. Dispara la lógica de reintento si no se ha alcanzado el máximo. |
+| **PreferenciaModificada** | UserPreference | `userId`, `canal`, `nuevoEstado` | El usuario ha actualizado sus permisos de contacto, afectando futuros envíos. |
+
+#### Domain Services
+
+Los **Domain Services** encapsulan lógica de negocio que no pertenece naturalmente a un Aggregate o Entity, operando sobre múltiples objetos o fuentes de información.
+
+| Domain Service | Método principal | Descripción |
+| :--- | :--- | :--- |
+| **TemplateEngineService** | `procesar(Template t, Map vars): MessageContent` | Realiza el reemplazo técnico de placeholders por datos reales del contexto (ej. nombre del producto, precio). |
+| **NotificationDispatcherService** | `despachar(Notification n, UserPreference p)` | Servicio que coordina con la infraestructura para enviar el mensaje, verificando primero las preferencias de privacidad. |
+| **RetryPolicyService** | `calcularProximoIntento(DeliveryAttempt last): LocalDateTime` | Implementa una estrategia de **Exponential Backoff** para determinar el tiempo de espera óptimo antes de un reintento. |
+### 2.6.4.2. Interface Layer
+
+La capa de interfaz de **Notification** expone sus capacidades hacia el exterior mediante una API REST consumida principalmente por la **Mobile App** (Buyer) y la **Web App** (Merchant). Todos los endpoints están prefijados con `/api/v1/notifications`.
+
+#### NotificationController
+
+| Método HTTP | Endpoint | Descripción | Request DTO | Response DTO |
+| :--- | :--- | :--- | :--- | :--- |
+| **POST** | `/preferences` | Permite a un usuario configurar sus canales de comunicación y tokens. | `UpdatePreferencesRequest` | `PreferenceResponse` |
+| **GET** | `/preferences/{userId}` | Obtiene la configuración de canales y horarios de silencio de un usuario. | — | `PreferenceResponse` |
+| **GET** | `/history/{userId}` | Obtiene el listado paginado de notificaciones enviadas a un usuario. | — (query params: `page`, `size`) | `Page<NotificationSummary>` |
+| **POST** | `/send-test` | Envía una notificación de prueba para validar la integración de tokens/canales. | `TestNotificationRequest` | `NotificationStatusResponse` |
+
+#### DTOs de Request y Response
+
+**UpdatePreferencesRequest**
+```json
+{
+  "userId": "uuid",
+  "channels": [
+    {
+      "tipo": "PUSH",
+      "estaHabilitado": true,
+      "tokenContacto": "fcm_token_987654321"
+    }
+  ],
+  "ventanaSilencio": {
+    "horaInicio": "22:00:00",
+    "horaFin": "07:00:00"
+  }
+}
+``` 
+**NotificationStatusResponse**
+```json
+{
+  "notificationId": "uuid",
+  "estado": "ENVIADO",
+  "canal": "PUSH",
+  "fechaEnvio": "2026-04-23T12:00:00",
+  "intentos": 1
+}
+
+``` 
+### 2.6.4.3. Application Layer
+
+La capa de aplicación orquesta los flujos de negocio coordinando los objetos del dominio, los repositorios y los servicios de infraestructura. No contiene lógica de dominio propia; su responsabilidad es dirigir el flujo de trabajo (orchestration).
+
+#### Application Services
+
+| Application Service | Responsabilidad |
+| :--- | :--- |
+| **NotificationApplicationService** | Punto de entrada principal para las operaciones de comunicación. Recibe comandos desde la Interface Layer o Message Broker, delega en los agregados y publica los domain events. |
+| **PreferenceApplicationService** | Orquesta la actualización de `UserPreference` de un usuario en respuesta a cambios en su configuración o renovaciones de tokens de dispositivo. |
+
+#### Command Handlers
+
+Los **Command Handlers** reciben un Command Object y ejecutan la operación de escritura correspondiente sobre el dominio.
+
+| Command | Command Handler | Flujo de ejecución |
+| :--- | :--- | :--- |
+| **SendNotificationCommand** | **SendNotificationCommandHandler** | 1) Valida el `userId`. 2) Recupera `UserPreference`. 3) Llama a `Notification.renderizarContenido()`. 4) Persiste el aggregate. 5) Publica `NotificacionCreada`. 6) Dispara el envío físico vía infraestructura. |
+| **UpdatePreferencesCommand** | **UpdatePreferencesCommandHandler** | 1) Recupera `UserPreference` activa. 2) Actualiza `ChannelConfig` según los nuevos tokens recibidos. 3) Persiste cambios en el repositorio. 4) Publica `PreferenciaModificada`. |
+| **RetryNotificationCommand** | **RetryNotificationCommandHandler** | 1) Recupera la `Notification` fallida. 2) Evalúa `RetryPolicyService.calcularProximoIntento()`. 3) Registra nuevo `DeliveryAttempt`. 4) Publica `NotificacionEnviada` si tiene éxito. |
+
+#### Query Handlers
+
+Los **Query Handlers** se encargan exclusivamente de las operaciones de lectura, sin modificar el estado del sistema (principio CQRS).
+
+| Query | Query Handler | Descripción |
+| :--- | :--- | :--- |
+| **GetUserPreferencesQuery** | **GetUserPreferencesQueryHandler** | Recupera el `UserPreference` público de un usuario dado su `userId`. Utiliza una proyección de lectura optimizada. |
+| **GetNotificationHistoryQuery** | **GetNotificationHistoryHandler** | Obtiene la lista paginada de notificaciones para un usuario, ordenada por fecha de creación descendente. |
+| **GetStatusQuery** | **GetStatusQueryHandler** | Recupera el `EstadoEnvio` calculado para una notificación específica. |
+
+#### Integración con el evento de finalización de recorrido
+
+El flujo que detona el ciclo de feedback y comunicación se inicia cuando **Shopping Journey** publica el evento de dominio `RecorridoFinalizado`. La Application Layer de **Notification** actúa como consumidor de este evento a través del Message Broker (RabbitMQ/Kafka):
+
+```text
+[Shopping Journey] --publica--> RecorridoFinalizado (AMQP)
+       |
+       v
+[NotificationEventConsumer] --traduce via ACL--> SendNotificationCommand
+       |
+       v
+[NotificationApplicationService]
+       |-- dispatch(SendNotificationCommand)
+       |-- dispatch(SolicitarFeedbackCommand) <-- dispara notificación push al Buyer
+
+``` 
+**Al recibir el evento `RecorridoFinalizado`, el `NotificationApplicationService` realiza las siguientes acciones:**
+
+1. **Traducción de Contexto:** Traduce el evento externo (procedente de Shopping Journey) a su modelo interno de datos utilizando el **ShoppingJourneyACL** para evitar el acoplamiento de modelos.
+2. **Procesamiento de Resumen:** Despacha el `SendNotificationCommand` para procesar y preparar el resumen de la compra que se enviará al usuario.
+3. **Validación de Políticas de Envío:** Verifica la **Ventana de Silencio** (`ScheduleWindow`) definida en el agregado `UserPreference`. Si el usuario se encuentra en su horario de descanso o "No Molestar", la notificación se encola para ser enviada automáticamente al finalizar dicho periodo.
+4. **Ejecución de Despacho Omnicanal:** Envía la notificación final que, a través del **NotificationDispatcherService** (utilizando proveedores como FCM para Push o AWS SES para Email), invita al **Buyer** a realizar dos acciones clave:
+    * Calificar la experiencia con el **Merchant**.
+    * Reportar posibles errores de precio detectados durante la compra.
+### 2.6.4.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios, mensajería, persistencia) y la capa anticorrupción que aísla a **Notification** de los modelos externos.
+
+#### Repositories (Implementación)
+
+Las interfaces de repositorio se definen en la capa de dominio y se implementan en infraestructura siguiendo el principio de inversión de dependencias.
+
+| Interfaz (Dominio) | Implementación (Infraestructura) | Tecnología |
+| :--- | :--- | :--- |
+| **NotificationRepository** | **NotificationJpaRepository** | Spring Data JPA + PostgreSQL |
+| **UserPreferenceRepository** | **UserPreferenceJpaRepository** | Spring Data JPA + PostgreSQL |
+| **TemplateReadModelRepository** | **TemplateMongoReadRepository** | Spring Data MongoDB (Read Model optimizado para carga de plantillas) |
+
+#### Mapeo a Base de Datos (Persistencia)
+
+La persistencia utiliza una estrategia híbrida conforme al modelo visto en el diagrama de arquitectura de contenedores: **PostgreSQL** para los aggregates transaccionales y **MongoDB** para los read models de alta frecuencia de lectura.
+
+**Tabla `notifications` (PostgreSQL)**
+
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | **UUID (PK)** | Identificador único del aggregate `Notification`. |
+| **user_id** | **UUID** | Identificador del destinatario (Buyer o Merchant). |
+| **tipo_canal** | **VARCHAR(20)** | Canal utilizado: PUSH, EMAIL, SMS. |
+| **contenido_renderizado** | **TEXT** | Cuerpo final del mensaje enviado tras procesar la plantilla. |
+| **estado_envio** | **VARCHAR(15)** | PENDIENTE, ENVIADO, FALLIDO. |
+| **created_at** | **TIMESTAMP** | Fecha de creación del registro. |
+| **updated_at** | **TIMESTAMP** | Fecha de última modificación. |
+
+**Tabla `user_preferences` (PostgreSQL)**
+
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | **UUID (PK)** | Identificador único del aggregate `UserPreference`. |
+| **user_id** | **UUID (UNIQUE)** | Identificador del usuario (vínculo único). |
+| **ventana_inicio** | **TIME** | Hora de inicio del periodo de silencio. |
+| **ventana_fin** | **TIME** | Hora de fin del periodo de silencio. |
+| **updated_at** | **TIMESTAMP** | Fecha del último recálculo o cambio. |
+
+**Colección `templates_read_model` (MongoDB)**
+
+```json
+{
+  "_id": "uuid",
+  "codigo": "RECORRIDO_FINALIZADO",
+  "buyerId": "uuid",
+  "asunto": "Resumen de tu compra",
+  "cuerpo": "Hola {{nombre}}, tu ahorro fue de {{monto}}...",
+  "estado": "ACTIVO",
+  "fechaActualizacion": "2026-04-21T12:31:00"
+}
+``` 
+> ** Esta colección es un Read Model que permite la recuperación instantánea de estructuras de mensaje predefinidas sin realizar joins complejos en la base de datos relacional, optimizando el tiempo de respuesta del dispatcher.
+
+#### Integración con RabbitMQ (Mensajería Asíncrona)
+
+La integración con el Message Broker se realiza mediante Spring AMQP. **Notification** actúa como **consumidor (Subscriber)** del evento `RecorridoFinalizado` y como **productor (Publisher)** de eventos de entrega.
+
+**Configuración de colas y exchanges:**
+
+| Exchange | Queue | Routing Key | Dirección | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **shopping-journey.events** | **notification.recorrido-finalizado** | **recorrido.finalizado** | **Inbound (Consumer)** | Consume el fin de recorrido para enviar el resumen y feedback. |
+| **notification.events** | **analytics.notificacion-enviada** | **notificacion.enviada** | **Outbound (Publisher)** | Informa que un mensaje fue entregado exitosamente. |
+| **notification.events** | **experience.feedback-solicitado** | **feedback.solicitado** | **Outbound (Publisher)** | Avisa a Experience que ya se pidió la reseña al usuario. |
+
+**Consumer (`NotificationEventConsumer`):**
+
+```java
+@RabbitListener(queues = "notification.recorrido-finalizado")
+public void handleRecorridoFinalizado(RecorridoFinalizadoMessage message) {
+    RecorridoFinalizadoDTO dto = shoppingJourneyACL.traducir(message);
+    notificationApplicationService.procesarNotificacionPostCompra(dto);
+}
+
+``` 
+#### Anti-Corruption Layer (ACL) — Integración con Shopping Journey
+
+La **Anti-Corruption Layer** es el componente más crítico de la infraestructura de **Notification**. Actúa como un traductor que convierte los modelos de **Shopping Journey** al lenguaje ubicuo de **Notification**, evitando que conceptos ajenos contaminen el modelo de dominio interno.
+
+**Estructura de la ACL:**
+
+```text
+[Shopping Journey Event] ─────────────────────────────┐
+        │                                              │
+        ▼                                              │
+┌─────────────────────────────────────────────────────┐│
+│          ShoppingJourneyACL                         ││
+│                                                     ││
+│  RecorridoFinalizadoMessage  →  RecorridoFinalizadoDTO  │
+│  UserMessage                 →  RecipientId (ValueObject) │
+│  StoreMessage                →  StoreId (ValueObject)   │
+└─────────────────────────────────────────────────────┘│
+        │                                              │
+        ▼                                              │
+[Notification Domain Model] ◄──────────────────────────┘
+```
+**Contrato de traducción del ACL:**
+
+| Concepto externo (Shopping Journey) | Traducción interna (Notification) | Notas |
+| :--- | :--- | :--- |
+| **RecorridoFinalizado.journeyId** | **RecorridoId (Value Object)** | Se usa para rastrear el origen de la notificación y mantener la correlación entre contextos. |
+| **RecorridoFinalizado.userId** | **RecipientId (Value Object)** | Traducido al ID del destinatario dentro del contexto de mensajería omnicanal. |
+| **RecorridoFinalizado.timestamp** | **FechaEvento: LocalDateTime** | Ajustado a la zona horaria local (`America/Lima`) para asegurar la precisión en las reglas de envío. |
+
+**Implementación del ACL:**
+
+```java
+@Component
+public class ShoppingJourneyACL {
+
+    public RecorridoFinalizadoDTO traducir(RecorridoFinalizadoMessage msg) {
+        return RecorridoFinalizadoDTO.builder()
+            .recorridoId(new RecorridoId(msg.getJourneyId()))
+            .recipientId(new RecipientId(msg.getUserId()))
+            .tiendaNombre(msg.getTiendaNombre())
+            .fechaFinalizacion(
+                msg.getTimestamp().atZone(ZoneId.of("America/Lima")).toLocalDateTime()
+            )
+            .build();
+    }
+}
+
+```
+> **  Decisión de diseño: El ACL garantiza que si el formato de los eventos de Shopping Journey cambia, solo se deba modificar este componente de infraestructura. Esto protege la lógica de despacho, las políticas de reintento y las plantillas del dominio de Notification, manteniendo la integridad del sistema ante cambios externos.
+
 #### 2.6.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presentan los **diagramas de nivel componente** que ilustran la arquitectura de software del contexto de **Notification**. Se muestra la interacción entre los diferentes componentes, servicios y capas que conforman este bounded context, destacando el flujo desde la recepción de eventos externos hasta el despacho omnicanal. Se integra con la base de datos relacional y documental definida en el diagrama de contenedores.
+
 #### 2.6.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los **diagramas de nivel código** que detallan la estructura interna del contexto de **Notification**. Se incluyen diagramas de clases y diseño de base de datos que reflejan cómo se implementan los elementos del dominio y cómo se gestionan las relaciones entre ellos para garantizar un sistema de comunicación escalable y resiliente.
+> ![Diagrama de Componentes - Notification](assets/diagramas/Diagrama_Component_Notification.png)
 ##### 2.6.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases del **Domain Layer** del contexto de **Notification** ilustra las entidades, objetos de valor y servicios que componen este bounded context. Se muestran las relaciones entre los agregados de `Notification` y `UserPreference`, detallando sus atributos y métodos principales, como la validación de ventanas de silencio y el manejo de intentos de envío.
+> ![Diagrama de Clases - Notification](assets/diagramas/Diagrama_Clases_Notification.png)
 ##### 2.6.4.6.2. Bounded Context Database Design Diagram
 
+El diagrama de **diseño de base de datos** del contexto de **Notification** muestra la estructura de las tablas y sus relaciones en la base de datos relacional (PostgreSQL) y documental (MongoDB). Se detallan las tablas principales para el historial de notificaciones y preferencias de usuario, asegurando la integridad de los datos necesarios para el seguimiento de comunicaciones.
+> ![Diagrama de Base de Datos - Notification](assets/diagramas/Diagrama_Database_Notification.png)
 ### 2.6.5. Bounded Context: Shopping Planning
 #### 2.6.5.1. Domain Layer
 #### 2.6.5.2. Interface Layer
