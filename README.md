@@ -1259,80 +1259,104 @@ Detalles de la Infraestructura:
 
 ## 2.6. Tactical-Level Domain-Driven Design
 
-### 2.6.1. Bounded Context: IAM
+#### 2.6.1. Bounded Context: IAM
 
 ##### 2.6.1.1. Domain Layer
-Este contexto gestiona la identidad, autenticación y niveles de acceso para consumidores y *Store Managers*, asegurando la seguridad del ecosistema SmartCart.
+La capa de dominio del contexto de **Identity and Access Management (IAM)** es el núcleo de seguridad del sistema. Aquí se define la lógica de autenticación y autorización, asegurando que solo usuarios legítimos accedan a sus respectivos recursos en SmartCart.
 
-* **Entities:**
-    * **User:** Root Aggregate que centraliza la identidad y el estado de la cuenta.
-    * **Role:** Define si el usuario opera como `Consumer` o `StoreManager`.
-* **Value Objects:**
-    * **UserEmail:** Valida el formato y unicidad del correo electrónico.
-    * **UserPassword:** Gestiona el cifrado (hashing) y la seguridad de las credenciales.
-    * **Session:** Estado temporal que representa la autenticación activa.
-* **Aggregates:**
-    * **UserAggregate:** Garantiza que cada perfil de usuario esté correctamente vinculado a un rol y estado de activación.
-* **Business Decisions:**
-    * **Seguridad:** Bloqueo automático de cuenta tras **3 intentos fallidos** de inicio de sesión con credenciales inválidas.
-##### 2.6.1.2. Interface Layer
-Expone los servicios de gestión de identidad hacia las aplicaciones cliente.
-* **Controllers:** `IdentityController` (Inicio de sesión, registro y recuperación de contraseña).
-* **DTOs:** `AuthRequest`, `RegisterUserRequest`, `TokenResponse`.
+A continuación, se detallan los bloques de construcción tácticos bajo el patrón de Tactical DDD:
 
-##### 2.6.1.3. Application Layer
-Coordina los casos de uso sin imponer lógica de negocio.
-* **Application Services:** `AuthApplicationService` (Orquesta la verificación de identidad y generación de tokens).
-* **Command Handlers:** `RegisterUserCommandHandler`, `ResetPasswordCommandHandler`.
+| Elemento (Tactical DDD) | Clase / Objeto | Descripción y Responsabilidad Principal |
+| :--- | :--- | :--- |
+| **Aggregate Root** | `UserAggregate` | Actúa como la unidad de consistencia. Orquesta la relación entre el usuario, sus credenciales y su sesión activa. |
+| **Entities** | `User` | Representa la identidad del usuario. Responsable de rastrear el estado de la cuenta (bloqueos, intentos fallidos e identidad). |
+| | `Role` | Entidad que define el perfil de acceso del usuario (`Consumer` o `StoreManager`) y sus permisos asociados. |
+| **Value Objects** | `UserEmail` | Encapsula la validación de formato y garantiza que el correo electrónico sea único y válido. |
+| | `UserPassword` | Maneja de forma segura el hashing y la verificación de la contraseña, aislando la complejidad criptográfica. |
+| | `Session` | Objeto inmutable que representa la validez temporal del acceso de un usuario tras loguearse. |
 
-##### 2.6.1.4. Infrastructure Layer
-* **Persistence:** Implementado con **Entity Framework Core** y SQL Server para el almacenamiento de perfiles.
-* **Security:** Uso de **JWT (JSON Web Tokens)** para el manejo de sesiones *stateless*.
+> **Business Decisions (Reglas de Negocio Críticas):**
+> * **Política de Bloqueo:** Para prevenir ataques de fuerza bruta, el sistema bloqueará automáticamente cualquier cuenta que registre **3 intentos fallidos** consecutivos de inicio de sesión.
+> * **Cifrado:** Las contraseñas nunca se almacenan en texto plano; se utiliza un algoritmo de hashing robusto dentro del Value Object `UserPassword`.
 
-##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+---
 
-En este nivel de la arquitectura, se describen los componentes internos del contenedor "Identity API". Se sigue el patrón de capas de Tactical DDD para asegurar que la lógica de autenticación esté aislada de la infraestructura.
-
-*(Diagrama de Componentes C4*
-
-**Descripción de los Componentes:**
-
-* **Auth Controller:** Componente encargado de exponer los endpoints REST para el inicio de sesión y registro de usuarios. Valida la estructura de los DTOs entrantes.
-* **Identity Application Service:** Orquestador de la capa de aplicación que coordina el flujo de verificación de credenciales y la interacción con el dominio.
-* **JWT Token Generator:** Componente especializado en la creación y firma de tokens de seguridad bajo el estándar JSON Web Token para el manejo de sesiones.
-* **User Domain Logic:** Contiene las reglas de negocio, como la validación de contraseñas y la lógica de bloqueo de cuenta tras 3 intentos fallidos.
-* **User Repository:** Componente de infraestructura que encapsula el acceso a la base de datos SQL mediante Entity Framework Core.#### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-Este diagrama representa las clases del modelo de dominio para el contexto de IAM, siguiendo los patrones de Tactical DDD para asegurar la integridad de la lógica de negocio.
+![Diagrama de Clases de Dominio - IAM](assets/imagenes/iam-domain-classes.png)
 
-*Diagrama de Clases *
+*Diagrama de Clases de la Capa de Dominio del Bounded Context IAM generado con Mermaid.*
 
-**Estructura de Clases Principal:**
 
-* **User (Entity - Aggregate Root):**
-    * `Id: int`
-    * `Username: string`
-    * `Password: PasswordValueObject`
-    * `Email: EmailValueObject`
-    * `FailedAttempts: int`
-    * `LockoutEnd: DateTime?`
-    * `Methods: Authenticate(), ResetPassword(), RecordFailedAttempt()`
-* **Role (Entity):**
-    * `Id: int`
-    * `Name: string`
-    * `Permissions: List<string>`
-* **Password (Value Object):**
-    * `HashedValue: string`
-    * `Methods: HashPassword(), VerifyPassword()`
-* **Email (Value Object):**
-    * `Address: string`
-    * `Methods: ValidateFormat()`
 
+##### 2.6.1.2. Interface Layer
+Esta capa actúa como el punto de entrada al contexto de IAM, exponiendo los servicios de gestión de identidad hacia las aplicaciones cliente (Web/Mobile) mediante contratos claros y seguros.
+
+| Componente | Tipo | Responsabilidad / Descripción |
+| :--- | :--- | :--- |
+| **IdentityController** | `Controller` | Punto final (Endpoint) que gestiona el flujo de inicio de sesión, registro de nuevos usuarios y recuperación de credenciales. |
+| **AuthRequest** | `DTO` | Objeto de transferencia de datos que encapsula las credenciales enviadas por el cliente para autenticación. |
+| **RegisterUserRequest** | `DTO` | Estructura de datos requerida para el alta de nuevos perfiles en la plataforma. |
+| **TokenResponse** | `DTO` | Envuelve el token JWT generado y la información básica del usuario tras una autenticación exitosa. |
+
+---
+
+##### 2.6.1.3. Application Layer
+La capa de aplicación se encarga de coordinar los casos de uso del sistema. No contiene lógica de negocio, sino que orquesta la interacción entre los servicios de dominio y la infraestructura.
+
+| Componente | Tipo | Responsabilidad / Descripción |
+| :--- | :--- | :--- |
+| **AuthApplicationService** | `App Service` | Orquestador principal que valida identidades, invoca al dominio y coordina la generación de tokens de acceso. |
+| **RegisterUserCommandHandler** | `Handler` | Implementa el patrón CQRS para procesar el comando de registro, interactuando con el repositorio de usuarios. |
+| **ResetPasswordCommandHandler** | `Handler` | Gestiona el flujo lógico de recuperación y actualización de contraseñas de manera transaccional. |
+
+---
+
+##### 2.6.1.4. Infrastructure Layer
+Esta capa proporciona las implementaciones técnicas necesarias para que el sistema funcione, abstrayendo la complejidad de la persistencia y la seguridad externa.
+
+| Tecnología / Componente | Implementación | Propósito Técnico |
+| :--- | :--- | :--- |
+| **Persistence** | `EF Core / SQL Server` | Gestión de la persistencia de datos mediante el mapeo objeto-relacional (ORM) para asegurar la integridad de los perfiles. |
+| **Security / Sessions** | `JWT (JSON Web Tokens)` | Manejo de sesiones de forma *stateless*, permitiendo una arquitectura escalable y segura mediante firmas criptográficas. |
+| **Repositories** | `SqlUserRepository` | Implementación concreta de la interfaz de persistencia definida en el dominio para el almacenamiento de usuarios. |
+
+#### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+En este nivel de la arquitectura C4, se detallan los componentes internos que residen dentro del contenedor **Identity API**. La organización de estos componentes sigue estrictamente el patrón de capas de **Tactical DDD**, garantizando un aislamiento total entre la lógica de identidad (core) y las implementaciones técnicas de infraestructura.
+
+![Diagrama de Componentes - IAM](assets/imagenes/iam-component-diagram.png)
+
+**Descripción Técnica de los Componentes:**
+
+| Componente | Capa / Tipo | Responsabilidad y Lógica Clave |
+| :--- | :--- | :--- |
+| **Auth Controller** | `Interface` | Expone los endpoints RESTful para procesos de autenticación. Se encarga de la validación estructural de los DTOs y el manejo de respuestas HTTP. |
+| **Identity Application Service** | `Application` | Actúa como el orquestador principal. Coordina el flujo entre el dominio y la persistencia, gestionando la lógica de casos de uso como el Login y Registro. |
+| **User Domain Logic** | `Domain` | Encapsula las reglas críticas de negocio, incluyendo la validación de políticas de seguridad y la lógica de bloqueo de cuenta tras **3 intentos fallidos**. |
+| **JWT Token Generator** | `Infrastructure` | Componente de soporte técnico encargado de la generación, firma y validación de tokens bajo el estándar **JSON Web Token**. |
+| **User Repository** | `Infrastructure` | Gestiona la persistencia de los perfiles de usuario, abstrayendo el acceso a la base de datos mediante **Entity Framework Core**. |
+
+---
+##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+Este diagrama representa las clases del modelo de dominio para el contexto de IAM, implementando patrones de **Tactical DDD** para asegurar la integridad de la lógica de negocio y el correcto encapsulamiento de las reglas de identidad.
+
+![Diagrama de Clases de Dominio - IAM](assets/imagenes/iam-domain-classes.png)
+
+**Estructura Detallada de Clases y Objetos:**
+
+| Elemento | Tipo | Atributos Principales | Métodos / Responsabilidades |
+| :--- | :--- | :--- | :--- |
+| **User** | `Aggregate Root` | `Id`, `Username`, `Password`, `Email`, `FailedAttempts`, `LockoutEnd` | `Authenticate()`, `ResetPassword()`, `RecordFailedAttempt()`. Controla el estado y seguridad de la cuenta. |
+| **Role** | `Entity` | `Id`, `Name`, `Permissions` | Define el conjunto de permisos y el perfil del usuario (`Consumer` o `StoreManager`). |
+| **Password** | `Value Object` | `HashedValue` | `HashPassword()`, `VerifyPassword()`. Gestiona el cifrado y la validación de seguridad de las credenciales. |
+| **Email** | `Value Object` | `Address` | `ValidateFormat()`. Asegura que el correo cumpla con los estándares técnicos requeridos. |
+
+---
 
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
-![Diagrama IAM](SmartCart_IAM_DB.png)
-
+![Diagrama IAM](assets/imagenes/SmartCart_IAM_DB.png)
 
 ### 2.6.2. Bounded Context: Verification
 ##### 2.6.2.1. Domain Layer
@@ -1360,46 +1384,50 @@ Encargado de validar la legitimidad de las tiendas y sus datos fiscales para hab
 * **External API:** Integración con la **SUNAT API** para la validación de RUC en tiempo real.
 * **Services:** Implementación de servicio de mensajería para el envío de tokens de validación.
 
-##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-En este nivel de la arquitectura C4, se detallan los componentes internos del contenedor "Verification API", el cual es responsable de procesar y validar las solicitudes de las tiendas interesadas en la plataforma.
+En este nivel de la arquitectura C4, se detallan los componentes internos del contenedor **Verification API**, el cual es responsable de procesar y validar las solicitudes de las tiendas interesadas en la plataforma SmartCart. La arquitectura sigue los principios de Tactical DDD para asegurar un desacoplamiento efectivo entre la lógica de negocio y los servicios externos.
 
-*Diagrama de Componentes C4 *
+![Diagrama de Componentes - Verification Context](assets/imagenes/verification-component-diagram.png)
 
 **Descripción de los Componentes:**
 
-* **Affiliation Controller:** Componente encargado de recibir las solicitudes de registro de tiendas y los documentos de identidad para su posterior análisis.
-* **Store Verification Service:** Orquestador de la capa de aplicación que coordina la lógica de verificación, incluyendo el llamado a servicios externos de validación fiscal.
-* **Sunat External Service:** Componente de infraestructura que actúa como cliente para consumir la API externa de SUNAT y obtener los datos de validez del RUC.
-* **Verification Domain Logic:** Contiene las reglas de negocio críticas para decidir si una tienda cumple con los requisitos de legitimidad para ser activada.
-* **Affiliation Repository:** Encargado de la persistencia y recuperación de las solicitudes de afiliación y sus estados (Pendiente, Verificado, Rechazado) en la base de datos.#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
-Este diagrama representa la estructura de clases del dominio para el proceso de verificación de tiendas. Se asegura que la validación de datos fiscales sea una parte integral del ciclo de vida de la afiliación.
+* **Affiliation Controller:** Componente de la capa de infraestructura (ASP.NET Core) encargado de recibir las solicitudes de registro de tiendas y los documentos de identidad mediante endpoints REST.
+* **Store Verification Service:** Actúa como el orquestador de la capa de aplicación. Coordina el flujo de verificación, validando primero las reglas internas y luego solicitando la validación externa.
+* **Verification Domain Logic:** Contiene las reglas de negocio críticas y las validaciones de dominio necesarias para decidir si una tienda cumple con los requisitos de legitimidad.
+* **Sunat External Service:** Componente de infraestructura que actúa como cliente para consumir la API externa de SUNAT, abstrayendo la complejidad del consumo de servicios externos.
+* **Affiliation Repository:** Encargado de la persistencia de las solicitudes de afiliación, gestionando el ciclo de vida de los estados (Pending, Verified, Rejected) en la base de datos.
 
-*( Diagrama de Clases)*
+---
+
+#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+Este diagrama representa la estructura de clases del dominio para el proceso de verificación de tiendas. Se asegura que la validación de datos fiscales sea una parte integral del ciclo de vida de la afiliación, utilizando patrones de Tactical DDD como Aggregate Roots y Value Objects.
+
+![Diagrama de Clases de Dominio - Verification Context](assets/imagenes/verification-domain-classes.png)
 
 **Estructura de Clases Principal:**
 
-* **AffiliationRequest (Entity - Aggregate Root):**
-    * `Id: int`
-    * `UserId: int`
-    * `StoreName: string`
-    * `Ruc: RucValueObject`
-    * `Status: RequestStatus`
-    * `Methods: Submit(), Review(), Approve(), Reject()`
-* **StoreValidation (Entity):**
-    * `Id: int`
-    * `RequestId: int`
-    * `ValidationDate: DateTime`
-    * `IsLegit: bool`
-    * `SunatResponseCode: string`
-* **Ruc (Value Object):**
-    * `Number: string`
-    * `Methods: ValidateFormat(), IsActive()`
-* **RequestStatus (Enum):**
-    * `Values: Pending, InReview, Verified, Rejected`
-##### 2.6.2.6.2. Bounded Context Database Design Diagram
-![Diagrama Verification](SmartCart_Verification_DB.png)
+* **AffiliationRequest (Aggregate Root):** Es la entidad principal que controla el proceso de registro. Gestiona los cambios de estado y asegura que una solicitud no sea aprobada sin pasar por las validaciones correspondientes.
+* **StoreValidation (Entity):** Representa el registro histórico de una validación específica realizada contra la SUNAT, almacenando el resultado técnico y la fecha del proceso.
+* **Ruc (Value Object):** Encapsula la lógica de validación del número de RUC (formato, longitud y prefijo), garantizando que solo datos válidos entren al dominio.
+* **RequestStatus (Enum):** Define el conjunto finito de estados por los que puede pasar una solicitud: `Pending`, `InReview`, `Verified` y `Rejected`.
 
+
+
+##### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+Este diagrama detalla el esquema relacional diseñado para el contexto de Verificación. La estructura está optimizada para mantener un historial auditable de las validaciones realizadas contra servicios externos (SUNAT) y gestionar el ciclo de vida de las solicitudes de afiliación de las tiendas.
+
+![Diagrama de Diseño de Base de Datos - Verification Context](assets/imagenes/verification-db-design.png)
+
+**Especificaciones Técnicas del Diseño:**
+
+* **Tabla AFFILIATION_REQUESTS:** Es la tabla central que almacena los datos de la tienda y el estado actual de su solicitud. Se utiliza `ruc_number` como un campo crítico de búsqueda y validación.
+* **Tabla STORE_VALIDATIONS:** Implementa una relación uno-a-varios con las solicitudes. Esto permite registrar múltiples intentos de validación o actualizaciones periódicas de estado, almacenando la respuesta técnica (`sunat_response_code`) para auditoría.
+* **Integridad de Datos:** Se emplean tipos de datos específicos como `DATETIME` para el control temporal y `BOOLEAN` para marcas rápidas de legitimidad, asegurando una persistencia eficiente y coherente con el modelo de dominio.
 
 
 
