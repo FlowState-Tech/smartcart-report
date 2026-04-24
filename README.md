@@ -200,9 +200,9 @@ A continuación, cada miembro del equipo expone sus objetivos SMART, orientados 
 
 **Integrante 1: Anjali Amaro**
 
-**Objetivo 1:**
+**Objetivo 1:** Lograr una contratación remota para una compañía tecnológica de Estados Unidos o Europa en un plazo de un año tras finalizar mi carrera, alcanzando un nivel de inglés C1 y especializándome en arquitecturas de microservicios, con el objetivo de internacionalizar mi carrera y trabajar en entornos multiculturales de alto impacto.
 
-**Objetivo 2:**
+**Objetivo 2:** Alcanzar la posición de Backend Developer Senior en una empresa de desarrollo de software líder en la región en un plazo de tres años tras mi graduación, liderando técnicamente el despliegue de soluciones escalables y contribuyendo anualmente en dos proyectos de código abierto para consolidar mi marca personal y autoridad técnica en la industria.
 
 **Integrante 2: Joseph Chavez**  
 **Objetivo 1:**
