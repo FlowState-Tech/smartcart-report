@@ -254,7 +254,7 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 
 El problema central es la asincronía informativa y la ineficiencia logística en el consumo masivo dentro del canal moderno (supermercados y tiendas de conveniencia) en Lima. A pesar de la digitalización, existe una brecha crítica entre los precios/promociones anunciados en plataformas corporativas y la realidad física en las góndolas, sumada a la incapacidad de los consumidores para comparar canastas completas entre distintos competidores de proximidad.
 
-Esta ineficiencia se ve respaldada por investigaciones que identifican la dispersión de precios como una falla de mercado crítica en el sector minorista peruano, donde productos idénticos presentan variaciones de costo significativas dependiendo del canal de venta y la ubicación geográfica del establecimiento (Banco Central de Reserva del Perú [BCRP], 2025). En el canal moderno, esta problemática se agrava por el "incumplimiento de oferta" en punto de venta, donde la falta de stock o el etiquetado erróneo anula el beneficio del consumidor. A esto se suma la ineficiencia en la movilidad, incurriendo en gastos innecesarios de transporte y una pérdida de tiempo considerable al no contar con una secuencia organizada de visitas (ResearchGate, 2024). Esta falta de transparencia logística impide que las familias logren un beneficio neto real frente a la inflación acumulada en el rubro de alimentos básicos (Instituto Nacional de Estadística e Informática [INEI], 2026).
+Esta ineficiencia se ve respaldada por investigaciones que identifican la dispersión de precios como una falla de mercado crítica en el sector minorista peruano, donde productos idénticos presentan variaciones de costo significativas dependiendo del canal de venta y la ubicación geográfica del establecimiento (Banco Central de Reserva del Perú [BCRP], 2025). En el canal moderno, esta problemática se agrava por el 'incumplimiento de oferta' en punto de venta, donde la falta de stock o el etiquetado erróneo anula el beneficio del consumidor. A esto se suma la ineficiencia en la movilidad, incurriendo en gastos innecesarios de transporte y una pérdida de tiempo considerable al no contar con una secuencia organizada de visitas, lo que representa un desafío computacional de optimización de rutas ampliamente documentado (Applegate et al., 2006). Esta falta de transparencia logística impide que las familias logren un beneficio neto real frente a la inflación acumulada en el rubro de alimentos básicos (Instituto Nacional de Estadística e Informática [INEI], 2026).
 
 #### When? (¿Cuándo?)
 
@@ -305,7 +305,7 @@ Mediante una aplicación móvil nativa que permita la integración de mapas en t
 
 **Estadísticas que sustentan la problemática.**
 
-La problemática económica en Lima Metropolitana se ve agravada por una inflación que registró un incremento del 2.38% en marzo de 2026 (INEI, 2026). Esta situación impacta severamente la economía doméstica, considerando que el gasto promedio para cubrir una canasta básica familiar ya supera significativamente los ingresos percibidos por los trabajadores (BCRP, 2025), incluso con la Remuneración Mínima Vital de S/ 1,130 (Infobae, 2025). Ante este panorama, el 41% de los responsables de compra prioriza la búsqueda de ofertas (Kantar Worldpanel, 2025). Finalmente, la falta de planificación logística genera sobrecostos de hasta un 20% en transporte y tiempo de desplazamiento (ResearchGate, 2024), una cifra crítica para el segmento de jóvenes que operan con presupuestos ajustados y tiempos limitados.
+La problemática económica en Lima Metropolitana se ve agravada por una inflación que registró un incremento del 2.38% en marzo de 2026 (INEI, 2026). Esta situación impacta severamente la economía doméstica, considerando que el gasto promedio para cubrir una canasta básica familiar ya supera significativamente los ingresos percibidos por los trabajadores (BCRP, 2025), incluso con la Remuneración Mínima Vital de S/ 1,130 (Infobae, 2025). Ante este panorama, el 41% de los responsables de compra prioriza la búsqueda de ofertas (Kantar Worldpanel, 2025). Finalmente, la falta de planificación logística genera ineficiencias en el desplazamiento que impactan directamente en el presupuesto familiar, las cuales pueden ser mitigadas mediante la aplicación de modelos de clustering y metaheurísticas para la resolución de problemas de transporte (Sabagh Nejad & Fazekas, 2022), un factor crítico para el segmento de jóvenes que operan con presupuestos ajustados y tiempos limitados.
 
 ### 1.2.2. Lean UX Process
 #### 1.2.2.1. Lean UX Problem Statements
@@ -1584,14 +1584,34 @@ El diagrama de diseño de base de datos muestra el esquema relacional en Postgre
 
 ## Bibliografía       
 
-Banco Central de Reserva del Perú. (2025). Reporte de Inflación: Panorama actual y proyecciones macroeconómicas. https://www.bcrp.gob.pe/publicaciones/reporte-de-inflacion.html
+<p class="ref">
+  Banco Central de Reserva del Perú. (2025).
+  <i>Reporte de Inflación: Panorama actual y proyecciones macroeconómicas</i>.
+  <a href="https://www.bcrp.gob.pe/publicaciones/reporte-de-inflacion.html">https://www.bcrp.gob.pe/publicaciones/reporte-de-inflacion.html</a>
+</p>
 
-Infobae. (2025, 3 de agosto). ¿Alcanza el sueldo mínimo para vivir en el Perú? Así se reparten S/1.025 al mes en Lima y regiones. https://www.infobae.com/peru/2025/08/03/alcanza-el-sueldo-minimo-para-vivir-en-el-peru-asi-se-reparten-s1025-al-mes-en-lima-y-regiones/
+<p class="ref">
+  Infobae. (2025, 3 de agosto).
+  <i>¿Alcanza el sueldo mínimo para vivir en el Perú? Así se reparten S/1.025 al mes en Lima y regiones</i>.
+  <a href="https://www.infobae.com/peru/2025/08/03/alcanza-el-sueldo-minimo-para-vivir-en-el-peru-asi-se-reparten-s1025-al-mes-en-lima-y-regiones/">https://www.infobae.com/peru/2025/08/03/alcanza-el-sueldo-minimo-para-vivir-en-el-peru-asi-se-reparten-s1025-al-mes-en-lima-y-regiones/</a>
+</p>
 
-Instituto Nacional de Estadística e Informática. (2026). Variación de los Indicadores de Precios de la Economía: Marzo 2026 (Informe Técnico N° 04). https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe_de_precios_mar26.pdf
+<p class="ref">
+  Instituto Nacional de Estadística e Informática. (2026).
+  <i>Precios al consumidor de Lima Metropolitana subieron 2,38% en marzo de 2026</i>.
+  <a href="https://www.gob.pe/institucion/inei/noticias/1373722-precios-al-consumidor-de-lima-metropolitana-subieron-2-38-en-marzo-de-2026">hhttps://www.gob.pe/institucion/inei/noticias/1373722-precios-al-consumidor-de-lima-metropolitana-subieron-2-38-en-marzo-de-2026</a>
+</p>
 
-Kantar Worldpanel. (2025). Consumer Insights Perú: Comportamiento y Perfiles de Compra del 'Power Adult'. https://www.kantarworldpanel.com/pe/news/Consumer-Insights-Peru-Power-Adult-2025
+<p class="ref">
+  Kantar Worldpanel. (2025).
+  <i>Consumer Insights Perú: Comportamiento y Perfiles de Compra del 'Power Adult'</i>.
+  <a href="https://www.kantarworldpanel.com/pe/news/Consumer-Insights-Peru-Power-Adult-2025">https://www.kantarworldpanel.com/pe/news/Consumer-Insights-Peru-Power-Adult-2025</a>
+</p>
 
-ResearchGate. (2024). Optimization of the Traveling Salesman Problem (TSP) in Urban Retail Environments: A study on consumer behavior in emerging markets. https://www.researchgate.net/publication/380000_Optimization_TSP_Urban_Retail
+<p class="ref">
+  Sabagh Nejad, A., & Fazekas, G. (2022).
+  <i>Solving a traveling salesman problem using meta-heuristics</i>. IAES International Journal of Artificial Intelligence (IJ-AI).
+  <a href="https://www.researchgate.net/publication/358933622_Solving_a_traveling_salesman_problem_using_meta-heuristics">https://www.researchgate.net/publication/358933622_Solving_a_traveling_salesman_problem_using_meta-heuristics</a>
+</p>
 
 # Anexos
