@@ -1122,7 +1122,7 @@ Luego de analizar las alternativas y sus implicancias en SmartCart, el equipo de
 - Comunicación Eficiente: La relación entre la gestión de tienda y las notificaciones es asíncrona (basada en eventos), lo que evita cuellos de botella y asegura que el sistema siga operativo incluso si hay retrasos en los envíos.
 
 <div style="text-align: center;">
-  <img src="./assets/softwarearchitecture/contextmapping.png" alt="Context Level Diagram style="width: 180px; height: auto;">
+ <img src="./assets/softwarearchitecture/contextmapping.jpg" alt="Context Level Diagram" style="width: 180px; height: auto;">
 </div>
   
 ### 2.5.3. Software Architecture
