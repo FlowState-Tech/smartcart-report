@@ -1174,24 +1174,149 @@ Detalles de la Infraestructura:
 ## 2.6. Tactical-Level Domain-Driven Design
 
 ### 2.6.1. Bounded Context: IAM
-#### 2.6.1.1. Domain Layer
-#### 2.6.1.2. Interface Layer
-#### 2.6.1.3. Application Layer
-#### 2.6.1.4. Infrastructure Layer
-#### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
-#### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.1.1. Domain Layer
+Este contexto gestiona la identidad, autenticación y niveles de acceso para consumidores y *Store Managers*, asegurando la seguridad del ecosistema SmartCart.
+
+* **Entities:**
+    * **User:** Root Aggregate que centraliza la identidad y el estado de la cuenta.
+    * **Role:** Define si el usuario opera como `Consumer` o `StoreManager`.
+* **Value Objects:**
+    * **UserEmail:** Valida el formato y unicidad del correo electrónico.
+    * **UserPassword:** Gestiona el cifrado (hashing) y la seguridad de las credenciales.
+    * **Session:** Estado temporal que representa la autenticación activa.
+* **Aggregates:**
+    * **UserAggregate:** Garantiza que cada perfil de usuario esté correctamente vinculado a un rol y estado de activación.
+* **Business Decisions:**
+    * **Seguridad:** Bloqueo automático de cuenta tras **3 intentos fallidos** de inicio de sesión con credenciales inválidas.
+##### 2.6.1.2. Interface Layer
+Expone los servicios de gestión de identidad hacia las aplicaciones cliente.
+* **Controllers:** `IdentityController` (Inicio de sesión, registro y recuperación de contraseña).
+* **DTOs:** `AuthRequest`, `RegisterUserRequest`, `TokenResponse`.
+
+##### 2.6.1.3. Application Layer
+Coordina los casos de uso sin imponer lógica de negocio.
+* **Application Services:** `AuthApplicationService` (Orquesta la verificación de identidad y generación de tokens).
+* **Command Handlers:** `RegisterUserCommandHandler`, `ResetPasswordCommandHandler`.
+
+##### 2.6.1.4. Infrastructure Layer
+* **Persistence:** Implementado con **Entity Framework Core** y SQL Server para el almacenamiento de perfiles.
+* **Security:** Uso de **JWT (JSON Web Tokens)** para el manejo de sesiones *stateless*.
+
+##### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+En este nivel de la arquitectura, se describen los componentes internos del contenedor "Identity API". Se sigue el patrón de capas de Tactical DDD para asegurar que la lógica de autenticación esté aislada de la infraestructura.
+
+*(Diagrama de Componentes C4*
+
+**Descripción de los Componentes:**
+
+* **Auth Controller:** Componente encargado de exponer los endpoints REST para el inicio de sesión y registro de usuarios. Valida la estructura de los DTOs entrantes.
+* **Identity Application Service:** Orquestador de la capa de aplicación que coordina el flujo de verificación de credenciales y la interacción con el dominio.
+* **JWT Token Generator:** Componente especializado en la creación y firma de tokens de seguridad bajo el estándar JSON Web Token para el manejo de sesiones.
+* **User Domain Logic:** Contiene las reglas de negocio, como la validación de contraseñas y la lógica de bloqueo de cuenta tras 3 intentos fallidos.
+* **User Repository:** Componente de infraestructura que encapsula el acceso a la base de datos SQL mediante Entity Framework Core.#### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+Este diagrama representa las clases del modelo de dominio para el contexto de IAM, siguiendo los patrones de Tactical DDD para asegurar la integridad de la lógica de negocio.
+
+*Diagrama de Clases *
+
+**Estructura de Clases Principal:**
+
+* **User (Entity - Aggregate Root):**
+    * `Id: int`
+    * `Username: string`
+    * `Password: PasswordValueObject`
+    * `Email: EmailValueObject`
+    * `FailedAttempts: int`
+    * `LockoutEnd: DateTime?`
+    * `Methods: Authenticate(), ResetPassword(), RecordFailedAttempt()`
+* **Role (Entity):**
+    * `Id: int`
+    * `Name: string`
+    * `Permissions: List<string>`
+* **Password (Value Object):**
+    * `HashedValue: string`
+    * `Methods: HashPassword(), VerifyPassword()`
+* **Email (Value Object):**
+    * `Address: string`
+    * `Methods: ValidateFormat()`
+
+
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
+![Diagrama IAM](SmartCart_IAM_DB.png)
+
 
 ### 2.6.2. Bounded Context: Verification
-#### 2.6.2.1. Domain Layer
-#### 2.6.2.2. Interface Layer
-#### 2.6.2.3. Application Layer
-#### 2.6.2.4. Infrastructure Layer
-#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
-#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
-##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+##### 2.6.2.1. Domain Layer
+Encargado de validar la legitimidad de las tiendas y sus datos fiscales para habilitar su operación en la plataforma.
+
+* **Entities:**
+    * **Tienda:** Representa el local comercial físico que desea afiliarse.
+    * **Solicitud de Afiliación:** Documento que rastrea el ciclo de vida de la validación legal.
+* **Value Objects:**
+    * **RUC:** Identificador tributario de la tienda, validado externamente.
+    * **VerificationToken:** Código de seguridad de un solo uso enviado para confirmar el contacto.
+* **Aggregates:**
+    * **VerificationAggregate:** Asegura que la validación del RUC y el estado de la tienda sean consistentes antes de permitir operaciones.
+* **Business Decisions:**
+    * **Validación Externa:** Si los datos fiscales no coinciden con los registros de **SUNAT**, la solicitud se rechaza y se notifica al *Store Manager*.
+
+##### 2.6.2.2. Interface Layer
+* **Controllers:** `AffiliationController` (Envío de solicitudes y validación de documentación).
+* **DTOs:** `SubmitVerificationRequest`, `StoreStatusDTO`.
+
+##### 2.6.2.3. Application Layer
+* **Services:** `StoreVerificationService` (Coordina la consulta a la base de datos y fuentes externas).
+
+##### 2.6.2.4. Infrastructure Layer
+* **External API:** Integración con la **SUNAT API** para la validación de RUC en tiempo real.
+* **Services:** Implementación de servicio de mensajería para el envío de tokens de validación.
+
+##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+En este nivel de la arquitectura C4, se detallan los componentes internos del contenedor "Verification API", el cual es responsable de procesar y validar las solicitudes de las tiendas interesadas en la plataforma.
+
+*Diagrama de Componentes C4 *
+
+**Descripción de los Componentes:**
+
+* **Affiliation Controller:** Componente encargado de recibir las solicitudes de registro de tiendas y los documentos de identidad para su posterior análisis.
+* **Store Verification Service:** Orquestador de la capa de aplicación que coordina la lógica de verificación, incluyendo el llamado a servicios externos de validación fiscal.
+* **Sunat External Service:** Componente de infraestructura que actúa como cliente para consumir la API externa de SUNAT y obtener los datos de validez del RUC.
+* **Verification Domain Logic:** Contiene las reglas de negocio críticas para decidir si una tienda cumple con los requisitos de legitimidad para ser activada.
+* **Affiliation Repository:** Encargado de la persistencia y recuperación de las solicitudes de afiliación y sus estados (Pendiente, Verificado, Rechazado) en la base de datos.#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
+Este diagrama representa la estructura de clases del dominio para el proceso de verificación de tiendas. Se asegura que la validación de datos fiscales sea una parte integral del ciclo de vida de la afiliación.
+
+*( Diagrama de Clases)*
+
+**Estructura de Clases Principal:**
+
+* **AffiliationRequest (Entity - Aggregate Root):**
+    * `Id: int`
+    * `UserId: int`
+    * `StoreName: string`
+    * `Ruc: RucValueObject`
+    * `Status: RequestStatus`
+    * `Methods: Submit(), Review(), Approve(), Reject()`
+* **StoreValidation (Entity):**
+    * `Id: int`
+    * `RequestId: int`
+    * `ValidationDate: DateTime`
+    * `IsLegit: bool`
+    * `SunatResponseCode: string`
+* **Ruc (Value Object):**
+    * `Number: string`
+    * `Methods: ValidateFormat(), IsActive()`
+* **RequestStatus (Enum):**
+    * `Values: Pending, InReview, Verified, Rejected`
 ##### 2.6.2.6.2. Bounded Context Database Design Diagram
+![Diagrama Verification](SmartCart_Verification_DB.png)
+
+
+
+
 
 ### 2.6.3. Bounded Context: Store Management
 El Bounded Context Store Management constituye la infraestructura operativa y el pilar de veracidad de datos dentro del ecosistema de SmartCart. Su misión estratégica es la gobernanza integral de los establecimientos comerciales y la sincronización precisa de sus inventarios, transformando la gestión manual en una ventaja competitiva digital. Este contexto opera bajo un modelo de negocio de Efficiency & Reliability, clasificándose como un dominio Core debido a que la exactitud de sus datos (precios y stock) es lo que garantiza el éxito del proceso de ahorro del usuario final.
