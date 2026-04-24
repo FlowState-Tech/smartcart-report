@@ -189,8 +189,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico                                                                                                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                   | Conclusiones |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:*:      <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*:      <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:*:      <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*:      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:*:      <br> | *AV1:*       |
-| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:*:      <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*:      <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:*:      <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*:      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:*:      <br> | *AV1:*       |
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:*:      <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*:      <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:*:      <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*:Investigué y apliqué la metodología Lean UX para estructurar el Canvas y las hipótesis de solución, basándome en los requerimientos compartidos por el equipo para el proyecto SmartCart.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:*:      <br> | *AV1:*       |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:*:      <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*:      <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:*:      <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*:Identifiqué la necesidad de aprender nuevas técnicas de Needfinding para organizar la información recibida del grupo y transformarla en los perfiles de User Personas y la Task Matrix.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:*:      <br> | *AV1:*       |
 
 <hr class="page-break">
 
@@ -210,9 +210,13 @@ A continuación, cada miembro del equipo expone sus objetivos SMART, orientados 
 **Objetivo 1:**
 **Objetivo 2:**
 
-**Integrante 4: Kevin Pardo**  
+**Integrante 4: Kevin Pardo**
+
 **Objetivo 1:**
+Lograr la culminación exitosa del proyecto **SmartCart** junto a mi equipo, asegurando que la implementación técnica (especialmente en los módulos de IAM y Verification) cumpla con el 100% de los requisitos del curso para asegurar una calificación destacada en la sustentación final de este ciclo.
+
 **Objetivo 2:**
+Consolidar mi formación como Ingeniero de Software aplicando los conocimientos de programación aprendidos en este proyecto para graduarme satisfactoriamente, buscando que el trabajo realizado en grupo sirva como una base sólida para afrontar con éxito mis futuras metas profesionales en el desarrollo de soluciones reales.
 
 **Integrante 5: Stephano Valdivia**  
 **Objetivo 1:**
