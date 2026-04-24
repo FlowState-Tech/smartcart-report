@@ -1164,7 +1164,7 @@ Coordina los casos de uso sin imponer lógica de negocio.
 
 En este nivel de la arquitectura, se describen los componentes internos del contenedor "Identity API". Se sigue el patrón de capas de Tactical DDD para asegurar que la lógica de autenticación esté aislada de la infraestructura.
 
-*(Diagrama de Componentes C4*
+*Diagrama de Componentes C4*
 
 **Descripción de los Componentes:**
 
@@ -1202,8 +1202,7 @@ Este diagrama representa las clases del modelo de dominio para el contexto de IA
 
 
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
-![Diagrama IAM](SmartCart_IAM_DB.png)
-
+![Diagrama IAM](assets/imagenes/SmartCart_IAM_DB.png)
 
 ### 2.6.2. Bounded Context: Verification
 ##### 2.6.2.1. Domain Layer
@@ -1231,46 +1230,50 @@ Encargado de validar la legitimidad de las tiendas y sus datos fiscales para hab
 * **External API:** Integración con la **SUNAT API** para la validación de RUC en tiempo real.
 * **Services:** Implementación de servicio de mensajería para el envío de tokens de validación.
 
-##### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
+#### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-En este nivel de la arquitectura C4, se detallan los componentes internos del contenedor "Verification API", el cual es responsable de procesar y validar las solicitudes de las tiendas interesadas en la plataforma.
+En este nivel de la arquitectura C4, se detallan los componentes internos del contenedor **Verification API**, el cual es responsable de procesar y validar las solicitudes de las tiendas interesadas en la plataforma SmartCart. La arquitectura sigue los principios de Tactical DDD para asegurar un desacoplamiento efectivo entre la lógica de negocio y los servicios externos.
 
-*Diagrama de Componentes C4 *
+![Diagrama de Componentes - Verification Context](assets/imagenes/verification-component-diagram.png)
 
 **Descripción de los Componentes:**
 
-* **Affiliation Controller:** Componente encargado de recibir las solicitudes de registro de tiendas y los documentos de identidad para su posterior análisis.
-* **Store Verification Service:** Orquestador de la capa de aplicación que coordina la lógica de verificación, incluyendo el llamado a servicios externos de validación fiscal.
-* **Sunat External Service:** Componente de infraestructura que actúa como cliente para consumir la API externa de SUNAT y obtener los datos de validez del RUC.
-* **Verification Domain Logic:** Contiene las reglas de negocio críticas para decidir si una tienda cumple con los requisitos de legitimidad para ser activada.
-* **Affiliation Repository:** Encargado de la persistencia y recuperación de las solicitudes de afiliación y sus estados (Pendiente, Verificado, Rechazado) en la base de datos.#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
-Este diagrama representa la estructura de clases del dominio para el proceso de verificación de tiendas. Se asegura que la validación de datos fiscales sea una parte integral del ciclo de vida de la afiliación.
+* **Affiliation Controller:** Componente de la capa de infraestructura (ASP.NET Core) encargado de recibir las solicitudes de registro de tiendas y los documentos de identidad mediante endpoints REST.
+* **Store Verification Service:** Actúa como el orquestador de la capa de aplicación. Coordina el flujo de verificación, validando primero las reglas internas y luego solicitando la validación externa.
+* **Verification Domain Logic:** Contiene las reglas de negocio críticas y las validaciones de dominio necesarias para decidir si una tienda cumple con los requisitos de legitimidad.
+* **Sunat External Service:** Componente de infraestructura que actúa como cliente para consumir la API externa de SUNAT, abstrayendo la complejidad del consumo de servicios externos.
+* **Affiliation Repository:** Encargado de la persistencia de las solicitudes de afiliación, gestionando el ciclo de vida de los estados (Pending, Verified, Rejected) en la base de datos.
 
-*( Diagrama de Clases)*
+---
+
+#### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+Este diagrama representa la estructura de clases del dominio para el proceso de verificación de tiendas. Se asegura que la validación de datos fiscales sea una parte integral del ciclo de vida de la afiliación, utilizando patrones de Tactical DDD como Aggregate Roots y Value Objects.
+
+![Diagrama de Clases de Dominio - Verification Context](assets/imagenes/verification-domain-classes.png)
 
 **Estructura de Clases Principal:**
 
-* **AffiliationRequest (Entity - Aggregate Root):**
-    * `Id: int`
-    * `UserId: int`
-    * `StoreName: string`
-    * `Ruc: RucValueObject`
-    * `Status: RequestStatus`
-    * `Methods: Submit(), Review(), Approve(), Reject()`
-* **StoreValidation (Entity):**
-    * `Id: int`
-    * `RequestId: int`
-    * `ValidationDate: DateTime`
-    * `IsLegit: bool`
-    * `SunatResponseCode: string`
-* **Ruc (Value Object):**
-    * `Number: string`
-    * `Methods: ValidateFormat(), IsActive()`
-* **RequestStatus (Enum):**
-    * `Values: Pending, InReview, Verified, Rejected`
-##### 2.6.2.6.2. Bounded Context Database Design Diagram
-![Diagrama Verification](SmartCart_Verification_DB.png)
+* **AffiliationRequest (Aggregate Root):** Es la entidad principal que controla el proceso de registro. Gestiona los cambios de estado y asegura que una solicitud no sea aprobada sin pasar por las validaciones correspondientes.
+* **StoreValidation (Entity):** Representa el registro histórico de una validación específica realizada contra la SUNAT, almacenando el resultado técnico y la fecha del proceso.
+* **Ruc (Value Object):** Encapsula la lógica de validación del número de RUC (formato, longitud y prefijo), garantizando que solo datos válidos entren al dominio.
+* **RequestStatus (Enum):** Define el conjunto finito de estados por los que puede pasar una solicitud: `Pending`, `InReview`, `Verified` y `Rejected`.
 
+
+
+##### 2.6.2.6.2. Bounded Context Database Design Diagram
+
+Este diagrama detalla el esquema relacional diseñado para el contexto de Verificación. La estructura está optimizada para mantener un historial auditable de las validaciones realizadas contra servicios externos (SUNAT) y gestionar el ciclo de vida de las solicitudes de afiliación de las tiendas.
+
+![Diagrama de Diseño de Base de Datos - Verification Context](assets/imagenes/verification-db-design.png)
+
+**Especificaciones Técnicas del Diseño:**
+
+* **Tabla AFFILIATION_REQUESTS:** Es la tabla central que almacena los datos de la tienda y el estado actual de su solicitud. Se utiliza `ruc_number` como un campo crítico de búsqueda y validación.
+* **Tabla STORE_VALIDATIONS:** Implementa una relación uno-a-varios con las solicitudes. Esto permite registrar múltiples intentos de validación o actualizaciones periódicas de estado, almacenando la respuesta técnica (`sunat_response_code`) para auditoría.
+* **Integridad de Datos:** Se emplean tipos de datos específicos como `DATETIME` para el control temporal y `BOOLEAN` para marcas rápidas de legitimidad, asegurando una persistencia eficiente y coherente con el modelo de dominio.
 
 
 
