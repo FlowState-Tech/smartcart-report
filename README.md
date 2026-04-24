@@ -893,50 +893,50 @@ Se identificaron puntos de fricción, como la posible lentitud en la actualizaci
 
 <img src="./assets/eventstorming/step4.png" >
 
-<img src="./assets/eventstorming/step4.1png" >
+<img src="./assets/eventstorming/step4.1.png" >
 
 <img src="./assets/eventstorming/step4.2.png" >
 
 5.  Roles & Persons
 Se definieron los actores que interactúan con el sistema, diferenciando claramente entre el Shopper Planificador, el Gerente de Tienda y el Administrador del Sistema, asociándolos a sus respectivos comandos.
 <img src="./assets/eventstorming/step5.png" >
-<img src="./assets/eventstorming/step5.1png" >
+<img src="./assets/eventstorming/step5.1.png" >
 <img src="./assets/eventstorming/step5.2.png" >
-<img src="./assets/eventstorming/step5.3png" >
+<img src="./assets/eventstorming/step5.3.png" >
 <img src="./assets/eventstorming/step5.4.png" >
 
 6. Commands
 Se añadieron las acciones (notas azules) que desencadenan los eventos de dominio. Esto permitió mapear la intención del usuario (ej. "Consultar ruta", "Reportar precio") con su resultado directo en el sistema.
 <img src="./assets/eventstorming/step6.png" >
-<img src="./assets/eventstorming/step6.1png" >
+<img src="./assets/eventstorming/step6.1.png" >
 <img src="./assets/eventstorming/step6.2.png" >
-<img src="./assets/eventstorming/step6.3png" >
+<img src="./assets/eventstorming/step6.3.png" >
 <img src="./assets/eventstorming/step6.4.png" >
 <img src="./assets/eventstorming/step6.5.png" >
 
 7. Data Models
 Se identificó la información necesaria para que cada comando se ejecute con éxito. Se definieron estructuras básicas de datos para elementos como "Lista de Compras", "Geolocalización de Establecimiento" y "Ticket de Oferta".
 <img src="./assets/eventstorming/step7.png" >
-<img src="./assets/eventstorming/step7.1png" >
+<img src="./assets/eventstorming/step7.1.png" >
 <img src="./assets/eventstorming/step7.2.png" >
-<img src="./assets/eventstorming/step7.3png" >
+<img src="./assets/eventstorming/step7.3.png" >
 <img src="./assets/eventstorming/step7.4.png" >
 <img src="./assets/eventstorming/step7.5.png" >
 
 8. Emerging Bounded Contexts
 A través de la agrupación de eventos y comandos relacionados, se identificaron los límites lógicos del sistema. Esto dio origen a contextos como Inventory Management, Shopping Optimization e Identity & Access Management (IAM).
 <img src="./assets/eventstorming/step8.png" >
-<img src="./assets/eventstorming/step8.1png" >
+<img src="./assets/eventstorming/step8.1.png" >
 <img src="./assets/eventstorming/step8.2.png" >
-<img src="./assets/eventstorming/step8.3png" >
+<img src="./assets/eventstorming/step8.3.png" >
 <img src="./assets/eventstorming/step8.4.png" >
 
 9. Policy & Process Modeling
 Se establecieron las reglas de negocio y procesos automáticos (políticas). Por ejemplo, la regla de "Si un usuario valida 5 precios, otorgar insignia de contribuidor", definiendo reacciones del sistema ante eventos específicos.
 <img src="./assets/eventstorming/step9.png" >
-<img src="./assets/eventstorming/step9.1png" >
+<img src="./assets/eventstorming/step9.1.png" >
 <img src="./assets/eventstorming/step9.2.png" >
-<img src="./assets/eventstorming/step9.3png" >
+<img src="./assets/eventstorming/step9.3.png" >
 <img src="./assets/eventstorming/step9.4.png" >
 <img src="./assets/eventstorming/step9.5.png" >
 
