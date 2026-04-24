@@ -591,8 +591,8 @@ Cuando lanzan un "evento" (oferta relámpago, cierre de puertas), ¿cómo miden 
 
 **Segmento:** Consumidores (Estudiantes y Jóvenes Profesionales)  
 **Total de entrevistados:** 3  
-**Edades:** 20, 20 y 30 años  
-**Distritos:** La Victoria y San Juan de Miraflores  
+**Edades:** 20, 21 y 30 años  
+**Distritos:** La Victoria, Cañete y San Juan de Miraflores  
 
 #### **Características Objetivas**
 * **Responsabilidad en el abastecimiento:** **100% (3/3)** asumen el rol principal o una participación activa en la logística y ejecución de las compras del hogar.
