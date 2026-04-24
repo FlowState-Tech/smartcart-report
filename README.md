@@ -890,8 +890,11 @@ Mediante un análisis retrospectivo, se validaron los flujos para garantizar que
 
 4. Problems & Opportunities
 Se identificaron puntos de fricción, como la posible lentitud en la actualización de stock o la veracidad de los datos. Estos se marcaron con notas de color rosa para priorizar soluciones tecnológicas en las etapas de diseño.
+
 <img src="./assets/eventstorming/step4.png" >
+
 <img src="./assets/eventstorming/step4.1png" >
+
 <img src="./assets/eventstorming/step4.2.png" >
 
 5.  Roles & Persons
