@@ -214,10 +214,10 @@ A continuación, cada miembro del equipo expone sus objetivos SMART, orientados 
 **Objetivo 1:**
 **Objetivo 2:**
 
-**Integrante 5: Stephano Valdivia**  
-**Objetivo 1:**
-**Objetivo 2:**
+**Integrante 5: Stephano Valdivia**
+**Objetivo 1:** Asumir el rol de Arquitecto de Software Junior o Lead Developer en un proyecto corporativo, liderando el diseño y la implementación de una arquitectura de microservicios basada en *Domain-Driven Design* (DDD), logrando el despliegue exitoso a producción de la plataforma dentro de los primeros dos años tras egresar de la universidad.
 
+**Objetivo 2:** Fundar una startup tecnológica enfocada en el desarrollo de soluciones de software B2B (como plataformas SaaS para optimizar procesos corporativos internos), desarrollando un Producto Mínimo Viable (MVP) y cerrando acuerdos comerciales con los primeros 3 clientes empresariales durante los primeros tres años posteriores a la culminación de la carrera.
 
 <hr class="page-break">
 
