@@ -892,7 +892,7 @@ alertas a los usuarios.
 Bounded Context? 
 #### Alternativa A: Contextos separados (Modelo Actual) 
 - Ventajas: Claridad de responsabilidades. Planificar y comparar 
-precios es un problema de comercio electrónico; trazar rutas en 
+precios es un problema de comercio electrónico; trazar rutas 
 GPS es un problema de logística.
 - Desventajas: Mayor sobrecarga arquitectónica por tener dos 
 dominios separados para un proceso que el usuario percibe como 
@@ -1004,14 +1004,289 @@ Detalles de la Infraestructura:
 ##### 2.6.4.6.2. Bounded Context Database Design Diagram
 
 ### 2.6.5. Bounded Context: Shopping Planning
+
+El bounded context **Shopping Planning** representa la fase de preparación y toma de decisiones del usuario antes de la compra física. Su objetivo estratégico es permitir al consumidor organizar sus necesidades, establecer restricciones financieras y proyectar el costo total de su canasta en diferentes establecimientos. Este contexto actúa como un **Core Domain** de SmartPrice, ya que implementa la lógica distintiva de optimización de costos y manejo de stock mediante una "Política de Sugerencia de Sustitutos".
+
 #### 2.6.5.1. Domain Layer
+
+La capa de dominio de **Shopping Planning** concentra toda la lógica de negocio relacionada con la preparación de la canasta y la toma de decisiones basada en proyecciones de costos.
+
+**Aggregates**
+
+Un Aggregate es un clúster de objetos de dominio que se trata como una única unidad de consistencia para garantizar que las reglas de negocio se cumplan en todo momento.
+
+| Aggregate Root | Descripción | Responsabilidad principal |
+| :--- | :--- | :--- |
+| **ShoppingList** | Representa la lista activa de productos que el Consumidor desea adquirir. | Gestionar la consistencia de los ítems en la canasta (adición/eliminación) y su estado actual. |
+| **ShoppingPreferences** |Almacena las restricciones y preferencias del usuario para el ciclo de planificación actual. | Garantizar que la planificación se mantenga dentro de los límites de presupuesto y priorice las tiendas seleccionadas. |
+| **PriceComparison** | Es el núcleo analítico que procesa la información de precios y stock para generar proyecciones. | Orquestar la comparación de costos totales, verificar disponibilidad de stock y proponer alternativas. |
+
+**Entities**
+
+Las Entities son objetos con identidad propia que persisten a lo largo del tiempo y pueden cambiar de estado, manteniendo su identificador único.
+
+| Entidad | Aggregate al que pertenece | Atributos clave | Comportamientos |
+| :--- | :--- | :--- | :--- |
+| **ShoppingListItem** | ShoppingList | `itemId`, `productId`, `quantity`, `isInBasket` | `updateQuantity()`, `markAsAdded()`  |
+| **SubstituteProduct** | PriceComparison | `suggestionId`, `originalProductId`, `substituteProductId`, `reason` | `evaluateSuitability()`, `applyPolicy()`  |
+| **PriceProjection** | PriceComparison | `projectionId`, `totalCost`, `estimatedSavings`, `storeId` | `calculateTotalCost()`, `compareWithBudget()`  |
+
+**Value Objects**
+
+Los Value Objects son objetos sin identidad propia que se definen únicamente por sus atributos. Son inmutables y encapsulan reglas de validación del dominio.
+
+| Value Object | Atributos | Reglas de validación / invariantes |
+| :--- | :--- | :--- |
+| **Budget** | `amount: BigDecimal`, `currency: Currency` | Debe ser mayor a cero. Representa el límite máximo de gasto definido. |
+| **Quantity** | `value: double`, `unit: String` | El valor debe ser positivo. Valida unidades de medida compatibles (kg, unidades, etc.). |
+| **StockStatus** | `status: Enum` | Define estados como `AVAILABLE`, `OUT_OF_STOCK` o `CRITICAL`. |
+| **PreferenceScope** | `storeId: UUID`, `isPriority: boolean` | Identificador inmutable de la tienda que el usuario prefiere. |
+
+**Domain Events**
+
+Los Domain Events son hechos relevantes que han ocurrido dentro del dominio y que son publicados para que otros contextos puedan reaccionar.
+
+| Domain Event | Aggregate origen | Atributos del payload | Significado de negocio |
+| :--- | :--- | :--- | :--- |
+| **ShoppingListCreated** | ShoppingList | `listId`, `buyerId`, `createdAt` | El consumidor ha iniciado una nueva sesión de planificación. |
+| **ProductAddedToBasket** | ShoppingList | `listId`, `productId`, `quantity` | Un nuevo ítem se ha integrado a la lista de planificación. |
+| **MaxBudgetDefined** | ShoppingPreferences | `buyerId`, `amount`, `currency` | Se ha establecido un límite financiero para la canasta. |
+| **BasketTotalCostProjected** | PriceComparison | `projectionId`, `totalCost`, `savings` | El sistema ha calculado el costo estimado en las tiendas seleccionadas. |
+| **ProductStockOutDetected** | PriceComparison | `productId`, `storeId`, `occurrenceDate` | Se ha detectado falta de stock durante el proceso de comparación. |
+| **SubstituteProductSuggested** | PriceComparison | `originalId`, `substituteId`, `projectionId` | Se activa la política de sustitutos por falta de stock o costo elevado. |
+
+**Domain Services**
+
+Los Domain Services encapsulan lógica de negocio que no pertenece naturalmente a un Aggregate, ya que opera sobre múltiples objetos o fuentes de información.
+
+| Domain Service | Método principal | Descripción |
+| :--- | :--- | :--- |
+| **ComparisonEngineService** | `compareBasket(ShoppingList, List<Store>): List<PriceProjection>` | Analiza la lista de compras frente a múltiples tiendas para proyectar costos. |
+| **SubstituteSuggestionService** | `suggestAlternative(Product, Policy): SubstituteProduct` | Aplica la "Política de Sugerencia de Sustitutos" basada en categoría y precio. |
+| **BudgetValidatorService** | `verifyFeasibility(PriceProjection, Budget): boolean` | Determina si una proyección de compra cumple con el presupuesto del usuario. |
+
 #### 2.6.5.2. Interface Layer
+
+La capa de interfaz de **Shopping Planning** expone las capacidades de planificación y comparación de precios a través de una API REST. Esta interfaz es consumida principalmente por la aplicación móvil del Consumidor para gestionar sus listas y recibir sugerencias de ahorro.
+
+Todos los endpoints están prefijados con `/api/v1/planning`.
+
+**ShoppingPlanningController**
+
+| Método HTTP | Endpoint | Descripción | Request DTO | Response DTO |
+| :--- | :--- | :--- | :--- | :--- |
+| **POST** | `/shopping-lists` | Crea una nueva lista de compras vacía para el usuario. | `CreateShoppingListRequest` | `ShoppingListResponse` |
+| **POST** | `/shopping-lists/{listId}/items` | Añade un producto específico a una lista de compras existente. | `AddItemToBasketRequest` | `ShoppingListItemResponse` |
+| **DELETE** | `/shopping-lists/{listId}/items/{itemId}` | Elimina un producto de la lista de compras. | `-` | `void` |
+| **PUT** | `/preferences/budget` | Define o actualiza el presupuesto máximo para el ciclo de compra. | `DefineBudgetRequest` | `BudgetResponse` |
+| **POST** | `/preferences/stores` | Selecciona las tiendas de preferencia para realizar las comparaciones. | `SelectPreferredStoresRequest` | `PreferenceResponse` |
+| **GET** | `/shopping-lists/{listId}/comparison` | Ejecuta la comparación de la canasta y genera proyecciones de costo y stock. | `-` | `List<PriceProjectionResponse>` |
+| **GET** | `/shopping-lists/{listId}/total-cost` | Obtiene el costo total proyectado de la canasta actual. | `-` | `TotalCostResponse` |
+
+**DTOs de Request y Response**
+
+A continuación se muestran ejemplos de los objetos de transferencia de datos utilizados para la comunicación con la API:
+
+**CreateShoppingListRequest**
+```json
+{
+  "buyerId": "uuid",
+  "listName": "Compras Semanales - Abril"
+} 
+```
+
+**ShoppingListResponse**
+
+```json
+{
+  "listId": "uuid",
+  "buyerId": "uuid",
+  "name": "Compras Semanales - Abril",
+  "createdAt": "2026-04-23T10:00:00"
+} 
+```
+
+**AddItemToBasketRequest**
+
+```json
+{
+ "productId": "uuid",
+  "quantity": 2.5,
+  "unit": "kg"
+} 
+```
+**DefineBudgetRequest**
+```json
+{
+ "buyerId": "uuid",
+  "amount": 250.00,
+  "currency": "PEN"
+} 
+```
+**PriceProjectionResponse**
+```json
+{
+  "projectionId": "uuid",
+  "storeId": "uuid",
+  "storeName": "Plaza Vea",
+  "totalCost": 215.50,
+  "estimatedSavings": 34.50,
+  "itemsStatus": [
+    {
+      "productId": "uuid",
+      "status": "AVAILABLE",
+      "price": 12.00
+    },
+    {
+      "productId": "uuid",
+      "status": "OUT_OF_STOCK",
+      "suggestedSubstituteId": "uuid"
+    }
+  ]
+} 
+```
+**TotalCostResponse**
+```json
+{
+  "listId": "uuid",
+  "projectedTotal": 215.50,
+  "currency": "PEN",
+  "isWithinBudget": true
+}
+```
+
 #### 2.6.5.3. Application Layer
+
+La capa de aplicación de **Shopping Planning** orquesta los flujos de negocio coordinando los objetos del dominio, los repositorios y los servicios de infraestructura. Su responsabilidad principal es dirigir el flujo de trabajo (orchestration) y asegurar que las transacciones se completen correctamente sin contener lógica de decisión propia, la cual reside en el dominio.
+
+**Application Services**
+
+| Application Service | Responsabilidad |
+| :--- | :--- |
+| **ShoppingPlanningApplicationService** | Punto de entrada principal para las operaciones de preparación de canasta. Recibe comandos desde la Interface Layer, delega en los aggregates `ShoppingList` y `ShoppingPreferences`, y publica los domain events generados. |
+| **PriceComparisonApplicationService** | Orquesta la actualización de las proyecciones de precios y stock en respuesta a cambios en la lista de compras o actualizaciones del catálogo externo. |
+
+**Command Handlers**
+
+Los Command Handlers reciben un Command Object y ejecutan la operación de escritura correspondiente sobre el dominio, manejando la consistencia transaccional.
+
+| Command | Command Handler | Flujo de ejecución |
+| :--- | :--- | :--- |
+| **CreateShoppingListCommand** | **CreateShoppingListCommandHandler** | 1) Valida el `BuyerId`. 2) Instancia un nuevo aggregate `ShoppingList`. 3) Persiste el aggregate en el repositorio. 4) Publica el evento `ShoppingListCreated`. |
+| **AddItemToShoppingListCommand** | **AddItemToShoppingListCommandHandler** | 1) Recupera la `ShoppingList` activa. 2) Crea una entidad `ShoppingListItem`. 3) Invoca `shoppingList.addItem(item)`. 4) Persiste los cambios. 5) Publica `ProductAddedToBasket`. 6) Dispara de forma asíncrona el recálculo de la comparación de precios. |
+| **DefineMaxBudgetCommand** | **DefineMaxBudgetCommandHandler** | 1) Recupera o crea las `ShoppingPreferences` del usuario. 2) Invoca `preferences.defineBudget(amount, currency)`. 3) Persiste el aggregate. 4) Publica `MaxBudgetDefined`. |
+| **CompareBasketPricesCommand** | **CompareBasketPricesCommandHandler** | 1) Recupera la `ShoppingList` y las tiendas seleccionadas. 2) Invoca al `ComparisonEngineService` para proyectar costos. 3) Si detecta falta de stock, llama al `SubstituteSuggestionService`. 4) Crea las entidades `PriceProjection`. 5) Persiste y publica `BasketTotalCostProjected`. |
+
+**Query Handlers**
+
+Los Query Handlers se encargan exclusivamente de las operaciones de lectura, utilizando modelos optimizados para evitar la carga innecesaria de aggregates complejos (principio CQRS).
+
+| Query | Query Handler | Descripción |
+| :--- | :--- | :--- |
+| **GetShoppingListQuery** | **GetShoppingListQueryHandler** | Recupera el detalle completo de la lista de compras de un usuario, incluyendo ítems, cantidades y estado de la canasta. |
+| **GetPriceProjectionsQuery** | **GetPriceProjectionsQueryHandler** | Obtiene las proyecciones de costo generadas para una lista específica en las diferentes tiendas, optimizando la lectura mediante un Read Model. |
+| **GetBudgetStatusQuery** | **GetBudgetStatusQueryHandler** | Retorna la situación financiera de la planificación actual, comparando el costo proyectado contra el presupuesto definido por el usuario. |
+
+**Integración con el Catálogo de Productos y Stock**
+
+El flujo de planificación se alimenta de datos provenientes del contexto externo de **Catálogo**. La integración se realiza mediante un patrón de mensajería asíncrona para garantizar la resiliencia:
+
+1. El **Catalog Context** publica eventos de actualización de precios o stock.
+2. El **PlanningEventConsumer** (en infraestructura) recibe el mensaje y lo traduce mediante el **CatalogACL**.
+3. El **PriceComparisonApplicationService** recibe la notificación de cambio y:
+    * Identifica las `ShoppingList` afectadas por el cambio de precio o stock.
+    * Despacha el comando `CompareBasketPricesCommand` para actualizar las proyecciones de los usuarios afectados.
+    * Si un producto queda sin stock (`OUT_OF_STOCK`), el sistema genera automáticamente una sugerencia de sustituto basada en la "Política de Sugerencia de Sustitutos" definida en el dominio.
+
 #### 2.6.5.4. Infrastructure Layer
+
+La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios y mensajería) y la capa anticorrupción que aísla a **Shopping Planning** de los modelos externos. En este contexto, se utiliza una estrategia de persistencia relacional y comunicación asíncrona para garantizar la escalabilidad del motor de comparaciones.
+
+**Repositories (Implementación)**
+
+| Interfaz (Dominio) | Implementación (Infraestructura) | Tecnología |
+| :--- | :--- | :--- |
+| **ShoppingListRepository** | **ShoppingListJpaRepository** | Spring Data JPA + PostgreSQL |
+| **ShoppingPreferencesRepository** | **ShoppingPreferencesJpaRepository** | Spring Data JPA + PostgreSQL |
+| **PriceComparisonRepository** | **PriceComparisonJpaRepository** | Spring Data JPA + PostgreSQL |
+
+**Mapeo a Base de Datos (Persistencia Relacional)**
+
+La persistencia utiliza exclusivamente PostgreSQL para gestionar los aggregates transaccionales y las proyecciones resultantes.
+
+**Tabla shopping_lists**
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | UUID (PK) | Identificador único de la lista de compras. |
+| **buyer_id** | UUID | Identificador del consumidor propietario. |
+| **name** | VARCHAR(100) | Nombre descriptivo dado por el usuario. |
+| **created_at** | TIMESTAMP | Fecha de creación del registro. |
+
+**Tabla shopping_list_items**
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | UUID (PK) | Identificador único del ítem en la lista. |
+| **shopping_list_id** | UUID (FK) | Vínculo con el aggregate `ShoppingList`. |
+| **product_id** | UUID | Identificador del producto del catálogo externo. |
+| **quantity** | DECIMAL(10,2) | Cantidad planificada para la compra. |
+| **is_in_basket** | BOOLEAN | Estado de selección dentro de la planificación. |
+
+**Integración con RabbitMQ (Mensajería Asíncrona)**
+
+La integración con el Message Broker se realiza mediante Spring AMQP. **Shopping Planning** actúa como consumidor de eventos de stock y como productor de alertas de presupuesto y finalización de planes.
+
+| Exchange | Queue | Routing Key | Dirección | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **catalog.events** | **planning.product-updated** | **product.updated** | Inbound (Consumer) | Recibe cambios en precios o stock para actualizar comparaciones. |
+| **planning.events** | **notifications.budget-exceeded** | **budget.exceeded** | Outbound (Publisher) | Notifica cuando la canasta actual supera el presupuesto del usuario. |
+| **planning.events** | **journey.planning-ready** | **planning.finalized** | Outbound (Publisher) | Informa que la lista está lista para ser procesada en un recorrido real. |
+
+**Anti-Corruption Layer (ACL) - Integración con Catalog Context**
+
+La ACL actúa como un traductor bidireccional que convierte los modelos del dominio externo (Catálogo de Productos) al lenguaje ubicuo propio de **Planning**. Esto permite obtener precios y stock actuales sin acoplar la lógica de planificación a cambios en el esquema del catálogo.
+
+**Implementación del ACL:**
+```java
+@Component
+public class CatalogACL {
+    public PlanningItemDTO translate(ExternalProductMessage msg) {
+        return PlanningItemDTO.builder()
+            .productId(new ProductId(msg.getId()))
+            .currentPrice(new Price(msg.getPrice(), Currency.getInstance("PEN")))
+            .stockStatus(mapStock(msg.getAvailability()))
+            .build();
+    }
+
+    private StockStatus mapStock(int availability) {
+        return availability > 0 ? StockStatus.AVAILABLE : StockStatus.OUT_OF_STOCK;
+    }
+}
+``` 
+> Decisión de diseño: El ACL se implementa exclusivamente en la capa de infraestructura de Shopping Planning, garantizando que ninguna dependencia del modelo de Catalog cruce la frontera hacia las capas de aplicación o dominio, protegiendo así la integridad del modelo interno.
+
 #### 2.6.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+Esta sección detalla la arquitectura de componentes del contexto de **Shopping Planning**. Se describe la interacción entre servicios y capas internas, incluyendo su integración con la base de datos relacional definida previamente en el diagrama de contenedores.
+
+> ![Diagrama de componente Shopping Planning](./assets/component-level-diagrams/shoppingplanning-component-diagram.png)
+
 #### 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+Se presentan los diagramas técnicos detallados que reflejan la implementación interna del código y el diseño de datos del contexto.
+
+
 ##### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases ilustra los aggregates raíz ShoppingList, ShoppingPreferences y PriceComparison. Se detallan los métodos en inglés como `addItem()`, `defineBudget()` y `calculateTotalCost()`. También se visualiza la relación de los servicios de dominio como `ComparisonEngineService` y la estructura de los Value Objects inmutables `(Budget, Quantity, StockStatus)` que aseguran la validez de los datos en el dominio.
+
+![class diagram](./assets/domain-layer-diagrams/shoppingplanning-domain-layer-diagram.png)
+
+
 ##### 2.6.5.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema relacional en PostgreSQL. Se detallan las tablas `shopping_lists`, `shopping_list_items` y `shopping_preferences`, junto con sus columnas, tipos de datos y restricciones de integridad (Primary Keys y Foreign Keys). Este diseño asegura que la información de planificación del consumidor se mantenga consistente y disponible para las consultas de ahorro proyectado.
+
+![database diagram](./assets/database-diagrams/shoppingplanning-database-diagram.png)
 
 ### 2.6.6. Bounded Context: Shopping Journey
 #### 2.6.6.1. Domain Layer
