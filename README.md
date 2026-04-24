@@ -1289,14 +1289,281 @@ El diagrama de diseño de base de datos muestra el esquema relacional en Postgre
 ![database diagram](./assets/database-diagrams/shoppingplanning-database-diagram.png)
 
 ### 2.6.6. Bounded Context: Shopping Journey
+
+El bounded context **Shopping Journey** es el motor logístico de SmartPrice durante la ejecución física de la compra. Su objetivo no es procesar pagos o transacciones comerciales, sino guiar al consumidor de manera eficiente hacia los puntos de venta optimizados. Se encarga de la gestión de rutas, la geolocalización de puntos de partida y el seguimiento del trayecto en tiempo real, integrándose con servicios externos de mapas para ofrecer una navegación precisa.
+
 #### 2.6.6.1. Domain Layer
+
+La capa de dominio de **Shopping Journey** encapsula la lógica de navegación y optimización de trayectos, asegurando que el consumidor complete su recorrido de verificación de precios de forma óptima.
+
+**Aggregates**
+
+Un Aggregate es un clúster de objetos de dominio que se trata como una única unidad de consistencia para garantizar las reglas de negocio en operaciones de navegación.
+
+| Aggregate Root | Descripción | Responsabilidad principal |
+| :--- | :--- | :--- |
+| **ShoppingRoute** | Representa el itinerario de compra activo, desde el punto de origen hasta el destino final. | Gestionar la secuencia de paradas, el estado del trayecto y validar la llegada a los locales. |
+| **UserLocationProfile** | Representa el perfil geográfico del usuario dentro del sistema de navegación. | Gestionar la ubicación de residencia (Home) para el cálculo de rutas de inicio. |
+
+**Entities**
+
+Las Entities son objetos con identidad propia que mantienen un hilo de continuidad y estado durante el transcurso del viaje.
+
+| Entidad | Aggregate al que pertenece | Atributos clave | Comportamientos |
+| :--- | :--- | :--- | :--- |
+| **StopPoint** | ShoppingRoute | `stopId`, `storeId`, `orderIndex`, `isReached` | `confirmArrival()`, `updateOrder()` |
+| **NavigationPath** | ShoppingRoute | `pathId`, `polylineData`, `estimatedDuration` | `calculateOptimalPath()`, `updateETA()` |
+
+**Value Objects**
+
+Los Value Objects son objetos inmutables que representan medidas o estados. Encapsulan las reglas de validación geográfica.
+
+| Value Object | Atributos | Reglas de validación / invariantes |
+| :--- | :--- | :--- |
+| **GeoCoordinates** | `latitude: double`, `longitude: double` | Debe cumplir con rangos válidos de latitud ([-90, 90]) y longitud ([-180, 180]). |
+| **JourneyStatus** | `status: Enum` | Define estados como `SEARCHED`, `STARTED`, `COMPLETED` o `CANCELLED`. |
+| **MapIntegrationPolicy** | `provider: String`, `criteria: Enum` | Define la política de integración con proveedores externos (ej. Google Maps) para optimización de ruta. |
+
+**Domain Events**
+
+Los Domain Events notifican hechos relevantes ocurridos durante el movimiento del usuario, permitiendo que el sistema reaccione a hitos geográficos.
+
+| Domain Event | Aggregate origen | Atributos del payload | Significado de negocio |
+| :--- | :--- | :--- | :--- |
+| **HomeLocationDefined** | UserLocationProfile | `userId`, `coordinates`, `timestamp` | El usuario ha establecido su ubicación de residencia como punto de partida. |
+| **OptimalPurchasePointDetermined** | ShoppingRoute | `routeId`, `storeId`, `coordinates` | Se ha identificado el mejor local según la planificación previa. |
+| **StopPointConfirmed** | ShoppingRoute | `stopId`, `routeId`, `confirmedAt` | Una de las paradas de la ruta ha sido validada por el usuario. |
+| **RouteSearched** | ShoppingRoute | `routeId`, `origin`, `destination` | Se ha solicitado el cálculo de un trayecto al proveedor de mapas. |
+| **NavigationToStoreStarted** | ShoppingRoute | `routeId`, `storeId`, `startTime` | El usuario ha iniciado el guiado activo hacia una tienda. |
+| **ShoppingRouteCompleted** | ShoppingRoute | `routeId`, `totalDuration`, `endTime` | El usuario ha finalizado formalmente su recorrido de compra. |
+| **StoreVisitConfirmed** | ShoppingRoute | `routeId`, `storeId`, `arrivalTime` | Se confirma la llegada física al local mediante geofencing. |
+
+**Domain Services**
+
+Los Domain Services gestionan lógica compleja que requiere interacción con sistemas externos o cálculos multivariable.
+
+| Domain Service | Método principal | Descripción |
+| :--- | :--- | :--- |
+| **RouteOptimizationService** | `optimizeRoute(Origin, List<Destination>): ShoppingRoute` | Calcula la ruta más eficiente basándose en el tiempo y la ubicación de las tiendas. |
+| **GeofencingService** | `verifyProximity(UserLocation, StoreLocation): boolean` | Determina si el usuario ha llegado al local para registrar la llegada automáticamente. |
+| **MapProviderService** | `requestPath(Origin, Destination): NavigationPath` | Actúa como puerto de salida para solicitar trayectos a servicios como Google Maps. |
+
 #### 2.6.6.2. Interface Layer
+
+La capa de interfaz de **Shopping Journey** expone los servicios de geolocalización, optimización de rutas y seguimiento de trayectos a través de una API REST. Esta interfaz permite a la aplicación móvil interactuar con proveedores externos de mapas y registrar los hitos geográficos del usuario durante su recorrido.
+
+Todos los endpoints están prefijados con `/api/v1/journey`.
+
+**ShoppingJourneyController**
+
+| Método HTTP | Endpoint | Descripción | Request DTO | Response DTO |
+| :--- | :--- | :--- | :--- | :--- |
+| **POST** | `/locations/home` | Define la ubicación de residencia del usuario para el inicio de rutas. | `DefineHomeLocationRequest` | `LocationResponse` |
+| **POST** | `/routes/optimize` | Calcula la ruta de compra más eficiente basándose en una lista de tiendas. | `OptimizeRouteRequest` | `ShoppingRouteResponse` |
+| **GET** | `/routes/{routeId}/path` | Obtiene la información del trayecto (polyline) y tiempos estimados. | `-` | `NavigationPathResponse` |
+| **POST** | `/routes/{routeId}/start` | Registra el inicio de la navegación hacia la primera o siguiente tienda. | `StartNavigationRequest` | `JourneyStatusResponse` |
+| **POST** | `/routes/{routeId}/stops/{stopId}/confirm` | Confirma la llegada física a un local mediante coordenadas actuales. | `ConfirmArrivalRequest` | `ArrivalResponse` |
+| **POST** | `/routes/{routeId}/finish` | Finaliza formalmente el recorrido de compra actual. | `-` | `JourneyStatusResponse` |
+
+**DTOs de Request y Response**
+
+A continuación se presentan los objetos de transferencia de datos diseñados para la gestión logística del trayecto:
+
+**DefineHomeLocationRequest**
+```json
+{
+  "buyerId": "uuid",
+  "latitude": -12.046374,
+  "longitude": -77.042793,
+  "addressAlias": "Mi Casa"
+}
+``` 
+**OptimizeRouteRequest**
+```json
+{
+  "origin": {
+    "latitude": -12.046374,
+    "longitude": -77.042793
+  },
+  "destinationStoreIds": ["uuid-1", "uuid-2"],
+  "optimizationCriteria": "FASTEST_ROUTE"
+}
+```
+
+**ShoppingRouteResponse**
+
+```json 
+{
+  "routeId": "uuid",
+  "status": "SEARCHED",
+  "stops": [
+    {
+      "stopId": "uuid",
+      "storeId": "uuid",
+      "orderIndex": 1,
+      "isReached": false
+    }
+  ],
+  "totalEstimatedDuration": "45 mins"
+}
+```
+
+**ConfirmArrivalRequest**
+
+```json
+{
+  "currentLatitude": -12.1221,
+  "currentLongitude": -77.0312,
+  "timestamp": "2026-04-23T11:45:00"
+}
+```
+
+**ArrivalResponse**
+```json 
+{
+  "stopId": "uuid",
+  "storeId": "uuid",
+  "arrivalTime": "2026-04-23T11:45:05",
+  "status": "CONFIRMED",
+  "message": "Visita a tienda confirmada exitosamente."
+}
+```
+
 #### 2.6.6.3. Application Layer
+
+La capa de aplicación de **Shopping Journey** actúa como el director de orquesta del trayecto físico del usuario. Su responsabilidad es coordinar los objetos del dominio, los repositorios y los adaptadores de infraestructura (como el servicio de mapas) para transformar la intención de compra en una ruta ejecutable y monitoreada. 
+
+**Application Services**
+
+| Application Service | Responsabilidad |
+| :--- | :--- |
+| **ShoppingJourneyApplicationService** | Orquesta el ciclo de vida del recorrido: desde la creación de la ruta óptima hasta el cierre del trayecto tras visitar los locales. |
+| **UserLocationApplicationService** | Gestiona los puntos de interés geográficos del consumidor, permitiendo establecer y recuperar ubicaciones base para el inicio de navegación. |
+
+**Command Handlers**
+
+Los Command Handlers procesan las intenciones de cambio de estado en el trayecto, asegurando que la lógica de geolocalización y navegación se ejecute bajo las reglas del dominio.
+
+| Command | Command Handler | Flujo de ejecución |
+| :--- | :--- | :--- |
+| **DefineHomeLocationCommand** | **DefineHomeLocationCommandHandler** | 1) Valida identidad del usuario. 2) Instancia o actualiza el `UserLocationProfile`. 3) Persiste coordenadas. 4) Publica `HomeLocationDefined`. |
+| **OptimizeShoppingRouteCommand** | **OptimizeShoppingRouteCommandHandler** | 1) Obtiene origen y lista de tiendas. 2) Invoca al `RouteOptimizationService`. 3) Genera el `ShoppingRoute` con paradas ordenadas. 4) Persiste y publica `OptimalPurchasePointDetermined`. |
+| **StartNavigationCommand** | **StartNavigationCommandHandler** | 1) Recupera la ruta activa. 2) Cambia estado a `STARTED`. 3) Registra hora de inicio para métricas de tiempo. 4) Publica `NavigationToStoreStarted`. |
+| **ConfirmStoreArrivalCommand** | **ConfirmStoreArrivalCommandHandler** | 1) Captura GPS actual. 2) Invoca al `GeofencingService`. 3) Si hay coincidencia, marca el `StopPoint` como alcanzado. 4) Persiste y publica `StoreVisitConfirmed`. |
+| **FinishShoppingJourneyCommand** | **FinishShoppingJourneyCommandHandler** | 1) Valida que se hayan visitado los puntos necesarios. 2) Cierra el aggregate `ShoppingRoute`. 3) Persiste estado final. 4) Publica `ShoppingJourneyCompleted`. |
+
+**Query Handlers**
+
+Los Query Handlers proporcionan una vista de solo lectura del progreso del usuario, facilitando la visualización en tiempo real de la ruta sin afectar la consistencia del dominio.
+
+| Query | Query Handler | Descripción |
+| :--- | :--- | :--- |
+| **GetActiveShoppingRouteQuery** | **GetActiveShoppingRouteQueryHandler** | Retorna el estado actual de la navegación, incluyendo el trazado (polyline) y las paradas pendientes. |
+| **GetUserHomeLocationQuery** | **GetUserHomeLocationQueryHandler** | Obtiene las coordenadas de residencia guardadas para agilizar el inicio de nuevas rutas. |
+| **GetTravelEstimatesQuery** | **GetTravelEstimatesQueryHandler** | Provee el tiempo estimado de llegada (ETA) y distancia restante hacia el próximo punto de parada. |
+
+**Integración y Flujo de Eventos**
+
+La comunicación con el exterior es vital para la precisión del trayecto:
+
+1. **Map Provider Integration**: La lógica de trayectos se apoya en el `MapProviderService` (Infraestructura), que mediante un ACL traduce las coordenadas del dominio a llamadas de servicios externos (ej. Google Maps API) para obtener rutas reales y tráfico.
+2. **Geofencing**: El sistema utiliza el `GeofencingService` para validar automáticamente la llegada del usuario al local. Al confirmarse, se dispara el evento `StoreVisitConfirmed`.
+3. **Trigger de Feedback**: El evento final `ShoppingJourneyCompleted` (o `RecorridoFinalizado`) es el que viaja hacia el contexto de **Experience**, indicándole al sistema que el usuario ya terminó su ruta y es el momento ideal para solicitarle que registre los precios encontrados y su reseña de la tienda.
+
 #### 2.6.6.4. Infrastructure Layer
+
+La capa de infraestructura de **Shopping Journey** provee las implementaciones concretas para la persistencia de rutas, la comunicación asíncrona y los adaptadores para servicios externos de cartografía. Se utiliza una arquitectura relacional para asegurar la trazabilidad de los recorridos y una capa anticorrupción (ACL) para abstraer la complejidad de los proveedores de mapas.
+
+**Repositories**
+
+| Interfaz (Dominio) | Implementación (Infraestructura) | Tecnología |
+| :--- | :--- | :--- |
+| **ShoppingRouteRepository** | **ShoppingRouteJpaRepository** | Spring Data JPA + PostgreSQL |
+| **UserLocationProfileRepository** | **UserLocationProfileJpaRepository** | Spring Data JPA + PostgreSQL |
+
+**Mapeo a Base de Datos**
+
+**Tabla user_location_profiles**
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | UUID (PK) | Identificador único del perfil de ubicación. |
+| **buyer_id** | UUID (UQ) | Identificador del consumidor (relación única). |
+| **home_latitude** | DECIMAL(10,8) | Latitud de la residencia del usuario. |
+| **home_longitude** | DECIMAL(11,8) | Longitud de la residencia del usuario. |
+| **updated_at** | TIMESTAMP | Fecha de la última actualización de ubicación. |
+
+**Tabla shopping_routes**
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | UUID (PK) | Identificador único del recorrido. |
+| **buyer_id** | UUID | Identificador del consumidor. |
+| **status** | VARCHAR(20) | Estado: SEARCHED, STARTED, COMPLETED, CANCELLED. |
+| **total_distance** | DECIMAL(10,2) | Distancia total estimada o recorrida en kilómetros. |
+| **start_time** | TIMESTAMP | Fecha y hora de inicio del trayecto. |
+| **end_time** | TIMESTAMP | Fecha y hora de finalización del trayecto. |
+
+**Tabla navigation_paths**
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | UUID (PK) | Identificador único del trazado. |
+| **route_id** | UUID (FK/UQ) | Vínculo con `shopping_routes` (Relación 1:1). |
+| **polyline_data** | TEXT | Datos geométricos del trazado de ruta (Google Maps). |
+| **estimated_duration_seconds** | BIGINT | Tiempo estimado de viaje en segundos. |
+
+**Tabla stop_points**
+| Columna | Tipo | Descripción |
+| :--- | :--- | :--- |
+| **id** | UUID (PK) | Identificador de la parada. |
+| **route_id** | UUID (FK) | Vínculo con la ruta `shopping_routes`. |
+| **store_id** | UUID | Identificador de la tienda de destino. |
+| **order_index** | INT | Orden de visita en el itinerario optimizado. |
+| **is_reached** | BOOLEAN | Indica si se confirmó la llegada física al local. |
+
+**Integración con RabbitMQ (Mensajería Asíncrona)**
+
+| Exchange | Queue | Routing Key | Dirección | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **planning.events** | **journey.plan-finalized** | **planning.finalized** | Inbound | Recibe la señal de lista lista para navegar. |
+| **journey.events** | **experience.visit-confirmed** | **store.reached** | Outbound | Notifica llegada a tienda para feedback. |
+| **journey.events** | **experience.journey-finished** | **journey.completed** | Outbound | Informa finalización de ruta a Experience. |
+
+**Anti-Corruption Layer (ACL) - Integración con Map Provider**
+
+La ACL abstrae la API de Google Maps, permitiendo que el dominio trabaje con objetos `NavigationPath` puros.
+
+```java
+@Component
+public class MapProviderACL {
+    public NavigationPathDTO translate(ExternalDirectionsResponse response) {
+        return NavigationPathDTO.builder()
+            .polylineData(response.getEncodedPoints())
+            .estimatedDuration(Duration.ofSeconds(response.getDurationSeconds()))
+            .build();
+    }
+}
+```
+
 #### 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+Este diagrama ilustra la interacción entre los componentes de navegación. El `ShoppingJourneyController` delega al `ShoppingJourneyApplicationService`, que utiliza el `RouteOptimizationService` y el `MapProviderACL` para trazar el camino óptimo. El `GeofencingService` monitorea la ubicación para actualizar los `StopPoints` en la base de datos PostgreSQL.
+
+> ![component diagram](./assets/component-level-diagrams/shoppingjourney-component-diagram.png)
+
 #### 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas de nivel de código que detallan la estructura interna del contexto de **Shopping Journey**. Se incluyen los diagramas de clases del dominio y el diseño de la base de datos, los cuales reflejan la implementación de los elementos del diseño táctico y las relaciones de integridad necesarias para gestionar la logística de los recorridos.
+
 ##### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases de la capa de dominio de Shopping Journey ilustra las entidades, objetos de valor y servicios de dominio que permiten la navegación y seguimiento del usuario. Se destacan los agregados raíz `ShoppingRoute` y `UserLocationProfile`, junto con sus entidades dependientes y los objetos de valor inmutables que aseguran la validez de los datos geográficos.
+
+![class diagram](./assets/domain-layer-diagrams/shoppingjourney-domain-layer-diagram.png)
+
 ##### 2.6.6.6.2. Bounded Context Database Design Diagram
+
+El diagrama de diseño de base de datos muestra el esquema relacional en PostgreSQL para el contexto de **Shopping Journey**. Se detallan las tablas `shopping_routes`, `stop_points`, `navigation_paths` y `user_location_profiles`, junto con sus columnas, tipos de datos y restricciones de integridad (Primary Keys y Foreign Keys). Este diseño asegura que la trazabilidad de los recorridos, la optimización de las paradas y los perfiles geográficos del consumidor se mantengan consistentes, permitiendo un seguimiento preciso del trayecto y la validación automática de visitas mediante geofencing.
+
+![database diagram](./assets/database-diagrams/shoppingjourney-database-diagram.png)
 
 ### 2.6.7. Bounded Context: Experience
 #### 2.6.7.1. Domain Layer
