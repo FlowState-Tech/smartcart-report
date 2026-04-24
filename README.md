@@ -1131,6 +1131,12 @@ Detalles de la Infraestructura:
 ## 2.6. Tactical-Level Domain-Driven Design
 
 ### 2.6.1. Bounded Context: IAM
+
+
+
+
+
+
 ##### 2.6.1.1. Domain Layer
 Este contexto gestiona la identidad, autenticación y niveles de acceso para consumidores y *Store Managers*, asegurando la seguridad del ecosistema SmartCart.
 
@@ -1162,7 +1168,13 @@ Coordina los casos de uso sin imponer lógica de negocio.
 #### 2.6.1.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+
+
 ##### 2.6.1.6.2. Bounded Context Database Design Diagram
+![Diagrama Base de Datos IAM](assets/imagenes/iam-database-design.png)
+*Diseño lógico de tablas Roles y Users generado en Redgate Data Modeler.*
+
 
 ### 2.6.2. Bounded Context: Verification
 ##### 2.6.2.1. Domain Layer
@@ -1193,8 +1205,10 @@ Encargado de validar la legitimidad de las tiendas y sus datos fiscales para hab
 #### 2.6.2.5. Bounded Context Software Architecture Component Level Diagrams
 #### 2.6.2.6. Bounded Context Software Architecture Code Level Diagrams
 ##### 2.6.2.6.1. Bounded Context Domain Layer Class Diagrams
-##### 2.6.2.6.2. Bounded Context Database Design Diagram
 
+##### 2.6.2.6.2. Bounded Context Database Design Diagram
+![Diagrama Base de Datos Verification](assets/imagenes/verification-database-design.png)
+*Diseño de tablas AffiliationRequests y StoreValidations generado en Redgate.*
 
 
 
