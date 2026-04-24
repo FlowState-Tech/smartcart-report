@@ -901,6 +901,81 @@ Esta sección establece el **Ubiquitous Language** (Lenguaje Ubicuo) de la plata
 | 16    | **US45** | Reporte de Visitas para Comerciantes   |      5       | EP09 | Baja      |
 ## 2.5. Strategic-Level Domain-Driven Design
 ### 2.5.1. EventStorming
+
+La fase de modelado se realizó mediante una sesión de Event Storming en Miro con cinco integrantes del equipo. El proceso consistió en el mapeo visual de eventos, comandos y actores con el fin de unificar la lógica del negocio, detectar puntos críticos y delimitar los Bounded Contexts que estructurarán la arquitectura del sistema. A continuación, se detallan las diez etapas seguidas durante la sesión:
+
+1. Unstructured Exploration
+Se realizó una lluvia de ideas abierta donde cada integrante registró eventos de dominio de forma libre. El foco fue identificar todos los sucesos relevantes dentro del ciclo de vida de SmartCart, desde la consulta de precios hasta la validación de ofertas.
+
+  <img src="./assets/eventstorming/step1.png" >
+
+2. Timelining
+Se procedió a organizar los eventos identificados en una línea de tiempo lógica. Este proceso permitió detectar vacíos en el flujo de negocio y asegurar una secuencia coherente en la interacción entre el usuario y la plataforma.
+
+  <img src="./assets/eventstorming/step2.png" >
+
+3. Reverse Parting
+Mediante un análisis retrospectivo, se validaron los flujos para garantizar que cada evento tuviera una causa lógica. Esto ayudó a eliminar eventos redundantes y a refinar la lógica del sistema.
+
+  <img src="./assets/eventstorming/step3.1.png" >
+  <img src="./assets/eventstorming/step3.2.png" >
+
+4. Problems & Opportunities
+Se identificaron puntos de fricción, como la posible lentitud en la actualización de stock o la veracidad de los datos. Estos se marcaron con notas de color rosa para priorizar soluciones tecnológicas en las etapas de diseño.
+
+<img src="./assets/eventstorming/step4.png" >
+
+<img src="./assets/eventstorming/step4.1.png" >
+
+<img src="./assets/eventstorming/step4.2.png" >
+
+5.  Roles & Persons
+Se definieron los actores que interactúan con el sistema, diferenciando claramente entre el Shopper Planificador, el Gerente de Tienda y el Administrador del Sistema, asociándolos a sus respectivos comandos.
+<img src="./assets/eventstorming/step5.png" >
+<img src="./assets/eventstorming/step5.1.png" >
+<img src="./assets/eventstorming/step5.2.png" >
+<img src="./assets/eventstorming/step5.3.png" >
+<img src="./assets/eventstorming/step5.4.png" >
+
+6. Commands
+Se añadieron las acciones (notas azules) que desencadenan los eventos de dominio. Esto permitió mapear la intención del usuario (ej. "Consultar ruta", "Reportar precio") con su resultado directo en el sistema.
+<img src="./assets/eventstorming/step6.png" >
+<img src="./assets/eventstorming/step6.1.png" >
+<img src="./assets/eventstorming/step6.2.png" >
+<img src="./assets/eventstorming/step6.3.png" >
+<img src="./assets/eventstorming/step6.4.png" >
+<img src="./assets/eventstorming/step6.5.png" >
+
+7. Data Models
+Se identificó la información necesaria para que cada comando se ejecute con éxito. Se definieron estructuras básicas de datos para elementos como "Lista de Compras", "Geolocalización de Establecimiento" y "Ticket de Oferta".
+<img src="./assets/eventstorming/step7.png" >
+<img src="./assets/eventstorming/step7.1.png" >
+<img src="./assets/eventstorming/step7.2.png" >
+<img src="./assets/eventstorming/step7.3.png" >
+<img src="./assets/eventstorming/step7.4.png" >
+<img src="./assets/eventstorming/step7.5.png" >
+
+8. Emerging Bounded Contexts
+A través de la agrupación de eventos y comandos relacionados, se identificaron los límites lógicos del sistema. Esto dio origen a contextos como Inventory Management, Shopping Optimization e Identity & Access Management (IAM).
+<img src="./assets/eventstorming/step8.png" >
+<img src="./assets/eventstorming/step8.1.png" >
+<img src="./assets/eventstorming/step8.2.png" >
+<img src="./assets/eventstorming/step8.3.png" >
+<img src="./assets/eventstorming/step8.4.png" >
+
+9. Policy & Process Modeling
+Se establecieron las reglas de negocio y procesos automáticos (políticas). Por ejemplo, la regla de "Si un usuario valida 5 precios, otorgar insignia de contribuidor", definiendo reacciones del sistema ante eventos específicos.
+<img src="./assets/eventstorming/step9.png" >
+<img src="./assets/eventstorming/step9.1.png" >
+<img src="./assets/eventstorming/step9.2.png" >
+<img src="./assets/eventstorming/step9.3.png" >
+<img src="./assets/eventstorming/step9.4.png" >
+<img src="./assets/eventstorming/step9.5.png" >
+
+11. Final Review
+Se realizó una revisión exhaustiva del mural completo con todos los participantes. Se validó que el flujo fuera integral, cerrando la sesión con una visión compartida de la arquitectura funcional antes de pasar al diseño de microservicios.
+<img src="./assets/eventstorming/step10.png" >
+
 ## 2.5.1.1. Candidate Context Discovery
 
 En esta sección se presenta el proceso seguido por el equipo para la descubierta y clasificación de los **Bounded Contexts** candidatos a partir del taller de **EventStorming** realizado previamente. El objetivo es identificar los límites naturales del dominio de SmartCart y determinar las partes core del negocio para priorizar los esfuerzos de diseño.
