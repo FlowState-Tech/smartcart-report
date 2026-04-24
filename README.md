@@ -235,13 +235,13 @@ La startup FlowState Tech es un equipo conformado por estudiantes de la carrera 
 
 ### 1.1.2. Perfiles de los integrantes del equipo
 
-| Foto | Nombres y Apellidos            | Código de Estudiante |        Carrera         | Resumen de Conocimientos y Habilidades |
+| Foto | Nombres y Apellidos | Código de Estudiante | Carrera | Resumen de Conocimientos y Habilidades |
 | :--: | :----------------------------- | :------------------: | :--------------------: | :------------------------------------- |
 |      | Anjali Amaro Villar            |      U20221G044      | Ingeniería de Software |                                        |
 |      | Joseph Manuel Chavez Viera     |      U202314019      | Ingeniería de Software |                                        |
 |      | Katherine Maryory Mejia Aliaga |      U20221A118      | Ingeniería de Software |                                        |
-|      | Kevin Patrick Pardo Chumpitazi |      U20221A525      | Ingeniería de Software |                                        |
-|      | Stephano Renan Valdivia Quispe |      U202311294      | Ingeniería de Software |                                        |
+| ![Kevin Pardo](assets/imagenes/foto.jpeg) | Kevin Patrick Pardo Chumpitazi | U20221A525 | Ingeniería de Software | Soy estudiante de Ingeniería de Software de 21 años. Cuento con conocimientos en lenguajes de programación como Java y Python, además de fundamentos en tecnologías web como HTML. Aunque me considero una persona reservada y a veces me cuesta interactuar, trato de mejorar constantemente mi desempeño en el trabajo en equipo mediante el apoyo técnico y la colaboración activa en el desarrollo del proyecto, buscando siempre aportar valor al grupo mientras fortalezco mis habilidades interpersonales. |
+|      | Stephano Renan Valdivia Quispe |      U202311294      | Ingeniería de Software |                                        |                              |
 
 ## 1.2. Solution Profile
 ### 1.2.1. Antecedentes y problemática
