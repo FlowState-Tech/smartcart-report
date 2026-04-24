@@ -1615,3 +1615,5 @@ El diagrama de diseño de base de datos muestra el esquema relacional en Postgre
 </p>
 
 # Anexos
+
+* Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
