@@ -3109,9 +3109,38 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 ## 3.1. Product design
 
+En esta sección, se detalla el diseño del producto como un aspecto fundamental en la estructura del sistema, enfocándose en los elementos clave que definen su forma y funcionamiento. El diseño de SmartCart se ha creado para garantizar que cada parte del software cumpla con las necesidades y metas de ahorro establecidas en las fases anteriores del proyecto.
+
+Con el objetivo de brindar una experiencia de usuario adecuada, se han tomado decisiones relevantes que afectan la interacción entre los usuarios y el sistema, priorizando la claridad en la información financiera y la rapidez en la navegación mediante GPS. Desde un enfoque tecnológico, la implementación visual se fundamenta en el lenguaje de diseño Material Design, lo que permite una transición fluida entre la plataforma web y la aplicación móvil, asegurando la coherencia de las piezas y la identidad de marca de FlowState Tech.
+
+
 ### 3.1.1. Style Guidelines
+En esta sección, el equipo establece las bases para contar con un repositorio central y organizado de recursos visuales de uso común.El objetivo principal es garantizar una presentación consistente y enfocada en todos los productos digitales de SmartCart, facilitando la colaboración entre diseñadores y desarrolladores mediante el uso estandarizado de activos, fuentes y estilos .
 
 #### 3.1.1.1. General Style Guidelines
+
+Estas guías establecen la identidad visual base para todos los productos del ecosistema SmartCart.
+
+**A. Branding & Tono de Comunicación**
+* **Tono:** El lenguaje será **Entusiasta y Sereno**. Queremos que el usuario se sienta motivado por el ahorro pero tranquilo de que la información es veraz.
+* **Lenguaje:** Se utilizará un estilo **Formal/Casual**, directo y fácil de entender para familias y jóvenes profesionales.
+
+**B. Paleta de Colores (Colors)**
+Se ha seleccionado una paleta moderna que evoca tecnología y ahorro inteligente:
+
+| Uso | Color | Hexadecimal | Representación |
+| :--- | :--- | :--- | :--- |
+| **Primario** | Azul Tecnológico | `#4A90E2` | Confianza y estabilidad del sistema. |
+| **Secundario** | Verde Menta | `#50E3C2` | Frescura y agilidad en la experiencia. |
+| **Acento** | Lima Suave | `#B8E986` | Resaltado de ofertas y ahorros logrados. |
+| **Fondo** | Blanco Nieve | `#FFFFFF` | Limpieza visual y legibilidad. |
+
+**C. Tipografía (Typography)**
+* **Títulos:** *Montserrat* (Bold) - Proporciona un aspecto moderno y sólido.
+* **Cuerpo de texto:** *Roboto* (Regular) - Siguiendo los estándares de Material Design para máxima legibilidad en dispositivos móviles.
+
+**D. Espaciado (Spacing)**
+Se aplicará un sistema de rejilla de 8dp (8pt grid) para mantener la consistencia en los márgenes y paddings de todos los componentes UI.
 
 ### 3.1.2. Information Architecture
 
