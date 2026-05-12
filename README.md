@@ -3312,6 +3312,46 @@ Los mensajes de commit seguirán el estándar Conventional Commits para asegurar
 
 ### 4.1.3. Source Code Style Guide & Conventions
 
+Con el objetivo de mantener un código ordenado, consistente y fácil de mantener entre todos los miembros del equipo, se han definido las siguientes convenciones. Todas las variables, funciones, clases, archivos y elementos estarán en inglés.
+
+- Se utilizará **inglés** como idioma único para nombres de variables, funciones, clases, comentarios y documentación.
+- Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
+
+**HTML**
+Atributos en minúsculas y nombres de clase con **kebab-case** (`section-title`, `main-container`).
+- Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangría con 2 espacios.
+- Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
+
+**CSS**
+
+- Para clases personalizadas: usar **kebab-case**.
+- Se agruparán clases de utilidad por orden lógico (layout -> spacing -> color -> typography).
+
+**JavaScript (Google Style Guide)**
+
+Siguiendo los lineamientos de Google para JavaScript, el equipo aplica las siguientes normas para garantizar la legibilidad del código:
+
+* **Nomenclatura y Escritura:** Se emplea **camelCase** para identificar variables y métodos, mientras que las clases y constructores utilizan **PascalCase**. Las constantes de alcance global se definen en `UPPER_CASE_WITH_UNDERSCORES`.
+* **Gestión de Módulos:** Se priorizan las **importaciones explícitas**, organizándolas jerárquicamente (librerías de terceros primero, luego archivos locales). Se restringe el uso de `default exports` en favor de exportaciones con nombre.
+* **Patrones de Desarrollo:** Se fomenta el uso de `const` como opción predeterminada frente a `let`, eliminando el uso de `var`. Asimismo, la lógica compleja se extrae a servicios para mantener los componentes limpios.
+
+**Java & Spring Boot**
+
+Para el desarrollo del Backend (enfocado en los contextos de *Store Management*, *Verification* e *IAM*), se utilizan las convenciones oficiales de Oracle y Spring:
+
+* **Estándares de Sintaxis:** Se aplica **camelCase** para miembros de clase y **PascalCase** para interfaces y clases. Los paquetes deben estructurarse en minúsculas (ej. `com.smartcart.store`).
+* **Arquitectura de Código:** Cada entidad reside en un archivo independiente, promoviendo métodos de responsabilidad única. La configuración y dependencias se gestionan mediante anotaciones nativas de Spring.
+* **Calidad del Servicio:** La lógica de negocio reside exclusivamente en la capa de servicios, no en los controladores. Se requiere el manejo global de errores y la documentación de endpoints mediante Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Para el segmento de comerciantes en la aplicación móvil, se siguen las convenciones oficiales de Kotlin y las mejores prácticas de Android:
+
+* **Reglas de Nombramiento:** Se utiliza **camelCase** para funciones y variables, reservando **PascalCase** para la definición de clases y objetos. Las constantes siguen el formato de `UPPER_CASE_WITH_UNDERSCORES`.
+* **Diseño de UI y Estructura:** Se emplea la anotación `@Composable` para definir los elementos de la interfaz, asegurando que cada función sea breve y específica.
+* **Gestión de Estado:** Se evita incluir lógica compleja dentro de los archivos de UI; esta se delega a los **ViewModels**. Se utiliza `State` y `MutableState` para el manejo reactivo de los datos y KDoc para la documentación técnica.
+
 ### 4.1.4. Software Deployment Configuration
 
 ## 4.2. Landing Page & Mobile Application Implementation
