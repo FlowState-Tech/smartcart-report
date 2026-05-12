@@ -3156,9 +3156,41 @@ Se aplicará un sistema de rejilla de 8dp (8pt grid) para mantener la consistenc
 
 ### 3.1.3. Landing Page UI Design
 
+En esta sección se detalla el proceso de diseño de la interfaz de usuario para la landing page de SmartCart, mostrando la evolución desde la planificación estructural hasta el diseño final de alta fidelidad.
+
 #### 3.1.3.1. Landing Page Wireframe
 
+Los wireframes de baja fidelidad que se presentan a continuación definen la disposición estructural y la arquitectura de la información de la página. Al utilizar una paleta de escala de grises y marcadores de posición para las imágenes, el enfoque se mantiene exclusivamente en el flujo del usuario y la jerarquía del contenido.
+
+<div align="center">
+  <h3>Parte 1: Cabecera y Hero Section</h3>
+  <img src="parte1.png" alt="Landing Page Wireframe Parte 1" width="800">
+  <p><i>Figura X: Estructura superior de la Landing Page (Baja Fidelidad)</i></p>
+
+  <br>
+
+  <h3>Parte 2: Características y Footer</h3>
+  <img src="parte2.png" alt="Landing Page Wireframe Parte 2" width="800">
+  <p><i>Figura Y: Estructura inferior y pie de página (Baja Fidelidad)</i></p>
+</div>
+
+
+
 #### 3.1.3.2. Landing Page Mock-up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 3.1.4. Mobile Applications UX/UI Design
 
