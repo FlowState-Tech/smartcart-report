@@ -3354,6 +3354,31 @@ Para el segmento de comerciantes en la aplicación móvil, se siguen las convenc
 
 ### 4.1.4. Software Deployment Configuration
 
+En esta sección se describen las herramientas y procedimientos utilizados para configurar el despliegue del software, incluyendo la selección de plataformas de hosting, estrategias de integración continua y entrega continua (CI/CD), así como los pasos específicos para realizar el despliegue de cada componente del proyecto.
+
+| Producto     | Plataforma de despliegue | Propósito                                                                                                                                                          | Enlace / Ruta de acceso                            |
+|--------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Landing Page | Netlify                  | Plataforma utilizada para realizar el despliegue automático y gratuito de la landing page. Permite integración con repositorios GitHub para despliegues continuos. | [https://www.netlify.com](https://www.netlify.com) |
+| REST API     | Railway                  | Servicio empleado para desplegar automáticamente el servicio REST API mediante un entorno en la nube. Permite integración con GitHub para CI/CD.                   | [https://railway.app](https://railway.app)         |
+
+**Netlify (Landing Page)**
+Para el despliegue de la Landing Page, se utiliza Netlify, una plataforma especializada en el alojamiento de aplicaciones frontend y sitios estáticos que permite la integración de despliegue continuo (CD). El flujo de configuración establecido es el siguiente:
+
+1. **Vinculación de Repositorio:** Se conecta la cuenta de Netlify con el repositorio de GitHub donde reside el código de la landing page.
+2. **Creación del Sitio:** Se crea un nuevo proyecto dentro de la plataforma seleccionando el repositorio específico del equipo.
+3. **Control de Versiones:** Se define la rama de producción (comúnmente `main` o `develop`) para activar el despliegue automático tras cada actualización.
+4. **Parámetros de Build:** Se configuran los comandos de construcción (ej. `npm run build`) y se apunta a la carpeta de salida generada (ej. `dist/` o `build/`).
+5. [cite_start]**Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
+
+**Railway (Backend Services)**
+La implementación y gestión de las APIs REST se realiza a través de Railway, una plataforma de infraestructura que simplifica el despliegue de servicios backend para múltiples lenguajes y frameworks. El proceso de despliegue configurado incluye:
+
+1. **Conexión con GitHub:** Se enlaza la plataforma con el repositorio que contiene los servicios del backend (Java/Spring Boot).
+2. **Gestión de Proyectos:** Se inicia un nuevo proyecto en Railway vinculado al código fuente correspondiente.
+3. **Automatización de Despliegues:** Se establece la rama de despliegue para asegurar que los cambios aprobados en el repositorio se reflejen en vivo inmediatamente.
+4. **Configuración de Entorno:** Se definen las variables de entorno críticas (credenciales de base de datos, claves de API) para el funcionamiento correcto de los Bounded Contexts.
+5. **Ejecución y Monitoreo:** Una vez guardados los ajustes, Railway ejecuta el despliegue automático, garantizando que el backend esté disponible para ser consumido por las aplicaciones móviles.
+
 ## 4.2. Landing Page & Mobile Application Implementation
 
 ### 4.2.1. Sprint 1
