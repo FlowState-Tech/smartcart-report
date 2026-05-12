@@ -3163,17 +3163,14 @@ En esta sección se detalla el proceso de diseño de la interfaz de usuario para
 Los wireframes de baja fidelidad que se presentan a continuación definen la disposición estructural y la arquitectura de la información de la página. Al utilizar una paleta de escala de grises y marcadores de posición para las imágenes, el enfoque se mantiene exclusivamente en el flujo del usuario y la jerarquía del contenido.
 
 <div align="center">
-  <h3>Parte 1: Cabecera y Hero Section</h3>
-  <img src="parte1.png" alt="Landing Page Wireframe Parte 1" width="800">
-  <p><i>Figura X: Estructura superior de la Landing Page (Baja Fidelidad)</i></p>
 
-  <br>
+  <img src="image_7eea03.png" alt="Estructura de la Landing Page de SmartCart (Vista Superior - Baja Fidelidad)" width="100%">
+  <p><i>Figura 1.3.1: Estructura de la Landing Page (Vista Superior - Baja Fidelidad)</i></p>
 
-  <h3>Parte 2: Características y Footer</h3>
-  <img src="parte2.png" alt="Landing Page Wireframe Parte 2" width="800">
-  <p><i>Figura Y: Estructura inferior y pie de página (Baja Fidelidad)</i></p>
-</div>
+  <br> <img src="image_7ee9a4.png" alt="Estructura de la Landing Page de SmartCart (Vista Inferior - Baja Fidelidad)" width="100%">
+  <p><i>Figura 1.3.2: Estructura de la Landing Page (Vista Inferior - Baja Fidelidad)</i></p>
 
+</div
 
 
 #### 3.1.3.2. Landing Page Mock-up
