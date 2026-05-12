@@ -3164,13 +3164,15 @@ Los wireframes de baja fidelidad que se presentan a continuación definen la dis
 
 <div align="center">
 
-  <img src="image_7eea03.png" alt="Estructura de la Landing Page de SmartCart (Vista Superior - Baja Fidelidad)" width="100%">
+  <img src="parte1.png" alt="Estructura de la Landing Page de SmartCart (Vista Superior - Baja Fidelidad)" width="100%">
   <p><i>Figura 1.3.1: Estructura de la Landing Page (Vista Superior - Baja Fidelidad)</i></p>
 
-  <br> <img src="image_7ee9a4.png" alt="Estructura de la Landing Page de SmartCart (Vista Inferior - Baja Fidelidad)" width="100%">
+  <br>
+
+  <img src="parte2.png" alt="Estructura de la Landing Page de SmartCart (Vista Inferior - Baja Fidelidad)" width="100%">
   <p><i>Figura 1.3.2: Estructura de la Landing Page (Vista Inferior - Baja Fidelidad)</i></p>
 
-</div
+</div>
 
 
 #### 3.1.3.2. Landing Page Mock-up
