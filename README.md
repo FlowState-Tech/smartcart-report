@@ -3147,11 +3147,168 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 # Capítulo IV: Product Implementation & Validation
 
+Este capítulo aborda la implementación y validación de la plataforma SmartCart. Se detallan las herramientas y tecnologías empleadas en el desarrollo del software, además de los procesos de configuración y administración del proyecto. Asimismo, se presentan los sprints ejecutados, las funcionalidades desarrolladas y los resultados alcanzados.
+
 ## 4.1. Software Configuration Management
+
+En esta sección se detallan las herramientas y procedimientos empleados para la gestión de la configuración del software, abarcando el control de versiones, la configuración de entornos y el proceso de despliegue.
 
 ### 4.1.1. Software Development Environment Configuration
 
+En esta sección se describen las herramientas de software seleccionadas para dar soporte a las distintas fases del ciclo de vida del producto digital. Se incluyen sus nombres, objetivos específicos dentro del proyecto y los enlaces de acceso o descarga, diferenciando entre soluciones SaaS y aplicaciones instalables.
+
+**Project Management**
+
+| **Herramienta** | **Uso Principal**                                                                                                            | **Enlace / Ruta de Acceso**              |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
+| **Trello**      | Plataforma utilizada para organizar y administrar tareas, entregables y actividades del equipo mediante metodologías ágiles. | [https://trello.com](https://trello.com) |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta** | **Uso Principal**                                                                                                              | **Enlace / Ruta de Acceso**                    |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **UXPressia**   | Herramienta empleada para elaborar User Personas, Empathy Maps, Journey Maps e Impact Maps orientados al análisis de usuarios. | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Uso Principal**                                                                                                                                                            | **Enlace / Ruta de Acceso**                    |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **Miro**        | Plataforma colaborativa utilizada para desarrollar artefactos: Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases and Context Maps. | [https://miro.com](https://miro.com)           |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta**          | **Propósito**                                                                                                  | **Enlace / Ruta de Acceso**                                                            |
+|--------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **Structurizr DSL**      | Herramienta orientada a la creación de diagramas de arquitectura basados en el modelo C4 mediante código.      | [https://structurizr.com/dsl](https://structurizr.com/dsl)                             |
+| **PlantUML**             | Software utilizado para generar diagramas UML a partir de sintaxis textual integrada en documentación técnica. | [https://plantuml.com](https://plantuml.com)                                           |
+| **Redgate Data MOdeler** | Plataforma visual utilizada para modelar y estructurar bases de datos relacionales de forma profesional.       | [https://datamodeler.redgate-platform.com/](https://datamodeler.redgate-platform.com/) |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta** | **Propósito**                                                                                                | **Enlace / Ruta de Acceso**                      |
+|-----------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| **Figma**       | Herramienta colaborativa empleada para diseñar wireframes, mockups y prototipos interactivos de la interfaz. | [https://figma.com](https://figma.com)           |
+| **Lucidchart**  | Plataforma utilizada para elaborar wireflows y diagramas de flujo de usuarios.                               | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                                | **Enlace / Ruta de Descarga**                                                                          |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **WebStorm**                 | Entorno de desarrollo empleado para construir la landing pagedel proyecto utilizando HTML5, CSS3, JavaScript y Tailwind CSS. | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm)                               |
+| **IntelliJ IDEA**            | IDE utilizado para desarrollar el servicio REST API con Java y Spring Boot.                                                  | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                       |
+| **Android Studio**           | Entorno de desarrollo utilizado para crear la aplicación móvil nativa para Android con Kotlin y Jetpack Compose.             | [https://developer.android.com/studio](https://developer.android.com/studio)                           |
+| **HTML5**                    | Lenguaje de marcado utilizado para definir la estructura semántica del contenido en la landing page.                         | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML)             |
+| **CSS3**                     | Lenguaje de estilos utilizado para definir la apariencia visual de la landing page.                                          | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS)               |
+| **JavaScript**               | Lenguaje de programación usado para manipular el DOM y permitir la internacionalización del contenido en la landing page.    | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Java**                     | Lenguaje de programación utilizado para desarrollar el backend del servicio REST API.                                        | [https://www.oracle.com/java](https://www.oracle.com/java)                                             |
+| **Spring Boot**              | Framework basado en Java utilizado para implementar el servicio REST API de manera eficiente.                                | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)                       |
+| **Kotlin**                   | Lenguaje de programación utilizado para el desarrollo de la aplicación móvil nativa en Android.                              | [https://kotlinlang.org](https://kotlinlang.org)                                                       |
+| **Jetpack Compose**          | Toolkit moderno utilizado para crear interfaces declarativas en aplicaciones Android.                                        | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)         |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                | **Enlace / Ruta de Descarga**                                        |
+|------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **Gherkin**                  | Lenguaje utilizado para redactar criterios de aceptación de las User Stories de manera clara y estructurada. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Propósito**                                                                                         | **Enlace / Ruta de Acceso**                        |
+|------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| **Netlify**                  | Plataforma utilizada para realizar el despliegue automático y gratuito de la landing page.            | [https://www.netlify.com](https://www.netlify.com) |
+| **Railway**                  | Servicio empleado para desplegar automáticamente el servicio REST API mediante un entorno en la nube. | [https://railway.app](https://railway.app)         |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Propósito**                                                                                                                                                                        | **Enlace / Ruta de Acceso**                                                                                        |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **IntelliJ IDEA**         | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensiones para visualización previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                                   |
+| **Visual Studio Code**    | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensión para exportación formateada de Markdown a PDF.     | [https://code.visualstudio.com](https://code.visualstudio.com)                                                     |
+| **Markdown**              | Lenguaje de marcado ligero utilizado para redactar la documentación técnica del proyecto.                                                                                            | [https://www.markdownguide.org](https://www.markdownguide                                                          |
+| **Git**                   | Sistema de control de versiones empleado para gestionar y registrar cambios en el código fuente.                                                                                     | [https://git-scm.com](https://git-scm.com)                                                                         |
+| **GitHub**                | Plataforma de alojamiento de repositorios utilizada para el control de versiones y la documentación colaborativa.                                                                    | [https://github.com](https://github.com)                                                                           |
+| **GitFlow Workflow**      | Estrategia de ramificación utilizada para mantener organizados el desarrollo y la documentación del proyecto.                                                                        | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits**  | Convención de nomenclatura de commits utilizada para mejorar la trazabilidad y generación de changelogs.                                                                             | [https://www.conventionalcommits.org](https://www.conventionalcommits.org)                                         |
+| **Semantic Versioning**   | Sistema de versionado utilizado para asignar versiones coherentes a las releases del software.                                                                                       | [https://semver.org](https://semver.org)                                                                           |
+
+
+
 ### 4.1.2. Source Code Management
+
+El equipo empleará GitHub como repositorio de alojamiento y Git como sistema de control de versiones para todos los entregables del proyecto SmartCart. Se aplicará la estrategia de ramificación GitFlow Workflow, con el uso de Semantic Versioning y mensajes estructurados bajo la convención de Conventional Commits.
+
+**Repositorios del Proyecto**
+
+| **Producto**                | **Repositorio GitHub**                                                                                       |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------|
+| Organización Flowstate Tech | [https://github.com/orgs/FlowState-Tech/repositories](https://github.com/orgs/FlowState-Tech/repositories)   |
+| Report                      | [https://github.com/FlowState-Tech/smartcart-report](https://github.com/FlowState-Tech/smartcart-report)     | 
+| Landing Page                | [https://github.com/FlowState-Tech/smartcart-landing](https://github.com/FlowState-Tech/smartcart-landing)   |
+| Android Native-Mobile App   | [https://github.com/FlowState-Tech/smartcart-merchant](https://github.com/FlowState-Tech/smartcart-merchant) |
+| RESTful API                 | [https://github.com/FlowState-Tech/smartcart-api](https://github.com/FlowState-Tech/smartcart-api)           |
+
+**Modelo GitFlow**
+Se seguirá el enfoque planteado por Vincent Driessen, el cual define dos ramas principales:
+
+* main: contiene las versiones estables listas para producción.
+* develop: integra nuevas funcionalidades antes de pasar al entorno de producción.
+
+| **Tipo de rama** | **Uso principal**                                | **Convención de nombres**      | **Ejemplo**               |
+|------------------|--------------------------------------------------|--------------------------------|---------------------------|
+| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-salim`   |
+| **release**      | Preparación de una versión previa al despliegue. | `release/vX.Y.Z`               | `release/v1.0.0`          |
+| **hotfix**       | Corrección rápida de errores en producción.      | `hotfix/<problema>`            | `hotfix/fix-crash-navbar` |
+
+**Versionado Semántico**
+
+Se implementará el esquema Semantic Versioning 2.0.0, con el formato:
+
+**MAJOR.MINOR.PATCH**
+
+* **MAJOR**: cambios incompatibles con versiones anteriores.
+
+* **MINOR**: incorporación de nuevas funciones compatibles.
+
+* **PATCH**: corrección de errores o mejoras menores.
+
+#### Conventional Commits
+
+Los mensajes de commit seguirán el estándar Conventional Commits para asegurar trazabilidad y generar changelogs automáticos.
+
+**Formato general:**
+<tipo>(opcional-scope): descripción breve
+
+* Tipos de commit definidos:
+
+* feat: nueva funcionalidad
+
+* fix: corrección de errores
+
+* docs: cambios en documentación
+
+* style: ajustes de formato (espacios, comas, etc.)
+
+* refactor: modificaciones de código sin impacto en funciones o errores
+
+* test: adición o modificación de pruebas
+
+* chore: tareas de mantenimiento o generales
 
 ### 4.1.3. Source Code Style Guide & Conventions
 
