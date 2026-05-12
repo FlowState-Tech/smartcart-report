@@ -3397,6 +3397,33 @@ La implementación y gestión de las APIs REST se realiza a través de Railway, 
 
 #### 4.2.1.7. Software Deployment Evidence for Sprint Review
 
+**Landing Page Deployment Evidence:**
+
+A continuación se muestra la evidencia paso a paso del proceso de despliegue de la landing page utilizando Netlify, desde la vinculación del repositorio hasta la confirmación de la URL pública.
+
+1. **Inicio de sesión en Netlify:**
+![img](assets/deployment/landing/1.png)
+
+2. **Dar click en "Add new project:"**
+   ![img](assets/deployment/landing/2.png)
+
+3. **Seleccionar "Import a Git repository":**
+   ![img](assets/deployment/landing/3.png)
+
+4. **Se escoge el repositorio de la Landing Page:**
+   ![img](assets/deployment/landing/4.png)
+
+5. **Se coloca el nombre del sitio y se selecciona la rama de despliegue:**
+   ![img](assets/deployment/landing/5.png)
+
+6. **Esperar a que Netlify realice el despliegue automático:**
+   ![img](assets/deployment/landing/6.png)
+
+7. **Confirmar que el despliegue fue exitoso y obtener la URL pública:**
+   ![img](assets/deployment/landing/7.png)
+
+Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+
 #### 4.2.1.8. Team Collaboration Insights during Sprint
 
 ## 4.3. Validation Interviews
