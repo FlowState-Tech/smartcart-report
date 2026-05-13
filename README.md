@@ -94,144 +94,295 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
 
 # Contenido
 
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Contenido](#contenido)
+- [Student Outcome](#student-outcome)
+- [Objetivos SMART](#objetivos-smart)
 - [Capítulo I: Presentación](#capítulo-i-presentación)
-    - [1.1. Startup Profile](#11-startup-profile)
-        - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
-        - [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
-    - [1.2. Solution Profile](#12-solution-profile)
-        - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
-        - [1.2.2. Lean UX Process](#122-lean-ux-process)
-            - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-            - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-            - [1.2.2.3. Lean UX Hypothesis](#1223-lean-ux-hypothesis)
-            - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-    - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+      - [What? (¿Qué?)](#what-qué)
+      - [When? (¿Cuándo?)](#when-cuándo)
+      - [Where? (¿Dónde?)](#where-dónde)
+      - [Who? (¿Quién?)](#who-quién)
+      - [Why? (¿Por qué?)](#why-por-qué)
+      - [How? (¿Cómo?)](#how-cómo)
+      - [How much? (¿Cuánto?)](#how-much-cuánto)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [Business Assumptions](#business-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis](#1223-lean-ux-hypothesis)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+    - [Segmentación del Dominio del Problema](#segmentación-del-dominio-del-problema)
+      - [1. Consumidores Finales (Shoppers Planificadores)](#1-consumidores-finales-shoppers-planificadores)
+      - [2. Establecimientos de Retail (Supermercados y Tiendas de Conveniencia)](#2-establecimientos-de-retail-supermercados-y-tiendas-de-conveniencia)
 - [Capítulo II: Requirements Development and Software Solution Design](#capítulo-ii-requirements-development-and-software-solution-design)
-    - [2.1. Competidores](#21-competidores)
-        - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-        - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-    - [2.2. Entrevistas](#22-entrevistas)
-        - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-        - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-        - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-    - [2.3. Needfinding](#23-needfinding)
-        - [2.3.1. User Personas](#231-user-personas)
-        - [2.3.2. User Task Matrix](#232-user-task-matrix)
-        - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-        - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-        - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
-        - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
-    - [2.4. Requirements specification](#24-requirements-specification)
-        - [2.4.1. User Stories](#241-user-stories)
-        - [2.4.2. Impact Mapping](#242-impact-mapping)
-        - [2.4.3. Product Backlog](#243-product-backlog)
-    - [2.5. Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)
-        - [2.5.1. EventStorming](#251-eventstorming)
-            - [2.5.1.1. Candidate Context Discovery](#2511-candidate-context-discovery)
-            - [2.5.1.2. Domain Message Flows Modeling](#2512-domain-message-flows-modeling)
-            - [2.5.1.3. Bounded Context Canvases](#2513-bounded-context-canvases)
-        - [2.5.2. Context Mapping](#252-context-mapping)
-        - [2.5.3. Software Architecture](#253-software-architecture)
-            - [2.5.3.1. Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)
-            - [2.5.3.2. Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
-            - [2.5.3.3. Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
-    - [2.6. Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
-        - [2.6.1. Bounded Context: IAM](#261-bounded-context-iam)
-            - [2.6.1.1. Domain Layer](#2611-domain-layer)
-            - [2.6.1.2. Interface Layer](#2612-interface-layer)
-            - [2.6.1.3. Application Layer](#2613-application-layer)
-            - [2.6.1.4. Infrastructure Layer](#2614-infrastructure-layer)
-            - [2.6.1.5. Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.1.6. Code Level Diagrams](#2616-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.2. Bounded Context: Verification](#262-bounded-context-verification)
-            - [2.6.2.1. Domain Layer](#2621-domain-layer-1)
-            - [2.6.2.2. Interface Layer](#2622-interface-layer-1)
-            - [2.6.2.3. Application Layer](#2623-application-layer-1)
-            - [2.6.2.4. Infrastructure Layer](#2624-infrastructure-layer-1)
-            - [2.6.2.5. Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.2.6. Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.3. Bounded Context: Store Management](#263-bounded-context-store-management)
-            - [2.6.3.1. Domain Layer](#2631-domain-layer)
-            - [2.6.3.2. Interface Layer](#2632-interface-layer)
-            - [2.6.3.3. Application Layer](#2633-application-layer)
-            - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
-            - [2.6.3.5. Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.3.6. Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.4. Bounded Context: Notification](#264-bounded-context-notification)
-            - [2.6.4.1. Domain Layer](#2641-domain-layer)
-            - [2.6.4.2. Interface Layer](#2642-interface-layer)
-            - [2.6.4.3. Application Layer](#2643-application-layer)
-            - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
-            - [2.6.4.5. Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.4.6. Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.5. Bounded Context: Shopping Planning](#265-bounded-context-shopping-planning)
-            - [2.6.5.1. Domain Layer](#2651-domain-layer)
-            - [2.6.5.2. Interface Layer](#2652-interface-layer)
-            - [2.6.5.3. Application Layer](#2653-application-layer)
-            - [2.6.5.4. Infrastructure Layer](#2654-infrastructure-layer)
-            - [2.6.5.5. Component Level Diagrams](#2655-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.5.6. Code Level Diagrams](#2656-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.6. Bounded Context: Shopping Journey](#266-bounded-context-shopping-journey)
-            - [2.6.6.1. Domain Layer](#2661-domain-layer)
-            - [2.6.6.2. Interface Layer](#2662-interface-layer)
-            - [2.6.6.3. Application Layer](#2663-application-layer)
-            - [2.6.6.4. Infrastructure Layer](#2664-infrastructure-layer)
-            - [2.6.6.5. Component Level Diagrams](#2665-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.6.6. Code Level Diagrams](#2666-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.7. Bounded Context: Experience](#267-bounded-context-experience)
-            - [2.6.7.1. Domain Layer](#2671-domain-layer)
-            - [2.6.7.2. Interface Layer](#2672-interface-layer)
-            - [2.6.7.3. Application Layer](#2673-application-layer)
-            - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
-            - [2.6.7.5. Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.7.6. Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
-
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+- [Competitive Analysis Landscape - SmartCart](#competitive-analysis-landscape---smartcart)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+      - [Segmento 1: Usuarios Consumidores](#segmento-1-usuarios-consumidores)
+      - [A. Información Demográfica y Antecedentes](#a-información-demográfica-y-antecedentes)
+      - [B. Objetivos y Frustraciones](#b-objetivos-y-frustraciones)
+      - [C. Tecnología y Canales de Interacción](#c-tecnología-y-canales-de-interacción)
+      - [D. Comportamiento frente a la solución](#d-comportamiento-frente-a-la-solución)
+      - [Segmento 2: Establecimientos de Consumo Masivo](#segmento-2-establecimientos-de-consumo-masivo)
+      - [A. Gestión de Catálogo y Visibilidad Digital](#a-gestión-de-catálogo-y-visibilidad-digital)
+      - [B. Atracción y Eventos Promocionales](#b-atracción-y-eventos-promocionales)
+      - [C. Engagement y Analítica de Datos](#c-engagement-y-analítica-de-datos)
+      - [D. Objetivos de Conversión y SmartPrice](#d-objetivos-de-conversión-y-smartprice)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+      - [Segmento de Consumidores:](#segmento-de-consumidores)
+      - [Entrevista 1:](#entrevista-1)
+      - [Entrevista 2:](#entrevista-2)
+      - [Entrevista 3:](#entrevista-3)
+      - [Segmento de Comerciantes:](#segmento-de-comerciantes)
+      - [Entrevista 1:](#entrevista-1-1)
+      - [Entrevista 2:](#entrevista-2-1)
+      - [Entrevista 3:](#entrevista-3-1)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [**Características Objetivas**](#características-objetivas)
+      - [**Características Subjetivas**](#características-subjetivas)
+      - [**Características Objetivas**](#características-objetivas-1)
+      - [**Características Subjetivas**](#características-subjetivas-1)
+  - [2.3. Needfinding](#23-needfinding)
+      - [Segmento #1: Consumidores (Hogares y Jefes de Familia)](#segmento-1-consumidores-hogares-y-jefes-de-familia)
+      - [Segmento #2: Establecimientos de Consumo Masivo (Gerentes de Sede)](#segmento-2-establecimientos-de-consumo-masivo-gerentes-de-sede)
+    - [2.3.1. User Personas](#231-user-personas)
+        - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto)
+        - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+      - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-1)
+      - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-1)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+      - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-2)
+      - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-2)
+    - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
+    - [1. Open:](#1-open)
+    - [2. Explore:](#2-explore)
+    - [3. Close:](#3-close)
+    - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
+  - [2.4. Requirements specification](#24-requirements-specification)
+    - [2.4.1. User Stories](#241-user-stories)
+    - [2.4.2. Impact Mapping](#242-impact-mapping)
+  - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-3)
+  - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-3)
+    - [2.4.3. Product Backlog](#243-product-backlog)
+  - [2.5. Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)
+    - [2.5.1. EventStorming](#251-eventstorming)
+  - [2.5.1.1. Candidate Context Discovery](#2511-candidate-context-discovery)
+    - [Preparación de la sesión](#preparación-de-la-sesión)
+    - [Técnica aplicada: Start-with-Value](#técnica-aplicada-start-with-value)
+    - [Candidate Contexts identificados](#candidate-contexts-identificados)
+    - [Clasificación Estratégica](#clasificación-estratégica)
+      - [2.5.1.2. Domain Message Flows Modeling](#2512-domain-message-flows-modeling)
+      - [Escenario 1: Registro y verificación de tienda](#escenario-1-registro-y-verificación-de-tienda)
+      - [Escenario 2: Planificación de compra del consumidor](#escenario-2-planificación-de-compra-del-consumidor)
+      - [Escenario 3: Ejecución del recorrido de compra](#escenario-3-ejecución-del-recorrido-de-compra)
+      - [Escenario 4: Calificación y experiencia post-compra](#escenario-4-calificación-y-experiencia-post-compra)
+      - [Escenario 5: Gestión de inventario y precios de tienda](#escenario-5-gestión-de-inventario-y-precios-de-tienda)
+      - [Escenario 6: Cálculo de ahorro y análisis de compra](#escenario-6-cálculo-de-ahorro-y-análisis-de-compra)
+      - [Escenario 7: Sistema de alertas y notificaciones de ofertas](#escenario-7-sistema-de-alertas-y-notificaciones-de-ofertas)
+      - [2.5.1.3. Bounded Context Canvases](#2513-bounded-context-canvases)
+      - [IAM](#iam)
+      - [Verification](#verification)
+      - [Store Management](#store-management)
+      - [Shopping Planning](#shopping-planning)
+      - [Shopping Journey](#shopping-journey)
+      - [Experience](#experience)
+      - [Notification](#notification)
+    - [2.5.2. Context Mapping](#252-context-mapping)
+        - [1. IAM -\> Verification](#1-iam---verification)
+        - [2. Verification -\> Store Management](#2-verification---store-management)
+        - [3. Store Management -\> Notification](#3-store-management---notification)
+        - [4.  Shopping Planning → Shopping journey](#4--shopping-planning--shopping-journey)
+        - [5. Shopping journey → Experience](#5-shopping-journey--experience)
+      - [Análisis de alternativas y preguntas clave:](#análisis-de-alternativas-y-preguntas-clave)
+    - [1. ¿Qué pasaría si Verification y Store Management compartieran la misma](#1-qué-pasaría-si-verification-y-store-management-compartieran-la-misma)
+      - [Alternativa A: Customer/Supplier + ACL (Modelo Actual)](#alternativa-a-customersupplier--acl-modelo-actual)
+      - [Alternativa B: Shared Kernel](#alternativa-b-shared-kernel)
+      - [Decisión Sustentada: Mantener Customer/Supplier + ACL.](#decisión-sustentada-mantener-customersupplier--acl)
+    - [2. ¿Qué pasaría si Store Management llamara directamente a los servicios de](#2-qué-pasaría-si-store-management-llamara-directamente-a-los-servicios-de)
+      - [Alternativa A: Publisher/Subscriber + OHS (Modelo Actual)](#alternativa-a-publishersubscriber--ohs-modelo-actual)
+      - [Alternativa B: Integración directa (Llamada síncrona)](#alternativa-b-integración-directa-llamada-síncrona)
+      - [Decisión Sustentada: Mantener Publisher/Subscriber.](#decisión-sustentada-mantener-publishersubscriber)
+    - [3. ¿Qué pasaría si Shopping Planning y Shopping journey fueran un solo](#3-qué-pasaría-si-shopping-planning-y-shopping-journey-fueran-un-solo)
+      - [Alternativa A: Contextos separados (Modelo Actual)](#alternativa-a-contextos-separados-modelo-actual)
+      - [Alternativa B: Unificar en un solo Bounded Context ("Shopping")](#alternativa-b-unificar-en-un-solo-bounded-context-shopping)
+      - [Decisión Sustentada: Mantener contextos separados.](#decisión-sustentada-mantener-contextos-separados)
+      - [Decisión Final](#decisión-final)
+    - [2.5.3. Software Architecture](#253-software-architecture)
+      - [2.5.3.1. Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)
+      - [Descripción de los elementos:](#descripción-de-los-elementos)
+      - [2.5.3.2. Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
+      - [2.5.3.3. Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
+  - [2.6. Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
+      - [2.6.1. Bounded Context: IAM](#261-bounded-context-iam)
+        - [2.6.1.1. Domain Layer](#2611-domain-layer)
+        - [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#26161-bounded-context-domain-layer-class-diagrams)
+        - [2.6.1.2. Interface Layer](#2612-interface-layer)
+        - [2.6.1.3. Application Layer](#2613-application-layer)
+        - [2.6.1.4. Infrastructure Layer](#2614-infrastructure-layer)
+      - [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)
+        - [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#26161-bounded-context-domain-layer-class-diagrams-1)
+        - [2.6.1.6.2. Bounded Context Database Design Diagram](#26162-bounded-context-database-design-diagram)
+    - [2.6.2. Bounded Context: Verification](#262-bounded-context-verification)
+        - [2.6.2.1. Domain Layer](#2621-domain-layer)
+        - [2.6.2.2. Interface Layer](#2622-interface-layer)
+        - [2.6.2.3. Application Layer](#2623-application-layer)
+        - [2.6.2.4. Infrastructure Layer](#2624-infrastructure-layer)
+      - [2.6.2.5. Bounded Context Software Architecture Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.2.6. Bounded Context Software Architecture Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.2.6.1. Bounded Context Domain Layer Class Diagrams](#26261-bounded-context-domain-layer-class-diagrams)
+        - [2.6.2.6.2. Bounded Context Database Design Diagram](#26262-bounded-context-database-design-diagram)
+    - [2.6.3. Bounded Context: Store Management](#263-bounded-context-store-management)
+      - [2.6.3.1. Domain Layer](#2631-domain-layer)
+        - [Aggregates](#aggregates)
+        - [Entities](#entities)
+        - [Value Objects](#value-objects)
+        - [Domain Events](#domain-events)
+        - [Domain Services](#domain-services)
+      - [2.6.3.2. Interface Layer](#2632-interface-layer)
+        - [StoreManagementController](#storemanagementcontroller)
+        - [DTOs de Request y Response](#dtos-de-request-y-response)
+      - [2.6.3.3. Application Layer](#2633-application-layer)
+        - [Application Services](#application-services)
+        - [Command Handlers](#command-handlers)
+        - [Query Handlers](#query-handlers)
+        - [Integración con procesos de Inventario](#integración-con-procesos-de-inventario)
+      - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
+      - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer-1)
+        - [Repositories (Implementación)](#repositories-implementación)
+        - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia)
+        - [Consumer (StoreManagementEventConsumer)](#consumer-storemanagementeventconsumer)
+      - [Anti-Corruption Layer (ACL) — Integración con External Legal API \& Merchant Systems](#anti-corruption-layer-acl--integración-con-external-legal-api--merchant-systems)
+        - [Estructura de la ACL](#estructura-de-la-acl)
+      - [Contrato de traducción del ACL](#contrato-de-traducción-del-acl)
+      - [Implementación del ACL](#implementación-del-acl)
+    - [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
+    - [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
+      - [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](#26361-bounded-context-domain-layer-class-diagrams)
+      - [2.6.3.6.2. Bounded Context Database Design Diagram](#26362-bounded-context-database-design-diagram)
+    - [2.6.4. Bounded Context: Notification](#264-bounded-context-notification)
+    - [2.6.4.1. Domain Layer](#2641-domain-layer)
+      - [Aggregates](#aggregates-1)
+      - [Entities](#entities-1)
+      - [Value Objects](#value-objects-1)
+      - [Domain Events](#domain-events-1)
+      - [Domain Services](#domain-services-1)
+    - [2.6.4.2. Interface Layer](#2642-interface-layer)
+      - [NotificationController](#notificationcontroller)
+      - [DTOs de Request y Response](#dtos-de-request-y-response-1)
+    - [2.6.4.3. Application Layer](#2643-application-layer)
+      - [Application Services](#application-services-1)
+      - [Command Handlers](#command-handlers-1)
+      - [Query Handlers](#query-handlers-1)
+      - [Integración con el evento de finalización de recorrido](#integración-con-el-evento-de-finalización-de-recorrido)
+    - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
+      - [Repositories (Implementación)](#repositories-implementación-1)
+      - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia-1)
+      - [Integración con RabbitMQ (Mensajería Asíncrona)](#integración-con-rabbitmq-mensajería-asíncrona)
+      - [Anti-Corruption Layer (ACL) — Integración con Shopping Journey](#anti-corruption-layer-acl--integración-con-shopping-journey)
+      - [2.6.4.5. Bounded Context Software Architecture Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.4.6. Bounded Context Software Architecture Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.4.6.1. Bounded Context Domain Layer Class Diagrams](#26461-bounded-context-domain-layer-class-diagrams)
+        - [2.6.4.6.2. Bounded Context Database Design Diagram](#26462-bounded-context-database-design-diagram)
+    - [2.6.5. Bounded Context: Shopping Planning](#265-bounded-context-shopping-planning)
+      - [2.6.5.1. Domain Layer](#2651-domain-layer)
+      - [2.6.5.2. Interface Layer](#2652-interface-layer)
+      - [2.6.5.3. Application Layer](#2653-application-layer)
+      - [2.6.5.4. Infrastructure Layer](#2654-infrastructure-layer)
+      - [2.6.5.5. Bounded Context Software Architecture Component Level Diagrams](#2655-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.5.6. Bounded Context Software Architecture Code Level Diagrams](#2656-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.5.6.1. Bounded Context Domain Layer Class Diagrams](#26561-bounded-context-domain-layer-class-diagrams)
+        - [2.6.5.6.2. Bounded Context Database Design Diagram](#26562-bounded-context-database-design-diagram)
+    - [2.6.6. Bounded Context: Shopping Journey](#266-bounded-context-shopping-journey)
+      - [2.6.6.1. Domain Layer](#2661-domain-layer)
+      - [2.6.6.2. Interface Layer](#2662-interface-layer)
+      - [2.6.6.3. Application Layer](#2663-application-layer)
+      - [2.6.6.4. Infrastructure Layer](#2664-infrastructure-layer)
+      - [2.6.6.5. Bounded Context Software Architecture Component Level Diagrams](#2665-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.6.6. Bounded Context Software Architecture Code Level Diagrams](#2666-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.6.6.1. Bounded Context Domain Layer Class Diagrams](#26661-bounded-context-domain-layer-class-diagrams)
+        - [2.6.6.6.2. Bounded Context Database Design Diagram](#26662-bounded-context-database-design-diagram)
+    - [2.6.7. Bounded Context: Experience](#267-bounded-context-experience)
+      - [2.6.7.1. Domain Layer](#2671-domain-layer)
+        - [Aggregates](#aggregates-2)
+        - [Entities](#entities-2)
+        - [Value Objects](#value-objects-2)
+        - [Domain Events](#domain-events-2)
+        - [Domain Services](#domain-services-2)
+      - [2.6.7.2. Interface Layer](#2672-interface-layer)
+        - [ExperienceController](#experiencecontroller)
+        - [DTOs de Request y Response](#dtos-de-request-y-response-2)
+      - [2.6.7.3. Application Layer](#2673-application-layer)
+        - [Application Services](#application-services-2)
+        - [Command Handlers](#command-handlers-2)
+        - [Query Handlers](#query-handlers-2)
+        - [Integración con el evento de finalización de recorrido](#integración-con-el-evento-de-finalización-de-recorrido-1)
+      - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
+        - [Repositories (Implementación)](#repositories-implementación-2)
+        - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia-2)
+        - [Integración con RabbitMQ (Mensajería Asíncrona)](#integración-con-rabbitmq-mensajería-asíncrona-1)
+        - [Anti-Corruption Layer (ACL) — Integración con Shopping Journey](#anti-corruption-layer-acl--integración-con-shopping-journey-1)
+      - [2.6.7.5. Bounded Context Software Architecture Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.7.6. Bounded Context Software Architecture Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.7.6.1. Bounded Context Domain Layer Class Diagrams](#26761-bounded-context-domain-layer-class-diagrams)
+        - [2.6.7.6.2. Bounded Context Database Design Diagram](#26762-bounded-context-database-design-diagram)
 - [Capítulo III: Solution UI/UX Design](#capítulo-iii-solution-uiux-design)
-    - [3.1. Product design](#31-product-design)
-        - [3.1.1. Style Guidelines](#311-style-guidelines)
-            - [3.1.1.1. General Style Guidelines](#3111-general-style-guidelines)
-        - [3.1.2. Information Architecture](#312-information-architecture)
-            - [3.1.2.1. Organization Systems](#3121-organization-systems)
-            - [3.1.2.2. Labelling Systems](#3122-labelling-systems)
-            - [3.1.2.3. SEO Tags and Meta Tags](#3123-seo-tags-and-meta-tags)
-            - [3.1.2.4. Searching Systems](#3124-searching-systems)
-            - [3.1.2.5. Navigation Systems](#3125-navigation-systems)
-        - [3.1.3. Landing Page UI Design](#313-landing-page-ui-design)
-            - [3.1.3.1. Landing Page Wireframe](#3131-landing-page-wireframe)
-            - [3.1.3.2. Landing Page Mock-up](#3132-landing-page-mock-up)
-        - [3.1.4. Mobile Applications UX/UI Design](#314-mobile-applications-uxui-design)
-            - [3.1.4.1. Mobile Applications Wireframes](#3141-mobile-applications-wireframes)
-            - [3.1.4.2. Mobile Applications Wireflow Diagrams](#3142-mobile-applications-wireflow-diagrams)
-            - [3.1.4.3. Mobile Applications Mock-ups](#3143-mobile-applications-mock-ups)
-            - [3.1.4.4. Mobile Applications User Flow Diagrams](#3144-mobile-applications-user-flow-diagrams)
-            - [3.1.4.5. Mobile Applications Prototyping](#3145-mobile-applications-prototyping)
-
-- [Capítulo IV: Product Implementation & Validation](#capítulo-iv-product-implementation--validation)
-    - [4.1. Software Configuration Management](#41-software-configuration-management)
-        - [4.1.1. Software Development Environment Configuration](#411-software-development-environment-configuration)
-        - [4.1.2. Source Code Management](#412-source-code-management)
-        - [4.1.3. Source Code Style Guide & Conventions](#413-source-code-style-guide--conventions)
-        - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
-    - [4.2. Landing Page & Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
-        - [4.2.1. Sprint 1](#421-sprint-1)
-            - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-1)
-            - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-1)
-            - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
-            - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
-            - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
-            - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
-            - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
-            - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
-    - [4.3. Validation Interviews](#43-validation-interviews)
-        - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
-        - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
-        - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
-
-    - [Conclusiones](#conclusiones)
-        - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Bibliografía](#bibliografía)
-    - [Anexos](#anexos)
+  - [3.1. Product design](#31-product-design)
+    - [3.1.1. Style Guidelines](#311-style-guidelines)
+      - [3.1.1.1. General Style Guidelines](#3111-general-style-guidelines)
+    - [3.1.2. Information Architecture](#312-information-architecture)
+      - [3.1.2.1. Organization Systems](#3121-organization-systems)
+      - [3.1.2.2. Labelling Systems](#3122-labelling-systems)
+      - [3.1.2.3. SEO Tags and Meta Tags](#3123-seo-tags-and-meta-tags)
+      - [3.1.2.4. Searching Systems](#3124-searching-systems)
+      - [3.1.2.5. Navigation Systems](#3125-navigation-systems)
+    - [3.1.3. Landing Page UI Design](#313-landing-page-ui-design)
+      - [3.1.3.1. Landing Page Wireframe](#3131-landing-page-wireframe)
+      - [3.1.3.2. Landing Page Mock-up](#3132-landing-page-mock-up)
+    - [3.1.4. Mobile Applications UX/UI Design](#314-mobile-applications-uxui-design)
+      - [3.1.4.1. Mobile Applications Wireframes](#3141-mobile-applications-wireframes)
+        - [App Móvil (Consumidores)](#app-móvil-consumidores)
+        - [App Tablet (Comerciantes y Administradores)](#app-tablet-comerciantes-y-administradores)
+        - [Especificaciones de Diseño Aplicadas](#especificaciones-de-diseño-aplicadas)
+      - [3.1.4.2. Mobile Applications Wireflow Diagrams](#3142-mobile-applications-wireflow-diagrams)
+      - [3.1.4.3. Mobile Applications Mock-ups](#3143-mobile-applications-mock-ups)
+      - [3.1.4.4. Mobile Applications User Flow Diagrams](#3144-mobile-applications-user-flow-diagrams)
+      - [3.1.4.5. Mobile Applications Prototyping](#3145-mobile-applications-prototyping)
+- [Capítulo IV: Product Implementation \& Validation](#capítulo-iv-product-implementation--validation)
+  - [4.1. Software Configuration Management](#41-software-configuration-management)
+    - [4.1.1. Software Development Environment Configuration](#411-software-development-environment-configuration)
+    - [4.1.2. Source Code Management](#412-source-code-management)
+    - [4.1.3. Source Code Style Guide \& Conventions](#413-source-code-style-guide--conventions)
+    - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
+  - [4.2. Landing Page \& Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
+    - [4.2.1. Sprint 1](#421-sprint-1)
+      - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-1)
+      - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-1)
+      - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
+      - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
+      - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
+      - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
+      - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
+      - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+  - [4.3. Validation Interviews](#43-validation-interviews)
+    - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
+    - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
+    - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
+  - [Conclusiones](#conclusiones)
+  - [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
 
 <hr class="page-break">
 
@@ -3308,6 +3459,134 @@ Los wireframes fueron desarrollados siguiendo las siguientes especificaciones t�
 Estos wireframes constituyen la base funcional sobre la cual se construirán los mockups de alta fidelidad en la siguiente sección (3.1.4.3), manteniendo coherencia con la arquitectura de información definida en el sistema de organización (3.1.2.1).
 
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
+
+Los diagramas de wireflow ilustran la conexión y navegación entre las pantallas de cada aplicación, mostrando cómo el usuario se desplaza de un screen a otro mediante las acciones definidas en los User Goals.
+
+---
+
+**App Móvil (Usuario Consumidor)**
+
+**Goal 1: Autenticación y Registro**
+
+El usuario debe poder registrarse mediante email/contraseña o redes sociales (Google, Apple), aceptar términos y condiciones, y recuperar contraseña si es necesario.
+
+![Wireflow G1](./assets/wireflows/m_ug1.png)
+
+---
+
+**Goal 2: Gestión de Lista de Compras**
+
+El consumidor crea, edita y mantiene listas de productos. Agrega items con cantidad y categoría, modifica o elimina, guarda para uso futuro, repite compras anteriores, comparte con familia y exporta en PDF.
+
+![Wireflow G2](./assets/wireflows/m_ug2.png)
+
+---
+
+**Goal 3: Comparación de Precios**
+
+El usuario compara precios entre establecimientos cercanos. Interfaz con mapa, ranking de precios, filtros por formato (supermercado/conveniencia), categoría y distancia. Compara por unidad de medida ($/kg), recibe sugerencias de marca blanca y marca tiendas favoritas. 
+
+![Wireflow G3](./assets/wireflows/m_ug3.png)
+
+---
+
+**Goal 4: Optimización de Ruta de Compra**
+
+El usuario obtiene una ruta optimizada para minimizar tiempo y transporte. Mapa con puntos numerados, cálculo de tiempo estimado, brújula de orientación, lista de productos con checkboxes, filtro de tiendas 24h.
+
+![Wireflow G4](./assets/wireflows/m_ug4.png)
+
+---
+
+**Goal 5: Validación de Precios en Punto de Venta**
+
+El usuario valida precios escaneando productos por código de barras o subiendo foto del ticket completo. Reporta discrepancias o ofertas falsas para actualizar la base de datos comunitaria y ganar puntos. 
+
+![Wireflow G5](./assets/wireflows/m_ug5.png)
+
+---
+
+**Goal 6: Gestión de Perfil y Personalización**
+
+El usuario administra datos personales, configura preferencias de marcas y categorías, ajusta interfaz (modo oscuro), visualiza estadísticas de ahorro acumulado, revisa logros y canjea puntos por vales de descuento.
+
+![Wireflow G6](./assets/wireflows/m_ug6.png)
+
+---
+
+**Goal 7: Notificaciones y Alertas**
+
+El consumidor recibe alertas cuando su lista está más barato en otra cadena, notificaciones de ofertas flash, y avisos de afluencia en supermercados. Puede marcar como leídas y configurar preferencias. 
+
+![Wireflow G7](./assets/wireflows/m_ug7.png)
+
+---
+
+**Goal 8: Eliminación de Cuenta**
+
+El usuario solicita eliminación permanente de su cuenta con confirmación explícita mediante campos de texto, evitando eliminaciones accidentales. 
+
+![Wireflow G8](./assets/wireflows/m_ug8.png)
+
+---
+
+**App Tablet (Comerciante)**
+
+**Goal 1: Registro de Comerciante**
+
+El administrador crea cuenta empresarial con información de la empresa (nombre, RUC, dirección, categoría), datos de contacto y acepta términos y condiciones. 
+
+![Wireflow G1](./assets/wireflows/t_ug1.png)
+
+---
+
+**Goal 2: Registro de Sucursal(es)**
+
+El comerciante da de alta sucursales mediante proceso guiado: ubicación en mapa interactivo, selección de servicios (delivery, pickup, horario) y gestión de horarios especiales. 
+
+![Wireflow G2](./assets/wireflows/t_ug2.png)
+
+---
+
+**Goal 3: Gestión del Catálogo de Productos**
+
+El usuario administra el inventario: agregar, editar y eliminar productos; organizar por categorías; actualizar precios individuales o masivos por CSV; gestionar stock. 
+
+![Wireflow G3](./assets/wireflows/t_ug3.png)
+
+---
+
+**Goal 4: Gestión de Ofertas Promocionales**
+
+El comerciante crea ofertas relámpago o promociones temporales definiendo descuento, fechas de vigencia, productos afectados y visualiza temporizadores de tiempo restante. 
+
+![Wireflow G4](./assets/wireflows/t_ug4.png)
+
+---
+
+**Goal 5: Monitoreo de Métricas del Dashboard**
+
+Panel con indicadores clave: visitas diarias, ofertas activas, productos más escaneados, análisis de demanda por zona, comparación con competidores y alertas de posicionamiento. 
+
+![Wireflow G5](./assets/wireflows/t_ug5.png)
+
+---
+
+**Goal 6: Gestión del Código QR de Tienda**
+
+Código QR único para que clientes accedan a información de la tienda. El comerciante descarga en alta resolución, configura alertas de escaneo y visualiza estadísticas de uso. 
+
+![Wireflow G6](./assets/wireflows/t_ug6.png)
+
+---
+
+**Goal 7: Soporte Técnico y Gestión de Incidentes**
+
+Usuario reporta problemas mediante tickets de soporte, consulta estado (pendiente, en proceso, resuelto) y accede a contacto del equipo de soporte. 
+
+![Wireflow G7](./assets/wireflows/t_ug7.png)
+
+Los wireflows demuestran el flujo de navegación entre pantallas, conectando los wireframes documentados en la sección anterior mediante flechas que representan las acciones del usuario para alcanzar cada objetivo.
 
 #### 3.1.4.3. Mobile Applications Mock-ups
 
