@@ -3227,7 +3227,66 @@ En esta sección se presenta el diseño de alta fidelidad (Mock-up) de la Landin
 
 #### 4.2.1.1. Sprint Planning 1
 
+
+| Campo | Descripción |
+| :--- | :--- |
+| **Sprint #** | Sprint 1 |
+| **Sprint Planning Background** | |
+| **Date** | 2026-05-12 |
+| **Time** | 03:00 PM (GMT -5) |
+| **Location** | Modalidad remota por Google Meet |
+| **Prepared By** | FlowState Tech |
+| **Attendees (to planning meeting)** | Anjali Amaro Villar, Joseph Manuel Chavez Viera, Katherine Maryory Mejia Aliaga, Kevin Patrick Pardo Chumpitazi, Stephano Renan Valdivia Quispe |
+| **Sprint 0 Review Summary** | Este es el primer sprint, por lo tanto, no hay una revisión de sprint anterior. |
+| **Sprint 0 Retrospective Summary** | Se validaron los 18 wireframes de baja fidelidad para los segmentos de usuarios y comerciantes. Se identificó la necesidad de implementar un diseño responsivo para la Landing Page que capture la propuesta de valor del ahorro de tiempo y dinero. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 1 Goal** | Desplegar una Landing Page funcional con diseño responsivo y habilitar el registro base para el segmento de comerciantes. |
+| **Sprint 1 Velocity** | 35 |
+| **Sum of Story Points** | 35 |
+
+
+
+
+
+
 #### 4.2.1.2. Sprint Backlog 1
+
+El Sprint Backlog 1 representa la ejecución de las tareas planificadas para el primer ciclo de desarrollo de **SmartCart**. Durante este periodo, el equipo se enfocó en consolidar la identidad digital a través de la Landing Page y en establecer los cimientos operativos para el segmento de comerciantes.
+
+El uso de **Trello** como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
+
+**Captura del Tablero Trello (Fin del Sprint 1):**
+
+<div align="center">
+  <img src="assets/imagenes/trello-sprint-1.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+  <p><i>Figura 1.4.1: Estado final de las tareas del Sprint 1 en Trello</i></p>
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US01** | Visualizar beneficios de ahorro en la landing page | T1 | Diseño y maquetación | Desarrollo de la sección de beneficios con comparativa de precios y ahorro inteligente. | 4 | Kevin Patrick Pardo Chumpitazi | Done |
+| **US02** | Conocer el flujo de funcionamiento de SmartCart | T1 | Sección instructiva | Implementación de la guía paso a paso para usuarios finales sobre el uso de la aplicación. | 3 | Kevin Patrick Pardo Chumpitazi | Done |
+| **US03** | Registrar sucursal como socio comercial | T1 | Formulario de registro | Creación del formulario de registro para comerciantes y validación de campos técnicos. | 6 | Katherine Maryory Mejia Aliaga | Done |
+| **US03** | Registrar sucursal como socio comercial | T2 | Lógica de persistencia | Implementación de la lógica de guardado de datos en la base de datos inicial. | 4 | Stephano Renan Valdivia Quispe | Done |
+| **US04** | Visualizar dashboard de métricas comerciales | T1 | Interfaz de dashboard | Diseño de la interfaz de usuario para tablets enfocada en métricas de venta y stock. | 5 | Anjali Amaro Villar | Done |
+| **US04** | Visualizar dashboard de métricas comerciales | T2 | Gráficos base | Implementación de componentes visuales para representación de datos de ventas diarias. | 4 | Joseph Manuel Chavez Viera | Done |
+| **US05** | Gestionar el catálogo inicial de productos | T1 | Modelo de datos | Creación de las tablas y relaciones para el inventario inicial de productos y categorías. | 5 | Stephano Renan Valdivia Quispe | Done |
+| **US05** | Gestionar el catálogo inicial de productos | T2 | Interfaz de carga | Desarrollo de la pantalla básica para que el comerciante pueda listar sus productos. | 6 | Anjali Amaro / Joseph Chavez | Done |
+| **TS01** | Documentar el proceso de despliegue en GitHub Pages | T1 | Guía de despliegue | Redacción de los pasos necesarios para el despliegue automático del proyecto web. | 2 | Kevin Patrick Pardo Chumpitazi | Done |
+| **TS02** | Configuración de entorno de base de datos | T1 | Script SQL | Creación de scripts para la estructura de tablas inicial del segmento de comerciantes. | 4 | Stephano Renan Valdivia Quispe | Done |
+
+
+
+
+
+
+
+
+
+
+
 
 #### 4.2.1.3. Development Evidence for Sprint Review
 
