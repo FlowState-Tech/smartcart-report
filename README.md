@@ -3140,6 +3140,82 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 #### 3.1.4.3. Mobile Applications Mock-ups
 
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
+App Móvil (Usuario Consumidor)
+Goal 1: Autenticación y Registro
+El usuario debe poder registrarse mediante email/contraseña o redes sociales (Google, Apple), aceptar términos y condiciones, y recuperar contraseña si es necesario.
+
+![UserFlow](./assets/user-flow-diagram/apgoal1.png)
+
+Goal 2: Gestión de Lista de Compras
+El consumidor crea, edita y mantiene listas de productos. Agrega items con cantidad y categoría, modifica o elimina, guarda para uso futuro, repite compras anteriores, comparte con familia y exporta en PDF.
+
+![UserFlow](./assets/user-flow-diagram/apgoal2.png)
+
+Goal 3: Comparación de Precios
+El usuario compara precios entre establecimientos cercanos. Interfaz con mapa, ranking de precios, filtros por formato (supermercado/conveniencia), categoría y distancia. Compara por unidad de medida ($/kg), recibe sugerencias de marca blanca y marca tiendas favoritas.
+
+![UserFlow](./assets/user-flow-diagram/apgoal3.png)
+
+Goal 4: Optimización de Ruta de Compra
+El usuario obtiene una ruta optimizada para minimizar tiempo y transporte. Mapa con puntos numerados, cálculo de tiempo estimado, brújula de orientación, lista de productos con checkboxes, filtro de tiendas 24h.
+
+![UserFlow](./assets/user-flow-diagram/apgoal4.png)
+
+Goal 5: Validación de Precios en Punto de Venta
+El usuario valida precios escaneando productos por código de barras o subiendo foto del ticket completo. Reporta discrepancias o ofertas falsas para actualizar la base de datos comunitaria y ganar puntos.
+
+![UserFlow](./assets/user-flow-diagram/apgoal5.png)
+
+Goal 6: Gestión de Perfil y Personalización
+El usuario administra datos personales, configura preferencias de marcas y categorías, ajusta interfaz (modo oscuro), visualiza estadísticas de ahorro acumulado, revisa logros y canjea puntos por vales de descuento.
+
+![UserFlow](./assets/user-flow-diagram/apgoal6.png)
+
+Goal 7: Notificaciones y Alertas
+El consumidor recibe alertas cuando su lista está más barato en otra cadena, notificaciones de ofertas flash, y avisos de afluencia en supermercados. Puede marcar como leídas y configurar preferencias.
+
+![UserFlow](./assets/user-flow-diagram/apgoal7.png)
+
+Goal 8: Eliminación de Cuenta
+El usuario solicita eliminación permanente de su cuenta con confirmación explícita mediante campos de texto, evitando eliminaciones accidentales.
+
+![UserFlow](./assets/user-flow-diagram/apgoal8.png)
+
+App Tablet (Comerciante)
+Goal 1: Registro de Comerciante
+El administrador crea cuenta empresarial con información de la empresa (nombre, RUC, dirección, categoría), datos de contacto y acepta términos y condiciones.
+
+![UserFlow](./assets/user-flow-diagram/atgoal1.png)
+
+Goal 2: Registro de Sucursal(es)
+El comerciante da de alta sucursales mediante proceso guiado: ubicación en mapa interactivo, selección de servicios (delivery, pickup, horario) y gestión de horarios especiales.
+
+![UserFlow](./assets/user-flow-diagram/atgoal2.png)
+
+Goal 3: Gestión del Catálogo de Productos
+El usuario administra el inventario: agregar, editar y eliminar productos; organizar por categorías; actualizar precios individuales o masivos por CSV; gestionar stock.
+
+![UserFlow](./assets/user-flow-diagram/atgoal3.png)
+
+Goal 4: Gestión de Ofertas Promocionales
+El comerciante crea ofertas relámpago o promociones temporales definiendo descuento, fechas de vigencia, productos afectados y visualiza temporizadores de tiempo restante.
+
+![UserFlow](./assets/user-flow-diagram/atgoal4.png)
+
+Goal 5: Monitoreo de Métricas del Dashboard
+Panel con indicadores clave: visitas diarias, ofertas activas, productos más escaneados, análisis de demanda por zona, comparación con competidores y alertas de posicionamiento.
+
+![UserFlow](./assets/user-flow-diagram/atgoal5.png)
+
+Goal 6: Gestión del Código QR de Tienda
+Código QR único para que clientes accedan a información de la tienda. El comerciante descarga en alta resolución, configura alertas de escaneo y visualiza estadísticas de uso.
+
+![UserFlow](./assets/user-flow-diagram/atgoal6.png)
+
+Goal 7: Soporte Técnico y Gestión de Incidentes
+Usuario reporta problemas mediante tickets de soporte, consulta estado (pendiente, en proceso, resuelto) y accede a contacto del equipo de soporte.
+
+![UserFlow](./assets/user-flow-diagram/atgoal7.png)
 
 #### 3.1.4.5. Mobile Applications Prototyping
 
