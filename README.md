@@ -3176,7 +3176,12 @@ Los wireframes de baja fidelidad que se presentan a continuación definen la dis
 
 #### 3.1.3.2. Landing Page Mock-up
 
+En esta sección se presenta el diseño de alta fidelidad (Mock-up) de la Landing Page. A diferencia del wireframe, aquí se aplican los colores de marca, tipografías finales, imágenes reales y mockups de dispositivos para representar el producto final tal como lo verá el usuario.
 
+<div align="center">
+  <img src="assets/imagenes/Landing%20Page%20U.png" alt="Mock-up de alta fidelidad de la Landing Page SmartCart" width="100%">
+  <p><i>Figura 1.3.3: Diseño final de alta fidelidad de la Landing Page (Vista Completa)</i></p>
+</div>
 
 
 
