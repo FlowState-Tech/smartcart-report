@@ -3135,6 +3135,178 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 #### 3.1.4.1. Mobile Applications Wireframes
 
+La presente sección documenta los wireframes de baja fidelidad desarrollados para SmartCart, representando la estructura funcional de las interfaces antes de la aplicación de identidad visual. Se han diseñado dos aplicaciones diferenciadas: la **App Móvil** para usuarios consumidores (10 pantallas) y la **App Tablet** para comerciantes y administradores de tiendas (8 pantallas).
+
+El diseño sigue los principios de usabilidad establecidos en las Style Guidelines, empleando una escala de grises, iconos placeholder, texto mínimo limitado a labels y placeholders genéricos, y considerando touch targets mínimos de 44px para garantizar la accesibilidad.
+
+---
+
+##### App Móvil (Consumidores)
+
+**1. Splash**
+
+Pantalla inicial con logo centrado, barra de progreso inferior indicando carga y versión de aplicación en footer.
+
+![Splash](./assets/wireframes/m_splash.png)
+
+---
+
+**2. Login**
+
+Formulario de autenticación con campos de email y contraseña, botones de acceso social (Google, Apple), y enlaces de recuperación de contraseña.
+
+![Login](./assets/wireframes/m_login.png)
+
+---
+
+**3. Registro**
+
+Formulario de creación de cuenta con 4 inputs (nombre, email, contraseña, confirmación), checkbox de términos y condiciones, y botón de registro principal.
+
+![Registro](./assets/wireframes/m_registro.png)
+
+---
+
+**4. Home**
+
+Vista principal de lista de compras con items editables, botones de agregar/eliminar productos, resumen total de gasto proyectado, y botones de acción inferior (continuar compra, guardar lista).
+
+![Home](./assets/wireframes/m_home.png)
+
+---
+
+**5. Comparador**
+
+Interfaz con mapa interactivo mostrando pins de establecimientos cercanos, lista ranking de precios por producto, y filtros en chips horizontales (categoría, distancia, precio).
+
+![Comparador](./assets/wireframes/m_comparador.png)
+
+---
+
+**6. Navegación**
+
+Mapa con ruta de compra optimizada numerada, brújula de orientación, y lista de productos con checkbox para seguimiento del recorrido.
+
+![Navegación](./assets/wireframes/m_nav.png)
+
+---
+
+**7. Validación**
+
+Interfaz con tabs para cambiar entre modos de validación (por producto individual o por ticket de compra completo), botones de confirmar precio o reportar discrepancia.
+
+![Validación](./assets/wireframes/m_validacion.png)
+
+---
+
+**8. Perfil**
+
+Sección de gestión de usuario con avatar, múltiples secciones con iconos (datos personales, preferencias, seguridad), toggles de configuración, y estadísticas de ahorro acumuladas.
+
+![Perfil](./assets/wireframes/m_perfil.png)
+
+---
+
+**9. Notificaciones**
+
+Lista de alertas con iconos representativos, timestamps de recepción, y badges indicando elementos no leídos.
+
+![Notificaciones](./assets/wireframes/m_noti.png)
+
+---
+
+**10. Eliminar Cuenta**
+
+Pantalla de advertencia con icono de precaución, campos de confirmación de acción, y botón de acción danger para confirmar eliminación permanente.
+
+![Eliminar Cuenta](./assets/wireframes/m_elim_cuenta.png)
+
+La navegación inferior contiene 5 ítems principales: Inicio, Comparar, Rutas, Validar y Perfil, cumpliendo con los estándares de navegación móvil.
+
+---
+
+##### App Tablet (Comerciantes y Administradores)
+
+**1. Login Comerciante**
+
+Formulario de autenticación simplificado con logo centrado, campos de email y contraseña, y botón de acceso.
+
+![Login Comerciante](./assets/wireframes/t_login.png)
+
+---
+
+**2. Registro Comerciante**
+
+Formulario de registro en columna con campos de información empresarial, términos y condiciones checkbox, y botón de crear cuenta.
+
+![Registro Comerciante](./assets/wireframes/t_registro.png)
+
+---
+
+**3. Registro Sucursal**
+
+Wizard de 3 pasos numerados para el alta de nueva sucursal, con mapa interactivo para ubicación geográfica, y toggles de servicios disponibles.
+
+![Registro Sucursal](./assets/wireframes/t_registro_sucursal.png)
+
+---
+
+**4. Dashboard**
+
+Panel principal con 4 cards de métricas clave (visitas, ofertas activas, productos escaneados, conversiones), 3 secciones inferiores conteniendo tablas de datos y gráficos de tendencias.
+
+![Dashboard](./assets/wireframes/t_dashboard.png)
+
+---
+
+**5. Gestión Catálogo**
+
+Interfaz con tabs de categorías de productos, tabla editable con listados de productos, y drag handles para reordenar elementos dentro del catálogo.
+
+![Gestión Catálogo](./assets/wireframes/t_gest_catalogo.png)
+
+---
+
+**6. Gestión Ofertas**
+
+Vista de cards de ofertas activas con información de vigencia, modal flotante para crear nuevas ofertas, y temporizadores visuales de tiempo restante.
+
+![Gestión Ofertas](./assets/wireframes/t_gest_ofertas.png)
+
+---
+
+**7. QR Tienda**
+
+Generación de código QR de la tienda en tamaño ampliado, panel de estadísticas de escaneos diarios, y toggles de configuración de alertas.
+
+![QR Tienda](./assets/wireframes/t_qr.png)
+
+---
+
+**8. Soporte**
+
+Formulario de reporte de incidentes, lista de tickets abiertos con estados (pendiente, en proceso, resuelto), y información de contacto de soporte técnico.
+
+![Soporte](./assets/wireframes/t_soporte.png)
+
+El diseño de la App Tablet utiliza un layout con sidebar lateral o sistema de tabs para la navegación principal entre módulos.
+
+---
+
+##### Especificaciones de Diseño Aplicadas
+
+Los wireframes fueron desarrollados siguiendo las siguientes especificaciones técnicas:
+
+- **Paleta cromática:** Escala de grises (blanco, gris claro #F5F5F5, gris medio #9E9E9E, gris oscuro #424242, negro #212121)
+- **Elementos gráficos:** Cajas grises placeholder para iconos, sin imágenes, fotos ni logos reales
+- **Tipografía:** Solo labels y placeholders genéricos, texto mínimo indispensable
+- **Componentes UI:** Bordes simples de 1px, sombras mínimas de 2px, sin decoraciones adicionales
+- **Interactivity:** Touch targets mínimos de 44px para todos los elementos interactivos
+- **Navegación móvil:** Bottom navigation bar con 5 ítems (Inicio, Comparar, Rutas, Validar, Perfil)
+- **Navegación tablet:** Sidebar lateral o sistema de tabs para navegación entre módulos
+
+Estos wireframes constituyen la base funcional sobre la cual se construirán los mockups de alta fidelidad en la siguiente sección (3.1.4.3), manteniendo coherencia con la arquitectura de información definida en el sistema de organización (3.1.2.1).
+
 #### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
 #### 3.1.4.3. Mobile Applications Mock-ups
