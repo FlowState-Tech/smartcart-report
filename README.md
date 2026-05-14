@@ -3218,6 +3218,22 @@ Usuario reporta problemas mediante tickets de soporte, consulta estado (pendient
 ![UserFlow](./assets/user-flow-diagram/atgoal7.png)
 
 #### 3.1.4.5. Mobile Applications Prototyping
+Esta sección presenta los prototipos de alta fidelidad para las dos aplicaciones que conforman el ecosistema de SmartCart. Se han diseñado considerando los principios de usabilidad, accesibilidad y las necesidades específicas de cada segmento de usuario identificado en las etapas previas del proyecto.
+Las decisiones de diseño para ambos prototipos se basaron en los siguientes criterios técnicos:
+- Se estructuró el contenido priorizando las tareas frecuentes (Búsqueda y Comparación para el usuario; Monitoreo de Ventas para el comercio), reduciendo la profundidad de los clics necesarios para alcanzar los User Goals.
+- Sistema de Navegación:
+Mobile: Se implementó un Tab Bar inferior para facilitar el alcance ergonómico en dispositivos móviles (Ley de Fitts).
+Tablet: Se optó por un Navigation Drawer (Sidebar) lateral para aprovechar el ancho de pantalla y permitir el cambio rápido de contexto administrativo.
+- Affordance y Visibilidad del Estado: Se utilizaron microinteracciones y estados visuales (como etiquetas de color en ofertas y sombras en botones) para que el usuario reciba retroalimentación inmediata sobre sus acciones.
+- Consistencia Visual: Ambos sistemas comparten una identidad visual basada en el "Azul SmartCart", garantizando una experiencia de marca unificada pero adaptada a la densidad de datos que requiere cada plataforma.
+#### Prototipo App Móvil (Segmento 1: Consumidor Final)
+El prototipo móvil se enfoca en la agilidad y el ahorro. Permite al usuario planificar sus compras y validar información en tiempo real.
+![prototyping interviews](./assets/prototyping-interviews/segmento1.png)
+[Enlace al video]([https://tu-enlace.com](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a118_upc_edu_pe/IQDZqH9c9gE6Tr8sBL5FrYt1AeGTpwKbWwN7fyumcZQ_z4I?e=ZZTv4L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))
+#### Prototipo SmartCart Business (Segmento 2: Comerciante) 
+La aplicación para tablet/web está diseñada para la gestión operativa y el análisis de datos estratégicos.
+![prototyping interviews](./assets/prototyping-interviews/segmento2.png)
+[Enlace al video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a118_upc_edu_pe/IQAkLCdqe41DQLNvTpn6faDXAbNv4ebR3DVq_l5XkrNmnIA?e=nTh7NC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 <hr class="page-break">
 
