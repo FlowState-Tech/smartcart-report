@@ -3256,6 +3256,23 @@ Usuario reporta problemas mediante tickets de soporte, consulta estado (pendient
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
+En esta sección se establece la estructura de las sesiones de validación para SmartCart. El diseño se centra en observar cómo los usuarios interactúan con la interfaz y si logran completar tareas críticas utilizando los prototipos de alta fidelidad, asegurando que la navegación sea intuitiva y lógica.
+#### Elementos de la Sesión de Validación
+Las sesiones se realizarán de manera individual siguiendo esta estructura:
+Exploración de Landing Page: Validación de la arquitectura de información (Secciones: Hero, Beneficios, FAQ, Sobre nosotros y Colaboradores). Se busca confirmar si el usuario entiende el modelo de ahorro y colaboración.
+Validación de User Flows: Ejecución de tareas específicas en los prototipos, donde el equipo observará la facilidad de navegación y la claridad de los botones y alertas.
+Recolección de Feedback: Registro de las apreciaciones del usuario sobre el diseño visual y la utilidad de las funciones presentadas.
+#### Especificación de User Flows para Validación
+Segmento 1: Consumidores Finales (Shoppers Planificadores)
+- Flujo 1: Registro y Gestión de Perfil: El usuario simula el alta en la aplicación y la navegación hacia la configuración de preferencias de marcas y modo oscuro (Goals 1 y 6).
+- Flujo 2: Creación de Lista y Comparativa: El usuario agrega productos a una lista de compras y utiliza la interfaz de ranking para identificar qué establecimiento ofrece el precio más bajo (Goals 2 y 3).
+- Flujo 3: Visualización de Ruta y Simulación de Reporte: El usuario accede al mapa para ver la ruta de compra sugerida y simula el reporte de un precio presionando el botón de "Escanear/Subir Foto", llegando hasta la pantalla de confirmación de "Puntos Ganados" (Goals 4 y 5).
+Segmento 2: Establecimientos de Retail (Comerciantes).
+- Flujo 1: Registro y Alta de Sucursal: El comerciante completa el formulario de datos empresariales (RUC) y simula la ubicación de su tienda en el mapa interactivo (Goals 1 y 2).
+- Flujo 2: Gestión de Catálogo y Ofertas: El usuario navega por la sección de inventario, selecciona un producto para editar su precio y activa una "Oferta Relámpago" configurando el tiempo de vigencia (Goals 3 y 4).
+- Flujo 3: Lectura de Métricas: El usuario accede al Dashboard principal e identifica visualmente cuál es el producto con mayor demanda en su zona según los indicadores presentados (Goal 5).
+#### Metodología de Validación
+Se aplicará la técnica de Escenarios de Uso. En lugar de dar instrucciones directas, se le planteará una situación al usuario (ej. "Deseas saber cuántas personas han visto tus ofertas hoy") para observar si encuentra la sección de métricas de forma natural. Cualquier error o duda del usuario durante el flujo será documentado como un hallazgo para la evaluación heurística posterior.
 
 ### 4.3.2. Registro de Entrevistas
 
