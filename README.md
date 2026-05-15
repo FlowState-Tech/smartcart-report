@@ -3590,6 +3590,166 @@ Los wireflows demuestran el flujo de navegación entre pantallas, conectando los
 
 #### 3.1.4.3. Mobile Applications Mock-ups
 
+La presente sección documenta los mockups de alta fidelidad para SmartCart, representando el diseño visual final de las interfaces con la identidad de marca aplicada. A diferencia de los wireframes (escala de grises), los mockups incorporan la paleta cromática, tipografía, iconografía y elementos de navegación definitivos.
+
+Se han diseñado dos aplicaciones con identidad visual diferenciada: la **App Móvil** para consumidores y la **App Tablet** para comerciantes.
+
+---
+
+**App Móvil (Usuario Consumidor)**
+
+**1. Splash**
+
+Pantalla de inicio con logo de SmartCart, barra de progreso de carga y versión de la aplicación en la parte inferior. Presentación profesional con colores de marca.
+
+![Splash](./assets/mockups/m_splash.png)
+
+---
+
+**2. Login**
+
+Interfaz de autenticación con campos para email y contraseña, botones de acceso mediante redes sociales (Google, Apple), y enlaces para recuperación de contraseña. Diseño limpio y orientado a la conversión.
+
+![Login](./assets/mockups/m_login.png)
+
+---
+
+**3. Registro**
+
+Formulario de creación de cuenta con campos para nombre, email, contraseña y confirmación de contraseña. Checkbox de términos y condiciones, y botón principal de registro. Diseño que minimiza la fricción de registro.
+
+![Registro](./assets/mockups/m_registro.png)
+
+---
+
+**4. Home**
+
+Vista principal de lista de compras con items visualmente atractivos, botones para agregar y eliminar productos, resumen total de gasto proyectado con formato destacado, y botones de acción inferior para continuar compra o guardar lista.
+
+![Home](./assets/mockups/m_home.png)
+
+---
+
+**5. Comparador**
+
+Interfaz de comparación de precios con mapa interactivo mostrando pins de establecimientos cercanos, lista ranking de precios por producto, y filtros en chips horizontales (categoría, distancia, precio). Visualización clara de ahorros.
+
+![Comparador](./assets/mockups/m_comparador.png)
+
+---
+
+**6. Navegación**
+
+Pantalla de ruta de compra optimizada con mapa detallado, puntos numerados en orden de visita, brújula de orientación, y lista de productos con checkboxes para seguimiento del recorrido.
+
+![Navegación](./assets/mockups/m_nav.png)
+
+---
+
+**7. Validación**
+
+Interfaz de validación de precios con tabs para cambiar entre modos (producto individual o ticket completo). Botones prominentes para confirmar precio o reportar discrepancia.
+
+![Validación](./assets/mockups/m_validacion.png)
+
+![Validación 2](./assets/mockups/m_validacion2.png)
+
+---
+
+**8. Perfil**
+
+Sección de gestión de usuario con avatar, secciones organizadas con iconografía, toggles de configuración, y panel de estadísticas de ahorro acumulado. Diseño que transmite confianza y control al usuario.
+
+![Perfil](./assets/mockups/m_perfil.png)
+
+---
+
+**9. Notificaciones**
+
+Lista de alertas con iconos representativos diferenciados por tipo, timestamps de recepción, y badges de no leídos. Diseño que prioriza la legibilidad y acciones rápidas.
+
+![Notificaciones](./assets/mockups/m_notificacion.png)
+
+---
+
+**10. Eliminar Cuenta**
+
+Pantalla de advertencia con icono de precaución, campos de confirmación que requieren acción explícita del usuario, y botón de acción danger para eliminación permanente. Diseño que previene eliminaciones accidentales.
+
+![Eliminar Cuenta](./assets/mockups/m_eliminar_cuenta.png)
+
+La navegación inferior mantiene los 5 ítems principales: Inicio, Comparar, Rutas, Validar y Perfil, ahora con iconografía de marca.
+
+---
+
+**App Tablet (Comerciantes y Administradores)**
+
+**1. Login Comerciante**
+
+Formulario de autenticación simplificado con logo centrado, campos de email y contraseña, y botón de acceso. Diseño profesional orientado a eficiencia.
+
+![Login Comerciante](./assets/mockups/t_login.png)
+
+---
+
+**2. Registro Comerciante**
+
+Formulario de registro en columna con campos de información empresarial, términos y condiciones checkbox, y botón de crear cuenta. Diseño que transmite seriedad empresarial.
+
+![Registro Comerciante](./assets/mockups/t_registro.png)
+
+---
+
+**3. Registro Sucursal**
+
+Wizard de 3 pasos numerados para el alta de nueva sucursal, con mapa interactivo para ubicación geográfica, toggles de servicios disponibles (delivery, pickup, horario). Interfaz que guía al usuario en el proceso.
+
+![Registro Sucursal](./assets/mockups/t_registro_sucursal.png)
+
+---
+
+**4. Dashboard**
+
+Panel principal con 4 cards de métricas clave en formato visual atractivo (visitas, ofertas activas, productos escaneados, conversiones), 3 secciones inferiores con tablas de datos y gráficos de tendencias. Dashboard orientado a toma de decisiones.
+
+![Dashboard](./assets/mockups/t_dashboard.png)
+
+---
+
+**5. Gestión Catálogo**
+
+Interfaz con tabs de categorías de productos, tabla editable con listados de productos, y drag handles para reordenar elementos. Diseño funcional para gestión eficiente del inventario.
+
+![Gestión Catálogo](./assets/mockups/t_gest_catalogo.png)
+
+---
+
+**6. Gestión Ofertas**
+
+Vista de cards de ofertas activas con información de vigencia y temporizadores visuales de tiempo restante, modal flotante para crear nuevas ofertas. Diseño que incentiva la creación de promociones.
+
+![Gestión Ofertas](./assets/mockups/t_gest_ofertas.png)
+
+---
+
+**7. QR Tienda**
+
+Código QR de la tienda en tamaño destacado, panel de estadísticas de escaneos diarios con gráficos, toggles de configuración de alertas. Elemento de marketing para el establecimiento.
+
+![QR Tienda](./assets/mockups/t_qr_tienda.png)
+
+---
+
+**8. Soporte**
+
+Formulario de reporte de incidentes con campos estructurados, lista de tickets abiertos con indicadores de estado (pendiente, en proceso, resuelto), y información de contacto del equipo de soporte. Diseño que transmite soporte confiable.
+
+![Soporte](./assets/mockups/t_soporte.png)
+
+El diseño de la App Tablet utiliza un layout con sidebar lateral y sistema de tabs para navegación entre módulos, adaptándose al contexto de uso profesional.
+
+---
+
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
 
 #### 3.1.4.5. Mobile Applications Prototyping
