@@ -3424,6 +3424,44 @@ A continuación se muestra la evidencia paso a paso del proceso de despliegue de
 
 Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
 
+
+**Api REST Deployment Evidence:**
+
+A continución se muestra la evidencia paso a paso del proceso de despliegue del servicio REST API utilizando Railway, desde la vinculación del repositorio hasta la confirmación de que el servicio está en ejecución.
+
+1. **Nos encontramos en la página principal de Railway, damos click en "Deploy":**
+![img](assets/deployment/backend/1.png)
+
+2. **Seleccionamos "Github Repository":**
+   ![img](assets/deployment/backend/2.png)
+
+3. **Seleccionamos el repositorio del servicio REST API:**
+   ![img](assets/deployment/backend/3.png)
+
+4. **Seleccionamos la rama de despliegue:**
+   ![img](assets/deployment/backend/4.png)
+
+5. **El despliegue automatico falla debido a que no encuentra una instancia activa de PostgreSQL**
+   ![img](assets/deployment/backend/5.png)
+
+6. **Creamos una nueva instancia de PostgreSQL en Railway:**
+   ![img](assets/deployment/backend/6.png)
+
+7. **Copiamos las variables de entorno de la base de datos**
+   ![img](assets/deployment/backend/7.png)
+
+8. **Agregamos las variables de entorno a la configuración del proyecto:**
+   ![img](assets/deployment/backend/8.png)
+
+9. **Guardamos los cambios y esperamos a que Railway realice el despliegue automático**
+   ![img](assets/deployment/backend/9.png)
+
+10. **Confirmamos que el despliegue fue exitoso y que el servicio está en ejecución:**
+    ![img](assets/deployment/backend/10.png)
+
+
+Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
+
 #### 4.2.1.8. Team Collaboration Insights during Sprint
 
 ## 4.3. Validation Interviews
