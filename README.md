@@ -94,102 +94,295 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
 
 # Contenido
 
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Contenido](#contenido)
+- [Student Outcome](#student-outcome)
+- [Objetivos SMART](#objetivos-smart)
 - [Capítulo I: Presentación](#capítulo-i-presentación)
-    - [1.1. Startup Profile](#11-startup-profile)
-        - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
-        - [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
-    - [1.2. Solution Profile](#12-solution-profile)
-        - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
-        - [1.2.2. Lean UX Process](#122-lean-ux-process)
-            - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
-            - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
-            - [1.2.2.3. Lean UX Hypothesis](#1223-lean-ux-hypothesis)
-            - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
-    - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+      - [What? (¿Qué?)](#what-qué)
+      - [When? (¿Cuándo?)](#when-cuándo)
+      - [Where? (¿Dónde?)](#where-dónde)
+      - [Who? (¿Quién?)](#who-quién)
+      - [Why? (¿Por qué?)](#why-por-qué)
+      - [How? (¿Cómo?)](#how-cómo)
+      - [How much? (¿Cuánto?)](#how-much-cuánto)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [Business Assumptions](#business-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis](#1223-lean-ux-hypothesis)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+    - [Segmentación del Dominio del Problema](#segmentación-del-dominio-del-problema)
+      - [1. Consumidores Finales (Shoppers Planificadores)](#1-consumidores-finales-shoppers-planificadores)
+      - [2. Establecimientos de Retail (Supermercados y Tiendas de Conveniencia)](#2-establecimientos-de-retail-supermercados-y-tiendas-de-conveniencia)
 - [Capítulo II: Requirements Development and Software Solution Design](#capítulo-ii-requirements-development-and-software-solution-design)
-    - [2.1. Competidores](#21-competidores)
-        - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-        - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
-    - [2.2. Entrevistas](#22-entrevistas)
-        - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-        - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-        - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-    - [2.3. Needfinding](#23-needfinding)
-        - [2.3.1. User Personas](#231-user-personas)
-        - [2.3.2. User Task Matrix](#232-user-task-matrix)
-        - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-        - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-        - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
-        - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
-    - [2.4. Requirements specification](#24-requirements-specification)
-        - [2.4.1. User Stories](#241-user-stories)
-        - [2.4.2. Impact Mapping](#242-impact-mapping)
-        - [2.4.3. Product Backlog](#243-product-backlog)
-    - [2.5. Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)
-        - [2.5.1. EventStorming](#251-eventstorming)
-            - [2.5.1.1. Candidate Context Discovery](#2511-candidate-context-discovery)
-            - [2.5.1.2. Domain Message Flows Modeling](#2512-domain-message-flows-modeling)
-            - [2.5.1.3. Bounded Context Canvases](#2513-bounded-context-canvases)
-        - [2.5.2. Context Mapping](#252-context-mapping)
-        - [2.5.3. Software Architecture](#253-software-architecture)
-            - [2.5.3.1. Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)
-            - [2.5.3.2. Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
-            - [2.5.3.3. Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
-    - [2.6. Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
-        - [2.6.1. Bounded Context: IAM](#261-bounded-context-iam)
-            - [2.6.1.1. Domain Layer](#2611-domain-layer)
-            - [2.6.1.2. Interface Layer](#2612-interface-layer)
-            - [2.6.1.3. Application Layer](#2613-application-layer)
-            - [2.6.1.4. Infrastructure Layer](#2614-infrastructure-layer)
-            - [2.6.1.5. Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.1.6. Code Level Diagrams](#2616-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.2. Bounded Context: Verification](#262-bounded-context-verification)
-            - [2.6.2.1. Domain Layer](#2621-domain-layer-1)
-            - [2.6.2.2. Interface Layer](#2622-interface-layer-1)
-            - [2.6.2.3. Application Layer](#2623-application-layer-1)
-            - [2.6.2.4. Infrastructure Layer](#2624-infrastructure-layer-1)
-            - [2.6.2.5. Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.2.6. Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.3. Bounded Context: Store Management](#263-bounded-context-store-management)
-            - [2.6.3.1. Domain Layer](#2631-domain-layer)
-            - [2.6.3.2. Interface Layer](#2632-interface-layer)
-            - [2.6.3.3. Application Layer](#2633-application-layer)
-            - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
-            - [2.6.3.5. Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.3.6. Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.4. Bounded Context: Notification](#264-bounded-context-notification)
-            - [2.6.4.1. Domain Layer](#2641-domain-layer)
-            - [2.6.4.2. Interface Layer](#2642-interface-layer)
-            - [2.6.4.3. Application Layer](#2643-application-layer)
-            - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
-            - [2.6.4.5. Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.4.6. Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.5. Bounded Context: Shopping Planning](#265-bounded-context-shopping-planning)
-            - [2.6.5.1. Domain Layer](#2651-domain-layer)
-            - [2.6.5.2. Interface Layer](#2652-interface-layer)
-            - [2.6.5.3. Application Layer](#2653-application-layer)
-            - [2.6.5.4. Infrastructure Layer](#2654-infrastructure-layer)
-            - [2.6.5.5. Component Level Diagrams](#2655-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.5.6. Code Level Diagrams](#2656-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.6. Bounded Context: Shopping Journey](#266-bounded-context-shopping-journey)
-            - [2.6.6.1. Domain Layer](#2661-domain-layer)
-            - [2.6.6.2. Interface Layer](#2662-interface-layer)
-            - [2.6.6.3. Application Layer](#2663-application-layer)
-            - [2.6.6.4. Infrastructure Layer](#2664-infrastructure-layer)
-            - [2.6.6.5. Component Level Diagrams](#2665-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.6.6. Code Level Diagrams](#2666-bounded-context-software-architecture-code-level-diagrams)
-        - [2.6.7. Bounded Context: Experience](#267-bounded-context-experience)
-            - [2.6.7.1. Domain Layer](#2671-domain-layer)
-            - [2.6.7.2. Interface Layer](#2672-interface-layer)
-            - [2.6.7.3. Application Layer](#2673-application-layer)
-            - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
-            - [2.6.7.5. Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
-            - [2.6.7.6. Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
-    - [Conclusiones](#conclusiones)
-        - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-    - [Bibliografía](#bibliografía)
-    - [Anexos](#anexos)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+- [Competitive Analysis Landscape - SmartCart](#competitive-analysis-landscape---smartcart)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+      - [Segmento 1: Usuarios Consumidores](#segmento-1-usuarios-consumidores)
+      - [A. Información Demográfica y Antecedentes](#a-información-demográfica-y-antecedentes)
+      - [B. Objetivos y Frustraciones](#b-objetivos-y-frustraciones)
+      - [C. Tecnología y Canales de Interacción](#c-tecnología-y-canales-de-interacción)
+      - [D. Comportamiento frente a la solución](#d-comportamiento-frente-a-la-solución)
+      - [Segmento 2: Establecimientos de Consumo Masivo](#segmento-2-establecimientos-de-consumo-masivo)
+      - [A. Gestión de Catálogo y Visibilidad Digital](#a-gestión-de-catálogo-y-visibilidad-digital)
+      - [B. Atracción y Eventos Promocionales](#b-atracción-y-eventos-promocionales)
+      - [C. Engagement y Analítica de Datos](#c-engagement-y-analítica-de-datos)
+      - [D. Objetivos de Conversión y SmartPrice](#d-objetivos-de-conversión-y-smartprice)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+      - [Segmento de Consumidores:](#segmento-de-consumidores)
+      - [Entrevista 1:](#entrevista-1)
+      - [Entrevista 2:](#entrevista-2)
+      - [Entrevista 3:](#entrevista-3)
+      - [Segmento de Comerciantes:](#segmento-de-comerciantes)
+      - [Entrevista 1:](#entrevista-1-1)
+      - [Entrevista 2:](#entrevista-2-1)
+      - [Entrevista 3:](#entrevista-3-1)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+      - [**Características Objetivas**](#características-objetivas)
+      - [**Características Subjetivas**](#características-subjetivas)
+      - [**Características Objetivas**](#características-objetivas-1)
+      - [**Características Subjetivas**](#características-subjetivas-1)
+  - [2.3. Needfinding](#23-needfinding)
+      - [Segmento #1: Consumidores (Hogares y Jefes de Familia)](#segmento-1-consumidores-hogares-y-jefes-de-familia)
+      - [Segmento #2: Establecimientos de Consumo Masivo (Gerentes de Sede)](#segmento-2-establecimientos-de-consumo-masivo-gerentes-de-sede)
+    - [2.3.1. User Personas](#231-user-personas)
+        - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto)
+        - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+      - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-1)
+      - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-1)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+      - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-2)
+      - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-2)
+    - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
+    - [1. Open:](#1-open)
+    - [2. Explore:](#2-explore)
+    - [3. Close:](#3-close)
+    - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
+  - [2.4. Requirements specification](#24-requirements-specification)
+    - [2.4.1. User Stories](#241-user-stories)
+    - [2.4.2. Impact Mapping](#242-impact-mapping)
+  - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-3)
+  - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-3)
+    - [2.4.3. Product Backlog](#243-product-backlog)
+  - [2.5. Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)
+    - [2.5.1. EventStorming](#251-eventstorming)
+  - [2.5.1.1. Candidate Context Discovery](#2511-candidate-context-discovery)
+    - [Preparación de la sesión](#preparación-de-la-sesión)
+    - [Técnica aplicada: Start-with-Value](#técnica-aplicada-start-with-value)
+    - [Candidate Contexts identificados](#candidate-contexts-identificados)
+    - [Clasificación Estratégica](#clasificación-estratégica)
+      - [2.5.1.2. Domain Message Flows Modeling](#2512-domain-message-flows-modeling)
+      - [Escenario 1: Registro y verificación de tienda](#escenario-1-registro-y-verificación-de-tienda)
+      - [Escenario 2: Planificación de compra del consumidor](#escenario-2-planificación-de-compra-del-consumidor)
+      - [Escenario 3: Ejecución del recorrido de compra](#escenario-3-ejecución-del-recorrido-de-compra)
+      - [Escenario 4: Calificación y experiencia post-compra](#escenario-4-calificación-y-experiencia-post-compra)
+      - [Escenario 5: Gestión de inventario y precios de tienda](#escenario-5-gestión-de-inventario-y-precios-de-tienda)
+      - [Escenario 6: Cálculo de ahorro y análisis de compra](#escenario-6-cálculo-de-ahorro-y-análisis-de-compra)
+      - [Escenario 7: Sistema de alertas y notificaciones de ofertas](#escenario-7-sistema-de-alertas-y-notificaciones-de-ofertas)
+      - [2.5.1.3. Bounded Context Canvases](#2513-bounded-context-canvases)
+      - [IAM](#iam)
+      - [Verification](#verification)
+      - [Store Management](#store-management)
+      - [Shopping Planning](#shopping-planning)
+      - [Shopping Journey](#shopping-journey)
+      - [Experience](#experience)
+      - [Notification](#notification)
+    - [2.5.2. Context Mapping](#252-context-mapping)
+        - [1. IAM -\> Verification](#1-iam---verification)
+        - [2. Verification -\> Store Management](#2-verification---store-management)
+        - [3. Store Management -\> Notification](#3-store-management---notification)
+        - [4.  Shopping Planning → Shopping journey](#4--shopping-planning--shopping-journey)
+        - [5. Shopping journey → Experience](#5-shopping-journey--experience)
+      - [Análisis de alternativas y preguntas clave:](#análisis-de-alternativas-y-preguntas-clave)
+    - [1. ¿Qué pasaría si Verification y Store Management compartieran la misma](#1-qué-pasaría-si-verification-y-store-management-compartieran-la-misma)
+      - [Alternativa A: Customer/Supplier + ACL (Modelo Actual)](#alternativa-a-customersupplier--acl-modelo-actual)
+      - [Alternativa B: Shared Kernel](#alternativa-b-shared-kernel)
+      - [Decisión Sustentada: Mantener Customer/Supplier + ACL.](#decisión-sustentada-mantener-customersupplier--acl)
+    - [2. ¿Qué pasaría si Store Management llamara directamente a los servicios de](#2-qué-pasaría-si-store-management-llamara-directamente-a-los-servicios-de)
+      - [Alternativa A: Publisher/Subscriber + OHS (Modelo Actual)](#alternativa-a-publishersubscriber--ohs-modelo-actual)
+      - [Alternativa B: Integración directa (Llamada síncrona)](#alternativa-b-integración-directa-llamada-síncrona)
+      - [Decisión Sustentada: Mantener Publisher/Subscriber.](#decisión-sustentada-mantener-publishersubscriber)
+    - [3. ¿Qué pasaría si Shopping Planning y Shopping journey fueran un solo](#3-qué-pasaría-si-shopping-planning-y-shopping-journey-fueran-un-solo)
+      - [Alternativa A: Contextos separados (Modelo Actual)](#alternativa-a-contextos-separados-modelo-actual)
+      - [Alternativa B: Unificar en un solo Bounded Context ("Shopping")](#alternativa-b-unificar-en-un-solo-bounded-context-shopping)
+      - [Decisión Sustentada: Mantener contextos separados.](#decisión-sustentada-mantener-contextos-separados)
+      - [Decisión Final](#decisión-final)
+    - [2.5.3. Software Architecture](#253-software-architecture)
+      - [2.5.3.1. Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)
+      - [Descripción de los elementos:](#descripción-de-los-elementos)
+      - [2.5.3.2. Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
+      - [2.5.3.3. Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
+  - [2.6. Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
+      - [2.6.1. Bounded Context: IAM](#261-bounded-context-iam)
+        - [2.6.1.1. Domain Layer](#2611-domain-layer)
+        - [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#26161-bounded-context-domain-layer-class-diagrams)
+        - [2.6.1.2. Interface Layer](#2612-interface-layer)
+        - [2.6.1.3. Application Layer](#2613-application-layer)
+        - [2.6.1.4. Infrastructure Layer](#2614-infrastructure-layer)
+      - [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](#2615-bounded-context-software-architecture-component-level-diagrams)
+        - [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#26161-bounded-context-domain-layer-class-diagrams-1)
+        - [2.6.1.6.2. Bounded Context Database Design Diagram](#26162-bounded-context-database-design-diagram)
+    - [2.6.2. Bounded Context: Verification](#262-bounded-context-verification)
+        - [2.6.2.1. Domain Layer](#2621-domain-layer)
+        - [2.6.2.2. Interface Layer](#2622-interface-layer)
+        - [2.6.2.3. Application Layer](#2623-application-layer)
+        - [2.6.2.4. Infrastructure Layer](#2624-infrastructure-layer)
+      - [2.6.2.5. Bounded Context Software Architecture Component Level Diagrams](#2625-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.2.6. Bounded Context Software Architecture Code Level Diagrams](#2626-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.2.6.1. Bounded Context Domain Layer Class Diagrams](#26261-bounded-context-domain-layer-class-diagrams)
+        - [2.6.2.6.2. Bounded Context Database Design Diagram](#26262-bounded-context-database-design-diagram)
+    - [2.6.3. Bounded Context: Store Management](#263-bounded-context-store-management)
+      - [2.6.3.1. Domain Layer](#2631-domain-layer)
+        - [Aggregates](#aggregates)
+        - [Entities](#entities)
+        - [Value Objects](#value-objects)
+        - [Domain Events](#domain-events)
+        - [Domain Services](#domain-services)
+      - [2.6.3.2. Interface Layer](#2632-interface-layer)
+        - [StoreManagementController](#storemanagementcontroller)
+        - [DTOs de Request y Response](#dtos-de-request-y-response)
+      - [2.6.3.3. Application Layer](#2633-application-layer)
+        - [Application Services](#application-services)
+        - [Command Handlers](#command-handlers)
+        - [Query Handlers](#query-handlers)
+        - [Integración con procesos de Inventario](#integración-con-procesos-de-inventario)
+      - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
+      - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer-1)
+        - [Repositories (Implementación)](#repositories-implementación)
+        - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia)
+        - [Consumer (StoreManagementEventConsumer)](#consumer-storemanagementeventconsumer)
+      - [Anti-Corruption Layer (ACL) — Integración con External Legal API \& Merchant Systems](#anti-corruption-layer-acl--integración-con-external-legal-api--merchant-systems)
+        - [Estructura de la ACL](#estructura-de-la-acl)
+      - [Contrato de traducción del ACL](#contrato-de-traducción-del-acl)
+      - [Implementación del ACL](#implementación-del-acl)
+    - [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
+    - [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
+      - [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](#26361-bounded-context-domain-layer-class-diagrams)
+      - [2.6.3.6.2. Bounded Context Database Design Diagram](#26362-bounded-context-database-design-diagram)
+    - [2.6.4. Bounded Context: Notification](#264-bounded-context-notification)
+    - [2.6.4.1. Domain Layer](#2641-domain-layer)
+      - [Aggregates](#aggregates-1)
+      - [Entities](#entities-1)
+      - [Value Objects](#value-objects-1)
+      - [Domain Events](#domain-events-1)
+      - [Domain Services](#domain-services-1)
+    - [2.6.4.2. Interface Layer](#2642-interface-layer)
+      - [NotificationController](#notificationcontroller)
+      - [DTOs de Request y Response](#dtos-de-request-y-response-1)
+    - [2.6.4.3. Application Layer](#2643-application-layer)
+      - [Application Services](#application-services-1)
+      - [Command Handlers](#command-handlers-1)
+      - [Query Handlers](#query-handlers-1)
+      - [Integración con el evento de finalización de recorrido](#integración-con-el-evento-de-finalización-de-recorrido)
+    - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
+      - [Repositories (Implementación)](#repositories-implementación-1)
+      - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia-1)
+      - [Integración con RabbitMQ (Mensajería Asíncrona)](#integración-con-rabbitmq-mensajería-asíncrona)
+      - [Anti-Corruption Layer (ACL) — Integración con Shopping Journey](#anti-corruption-layer-acl--integración-con-shopping-journey)
+      - [2.6.4.5. Bounded Context Software Architecture Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.4.6. Bounded Context Software Architecture Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.4.6.1. Bounded Context Domain Layer Class Diagrams](#26461-bounded-context-domain-layer-class-diagrams)
+        - [2.6.4.6.2. Bounded Context Database Design Diagram](#26462-bounded-context-database-design-diagram)
+    - [2.6.5. Bounded Context: Shopping Planning](#265-bounded-context-shopping-planning)
+      - [2.6.5.1. Domain Layer](#2651-domain-layer)
+      - [2.6.5.2. Interface Layer](#2652-interface-layer)
+      - [2.6.5.3. Application Layer](#2653-application-layer)
+      - [2.6.5.4. Infrastructure Layer](#2654-infrastructure-layer)
+      - [2.6.5.5. Bounded Context Software Architecture Component Level Diagrams](#2655-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.5.6. Bounded Context Software Architecture Code Level Diagrams](#2656-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.5.6.1. Bounded Context Domain Layer Class Diagrams](#26561-bounded-context-domain-layer-class-diagrams)
+        - [2.6.5.6.2. Bounded Context Database Design Diagram](#26562-bounded-context-database-design-diagram)
+    - [2.6.6. Bounded Context: Shopping Journey](#266-bounded-context-shopping-journey)
+      - [2.6.6.1. Domain Layer](#2661-domain-layer)
+      - [2.6.6.2. Interface Layer](#2662-interface-layer)
+      - [2.6.6.3. Application Layer](#2663-application-layer)
+      - [2.6.6.4. Infrastructure Layer](#2664-infrastructure-layer)
+      - [2.6.6.5. Bounded Context Software Architecture Component Level Diagrams](#2665-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.6.6. Bounded Context Software Architecture Code Level Diagrams](#2666-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.6.6.1. Bounded Context Domain Layer Class Diagrams](#26661-bounded-context-domain-layer-class-diagrams)
+        - [2.6.6.6.2. Bounded Context Database Design Diagram](#26662-bounded-context-database-design-diagram)
+    - [2.6.7. Bounded Context: Experience](#267-bounded-context-experience)
+      - [2.6.7.1. Domain Layer](#2671-domain-layer)
+        - [Aggregates](#aggregates-2)
+        - [Entities](#entities-2)
+        - [Value Objects](#value-objects-2)
+        - [Domain Events](#domain-events-2)
+        - [Domain Services](#domain-services-2)
+      - [2.6.7.2. Interface Layer](#2672-interface-layer)
+        - [ExperienceController](#experiencecontroller)
+        - [DTOs de Request y Response](#dtos-de-request-y-response-2)
+      - [2.6.7.3. Application Layer](#2673-application-layer)
+        - [Application Services](#application-services-2)
+        - [Command Handlers](#command-handlers-2)
+        - [Query Handlers](#query-handlers-2)
+        - [Integración con el evento de finalización de recorrido](#integración-con-el-evento-de-finalización-de-recorrido-1)
+      - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
+        - [Repositories (Implementación)](#repositories-implementación-2)
+        - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia-2)
+        - [Integración con RabbitMQ (Mensajería Asíncrona)](#integración-con-rabbitmq-mensajería-asíncrona-1)
+        - [Anti-Corruption Layer (ACL) — Integración con Shopping Journey](#anti-corruption-layer-acl--integración-con-shopping-journey-1)
+      - [2.6.7.5. Bounded Context Software Architecture Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
+      - [2.6.7.6. Bounded Context Software Architecture Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
+        - [2.6.7.6.1. Bounded Context Domain Layer Class Diagrams](#26761-bounded-context-domain-layer-class-diagrams)
+        - [2.6.7.6.2. Bounded Context Database Design Diagram](#26762-bounded-context-database-design-diagram)
+- [Capítulo III: Solution UI/UX Design](#capítulo-iii-solution-uiux-design)
+  - [3.1. Product design](#31-product-design)
+    - [3.1.1. Style Guidelines](#311-style-guidelines)
+      - [3.1.1.1. General Style Guidelines](#3111-general-style-guidelines)
+    - [3.1.2. Information Architecture](#312-information-architecture)
+      - [3.1.2.1. Organization Systems](#3121-organization-systems)
+      - [3.1.2.2. Labelling Systems](#3122-labelling-systems)
+      - [3.1.2.3. SEO Tags and Meta Tags](#3123-seo-tags-and-meta-tags)
+      - [3.1.2.4. Searching Systems](#3124-searching-systems)
+      - [3.1.2.5. Navigation Systems](#3125-navigation-systems)
+    - [3.1.3. Landing Page UI Design](#313-landing-page-ui-design)
+      - [3.1.3.1. Landing Page Wireframe](#3131-landing-page-wireframe)
+      - [3.1.3.2. Landing Page Mock-up](#3132-landing-page-mock-up)
+    - [3.1.4. Mobile Applications UX/UI Design](#314-mobile-applications-uxui-design)
+      - [3.1.4.1. Mobile Applications Wireframes](#3141-mobile-applications-wireframes)
+        - [App Móvil (Consumidores)](#app-móvil-consumidores)
+        - [App Tablet (Comerciantes y Administradores)](#app-tablet-comerciantes-y-administradores)
+        - [Especificaciones de Diseño Aplicadas](#especificaciones-de-diseño-aplicadas)
+      - [3.1.4.2. Mobile Applications Wireflow Diagrams](#3142-mobile-applications-wireflow-diagrams)
+      - [3.1.4.3. Mobile Applications Mock-ups](#3143-mobile-applications-mock-ups)
+      - [3.1.4.4. Mobile Applications User Flow Diagrams](#3144-mobile-applications-user-flow-diagrams)
+      - [3.1.4.5. Mobile Applications Prototyping](#3145-mobile-applications-prototyping)
+- [Capítulo IV: Product Implementation \& Validation](#capítulo-iv-product-implementation--validation)
+  - [4.1. Software Configuration Management](#41-software-configuration-management)
+    - [4.1.1. Software Development Environment Configuration](#411-software-development-environment-configuration)
+    - [4.1.2. Source Code Management](#412-source-code-management)
+    - [4.1.3. Source Code Style Guide \& Conventions](#413-source-code-style-guide--conventions)
+    - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
+  - [4.2. Landing Page \& Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
+    - [4.2.1. Sprint 1](#421-sprint-1)
+      - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-1)
+      - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-1)
+      - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
+      - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
+      - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
+      - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
+      - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
+      - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+  - [4.3. Validation Interviews](#43-validation-interviews)
+    - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
+    - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
+    - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
+  - [Conclusiones](#conclusiones)
+  - [Bibliografía](#bibliografía)
+- [Anexos](#anexos)
 
 <hr class="page-break">
 
@@ -199,8 +392,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico                                                                                                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                   | Conclusiones |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*   Actualicé mis competencias profesionales al aplicar herramientas de análisis competitivo y estrategias frente a competidores para definir los segmentos objetivo del proyecto. Asimismo, integré conocimientos en metodologías ágiles mediante la elaboración de User Stories, Impact Mapping y la gestión del Product Backlog, asegurando que la solución técnica responda directamente a las necesidades del mercado y del usuario final.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Investigué y apliqué la metodología Lean UX para estructurar el Canvas y las hipótesis de solución, basándome en los requerimientos compartidos por el equipo para el proyecto SmartCart.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
-| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*  El desarrollo del análisis de competidores y el diseño del backlog me permitieron comprender que la ingeniería de software exige una actualización constante en estrategias de mercado y gestión ágil. Reconozco que el aprendizaje permanente es fundamental para refinar productos digitales en entornos competitivos, comprometiéndome a seguir adquiriendo nuevas metodologías que maximicen el valor de mis futuros proyectos.    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Identifiqué la necesidad de aprender nuevas técnicas de Needfinding para organizar la información recibida del grupo y transformarla en los perfiles de User Personas y la Task Matrix.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *TB1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto .    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *TB1:*Transformé los perfiles de User Personas y la Task Matrix en una API funcional documentada en Swagger, gestionando la creación de endpoints REST y la resolución de conflictos técnicos para asegurar la integridad del repositorio grupal.   <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
 
 <hr class="page-break">
 
@@ -815,74 +1008,86 @@ Esta sección establece el **Ubiquitous Language** (Lenguaje Ubicuo) de la plata
 * **Validación**: Procedimiento de contrastación de datos de la tienda contra fuentes oficiales como Sunat.
 
 ## 2.4. Requirements specification
+
 ### 2.4.1. User Stories
+
+
+
+
 | Story ID | User           | Priority | Epic | Title                       | Description                                                                                                                                 | Acceptance Criteria                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | :------- | :------------- | :------- | :--- | :-------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **US01** | Visitante      | Alta     | EP01 | Landing: Propuesta de Valor | Como visitante, deseo ver cómo SmartCart compara supermercados y tiendas de conveniencia para ahorrar.                                      | **E1:** Dado que el visitante accede al inicio, cuando carga la landing, entonces visualiza la comparativa de ahorro entre cadenas de retail. <br> **E2:** Dado que el visitante baja a "Beneficios", cuando lee el contenido, entonces comprende la diferencia de precios entre conveniencia y supermercado. <br> **E3:** Dado que el visitante busca cobertura, cuando el sistema muestra el mapa, entonces resalta las zonas de Lince y Surquillo.                                                                       |
-| **US02** | Visitante      | Media    | EP01 | Landing: Marcas Aliadas     | Como visitante, deseo ver qué cadenas de supermercados están mapeadas para confiar en la app.                                               | **E1:** Dado que el visitante llega a la sección de aliados, cuando el sistema carga los logos, entonces muestra marcas de supermercados y tiendas de conveniencia. <br> **E2:** Dado que el visitante hace scroll, cuando aparecen las tarjetas, entonces visualiza el número de locales registrados por cada cadena. <br> **E3:** Dado que el visitante consulta la veracidad, cuando lee la sección de datos, entonces el sistema explica que los precios se actualizan mediante la comunidad.                           |
-| **US03** | Visitante      | Baja     | EP01 | Landing: Registro Interés   | Como visitante, deseo dejar mi correo para recibir el aviso de lanzamiento oficial del proyecto.                                            | **E1:** Dado que el visitante llega al formulario final, cuando ingresa un correo válido, entonces el sistema registra la suscripción en la base de datos. <br> **E2:** Dado que el formato del correo es inválido, cuando el sistema valida el campo, entonces muestra una alerta de error en la landing. <br> **E3:** Dado que el correo ya existe, cuando el sistema procesa el envío, entonces notifica que el usuario ya está registrado en la lista de espera.                                                        |
-| **US04** | Consumidor     | Alta     | EP05 | Comparativa Retail          | Como consumidor, deseo comparar mi lista entre un supermercado y una tienda de conveniencia.                                                | **E1:** Dado que el consumidor tiene productos en su lista, cuando solicita comparar, entonces el sistema muestra la diferencia de costo total entre ambos formatos. <br> **E2:** Dado que un producto es exclusivo de supermercado, cuando se genera el ranking, entonces el sistema indica que no se encuentra en tiendas de conveniencia. <br> **E3:** Dado que el consumidor elige "Menor precio", cuando el sistema ordena, entonces prioriza el local con el ticket total más bajo.                                   |
-| **US05** | Consumidor     | Alta     | EP05 | Filtro por Formato          | Como consumidor, deseo filtrar resultados para ver solo tiendas de conveniencia (Tambo/Oxxo).                                               | **E1:** Dado que el consumidor activa filtros, cuando selecciona "Conveniencia", entonces el sistema oculta los grandes supermercados del mapa. <br> **E2:** Dado que el consumidor cambia a "Supermercados", cuando el sistema actualiza, entonces muestra solo locales con gran inventario (Metro/Plaza Vea). <br> **E3:** Dado que no hay filtros activos, cuando el sistema carga la vista, entonces combina ambos formatos de tienda en el radio de búsqueda.                                                          |
-| **US06** | Consumidor     | Alta     | EP04 | Escaneo de Productos        | Como consumidor, deseo escanear el código de barras en el supermercado para ver si está más barato en la tienda de conveniencia de al lado. | **E1:** Dado que el consumidor activa el escáner, cuando reconoce el código de barras, entonces muestra el precio del producto en todas las tiendas cercanas. <br> **E2:** Dado que el producto es de marca blanca, cuando el sistema busca coincidencias, entonces ofrece el equivalente de la marca blanca de la competencia. <br> **E3:** Dado que el código no se reconoce, cuando termina el proceso, entonces el sistema permite la búsqueda manual por nombre de marca.                                              |
-| **US07** | Consumidor     | Media    | EP04 | Armado de Canasta           | Como consumidor, deseo agregar productos de marcas reconocidas para armar mi canasta básica.                                                | **E1:** Dado que el consumidor busca una marca específica, cuando selecciona el ítem, entonces el sistema lo añade a la lista con la imagen referencial del empaque. <br> **E2:** Dado que el consumidor añade varios lácteos, cuando el sistema totaliza, entonces agrupa los productos por categorías de supermercado. <br> **E3:** Dado que el consumidor desea duplicar un ítem, cuando incrementa la cantidad, entonces actualiza el peso estimado de la canasta.                                                      |
-| **US08** | Consumidor     | Alta     | EP06 | Ruta de Compra Eficiente    | Como consumidor, deseo una ruta que incluya el supermercado y la tienda de conveniencia más cercanos.                                       | **E1:** Dado que el consumidor selecciona dos paradas de distinto formato, cuando solicita la ruta, entonces el sistema traza el camino más corto entre ambos. <br> **E2:** Dado que el consumidor está en Surquillo, cuando inicia la navegación, entonces el sistema prioriza calles con acceso vehicular para supermercados. <br> **E3:** Dado que un local está cerrado, cuando el sistema verifica el horario de la cadena, entonces sugiere la tienda de conveniencia 24h más cercana.                                |
-| **US09** | Consumidor     | Media    | EP06 | Cálculo de Tiempo           | Como consumidor, deseo ver cuánto tardaré en recorrer el supermercado según la afluencia reportada.                                         | **E1:** Dado que el consumidor selecciona un supermercado grande, cuando el sistema calcula el tiempo, entonces suma un margen estimado de permanencia en tienda. <br> **E2:** Dado que elige una tienda de conveniencia, cuando el sistema estima el tiempo, entonces reduce el margen por ser una compra rápida (express). <br> **E3:** Dado que el tráfico en Lince es alto, cuando el sistema actualiza la ruta, entonces incrementa el tiempo de llegada estimado automáticamente.                                     |
-| **US10** | Gerente Tienda | Alta     | EP02 | Registro de Sucursal        | Como gerente de sucursal, deseo registrar mi tienda de conveniencia para que aparezca en el mapa.                                           | **E1:** Dado que el gerente ingresa el RUC de la cadena, cuando el sistema valida, entonces permite añadir la ubicación específica de la sucursal. <br> **E2:** Dado un local nuevo, cuando se registra la dirección en Surquillo, entonces el sistema lo posiciona geográficamente de forma exacta. <br> **E3:** Dado que la sucursal ya existe, cuando el sistema detecta la duplicidad por coordenadas, entonces deniega el nuevo registro.                                                                              |
-| **US11** | Gerente Tienda | Alta     | EP03 | Carga de Catálogo           | Como gerente de tienda, deseo subir la lista de precios de la semana para atraer clientes del distrito.                                     | **E1:** Dado que el gerente carga el archivo de precios, cuando el sistema procesa el formato, entonces actualiza los valores de los productos en la app. <br> **E2:** Dado que un precio es una "Oferta del día", cuando se registra el cambio, entonces el sistema le asigna una etiqueta visual de descuento. <br> **E3:** Dado que el archivo tiene errores de formato, cuando el sistema valida, entonces rechaza la carga e indica la línea del error.                                                                |
-| **US12** | Gerente Tienda | Media    | EP03 | Alerta de Quiebre           | Como gerente, deseo marcar productos como "Sin Stock" para evitar reclamos de consumidores.                                                 | **E1:** Dado que se agota el stock de un producto de alta demanda, cuando el gerente lo marca en el panel, entonces desaparece de las búsquedas inmediatas. <br> **E2:** Dado que llega el camión de reposición, cuando el gerente actualiza el estado, entonces el sistema vuelve a listar el producto. <br> **E3:** Dado que el producto está agotado en toda la cadena, cuando el administrador central lo marca, entonces se actualiza en todas las sucursales vinculadas.                                              |
-| **US13** | Gerente Tienda | Media    | EP02 | Horarios Especiales         | Como gerente, deseo actualizar el horario de mi tienda de conveniencia (ej: 24 horas) para informar al usuario.                             | **E1:** Dado que el local cambia a atención 24h, cuando el gerente guarda el cambio, entonces el sistema muestra el icono de disponibilidad nocturna. <br> **E2:** Dado un feriado próximo, cuando el gerente programa el cierre temprano, entonces el sistema notifica a los usuarios que tengan ese local en su ruta. <br> **E3:** Dado que el horario es regular, cuando el sistema llega a la hora de cierre, entonces cambia el estado a "Cerrado" automáticamente en el mapa.                                         |
-| **US14** | Consumidor     | Alta     | EP07 | Validación Comunitaria      | Como consumidor, deseo confirmar que el precio del supermercado es el mismo que dice la app para ganar puntos.                              | **E1:** Dado que el consumidor está físicamente en la tienda, cuando marca "Precio Correcto", entonces el sistema le otorga 10 puntos de SmartCart. <br> **E2:** Dado que el precio cambió en góndola, cuando el consumidor ingresa el nuevo valor, entonces el sistema actualiza el precio tras una validación cruzada. <br> **E3:** Dado que el consumidor está lejos de la tienda, cuando intenta validar, entonces el sistema bloquea la acción por falta de cercanía GPS.                                              |
-| **US15** | Consumidor     | Media    | EP07 | Reporte de Oferta Falsa     | Como consumidor, deseo denunciar si una tienda de conveniencia no respeta la oferta publicada.                                              | **E1:** Dado que el consumidor detecta publicidad engañosa, cuando envía el reporte, entonces el sistema marca la oferta como "Bajo revisión". <br> **E2:** Dado que el reporte incluye foto del ticket, cuando el sistema lo recibe, entonces otorga un bono de puntos por veracidad de denuncia. <br> **E3:** Dado que la tienda acumula reportes, cuando el sistema procesa los datos, entonces envía una alerta al gerente del local.                                                                                   |
-| **US16** | Gerente Tienda | Alta     | EP03 | Actualización masiva        | Como gerente de supermercado, deseo actualizar miles de precios mediante integración para ahorrar tiempo.                                   | **E1:** Dado que se sube un archivo masivo, cuando el sistema termina el procesamiento, entonces emite un resumen de cambios exitosos y fallidos. <br> **E2:** Dado que hay precios con variaciones extremas, cuando el sistema los detecta, entonces solicita una confirmación manual de seguridad. <br> **E3:** Dado un error de conexión durante la subida, cuando el sistema recupera el enlace, entonces retoma la carga desde el último punto guardado.                                                               |
-| **US17** | Consumidor     | Media    | EP10 | Alerta de Canasta Económica | Como consumidor, deseo que la app me avise cuando mi lista de supermercado salga más barata en otra cadena.                                 | **E1:** Dado que el ahorro potencial supera el 10%, cuando el sistema detecta la baja de precios en la competencia, entonces envía una notificación push. <br> **E2:** Dado que el consumidor abre la alerta, cuando el sistema carga la comparativa, entonces muestra exactamente cuánto dinero ahorraría si cambia de tienda. <br> **E3:** Dado que el consumidor desactiva alertas, cuando el sistema encuentra ahorros, entonces los guarda en la sección "Oportunidades" para consulta manual.                         |
-| **US18** | Consumidor     | Media    | EP01 | Perfil de Consumo           | Como consumidor, deseo registrar mis marcas preferidas de supermercado para recibir ofertas personalizadas.                                 | **E1:** Dado que el consumidor selecciona categorías (ej: limpieza), cuando el sistema encuentra ofertas en esos pasillos, entonces las resalta en el home. <br> **E2:** Dado que el consumidor cambia de marca preferida, cuando actualiza su perfil, entonces el sistema ajusta las recomendaciones automáticamente. <br> **E3:** Dado que no hay preferencias marcadas, cuando el sistema sugiere productos, entonces utiliza los artículos más vendidos en Lince y Surquillo.                                           |
-| **US19** | Admin          | Alta     | EP02 | Auditoría de Cadenas        | Como admin, deseo verificar que los locales registrados pertenezcan a cadenas reales de retail.                                             | **E1:** Dado una nueva solicitud de registro, cuando el admin cruza el RUC con el padrón oficial, entonces aprueba la visibilidad de la tienda de conveniencia. <br> **E2:** Dado un registro falso de supermercado, cuando el admin lo detecta, entonces elimina el local y bloquea la cuenta del remitente. <br> **E3:** Dado que la cadena cambia de nombre comercial, cuando el admin lo actualiza, entonces el cambio se refleja en todas las sucursales de la red.                                                    |
-| **US20** | Consumidor     | Media    | EP08 | Resumen Mensual             | Como consumidor, deseo ver cuánto ahorré comprando en tiendas de conveniencia vs supermercados.                                             | **E1:** Dado que el consumidor accede a sus ahorros, cuando el sistema carga el gráfico, entonces diferencia el ahorro por tipo de establecimiento. <br> **E2:** Dado que el ahorro supera la meta mensual, cuando el sistema detecta el logro, entonces otorga una medalla de "Comprador Inteligente". <br> **E3:** Dado que el consumidor quiere exportar su ahorro, cuando selecciona la opción, entonces el sistema genera un resumen visual compartible.                                                               |
-| **US21** | Consumidor     | Media    | EP08 | Recompensas Retail          | Como consumidor, deseo canjear mis puntos por vales de descuento en los supermercados asociados.                                            | **E1:** Dado que el consumidor alcanza los 500 puntos, cuando selecciona el vale de descuento, entonces el sistema genera un código alfanumérico único. <br> **E2:** Dado que el vale es para una cadena específica, cuando el sistema lo emite, entonces indica claramente en qué sucursales de Lince es válido. <br> **E3:** Dado que el punto ha vencido, cuando el usuario intenta el canje, entonces el sistema informa que el saldo no está disponible.                                                               |
-| **US22** | Consumidor     | Media    | EP04 | Lista Compartida            | Como consumidor, deseo compartir mi lista de supermercado con mi familia para que me ayuden con las compras.                                | **E1:** Dado que el consumidor genera un enlace de lista, cuando lo envía por chat, entonces permite que otros vean los precios comparados. <br> **E2:** Dado que otro usuario añade un producto a la lista compartida, cuando el sistema procesa el cambio, entonces actualiza el costo total para todos. <br> **E3:** Dado que se marca un producto como "Comprado", cuando el sistema actualiza la lista, entonces lo tacha en tiempo real en todos los dispositivos.                                                    |
-| **US23** | Consumidor     | Media    | EP09 | Guía de Pasillos            | Como consumidor, deseo saber en qué pasillo del supermercado están los productos de mi lista.                                               | **E1:** Dado que el supermercado tiene mapeo de pasillos, cuando el consumidor consulta el producto, entonces el sistema indica el número de zona. <br> **E2:** Dado que el local es una tienda de conveniencia pequeña, cuando el sistema muestra la ubicación, entonces indica que es de "Acceso rápido" cerca de caja. <br> **E3:** Dado que la distribución cambió, cuando un usuario reporta la nueva ubicación, entonces el sistema actualiza el pasillo para los demás.                                              |
-| **US24** | Consumidor     | Alta     | EP05 | Comparación por Peso        | Como consumidor, deseo comparar precios por unidad de medida (ej: $/kg) para saber qué tamaño conviene más.                                 | **E1:** Dado que el sistema tiene el peso del producto, cuando el consumidor visualiza el precio, entonces muestra el valor calculado por kilo o litro. <br> **E2:** Dado dos productos similares de distinto tamaño, cuando el sistema los compara, entonces resalta cuál ofrece el menor costo por unidad. <br> **E3:** Dado que falta el dato del peso, cuando el sistema procesa el ítem, entonces omite la comparación por unidad para evitar errores de cálculo.                                                      |
-| **US25** | Gerente Tienda | Media    | EP09 | Reporte de Demanda          | Como gerente, deseo ver qué productos de mi supermercado son los más buscados en la zona de Surquillo.                                      | **E1:** Dado que el gerente accede a analíticas, cuando el sistema procesa las búsquedas, entonces muestra un ranking de los 10 productos más deseados. <br> **E2:** Dado que un producto tiene mucha demanda pero poco stock, cuando el sistema detecta la brecha, entonces emite una alerta de oportunidad de venta. <br> **E3:** Dado que la demanda cae, cuando el sistema analiza la tendencia semanal, entonces sugiere al gerente realizar una oferta para rotar el inventario.                                      |
-| **US26** | Visitante      | Baja     | EP01 | Landing: Preguntas de Pago  | Como visitante, deseo saber si la app permite pagar directamente o solo comparar precios.                                                   | **E1:** Dado que el visitante accede a las FAQ de la landing, cuando busca "Pagos", entonces el sistema explica que la app es una herramienta de comparación. <br> **E2:** Dado que el visitante consulta sobre métodos de pago, cuando lee la respuesta, entonces conoce que los pagos se hacen en la caja de cada tienda. <br> **E3:** Dado que el visitante tiene dudas legales, cuando lee los términos, entonces comprende que SmartCart no vende productos directamente.                                              |
-| **US27** | Consumidor     | Baja     | EP01 | Tiendas Favoritas           | Como consumidor, deseo marcar mi "Supermercado de confianza" para ver sus precios primero.                                                  | **E1:** Dado que el consumidor marca una cadena como favorita, cuando abre la app, entonces el sistema prioriza sus precios en la pantalla de inicio. <br> **E2:** Dado que hay una oferta en la tienda favorita, cuando el sistema la detecta, entonces envía una notificación especial destacada. <br> **E3:** Dado que el usuario desea cambiar de tienda favorita, cuando actualiza su elección, entonces el sistema reajusta el orden de prioridad en el ranking.                                                      |
-| **US28** | Consumidor     | Media    | EP02 | Estado de Afluencia         | Como consumidor, deseo saber si el supermercado está muy lleno para decidir si ir ahora o después.                                          | **E1:** Dado que el sistema recibe datos de usuarios en tiempo real, cuando el consumidor consulta el local, entonces muestra un nivel de afluencia (Baja/Media/Alta). <br> **E2:** Dado que la tienda está vacía, cuando el sistema procesa el estado, entonces muestra una recomendación de "Buen momento para comprar". <br> **E3:** Dado que no hay datos recientes, cuando el sistema muestra el local, entonces indica "Afluencia habitual según horario".                                                            |
-| **US29** | Gerente Tienda | Media    | EP03 | Gestión de Categorías       | Como gerente, deseo organizar mis productos por categorías de retail para facilitar la navegación del usuario.                              | **E1:** Dado que el gerente añade un ítem, cuando selecciona "Abarrotes", entonces el sistema lo posiciona en la sección correspondiente de la app. <br> **E2:** Dado que un producto pertenece a varias categorías, cuando el gerente lo etiqueta, entonces el sistema permite su búsqueda en ambos filtros. <br> **E3:** Dado que la categoría es nueva, cuando el gerente la propone, entonces el sistema la envía al administrador para su aprobación global.                                                           |
-| **US30** | Consumidor     | Baja     | EP01 | Interfaz Adaptativa         | Como consumidor, deseo que la interfaz se adapte al modo de luz de mi teléfono para leer mejor los precios.                                 | **E1:** Dado que el teléfono está en modo noche, cuando el sistema detecta la configuración, entonces cambia la app a colores oscuros. <br> **E2:** Dado que el consumidor está bajo luz solar fuerte, cuando el sistema ajusta el contraste, entonces mejora la visibilidad de los números de precio. <br> **E3:** Dado que el usuario prefiere un modo fijo, cuando selecciona "Claro" en ajustes, entonces el sistema bloquea los cambios automáticos.                                                                   |
-| **US31** | Gerente Tienda | Media    | EP09 | Comparador de Cadena        | Como gerente de tienda de conveniencia, deseo ver el precio de mi competencia directa en el mismo distrito.                                 | **E1:** Dado que el gerente elige un radio de 500m, cuando el sistema procesa los datos, entonces muestra los precios de las otras tiendas del mismo formato. <br> **E2:** Dado que su precio es el más bajo, cuando el sistema lo confirma, entonces le otorga una insignia de "Líder de ahorro en la zona". <br> **E3:** Dado que no hay datos de la competencia, cuando el sistema entrega el informe, entonces indica la fecha de la última actualización registrada.                                                   |
-| **US32** | Consumidor     | Alta     | EP07 | Verificación con Ticket     | Como consumidor, deseo subir una foto de mi ticket de supermercado para validar todos los precios de una vez.                               | **E1:** Dado que el consumidor toma foto al ticket, cuando el sistema procesa la imagen, entonces extrae los precios y los compara con la base de datos. <br> **E2:** Dado que los precios del ticket son más recientes, cuando el sistema los valida, entonces actualiza la información pública de ese supermercado. <br> **E3:** Dado que el ticket es ilegible, cuando el sistema falla en el escaneo, entonces solicita al usuario ingresar los datos manualmente para no perder los puntos.                            |
-| **US33** | Consumidor     | Media    | EP05 | Sugerencia de Marca Blanca  | Como consumidor, deseo que la app me sugiera la marca blanca del supermercado si es más barata que la marca líder.                          | **E1:** Dado que el consumidor añade un producto premium, cuando el sistema detecta un equivalente de marca propia (ej: Bell's, Tottus), entonces muestra el ahorro posible. <br> **E2:** Dado que el consumidor acepta el cambio, cuando confirma la acción, entonces el sistema actualiza la lista con el producto sugerido. <br> **E3:** Dado que no hay stock de marca blanca, cuando el sistema procesa la sugerencia, entonces la omite para no causar confusión.                                                     |
-| **US34** | Consumidor     | Baja     | EP08 | Logros de Comprador         | Como consumidor, deseo desbloquear logros por visitar diferentes supermercados en Lince y Surquillo.                                        | **E1:** Dado que el consumidor valida precios en 5 tiendas distintas, cuando el sistema confirma la actividad, entonces desbloquea el logro "Explorador de Retail". <br> **E2:** Dado que el logro se activa, cuando el consumidor revisa su perfil, entonces visualiza la nueva insignia y un bono de puntos extra. <br> **E3:** Dado que el usuario es inactivo, cuando el sistema detecta 15 días sin validaciones, entonces envía un recordatorio amistoso para no perder su racha.                                     |
-| **US35** | Gerente Tienda | Media    | EP10 | QR de Información           | Como gerente, deseo generar un QR de mi tienda para que los clientes en el local descarguen la app de SmartCart.                            | **E1:** Dado que el gerente solicita el kit de tienda, cuando el sistema procesa el ID del local, entonces genera un código QR único con el logo de la sucursal. <br> **E2:** Dado que un cliente escanea el QR en caja, cuando el sistema lo detecta, entonces lo dirige a la landing page informativa del proyecto. <br> **E3:** Dado que el QR es escaneado, cuando el sistema registra el evento, entonces contabiliza la visita para las métricas de alcance del gerente.                                              |
-| **US36** | Consumidor     | Media    | EP02 | Filtro 24 Horas             | Como consumidor, deseo filtrar solo tiendas de conveniencia que atiendan de madrugada.                                                      | **E1:** Dado que el consumidor activa el filtro "Abierto ahora", cuando el sistema verifica la hora (ej: 3 AM), entonces muestra solo los locales con horario extendido. <br> **E2:** Dado que no hay locales abiertos cerca, cuando el sistema termina la búsqueda, entonces muestra el local 24h más próximo aunque esté fuera del radio. <br> **E3:** Dado que el usuario desactiva el filtro, cuando el sistema refresca el mapa, entonces vuelve a mostrar todos los supermercados con su hora de apertura programada. |
-| **US37** | Admin          | Alta     | EP07 | Moderación de Usuarios      | Como admin, deseo suspender a usuarios que suben fotos de tickets falsos para engañar al sistema.                                           | **E1:** Dado que un usuario sube una imagen que no es un ticket, cuando el admin lo rechaza, entonces el sistema envía una advertencia al perfil del usuario. <br> **E2:** Dado un usuario reincidente, cuando el admin bloquea la cuenta, entonces el sistema impide nuevos inicios de sesión desde ese dispositivo. <br> **E3:** Dado que el usuario apela la decisión, cuando el admin revisa las pruebas, entonces el sistema permite reactivar la cuenta si fue un error de procesamiento.                             |
-| **US38** | Consumidor     | Media    | EP04 | Ubicaciones de Rutina       | Como consumidor, deseo guardar la ubicación del supermercado donde siempre compro para comparar rápido.                                     | **E1:** Dado que el consumidor guarda un local como "Mi Super", cuando solicita una comparación, entonces el sistema siempre lo incluye como base de referencia. <br> **E2:** Dado que el consumidor está en otro distrito, cuando abre la app, entonces el sistema le pregunta si quiere comparar contra su local habitual. <br> **E3:** Dado que el local habitual cierra permanentemente, cuando el sistema actualiza la base de datos, entonces sugiere al usuario elegir un nuevo favorito.                            |
-| **US39** | Consumidor     | Media    | EP10 | Alerta de Oferta Flash      | Como consumidor, deseo recibir alertas de ofertas que solo duran unas horas en el supermercado.                                             | **E1:** Dado que la tienda publica una oferta relámpago, cuando el sistema recibe el dato, entonces envía una notificación de alta prioridad al consumidor. <br> **E2:** Dado que el consumidor está cerca del local, cuando el sistema detecta la proximidad, entonces el mensaje incluye la distancia exacta hacia la oferta. <br> **E3:** Dado que la oferta expira, cuando el sistema llega a la hora límite, entonces elimina la notificación de todos los dispositivos para no generar confusión.                     |
-| **US40** | Gerente Tienda | Baja     | EP09 | Soporte Empresas            | Como gerente, deseo un canal para reportar errores en la ubicación de mi supermercado en el mapa.                                           | **E1:** Dado que la ubicación es incorrecta, cuando el gerente envía la corrección desde su panel, entonces el sistema genera un ticket de revisión técnica. <br> **E2:** Dado que el equipo técnico corrige el pin, cuando el sistema guarda el cambio, entonces notifica al gerente que su local ya está bien posicionado. <br> **E3:** Dado que la solicitud se cierra, cuando el sistema pide feedback, entonces el gerente califica la rapidez de la corrección geográfica.                                            |
-| **US41** | Consumidor     | Baja     | EP06 | Brújula de Tienda           | Como consumidor, deseo ver una flecha que me indique hacia dónde caminar para llegar a la tienda de conveniencia.                           | **E1:** Dado que el consumidor inicia la ruta peatonal, cuando el sistema activa la brújula, entonces muestra la dirección exacta del local en la pantalla. <br> **E2:** Dado que el usuario se equivoca de calle, cuando el sistema detecta el desvío, entonces vibra y recalcula la dirección de la flecha. <br> **E3:** Dado que el consumidor llega al destino, cuando el sistema confirma la posición, entonces oculta la brújula y muestra el mensaje de "Has llegado".                                               |
-| **US42** | Consumidor     | Baja     | EP04 | Exportar Lista de Compras   | Como consumidor, deseo descargar mi lista en formato PDF para verla en el supermercado sin usar datos.                                      | **E1:** Dado que la lista está lista, cuando el consumidor selecciona "Descargar PDF", entonces el sistema genera un documento con los nombres de productos y precios. <br> **E2:** Dado que el archivo se abre, cuando el consumidor lo visualiza, entonces los ítems aparecen ordenados por el pasillo del supermercado seleccionado. <br> **E3:** Dado un error de almacenamiento, cuando el sistema falla en la descarga, entonces ofrece enviar la lista por correo electrónico como respaldo.                         |
-| **US43** | Gerente Tienda | Media    | EP03 | Promoción de Temporada      | Como gerente, deseo destacar la sección de "Cuidado Personal" durante una campaña específica.                                               | **E1:** Dado que inicia la campaña, cuando el gerente activa el destaque en el panel, entonces los productos de esa categoría aparecen primero en las búsquedas. <br> **E2:** Dado que la campaña termina, cuando el sistema detecta la fecha fin, entonces restaura el orden de visualización estándar automáticamente. <br> **E3:** Dado que el destaque tiene costo de puntos, cuando el gerente confirma el gasto, entonces el sistema debita los puntos de la cuenta de la sucursal.                                   |
-| **US44** | Consumidor     | Media    | EP08 | Repetición de Canasta       | Como consumidor, deseo repetir la compra de la quincena pasada para no volver a buscar cada producto.                                       | **E1:** Dado que el consumidor accede a su historial, cuando selecciona "Repetir Canasta", entonces el sistema crea una lista nueva con todos los ítems previos. <br> **E2:** Dado que algunos precios de supermercado subieron, cuando el sistema actualiza la lista, entonces resalta en rojo los incrementos de precio. <br> **E3:** Dado que un producto ya no se fabrica, cuando el sistema procesa la copia, entonces lo marca como "Descontinuado" y ofrece buscar un sustituto.                                     |
-| **US45** | Consumidor     | Media    | EP10 | Filtro de Estacionamiento   | Como consumidor, deseo ver qué supermercados tienen estacionamiento gratuito para ir con mi auto.                                           | **E1:** Dado que el consumidor activa el filtro "Estacionamiento", cuando el sistema refresca el mapa, entonces muestra solo locales con espacio para vehículos. <br> **E2:** Dado que el estacionamiento tiene costo, cuando el consumidor toca el icono del local, entonces el sistema muestra la tarifa por hora reportada. <br> **E3:** Dado que el local es una tienda de conveniencia sin parking, cuando el filtro está activo, entonces el sistema oculta dicho local de los resultados.                            |
-| **US46** | Gerente Tienda | Baja     | EP02 | Notificación de Visibilidad | Como gerente, deseo recibir una alerta cuando mi tienda sea la más barata del distrito de Lince.                                            | **E1:** Dado que los precios del local bajan, cuando el sistema confirma que es el líder del ranking, entonces envía una felicitación al panel del gerente. <br> **E2:** Dado que la competencia baja más sus precios, cuando el local pierde el primer puesto, entonces el sistema informa al gerente para que revise su estrategia. <br> **E3:** Dado que el gerente desactiva alertas de negocio, cuando ocurren cambios de posición, entonces el sistema solo registra los hitos en el historial del local.             |
-| **US47** | Visitante      | Baja     | EP09 | Landing: Transparencia      | Como visitante, deseo leer cómo se protegen mis datos de consumo en la landing page.                                                        | **E1:** Dado que el visitante accede al pie de página, cuando selecciona "Privacidad", entonces el sistema despliega el documento de tratamiento de datos personales. <br> **E2:** Dado que el visitante lee la sección de seguridad, cuando el sistema explica el cifrado de datos, entonces genera confianza sobre el uso de su ubicación GPS. <br> **E3:** Dado que el visitante tiene dudas, cuando selecciona "Más info", entonces el sistema muestra un resumen en lenguaje sencillo de sus derechos ARCO.            |
-| **US48** | Consumidor     | Baja     | EP01 | Baja de Servicio            | Como consumidor, deseo eliminar mi cuenta y mis listas guardadas para no dejar rastro de mi consumo.                                        | **E1:** Dado que el consumidor solicita el borrado, cuando el sistema recibe la confirmación, entonces programa la eliminación de datos para el final del día. <br> **E2:** Dado que el usuario intenta entrar después de borrar, cuando el sistema valida la cuenta, entonces informa que el perfil ya no existe. <br> **E3:** Dado que la ley lo exige, cuando el sistema borra los datos, entonces mantiene solo los registros de transacciones anonimizados para fines estadísticos.                                    |
-| **SK01** | Developer      | Alta     | EP06 | Spike Optimización Retail   | Investigar algoritmos de optimización para rutas que incluyan tiempos de espera en cajas de supermercado.                                   | **E1:** Dado el flujo de compra, cuando el equipo investiga modelos de cola, entonces se entrega un documento de viabilidad técnica. <br> **E2:** Dado un set de datos de prueba, cuando se simula una ruta por 3 tiendas, entonces el cálculo del tiempo total debe tener un margen de error menor al 15%. <br> **E3:** Dado que el spike termina, cuando se documentan los resultados, entonces se define la fórmula de "Tiempo estimado" para el backend.                                                                |
-| **SK02** | Developer      | Alta     | EP06 | Spike Mapas de Retail       | Investigar la integración de mapas de interiores para grandes supermercados en Lince y Surquillo.                                           | **E1:** Dado que los supermercados son grandes, cuando se prueban capas de interiores, entonces se determina si es posible guiar al usuario por pasillos. <br> **E2:** Dado que el costo de Mapas de Interiores es alto, cuando se analiza el presupuesto, entonces se define si se usará una solución propia o de terceros. <br> **E3:** Dado que se concluye el análisis, cuando se cierra el spike, entonces se documenta el esquema de coordenadas para estanterías de productos.                                       |
-| **SK03** | Developer      | Media    | EP01 | Spike Seguridad OAuth       | Investigar la implementación de Single Sign-On para facilitar el registro de consumidores recurrentes.                                      | **E1:** Dado el requerimiento de rapidez, cuando se prueba la integración con Google/Apple, entonces el sistema debe crear un perfil en menos de 5 segundos. <br> **E2:** Dado que se maneja ubicación GPS, cuando se revisan los permisos de privacidad, entonces se documenta la política de tokens necesaria. <br> **E3:** Dado que el spike termina, cuando se entrega el código base, entonces se define el estándar de cabeceras de seguridad para el API.                                                            |
-| **SK04** | Developer      | Media    | EP07 | Spike OCR de Tickets        | Analizar la precisión del reconocimiento de texto para diferentes formatos de tickets de Plaza Vea y Tambo.                                 | **E1:** Dado un set de 20 tickets reales, cuando el motor OCR extrae la columna de precios, entonces la coincidencia exacta debe ser superior al 95%. <br> **E2:** Dado que los tickets se arrugan, cuando se prueban imágenes con ruido, entonces se determina el nivel de pre-procesamiento de imagen necesario. <br> **E3:** Dado que se selecciona el motor OCR, cuando termina el spike, entonces se documenta el costo por cada 1000 imágenes procesadas.                                                             |
-| **SK05** | Developer      | Alta     | EP03 | Spike Base de Datos NoSQL   | Investigar el uso de MongoDB para manejar catálogos de productos que cambian diariamente en supermercados.                                  | **E1:** Dado que hay miles de productos, cuando se realizan cargas masivas simultáneas, entonces la base de datos debe mantener la latencia bajo 100ms. <br> **E2:** Dado el esquema flexible, cuando se añaden atributos como "Peso" o "Marca Blanca", entonces se verifica que no afecte a los registros antiguos. <br> **E3:** Dado que se valida el rendimiento, cuando concluye el spike, entonces se entrega el diseño de colecciones optimizado para búsquedas geoespaciales.                                        |
-| **SK06** | Developer      | Baja     | EP10 | Spike Integración Pagos     | Investigar la viabilidad de redirección hacia pasarelas de pago de las cadenas de supermercado.                                             | **E1:** Dado que el usuario quiere comprar online, cuando se investigan los Deep Links de las apps de retail, entonces se documenta cuáles permiten la compra directa. <br> **E2:** Dado que algunas cadenas bloquean enlaces externos, cuando se realizan pruebas de salto, entonces se identifican las restricciones técnicas por marca. <br> **E3:** Dado que el spike termina, cuando se entrega el informe, entonces se recomienda si SmartCart debe incluir el botón de "Comprar ahora" o no.                         |
-| **TS01** | Developer      | Alta     | EP01 | API Login & Auth            | Como Developer, deseo un endpoint de autenticación robusto para proteger las listas de los consumidores.                                    | **E1:** Dado un POST con credenciales a `/api/v1/auth`, cuando el sistema las valida, entonces emite un JWT firmado para la sesión. <br> **E2:** Dado un intento de acceso sin token, cuando el backend recibe el request, entonces responde con 401 Unauthorized inmediatamente. <br> **E3:** Dado un token pronto a vencer, cuando el cliente solicita un refresh, entonces el API entrega un nuevo token sin pedir credenciales nuevamente.                                                                              |
-| **TS02** | Developer      | Alta     | EP05 | API Comparador              | Como Developer, deseo un endpoint que calcule el ahorro entre diferentes formatos de tienda (Super vs Conveniencia).                        | **E1:** Dado una lista de productos y un radio GPS, cuando se invoca al comparador, entonces el sistema devuelve el costo total por cada local disponible. <br> **E2:** Dado que un local no tiene precios actualizados, cuando se procesa la comparación, entonces el API utiliza el último precio promedio de la zona como referencia. <br> **E3:** Dado que el request supera los 50 ítems, cuando el sistema lo recibe, entonces aplica paginación para no saturar la respuesta JSON.                                   |
-| **TS03** | Developer      | Alta     | EP03 | API Carga Catálogo          | Como Developer, deseo un servicio que reciba archivos CSV y actualice los precios de supermercado en bloque.                                | **E1:** Dado un archivo CSV con 1000 filas, cuando se procesa en el servidor, entonces la actualización de la DB debe completarse en menos de 10 segundos. <br> **E2:** Dado que el archivo tiene IDs duplicados, cuando se valida, entonces el sistema ignora el segundo registro y emite un warning en el log. <br> **E3:** Dado que el archivo está vacío, cuando se intenta la subida, entonces el API responde con 400 Bad Request por falta de contenido.                                                             |
-| **TS04** | Developer      | Alta     | EP06 | API Motor de Rutas          | Como Developer, deseo integrar un servicio que calcule la ruta óptima visitando un supermercado y una tienda de conveniencia.               | **E1:** Dado un origen y dos destinos de distinto tipo, cuando se solicita la ruta, entonces el API devuelve las coordenadas ordenadas por eficiencia de tiempo. <br> **E2:** Dado que un punto de la ruta es inaccesible por obras, cuando se consulta al proveedor de mapas, entonces el API devuelve un camino alternativo. <br> **E3:** Dado que no se encuentran rutas posibles (ej: isla), cuando el sistema falla, entonces devuelve un código 422 con un mensaje de error geográfico.                               |
-| **TS05** | Developer      | Media    | EP10 | API Notificaciones Push     | Como Developer, deseo un servicio para enviar alertas de ofertas flash basadas en la ubicación del consumidor.                              | **E1:** Dado un evento de oferta nueva, cuando el trigger se activa, entonces el API filtra a los usuarios en un radio de 5km para enviar la push. <br> **E2:** Dado que el usuario tiene la app cerrada, cuando llega la notificación, entonces el payload debe incluir el título y el resumen del ahorro. <br> **E3:** Dado un error en el proveedor de push, cuando el sistema detecta el fallo, entonces encola la notificación para un reintento posterior.                                                            |
-| **TS06** | Developer      | Alta     | EP02 | API Validador RUC           | Como Developer, deseo un microservicio que verifique la vigencia de los supermercados registrados contra SUNAT.                             | **E1:** Dado un RUC de 11 dígitos enviado al microservicio, cuando se recibe la respuesta externa, entonces el sistema actualiza el estado de "Verificado" en la DB. <br> **E2:** Dado que el RUC no existe, cuando se termina la consulta, entonces el API marca la cuenta del gerente como "Pendiente de revisión". <br> **E3:** Dado que el servicio externo tarda más de 5s, cuando el sistema llega al timeout, entonces responde con un código 504 Gateway Timeout controlado.                                        |
-| **TS07** | Developer      | Media    | EP07 | API Wallet & Puntos         | Como Developer, deseo un endpoint para gestionar el balance de puntos ganado por validar tickets de compra.                                 | **E1:** Dado un éxito en el OCR de ticket, cuando se llama al endpoint de puntos, entonces suma el monto correspondiente al saldo del consumidor. <br> **E2:** Dado un intento de canje de vale, cuando se procesa el descuento, entonces genera un código único y lo marca como "Usado" en la tabla de recompensas. <br> **E3:** Dado un GET a `/api/v1/user/points`, cuando se consulta el balance, entonces devuelve el desglose de puntos por tienda validada.                                                          |
-| **TS08** | Developer      | Media    | EP03 | API Media Manager           | Como Developer, deseo un servicio para almacenar y servir las imágenes de los productos de supermercado de forma eficiente.                 | **E1:** Dado que se sube una foto de producto, cuando se guarda en el servidor de archivos, entonces el sistema genera versiones en miniatura para ahorrar datos móviles. <br> **E2:** Dado una solicitud de imagen inexistente, cuando el servidor la recibe, entonces devuelve una imagen por defecto de "Producto sin foto". <br> **E3:** Dado un volumen alto de peticiones, cuando el sistema utiliza una CDN, entonces el tiempo de entrega de la imagen debe ser inferior a 300ms.                                   |
-| **TS09** | Developer      | Baja     | EP09 | API Analytics Retail        | Como Developer, deseo un endpoint que genere estadísticas de los productos más comparados en Lince y Surquillo.                             | **E1:** Dado un rango de fechas y un distrito, cuando se invoca al reporte, entonces el API devuelve un JSON con el conteo de búsquedas por categoría. <br> **E2:** Dado que el distrito no tiene actividad, cuando se procesa la estadística, entonces el sistema devuelve valores en cero sin romper el formato. <br> **E3:** Dado que se solicita un reporte de marca específica, cuando se filtra por ID de cadena, entonces muestra el alcance de dicha marca frente a la competencia.                                 |
-| **TS10** | Developer      | Media    | EP07 | API Moderador               | Como Developer, deseo un endpoint para que los administradores gestionen las denuncias de precios falsos en supermercados.                  | **E1:** Dado un ID de denuncia, cuando el admin envía un PUT con el veredicto, entonces el sistema actualiza el registro y notifica al usuario denunciante. <br> **E2:** Dado que la denuncia requiere más pruebas, cuando el admin cambia el estado a "En espera", entonces el sistema bloquea el cierre automático del ticket. <br> **E3:** Dado que se resuelve a favor del usuario, cuando el sistema cierra la denuncia, entonces otorga un bono de puntos de gratitud al consumidor.                                  |
+| **US01** | Visitante      | Alta     | EP01 | Landing: Propuesta de Valor | Como visitante, deseo ver cómo SmartCart compara supermercados y tiendas de conveniencia para ahorrar.                                      | **E1:** Dado que el visitante accede al inicio, cuando carga la landing, entonces visualiza la comparativa de ahorro entre cadenas de retail.<br><br>**E2:** Dado que el visitante baja a "Beneficios", cuando lee el contenido, entonces comprende la diferencia de precios entre conveniencia y supermercado.<br><br>**E3:** Dado que el visitante busca cobertura, cuando el sistema muestra el mapa, entonces resalta las zonas de Lince y Surquillo.                                                                       |
+| **US02** | Visitante      | Media    | EP01 | Landing: Marcas Aliadas     | Como visitante, deseo ver qué cadenas de supermercados están mapeadas para confiar en la app.                                               | **E1:** Dado que el visitante llega a la sección de aliados, cuando el sistema carga los logos, entonces muestra marcas de supermercados y tiendas de conveniencia.<br><br>**E2:** Dado que el visitante hace scroll, cuando aparecen las tarjetas, entonces visualiza el número de locales registrados por cada cadena.<br><br>**E3:** Dado que el visitante consulta la veracidad, cuando lee la sección de datos, entonces el sistema explica que los precios se actualizan mediante la comunidad.                           |
+| **US03** | Visitante      | Baja     | EP01 | Landing: Registro Interés   | Como visitante, deseo dejar mi correo para recibir el aviso de lanzamiento oficial del proyecto.                                            | **E1:** Dado que el visitante llega al formulario final, cuando ingresa un correo válido, entonces el sistema registra la suscripción en la base de datos.<br><br>**E2:** Dado que el formato del correo es inválido, cuando el sistema valida el campo, entonces muestra una alerta de error en la landing.<br><br>**E3:** Dado que el correo ya existe, cuando el sistema procesa el envío, entonces notifica que el usuario ya está registrado en la lista de espera.                                                        |
+| **US04** | Consumidor     | Alta     | EP05 | Comparativa Retail          | Como consumidor, deseo comparar mi lista entre un supermercado y una tienda de conveniencia.                                                | **E1:** Dado que el consumidor tiene productos en su lista, cuando solicita comparar, entonces el sistema muestra la diferencia de costo total entre ambos formatos.<br><br>**E2:** Dado que un producto es exclusivo de supermercado, cuando se genera el ranking, entonces el sistema indica que no se encuentra en tiendas de conveniencia.<br><br>**E3:** Dado que el consumidor elige "Menor precio", cuando el sistema ordena, entonces prioriza el local con el ticket total más bajo.                                   |
+| **US05** | Consumidor     | Alta     | EP05 | Filtro por Formato          | Como consumidor, deseo filtrar resultados para ver solo tiendas de conveniencia (Tambo/Oxxo).                                               | **E1:** Dado que el consumidor activa filtros, cuando selecciona "Conveniencia", entonces el sistema oculta los grandes supermercados del mapa.<br><br>**E2:** Dado que el consumidor cambia a "Supermercados", cuando el sistema actualiza, entonces muestra solo locales con gran inventario (Metro/Plaza Vea).<br><br>**E3:** Dado que no hay filtros activos, cuando el sistema carga la vista, entonces combina ambos formatos de tienda en el radio de búsqueda.                                                          |
+| **US06** | Consumidor     | Alta     | EP04 | Escaneo de Productos        | Como consumidor, deseo escanear el código de barras en el supermercado para ver si está más barato en la tienda de conveniencia de al lado. | **E1:** Dado que el consumidor activa el escáner, cuando reconoce el código de barras, entonces muestra el precio del producto en todas las tiendas cercanas.<br><br>**E2:** Dado que el producto es de marca blanca, cuando el sistema busca coincidencias, entonces ofrece el equivalente de la marca blanca de la competencia.<br><br>**E3:** Dado que el código no se reconoce, cuando termina el proceso, entonces el sistema permite la búsqueda manual por nombre de marca.                                              |
+| **US07** | Consumidor     | Media    | EP04 | Armado de Canasta           | Como consumidor, deseo agregar productos de marcas reconocidas para armar mi canasta básica.                                                | **E1:** Dado que el consumidor busca una marca específica, cuando selecciona el ítem, entonces el sistema lo añade a la lista con la imagen referencial del empaque.<br><br>**E2:** Dado que el consumidor añade varios lácteos, cuando el sistema totaliza, entonces agrupa los productos por categorías de supermercado.<br><br>**E3:** Dado que el consumidor desea duplicar un ítem, cuando incrementa la cantidad, entonces actualiza el peso estimado de la canasta.                                                      |
+| **US08** | Consumidor     | Alta     | EP06 | Ruta de Compra Eficiente    | Como consumidor, deseo una ruta que incluya el supermercado y la tienda de conveniencia más cercanos.                                       | **E1:** Dado que el consumidor selecciona dos paradas de distinto formato, cuando solicita la ruta, entonces el sistema traza el camino más corto entre ambos.<br><br>**E2:** Dado que el consumidor está en Surquillo, cuando inicia la navegación, entonces el sistema prioriza calles con acceso vehicular para supermercados.<br><br>**E3:** Dado que un local está cerrado, cuando el sistema verifica el horario de la cadena, entonces sugiere la tienda de conveniencia 24h más cercana.                                |
+| **US09** | Consumidor     | Media    | EP06 | Cálculo de Tiempo           | Como consumidor, deseo ver cuánto tardaré en recorrer el supermercado según la afluencia reportada.                                         | **E1:** Dado que el consumidor selecciona un supermercado grande, cuando el sistema calcula el tiempo, entonces suma un margen estimado de permanencia en tienda.<br><br>**E2:** Dado que elige una tienda de conveniencia, cuando el sistema estima el tiempo, entonces reduce el margen por ser una compra rápida (express).<br><br>**E3:** Dado que el tráfico en Lince es alto, cuando el sistema actualiza la ruta, entonces incrementa el tiempo de llegada estimado automáticamente.                                     |
+| **US10** | Gerente Tienda | Alta     | EP02 | Registro de Sucursal        | Como gerente de sucursal, deseo registrar mi tienda de conveniencia para que aparezca en el mapa.                                           | **E1:** Dado que el gerente ingresa el RUC de la cadena, cuando el sistema valida, entonces permite añadir la ubicación específica de la sucursal.<br><br>**E2:** Dado un local nuevo, cuando se registra la dirección en Surquillo, entonces el sistema lo posiciona geográficamente de forma exacta.<br><br>**E3:** Dado que la sucursal ya existe, cuando el sistema detecta la duplicidad por coordenadas, entonces deniega el nuevo registro.                                                                              |
+| **US11** | Gerente Tienda | Alta     | EP03 | Carga de Catálogo           | Como gerente de tienda, deseo subir la lista de precios de la semana para atraer clientes del distrito.                                     | **E1:** Dado que el gerente carga el archivo de precios, cuando el sistema procesa el formato, entonces actualiza los valores de los productos en la app.<br><br>**E2:** Dado que un precio es una "Oferta del día", cuando se registra el cambio, entonces el sistema le asigna una etiqueta visual de descuento.<br><br>**E3:** Dado que el archivo tiene errores de formato, cuando el sistema valida, entonces rechaza la carga e indica la línea del error.                                                                |
+| **US12** | Gerente Tienda | Media    | EP03 | Alerta de Quiebre           | Como gerente, deseo marcar productos como "Sin Stock" para evitar reclamos de consumidores.                                                 | **E1:** Dado que se agota el stock de un producto de alta demanda, cuando el gerente lo marca en el panel, entonces desaparece de las búsquedas inmediatas.<br><br>**E2:** Dado que llega el camión de reposición, cuando el gerente actualiza el estado, entonces el sistema vuelve a listar el producto.<br><br>**E3:** Dado que el producto está agotado en toda la cadena, cuando el administrador central lo marca, entonces se actualiza en todas las sucursales vinculadas.                                              |
+| **US13** | Gerente Tienda | Media    | EP02 | Horarios Especiales         | Como gerente, deseo actualizar el horario de mi tienda de conveniencia (ej: 24 horas) para informar al usuario.                             | **E1:** Dado que el local cambia a atención 24h, cuando el gerente guarda el cambio, entonces el sistema muestra el icono de disponibilidad nocturna.<br><br>**E2:** Dado un feriado próximo, cuando el gerente programa el cierre temprano, entonces el sistema notifica a los usuarios que tengan ese local en su ruta.<br><br>**E3:** Dado que el horario es regular, cuando el sistema llega a la hora de cierre, entonces cambia el estado a "Cerrado" automáticamente en el mapa.                                         |
+| **US14** | Consumidor     | Alta     | EP07 | Validación Comunitaria      | Como consumidor, deseo confirmar que el precio del supermercado es el mismo que dice la app para ganar puntos.                              | **E1:** Dado que el consumidor está físicamente en la tienda, cuando marca "Precio Correcto", entonces el sistema le otorga 10 puntos de SmartCart.<br><br>**E2:** Dado que el precio cambió en góndola, cuando el consumidor ingresa el nuevo valor, entonces el sistema actualiza el precio tras una validación cruzada.<br><br>**E3:** Dado que el consumidor está lejos de la tienda, cuando intenta validar, entonces el sistema bloquea la acción por falta de cercanía GPS.                                              |
+| **US15** | Consumidor     | Media    | EP07 | Reporte de Oferta Falsa     | Como consumidor, deseo denunciar si una tienda de conveniencia no respeta la oferta publicada.                                              | **E1:** Dado que el consumidor detecta publicidad engañosa, cuando envía el reporte, entonces el sistema marca la oferta como "Bajo revisión".<br><br>**E2:** Dado que el reporte incluye foto del ticket, cuando el sistema lo recibe, entonces otorga un bono de puntos por veracidad de denuncia.<br><br>**E3:** Dado que la tienda acumula reportes, cuando el sistema procesa los datos, entonces envía una alerta al gerente del local.                                                                                   |
+| **US16** | Gerente Tienda | Alta     | EP03 | Actualización masiva        | Como gerente de supermercado, deseo actualizar miles de precios mediante integración para ahorrar tiempo.                                   | **E1:** Dado que se sube un archivo masivo, cuando el sistema termina el procesamiento, entonces emite un resumen de cambios exitosos y fallidos.<br><br>**E2:** Dado que hay precios con variaciones extremas, cuando el sistema los detecta, entonces solicita una confirmación manual de seguridad.<br><br>**E3:** Dado un error de conexión durante la subida, cuando el sistema recupera el enlace, entonces retoma la carga desde el último punto guardado.                                                               |
+| **US17** | Consumidor     | Media    | EP10 | Alerta de Canasta Económica | Como consumidor, deseo que la app me avise cuando mi lista de supermercado salga más barata en otra cadena.                                 | **E1:** Dado que el ahorro potencial supera el 10%, cuando el sistema detecta la baja de precios en la competencia, entonces envía una notificación push.<br><br>**E2:** Dado que el consumidor abre la alerta, cuando el sistema carga la comparativa, entonces muestra exactamente cuánto dinero ahorraría si cambia de tienda.<br><br>**E3:** Dado que el consumidor desactiva alertas, cuando el sistema encuentra ahorros, entonces los guarda en la sección "Oportunidades" para consulta manual.                         |
+| **US18** | Consumidor     | Media    | EP01 | Perfil de Consumo           | Como consumidor, deseo registrar mis marcas preferidas de supermercado para recibir ofertas personalizadas.                                 | **E1:** Dado que el consumidor selecciona categorías (ej: limpieza), cuando el sistema encuentra ofertas en esos pasillos, entonces las resalta en el home.<br><br>**E2:** Dado que el consumidor cambia de marca preferida, cuando actualiza su perfil, entonces el sistema ajusta las recomendaciones automáticamente.<br><br>**E3:** Dado que no hay preferencias marcadas, cuando el sistema sugiere productos, entonces utiliza los artículos más vendidos en Lince y Surquillo.                                           |
+| **US19** | Admin          | Alta     | EP02 | Auditoría de Cadenas        | Como admin, deseo verificar que los locales registrados pertenezcan a cadenas reales de retail.                                             | **E1:** Dado una nueva solicitud de registro, cuando el admin cruza el RUC con el padrón oficial, entonces aprueba la visibilidad de la tienda de conveniencia.<br><br>**E2:** Dado un registro falso de supermercado, cuando el admin lo detecta, entonces elimina el local y bloquea la cuenta del remitente.<br><br>**E3:** Dado que la cadena cambia de nombre comercial, cuando el admin lo actualiza, entonces el cambio se refleja en todas las sucursales de la red.                                                    |
+| **US20** | Consumidor     | Media    | EP08 | Resumen Mensual             | Como consumidor, deseo ver cuánto ahorré comprando en tiendas de conveniencia vs supermercados.                                             | **E1:** Dado que el consumidor accede a sus ahorros, cuando el sistema carga el gráfico, entonces diferencia el ahorro por tipo de establecimiento.<br><br>**E2:** Dado que el ahorro supera la meta mensual, cuando el sistema detecta el logro, entonces otorga una medalla de "Comprador Inteligente".<br><br>**E3:** Dado que el consumidor quiere exportar su ahorro, cuando selecciona la opción, entonces el sistema genera un resumen visual compartible.                                                               |
+| **US21** | Consumidor     | Media    | EP08 | Recompensas Retail          | Como consumidor, deseo canjear mis puntos por vales de descuento en los supermercados asociados.                                            | **E1:** Dado que el consumidor alcanza los 500 puntos, cuando selecciona el vale de descuento, entonces el sistema genera un código alfanumérico único.<br><br>**E2:** Dado que el vale es para una cadena específica, cuando el sistema lo emite, entonces indica claramente en qué sucursales de Lince es válido.<br><br>**E3:** Dado que el punto ha vencido, cuando el usuario intenta el canje, entonces el sistema informa que el saldo no está disponible.                                                               |
+| **US22** | Consumidor     | Media    | EP04 | Lista Compartida            | Como consumidor, deseo compartir mi lista de supermercado con mi familia para que me ayuden con las compras.                                | **E1:** Dado que el consumidor genera un enlace de lista, cuando lo envía por chat, entonces permite que otros vean los precios comparados.<br><br>**E2:** Dado que otro usuario añade un producto a la lista compartida, cuando el sistema procesa el cambio, entonces actualiza el costo total para todos.<br><br>**E3:** Dado que se marca un producto como "Comprado", cuando el sistema actualiza la lista, entonces lo tacha en tiempo real en todos los dispositivos.                                                    |
+| **US23** | Consumidor     | Media    | EP09 | Guía de Pasillos            | Como consumidor, deseo saber en qué pasillo del supermercado están los productos de mi lista.                                               | **E1:** Dado que el supermercado tiene mapeo de pasillos, cuando el consumidor consulta el producto, entonces el sistema indica el número de zona.<br><br>**E2:** Dado que el local es una tienda de conveniencia pequeña, cuando el sistema muestra la ubicación, entonces indica que es de "Acceso rápido" cerca de caja.<br><br>**E3:** Dado que la distribución cambió, cuando un usuario reporta la nueva ubicación, entonces el sistema actualiza el pasillo para los demás.                                              |
+| **US24** | Consumidor     | Alta     | EP05 | Comparación por Peso        | Como consumidor, deseo comparar precios por unidad de medida (ej: $/kg) para saber qué tamaño conviene más.                                 | **E1:** Dado que el sistema tiene el peso del producto, cuando el consumidor visualiza el precio, entonces muestra el valor calculado por kilo o litro.<br><br>**E2:** Dado dos productos similares de distinto tamaño, cuando el sistema los compara, entonces resalta cuál ofrece el menor costo por unidad.<br><br>**E3:** Dado que falta el dato del peso, cuando el sistema procesa el ítem, entonces omite la comparación por unidad para evitar errores de cálculo.                                                      |
+| **US25** | Gerente Tienda | Media    | EP09 | Reporte de Demanda          | Como gerente, deseo ver qué productos de mi supermercado son los más buscados en la zona de Surquillo.                                      | **E1:** Dado que el gerente accede a analíticas, cuando el sistema procesa las búsquedas, entonces muestra un ranking de los 10 productos más deseados.<br><br>**E2:** Dado que un producto tiene mucha demanda pero poco stock, cuando el sistema detecta la brecha, entonces emite una alerta de oportunidad de venta.<br><br>**E3:** Dado que la demanda cae, cuando el sistema analiza la tendencia semanal, entonces sugiere al gerente realizar una oferta para rotar el inventario.                                      |
+| **US26** | Visitante      | Baja     | EP01 | Landing: Preguntas de Pago  | Como visitante, deseo saber si la app permite pagar directamente o solo comparar precios.                                                   | **E1:** Dado que el visitante accede a las FAQ de la landing, cuando busca "Pagos", entonces el sistema explica que la app es una herramienta de comparación.<br><br>**E2:** Dado que el visitante consulta sobre métodos de pago, cuando lee la respuesta, entonces conoce que los pagos se hacen en la caja de cada tienda.<br><br>**E3:** Dado que el visitante tiene dudas legales, cuando lee los términos, entonces comprende que SmartCart no vende productos directamente.                                              |
+| **US27** | Consumidor     | Baja     | EP01 | Tiendas Favoritas           | Como consumidor, deseo marcar mi "Supermercado de confianza" para ver sus precios primero.                                                  | **E1:** Dado que el consumidor marca una cadena como favorita, cuando abre la app, entonces el sistema prioriza sus precios en la pantalla de inicio.<br><br>**E2:** Dado que hay una oferta en la tienda favorita, cuando el sistema la detecta, entonces envía una notificación especial destacada.<br><br>**E3:** Dado que el usuario desea cambiar de tienda favorita, cuando actualiza su elección, entonces el sistema reajusta el orden de prioridad en el ranking.                                                      |
+| **US28** | Consumidor     | Media    | EP02 | Estado de Afluencia         | Como consumidor, deseo saber si el supermercado está muy lleno para decidir si ir ahora o después.                                          | **E1:** Dado que el sistema recibe datos de usuarios en tiempo real, cuando el consumidor consulta el local, entonces muestra un nivel de afluencia (Baja/Media/Alta).<br><br>**E2:** Dado que la tienda está vacía, cuando el sistema procesa el estado, entonces muestra una recomendación de "Buen momento para comprar".<br><br>**E3:** Dado que no hay datos recientes, cuando el sistema muestra el local, entonces indica "Afluencia habitual según horario".                                                            |
+| **US29** | Gerente Tienda | Media    | EP03 | Gestión de Categorías       | Como gerente, deseo organizar mis productos por categorías de retail para facilitar la navegación del usuario.                              | **E1:** Dado que el gerente añade un ítem, cuando selecciona "Abarrotes", entonces el sistema lo posiciona en la sección correspondiente de la app.<br><br>**E2:** Dado que un producto pertenece a varias categorías, cuando el gerente lo etiqueta, entonces el sistema permite su búsqueda en ambos filtros.<br><br>**E3:** Dado que la categoría es nueva, cuando el gerente la propone, entonces el sistema la envía al administrador para su aprobación global.                                                           |
+| **US30** | Consumidor     | Baja     | EP01 | Interfaz Adaptativa         | Como consumidor, deseo que la interfaz se adapte al modo de luz de mi teléfono para leer mejor los precios.                                 | **E1:** Dado que el teléfono está en modo noche, cuando el sistema detecta la configuración, entonces cambia la app a colores oscuros.<br><br>**E2:** Dado que el consumidor está bajo luz solar fuerte, cuando el sistema ajusta el contraste, entonces mejora la visibilidad de los números de precio.<br><br>**E3:** Dado que el usuario prefiere un modo fijo, cuando selecciona "Claro" en ajustes, entonces el sistema bloquea los cambios automáticos.                                                                   |
+| **US31** | Gerente Tienda | Media    | EP09 | Comparador de Cadena        | Como gerente de tienda de conveniencia, deseo ver el precio de mi competencia directa en el mismo distrito.                                 | **E1:** Dado que el gerente elige un radio de 500m, cuando el sistema procesa los datos, entonces muestra los precios de las otras tiendas del mismo formato.<br><br>**E2:** Dado que su precio es el más bajo, cuando el sistema lo confirma, entonces le otorga una insignia de "Líder de ahorro en la zona".<br><br>**E3:** Dado que no hay datos de la competencia, cuando el sistema entrega el informe, entonces indica la fecha de la última actualización registrada.                                                   |
+| **US32** | Consumidor     | Alta     | EP07 | Verificación con Ticket     | Como consumidor, deseo subir una foto de mi ticket de supermercado para validar todos los precios de una vez.                               | **E1:** Dado que el consumidor toma foto al ticket, cuando el sistema procesa la imagen, entonces extrae los precios y los compara con la base de datos.<br><br>**E2:** Dado que los precios del ticket son más recientes, cuando el sistema los valida, entonces actualiza la información pública de ese supermercado.<br><br>**E3:** Dado que el ticket es ilegible, cuando el sistema falla en el escaneo, entonces solicita al usuario ingresar los datos manualmente para no perder los puntos.                            |
+| **US33** | Consumidor     | Media    | EP05 | Sugerencia de Marca Blanca  | Como consumidor, deseo que la app me sugiera la marca blanca del supermercado si es más barata que la marca líder.                          | **E1:** Dado que el consumidor añade un producto premium, cuando el sistema detecta un equivalente de marca propia (ej: Bell's, Tottus), entonces muestra el ahorro posible.<br><br>**E2:** Dado que el consumidor acepta el cambio, cuando confirma la acción, entonces el sistema actualiza la lista con el producto sugerido.<br><br>**E3:** Dado que no hay stock de marca blanca, cuando el sistema procesa la sugerencia, entonces la omite para no causar confusión.                                                     |
+| **US34** | Consumidor     | Baja     | EP08 | Logros de Comprador         | Como consumidor, deseo desbloquear logros por visitar diferentes supermercados en Lince y Surquillo.                                        | **E1:** Dado que el consumidor valida precios en 5 tiendas distintas, cuando el sistema confirma la actividad, entonces desbloquea el logro "Explorador de Retail".<br><br>**E2:** Dado que el logro se activa, cuando el consumidor revisa su perfil, entonces visualiza la nueva insignia y un bono de puntos extra.<br><br>**E3:** Dado que el usuario es inactivo, cuando el sistema detecta 15 días sin validaciones, entonces envía un recordatorio amistoso para no perder su racha.                                     |
+| **US35** | Gerente Tienda | Media    | EP10 | QR de Información           | Como gerente, deseo generar un QR de mi tienda para que los clientes en el local descarguen la app de SmartCart.                            | **E1:** Dado que el gerente solicita el kit de tienda, cuando el sistema procesa el ID del local, entonces genera un código QR único con el logo de la sucursal.<br><br>**E2:** Dado que un cliente escanea el QR en caja, cuando el sistema lo detecta, entonces lo dirige a la landing page informativa del proyecto.<br><br>**E3:** Dado que el QR es escaneado, cuando el sistema registra el evento, entonces contabiliza la visita para las métricas de alcance del gerente.                                              |
+| **US36** | Consumidor     | Media    | EP02 | Filtro 24 Horas             | Como consumidor, deseo filtrar solo tiendas de conveniencia que atiendan de madrugada.                                                      | **E1:** Dado que el consumidor activa el filtro "Abierto ahora", cuando el sistema verifica la hora (ej: 3 AM), entonces muestra solo los locales con horario extendido.<br><br>**E2:** Dado que no hay locales abiertos cerca, cuando el sistema termina la búsqueda, entonces muestra el local 24h más próximo aunque esté fuera del radio.<br><br>**E3:** Dado que el usuario desactiva el filtro, cuando el sistema refresca el mapa, entonces vuelve a mostrar todos los supermercados con su hora de apertura programada. |
+| **US37** | Admin          | Alta     | EP07 | Moderación de Usuarios      | Como admin, deseo suspender a usuarios que suben fotos de tickets falsos para engañar al sistema.                                           | **E1:** Dado que un usuario sube una imagen que no es un ticket, cuando el admin lo rechaza, entonces el sistema envía una advertencia al perfil del usuario.<br><br>**E2:** Dado un usuario reincidente, cuando el admin bloquea la cuenta, entonces el sistema impide nuevos inicios de sesión desde ese dispositivo.<br><br>**E3:** Dado que el usuario apela la decisión, cuando el admin revisa las pruebas, entonces el sistema permite reactivar la cuenta si fue un error de procesamiento.                             |
+| **US38** | Consumidor     | Media    | EP04 | Ubicaciones de Rutina       | Como consumidor, deseo guardar la ubicación del supermercado donde siempre compro para comparar rápido.                                     | **E1:** Dado que el consumidor guarda un local como "Mi Super", cuando solicita una comparación, entonces el sistema siempre lo incluye como base de referencia.<br><br>**E2:** Dado que el consumidor está en otro distrito, cuando abre la app, entonces el sistema le pregunta si quiere comparar contra su local habitual.<br><br>**E3:** Dado que el local habitual cierra permanentemente, cuando el sistema actualiza la base de datos, entonces sugiere al usuario elegir un nuevo favorito.                            |
+| **US39** | Consumidor     | Media    | EP10 | Alerta de Oferta Flash      | Como consumidor, deseo recibir alertas de ofertas que solo duran unas horas en el supermercado.                                             | **E1:** Dado que la tienda publica una oferta relámpago, cuando el sistema recibe el dato, entonces envía una notificación de alta prioridad al consumidor.<br><br>**E2:** Dado que el consumidor está cerca del local, cuando el sistema detecta la proximidad, entonces el mensaje incluye la distancia exacta hacia la oferta.<br><br>**E3:** Dado que la oferta expira, cuando el sistema llega a la hora límite, entonces elimina la notificación de todos los dispositivos para no generar confusión.                     |
+| **US40** | Gerente Tienda | Baja     | EP09 | Soporte Empresas            | Como gerente, deseo un canal para reportar errores en la ubicación de mi supermercado en el mapa.                                           | **E1:** Dado que la ubicación es incorrecta, cuando el gerente envía la corrección desde su panel, entonces el sistema genera un ticket de revisión técnica.<br><br>**E2:** Dado que el equipo técnico corrige el pin, cuando el sistema guarda el cambio, entonces notifica al gerente que su local ya está bien posicionado.<br><br>**E3:** Dado que la solicitud se cierra, cuando el sistema pide feedback, entonces el gerente califica la rapidez de la corrección geográfica.                                            |
+| **US41** | Consumidor     | Baja     | EP06 | Brújula de Tienda           | Como consumidor, deseo ver una flecha que me indique hacia dónde caminar para llegar a la tienda de conveniencia.                           | **E1:** Dado que el consumidor inicia la ruta peatonal, cuando el sistema activa la brújula, entonces muestra la dirección exacta del local en la pantalla.<br><br>**E2:** Dado que el usuario se equivoca de calle, cuando el sistema detecta el desvío, entonces vibra y recalcula la dirección de la flecha.<br><br>**E3:** Dado que el consumidor llega al destino, cuando el sistema confirma la posición, entonces oculta la brújula y muestra el mensaje de "Has llegado".                                               |
+| **US42** | Consumidor     | Baja     | EP04 | Exportar Lista de Compras   | Como consumidor, deseo descargar mi lista en formato PDF para verla en el supermercado sin usar datos.                                      | **E1:** Dado que la lista está lista, cuando el consumidor selecciona "Descargar PDF", entonces el sistema genera un documento con los nombres de productos y precios.<br><br>**E2:** Dado que el archivo se abre, cuando el consumidor lo visualiza, entonces los ítems aparecen ordenados por el pasillo del supermercado seleccionado.<br><br>**E3:** Dado un error de almacenamiento, cuando el sistema falla en la descarga, entonces ofrece enviar la lista por correo electrónico como respaldo.                         |
+| **US43** | Gerente Tienda | Media    | EP03 | Promoción de Temporada      | Como gerente, deseo destacar la sección de "Cuidado Personal" durante una campaña específica.                                               | **E1:** Dado que inicia la campaña, cuando el gerente activa el destaque en el panel, entonces los productos de esa categoría aparecen primero en las búsquedas.<br><br>**E2:** Dado que la campaña termina, cuando el sistema detecta la fecha fin, entonces restaura el orden de visualización estándar automáticamente.<br><br>**E3:** Dado que el destaque tiene costo de puntos, cuando el gerente confirma el gasto, entonces el sistema debita los puntos de la cuenta de la sucursal.                                   |
+| **US44** | Consumidor     | Media    | EP08 | Repetición de Canasta       | Como consumidor, deseo repetir la compra de la quincena pasada para no volver a buscar cada producto.                                       | **E1:** Dado que el consumidor accede a su historial, cuando selecciona "Repetir Canasta", entonces el sistema crea una lista nueva con todos los ítems previos.<br><br>**E2:** Dado que algunos precios de supermercado subieron, cuando el sistema actualiza la lista, entonces resalta en rojo los incrementos de precio.<br><br>**E3:** Dado que un producto ya no se fabrica, cuando el sistema procesa la copia, entonces lo marca como "Descontinuado" y ofrece buscar un sustituto.                                     |
+| **US45** | Consumidor     | Media    | EP10 | Filtro de Estacionamiento   | Como consumidor, deseo ver qué supermercados tienen estacionamiento gratuito para ir con mi auto.                                           | **E1:** Dado que el consumidor activa el filtro "Estacionamiento", cuando el sistema refresca el mapa, entonces muestra solo locales con espacio para vehículos.<br><br>**E2:** Dado que el estacionamiento tiene costo, cuando el consumidor toca el icono del local, entonces el sistema muestra la tarifa por hora reportada.<br><br>**E3:** Dado que el local es una tienda de conveniencia sin parking, cuando el filtro está activo, entonces el sistema oculta dicho local de los resultados.                            |
+| **US46** | Gerente Tienda | Baja     | EP02 | Notificación de Visibilidad | Como gerente, deseo recibir una alerta cuando mi tienda sea la más barata del distrito de Lince.                                            | **E1:** Dado que los precios del local bajan, cuando el sistema confirma que es el líder del ranking, entonces envía una felicitación al panel del gerente.<br><br>**E2:** Dado que la competencia baja más sus precios, cuando el local pierde el primer puesto, entonces el sistema informa al gerente para que revise su estrategia.<br><br>**E3:** Dado que el gerente desactiva alertas de negocio, cuando ocurren cambios de posición, entonces el sistema solo registra los hitos en el historial del local.             |
+| **US47** | Visitante      | Baja     | EP09 | Landing: Transparencia      | Como visitante, deseo leer cómo se protegen mis datos de consumo en la landing page.                                                        | **E1:** Dado que el visitante accede al pie de página, cuando selecciona "Privacidad", entonces el sistema despliega el documento de tratamiento de datos personales.<br><br>**E2:** Dado que el visitante lee la sección de seguridad, cuando el sistema explica el cifrado de datos, entonces genera confianza sobre el uso de su ubicación GPS.<br><br>**E3:** Dado que el visitante tiene dudas, cuando selecciona "Más info", entonces el sistema muestra un resumen en lenguaje sencillo de sus derechos ARCO.            |
+| **US48** | Consumidor     | Baja     | EP01 | Baja de Servicio            | Como consumidor, deseo eliminar mi cuenta y mis listas guardadas para no dejar rastro de mi consumo.                                        | **E1:** Dado que el consumidor solicita el borrado, cuando el sistema recibe la confirmación, entonces programa la eliminación de datos para el final del día.<br><br>**E2:** Dado que el usuario intenta entrar después de borrar, cuando el sistema valida la cuenta, entonces informa que el perfil ya no existe.<br><br>**E3:** Dado que la ley lo exige, cuando el sistema borra los datos, entonces mantiene solo los registros de transacciones anonimizados para fines estadísticos.                                    |
+| **SK01** | Developer      | Alta     | EP06 | Spike Optimización Retail   | Investigar algoritmos de optimización para rutas que incluyan tiempos de espera en cajas de supermercado.                                   | **E1:** Dado el flujo de compra, cuando el equipo investiga modelos de cola, entonces se entrega un documento de viabilidad técnica.<br><br>**E2:** Dado un set de datos de prueba, cuando se simula una ruta por 3 tiendas, entonces el cálculo del tiempo total debe tener un margen de error menor al 15%.<br><br>**E3:** Dado que el spike termina, cuando se documentan los resultados, entonces se define la fórmula de "Tiempo estimado" para el backend.                                                                |
+| **SK02** | Developer      | Alta     | EP06 | Spike Mapas de Retail       | Investigar la integración de mapas de interiores para grandes supermercados en Lince y Surquillo.                                           | **E1:** Dado que los supermercados son grandes, cuando se prueban capas de interiores, entonces se determina si es posible guiar al usuario por pasillos.<br><br>**E2:** Dado que el costo de Mapas de Interiores es alto, cuando se analiza el presupuesto, entonces se define si se usará una solución propia o de terceros.<br><br>**E3:** Dado que se concluye el análisis, cuando se cierra el spike, entonces se documenta el esquema de coordenadas para estanterías de productos.                                       |
+| **SK03** | Developer      | Media    | EP01 | Spike Seguridad OAuth       | Investigar la implementación de Single Sign-On para facilitar el registro de consumidores recurrentes.                                      | **E1:** Dado el requerimiento de rapidez, cuando se prueba la integración con Google/Apple, entonces el sistema debe crear un perfil en menos de 5 segundos.<br><br>**E2:** Dado que se maneja ubicación GPS, cuando se revisan los permisos de privacidad, entonces se documenta la política de tokens necesaria.<br><br>**E3:** Dado que el spike termina, cuando se entrega el código base, entonces se define el estándar de cabeceras de seguridad para el API.                                                            |
+| **SK04** | Developer      | Media    | EP07 | Spike OCR de Tickets        | Analizar la precisión del reconocimiento de texto para diferentes formatos de tickets de Plaza Vea y Tambo.                                 | **E1:** Dado un set de 20 tickets reales, cuando el motor OCR extrae la columna de precios, entonces la coincidencia exacta debe ser superior al 95%.<br><br>**E2:** Dado que los tickets se arrugan, cuando se prueban imágenes con ruido, entonces se determina el nivel de pre-procesamiento de imagen necesario.<br><br>**E3:** Dado que se selecciona el motor OCR, cuando termina el spike, entonces se documenta el costo por cada 1000 imágenes procesadas.                                                             |
+| **SK05** | Developer      | Alta     | EP03 | Spike Base de Datos NoSQL   | Investigar el uso de MongoDB para manejar catálogos de productos que cambian diariamente en supermercados.                                  | **E1:** Dado que hay miles de productos, cuando se realizan cargas masivas simultáneas, entonces la base de datos debe mantener la latencia bajo 100ms.<br><br>**E2:** Dado el esquema flexible, cuando se añaden atributos como "Peso" o "Marca Blanca", entonces se verifica que no afecte a los registros antiguos.<br><br>**E3:** Dado que se valida el rendimiento, cuando concluye el spike, entonces se entrega el diseño de colecciones optimizado para búsquedas geoespaciales.                                        |
+| **SK06** | Developer      | Baja     | EP10 | Spike Integración Pagos     | Investigar la viabilidad de redirección hacia pasarelas de pago de las cadenas de supermercado.                                             | **E1:** Dado que el usuario quiere comprar online, cuando se investigan los Deep Links de las apps de retail, entonces se documenta cuáles permiten la compra directa.<br><br>**E2:** Dado que algunas cadenas bloquean enlaces externos, cuando se realizan pruebas de salto, entonces se identifican las restricciones técnicas por marca.<br><br>**E3:** Dado que el spike termina, cuando se entrega el informe, entonces se recomienda si SmartCart debe incluir el botón de "Comprar ahora" o no.                         |
+| **TS01** | Developer      | Alta     | EP01 | API Login & Auth            | Como Developer, deseo un endpoint de autenticación robusto para proteger las listas de los consumidores.                                    | **E1:** Dado un POST con credenciales a `/api/v1/auth`, cuando el sistema las valida, entonces emite un JWT firmado para la sesión.<br><br>**E2:** Dado un intento de acceso sin token, cuando el backend recibe el request, entonces responde con 401 Unauthorized inmediatamente.<br><br>**E3:** Dado un token pronto a vencer, cuando el cliente solicita un refresh, entonces el API entrega un nuevo token sin pedir credenciales nuevamente.                                                                              |
+| **TS02** | Developer      | Alta     | EP05 | API Comparador              | Como Developer, deseo un endpoint que calcule el ahorro entre diferentes formatos de tienda (Super vs Conveniencia).                        | **E1:** Dado una lista de productos y un radio GPS, cuando se invoca al comparador, entonces el sistema devuelve el costo total por cada local disponible.<br><br>**E2:** Dado que un local no tiene precios actualizados, cuando se procesa la comparación, entonces el API utiliza el último precio promedio de la zona como referencia.<br><br>**E3:** Dado que el request supera los 50 ítems, cuando el sistema lo recibe, entonces aplica paginación para no saturar la respuesta JSON.                                   |
+| **TS03** | Developer      | Alta     | EP03 | API Carga Catálogo          | Como Developer, deseo un servicio que reciba archivos CSV y actualice los precios de supermercado en bloque.                                | **E1:** Dado un archivo CSV con 1000 filas, cuando se procesa en el servidor, entonces la actualización de la DB debe completarse en menos de 10 segundos.<br><br>**E2:** Dado que el archivo tiene IDs duplicados, cuando se valida, entonces el sistema ignora el segundo registro y emite un warning en el log.<br><br>**E3:** Dado que el archivo está vacío, cuando se intenta la subida, entonces el API responde con 400 Bad Request por falta de contenido.                                                             |
+| **TS04** | Developer      | Alta     | EP06 | API Motor de Rutas          | Como Developer, deseo integrar un servicio que calcule la ruta óptima visitando un supermercado y una tienda de conveniencia.               | **E1:** Dado un origen y dos destinos de distinto tipo, cuando se solicita la ruta, entonces el API devuelve las coordenadas ordenadas por eficiencia de tiempo.<br><br>**E2:** Dado que un punto de la ruta es inaccesible por obras, cuando se consulta al proveedor de mapas, entonces el API devuelve un camino alternativo.<br><br>**E3:** Dado que no se encuentran rutas posibles (ej: isla), cuando el sistema falla, entonces devuelve un código 422 con un mensaje de error geográfico.                               |
+| **TS05** | Developer      | Media    | EP10 | API Notificaciones Push     | Como Developer, deseo un servicio para enviar alertas de ofertas flash basadas en la ubicación del consumidor.                              | **E1:** Dado un evento de oferta nueva, cuando el trigger se activa, entonces el API filtra a los usuarios en un radio de 5km para enviar la push.<br><br>**E2:** Dado que el usuario tiene la app cerrada, cuando llega la notificación, entonces el payload debe incluir el título y el resumen del ahorro.<br><br>**E3:** Dado un error en el proveedor de push, cuando el sistema detecta el fallo, entonces encola la notificación para un reintento posterior.                                                            |
+| **TS06** | Developer      | Alta     | EP02 | API Validador RUC           | Como Developer, deseo un microservicio que verifique la vigencia de los supermercados registrados contra SUNAT.                             | **E1:** Dado un RUC de 11 dígitos enviado al microservicio, cuando se recibe la respuesta externa, entonces el sistema actualiza el estado de "Verificado" en la DB.<br><br>**E2:** Dado que el RUC no existe, cuando se termina la consulta, entonces el API marca la cuenta del gerente como "Pendiente de revisión".<br><br>**E3:** Dado que el servicio externo tarda más de 5s, cuando el sistema llega al timeout, entonces responde con un código 504 Gateway Timeout controlado.                                        |
+| **TS07** | Developer      | Media    | EP07 | API Wallet & Puntos         | Como Developer, deseo un endpoint para gestionar el balance de puntos ganado por validar tickets de compra.                                 | **E1:** Dado un éxito en el OCR de ticket, cuando se llama al endpoint de puntos, entonces suma el monto correspondiente al saldo del consumidor.<br><br>**E2:** Dado un intento de canje de vale, cuando se procesa el descuento, entonces genera un código único y lo marca como "Usado" en la tabla de recompensas.<br><br>**E3:** Dado un GET a `/api/v1/user/points`, cuando se consulta el balance, entonces devuelve el desglose de puntos por tienda validada.                                                          |
+| **TS08** | Developer      | Media    | EP03 | API Media Manager           | Como Developer, deseo un servicio para almacenar y servir las imágenes de los productos de supermercado de forma eficiente.                 | **E1:** Dado que se sube una foto de producto, cuando se guarda en el servidor de archivos, entonces el sistema genera versiones en miniatura para ahorrar datos móviles.<br><br>**E2:** Dado una solicitud de imagen inexistente, cuando el servidor la recibe, entonces devuelve una imagen por defecto de "Producto sin foto".<br><br>**E3:** Dado un volumen alto de peticiones, cuando el sistema utiliza una CDN, entonces el tiempo de entrega de la imagen debe ser inferior a 300ms.                                   |
+| **TS09** | Developer      | Baja     | EP09 | API Analytics Retail        | Como Developer, deseo un endpoint que genere estadísticas de los productos más comparados en Lince y Surquillo.                             | **E1:** Dado un rango de fechas y un distrito, cuando se invoca al reporte, entonces el API devuelve un JSON con el conteo de búsquedas por categoría.<br><br>**E2:** Dado que el distrito no tiene actividad, cuando se procesa la estadística, entonces el sistema devuelve valores en cero sin romper el formato.<br><br>**E3:** Dado que se solicita un reporte de marca específica, cuando se filtra por ID de cadena, entonces muestra el alcance de dicha marca frente a la competencia.                                 |
+| **TS10** | Developer      | Media    | EP07 | API Moderador               | Como Developer, deseo un endpoint para que los administradores gestionen las denuncias de precios falsos en supermercados.                  | **E1:** Dado un ID de denuncia, cuando el admin envía un PUT con el veredicto, entonces el sistema actualiza el registro y notifica al usuario denunciante.<br><br>**E2:** Dado que la denuncia requiere más pruebas, cuando el admin cambia el estado a "En espera", entonces el sistema bloquea el cierre automático del ticket.<br><br>**E3:** Dado que se resuelve a favor del usuario, cuando el sistema cierra la denuncia, entonces otorga un bono de puntos de gratitud al consumidor.                                  |
+
 ### 2.4.2. Impact Mapping
+
+En esta subsección se desarrollan los siguientes puntos:
+
+- Mapa de impacto del **segmento consumidor** y su relación con las capacidades priorizadas en SmartCart.
+- Mapa de impacto del **segmento establecimiento masivo** y la trazabilidad hacia funcionalidades de valor para retail.
+
 
 ## Segmento #1: Consumidor - Jorge Retuerto
 ![Impact Mapping Jorge Retuerto](./assets/imagenes/Impact%20Mapping%20Jorge%20Retuerto.png)
@@ -892,24 +1097,75 @@ Esta sección establece el **Ubiquitous Language** (Lenguaje Ubicuo) de la plata
 
 
 ### 2.4.3. Product Backlog
-| Orden | ID       | Título                                 | Story Points | Epic | Prioridad |
-| :---- | :------- | :------------------------------------- | :----------: | :--- | :-------- |
-| 1     | **US01** | Propuesta de Valor (Landing Page)      |      3       | EP01 | Muy Alta  |
-| 2     | **US02** | Acceso a Tiendas (Landing Page)        |      2       | EP01 | Muy Alta  |
-| 3     | **US23** | Comparativa de Canasta Completa        |      8       | EP05 | Muy Alta  |
-| 4     | **US21** | Ranking de Tienda más Barata           |      5       | EP05 | Muy Alta  |
-| 5     | **US16** | Creación de Lista de Compras           |      3       | EP04 | Alta      |
-| 6     | **US06** | Registro de Local Comercial            |      5       | EP02 | Alta      |
-| 7     | **US11** | Alta de Producto Individual            |      3       | EP03 | Alta      |
-| 8     | **US13** | Actualización de Precios Real-time     |      5       | EP03 | Alta      |
-| 9     | **US27** | Generación de Ruta Óptima (TSP)        |      8       | EP06 | Alta      |
-| 10    | **US31** | Confirmación de Precio (Crowdsourcing) |      5       | EP07 | Alta      |
-| 11    | **US05** | Creación de Cuenta de Usuario          |      3       | EP01 | Media     |
-| 12    | **US12** | Carga Masiva de Inventario (CSV)       |      8       | EP03 | Media     |
-| 13    | **US29** | Cálculo de Gasto en Transporte         |      5       | EP06 | Media     |
-| 14    | **US32** | Reporte de Precios Falsos              |      3       | EP07 | Alta      |
-| 15    | **US37** | Canje de Puntos por Cupones            |      5       | EP08 | Media     |
-| 16    | **US45** | Reporte de Visitas para Comerciantes   |      5       | EP09 | Baja      |
+
+
+| Orden | ID | Título | Tipo | Story Points | Épica | Prioridad |
+| :---: | :--- | :--- | :--- | :---: | :--- | :--- |
+| 1 | **US01** | Landing: Propuesta de Valor | US | 8 | EP01 | Alta |
+| 2 | **US02** | Landing: Marcas Aliadas | US | 5 | EP01 | Media |
+| 3 | **US03** | Landing: Registro Interés | US | 3 | EP01 | Baja |
+| 4 | **US04** | Comparativa Retail | US | 8 | EP05 | Alta |
+| 5 | **US05** | Filtro por Formato | US | 8 | EP05 | Alta |
+| 6 | **US06** | Escaneo de Productos | US | 8 | EP04 | Alta |
+| 7 | **US07** | Armado de Canasta | US | 5 | EP04 | Media |
+| 8 | **US08** | Ruta de Compra Eficiente | US | 8 | EP06 | Alta |
+| 9 | **US09** | Cálculo de Tiempo | US | 5 | EP06 | Media |
+| 10 | **US10** | Registro de Sucursal | US | 8 | EP02 | Alta |
+| 11 | **US11** | Carga de Catálogo | US | 8 | EP03 | Alta |
+| 12 | **US12** | Alerta de Quiebre | US | 5 | EP03 | Media |
+| 13 | **US13** | Horarios Especiales | US | 5 | EP02 | Media |
+| 14 | **US14** | Validación Comunitaria | US | 8 | EP07 | Alta |
+| 15 | **US15** | Reporte de Oferta Falsa | US | 5 | EP07 | Media |
+| 16 | **US16** | Actualización masiva | US | 8 | EP03 | Alta |
+| 17 | **US17** | Alerta de Canasta Económica | US | 5 | EP10 | Media |
+| 18 | **US18** | Perfil de Consumo | US | 5 | EP01 | Media |
+| 19 | **US19** | Auditoría de Cadenas | US | 8 | EP02 | Alta |
+| 20 | **US20** | Resumen Mensual | US | 5 | EP08 | Media |
+| 21 | **US21** | Recompensas Retail | US | 5 | EP08 | Media |
+| 22 | **US22** | Lista Compartida | US | 5 | EP04 | Media |
+| 23 | **US23** | Guía de Pasillos | US | 5 | EP09 | Media |
+| 24 | **US24** | Comparación por Peso | US | 8 | EP05 | Alta |
+| 25 | **US25** | Reporte de Demanda | US | 5 | EP09 | Media |
+| 26 | **US26** | Landing: Preguntas de Pago | US | 3 | EP01 | Baja |
+| 27 | **US27** | Tiendas Favoritas | US | 3 | EP01 | Baja |
+| 28 | **US28** | Estado de Afluencia | US | 5 | EP02 | Media |
+| 29 | **US29** | Gestión de Categorías | US | 5 | EP03 | Media |
+| 30 | **US30** | Interfaz Adaptativa | US | 3 | EP01 | Baja |
+| 31 | **US31** | Comparador de Cadena | US | 5 | EP09 | Media |
+| 32 | **US32** | Verificación con Ticket | US | 8 | EP07 | Alta |
+| 33 | **US33** | Sugerencia de Marca Blanca | US | 5 | EP05 | Media |
+| 34 | **US34** | Logros de Comprador | US | 3 | EP08 | Baja |
+| 35 | **US35** | QR de Información | US | 5 | EP10 | Media |
+| 36 | **US36** | Filtro 24 Horas | US | 5 | EP02 | Media |
+| 37 | **US37** | Moderación de Usuarios | US | 8 | EP07 | Alta |
+| 38 | **US38** | Ubicaciones de Rutina | US | 5 | EP04 | Media |
+| 39 | **US39** | Alerta de Oferta Flash | US | 5 | EP10 | Media |
+| 40 | **US40** | Soporte Empresas | US | 3 | EP09 | Baja |
+| 41 | **US41** | Brújula de Tienda | US | 3 | EP06 | Baja |
+| 42 | **US42** | Exportar Lista de Compras | US | 3 | EP04 | Baja |
+| 43 | **US43** | Promoción de Temporada | US | 5 | EP03 | Media |
+| 44 | **US44** | Repetición de Canasta | US | 5 | EP08 | Media |
+| 45 | **US45** | Filtro de Estacionamiento | US | 5 | EP10 | Media |
+| 46 | **US46** | Notificación de Visibilidad | US | 3 | EP02 | Baja |
+| 47 | **US47** | Landing: Transparencia | US | 3 | EP09 | Baja |
+| 48 | **US48** | Baja de Servicio | US | 3 | EP01 | Baja |
+| 49 | **SK01** | Spike Optimización Retail | SK | 3 | EP06 | Alta |
+| 50 | **SK02** | Spike Mapas de Retail | SK | 3 | EP06 | Alta |
+| 51 | **SK03** | Spike Seguridad OAuth | SK | 3 | EP01 | Media |
+| 52 | **SK04** | Spike OCR de Tickets | SK | 3 | EP07 | Media |
+| 53 | **SK05** | Spike Base de Datos NoSQL | SK | 3 | EP03 | Alta |
+| 54 | **SK06** | Spike Integración Pagos | SK | 3 | EP10 | Baja |
+| 55 | **TS01** | API Login & Auth | TS | 8 | EP01 | Alta |
+| 56 | **TS02** | API Comparador | TS | 8 | EP05 | Alta |
+| 57 | **TS03** | API Carga Catálogo | TS | 8 | EP03 | Alta |
+| 58 | **TS04** | API Motor de Rutas | TS | 8 | EP06 | Alta |
+| 59 | **TS05** | API Notificaciones Push | TS | 5 | EP10 | Media |
+| 60 | **TS06** | API Validador RUC | TS | 8 | EP02 | Alta |
+| 61 | **TS07** | API Wallet & Puntos | TS | 5 | EP07 | Media |
+| 62 | **TS08** | API Media Manager | TS | 5 | EP03 | Media |
+| 63 | **TS09** | API Analytics Retail | TS | 3 | EP09 | Baja |
+| 64 | **TS10** | API Moderador | TS | 5 | EP07 | Media |
+
 ## 2.5. Strategic-Level Domain-Driven Design
 ### 2.5.1. EventStorming
 
@@ -1617,7 +1873,6 @@ El flujo de actualización de inventario permite que el Merchant mantenga su ofe
 * Se emite el evento **`PriceChanged`**, el cual es capturado asíncronamente por el contexto de **Shopping Journey** para actualizar el cálculo de ahorro en las rutas activas de los usuarios.
 * Se recalcula el **`StockStatus`**, notificando mediante un servicio de mensajería a los usuarios que tengan el producto en su lista de favoritos si este vuelve a estar disponible.
 
-#### 2.6.3.4. Infrastructure Layer
 #### 2.6.3.4. Infrastructure Layer
 
 La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios, mensajería, persistencia) y la capa anticorrupción (ACL) que aísla a **Store Management** de los modelos externos y servicios gubernamentales.
@@ -3063,6 +3318,1242 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 <hr class="page-break">
 
+# Capítulo III: Solution UI/UX Design
+
+## 3.1. Product design
+
+En esta sección, se detalla el diseño del producto como un aspecto fundamental en la estructura del sistema, enfocándose en los elementos clave que definen su forma y funcionamiento. El diseño de SmartCart se ha creado para garantizar que cada parte del software cumpla con las necesidades y metas de ahorro establecidas en las fases anteriores del proyecto.
+
+Con el objetivo de brindar una experiencia de usuario adecuada, se han tomado decisiones relevantes que afectan la interacción entre los usuarios y el sistema, priorizando la claridad en la información financiera y la rapidez en la navegación mediante GPS. Desde un enfoque tecnológico, la implementación visual se fundamenta en el lenguaje de diseño Material Design, lo que permite una transición fluida entre la plataforma web y la aplicación móvil, asegurando la coherencia de las piezas y la identidad de marca de FlowState Tech.
+
+
+### 3.1.1. Style Guidelines
+En esta sección, el equipo establece las bases para contar con un repositorio central y organizado de recursos visuales de uso común.El objetivo principal es garantizar una presentación consistente y enfocada en todos los productos digitales de SmartCart, facilitando la colaboración entre diseñadores y desarrolladores mediante el uso estandarizado de activos, fuentes y estilos .
+
+#### 3.1.1.1. General Style Guidelines
+
+Estas guías establecen la identidad visual base para todos los productos del ecosistema SmartCart.
+
+**A. Branding & Tono de Comunicación**
+* **Tono:** El lenguaje será **Entusiasta y Sereno**. Queremos que el usuario se sienta motivado por el ahorro pero tranquilo de que la información es veraz.
+* **Lenguaje:** Se utilizará un estilo **Formal/Casual**, directo y fácil de entender para familias y jóvenes profesionales.
+
+**B. Paleta de Colores (Colors)**
+Se ha seleccionado una paleta moderna que evoca tecnología y ahorro inteligente:
+
+| Uso | Color | Hexadecimal | Representación |
+| :--- | :--- | :--- | :--- |
+| **Primario** | Azul Tecnológico | `#4A90E2` | Confianza y estabilidad del sistema. |
+| **Secundario** | Verde Menta | `#50E3C2` | Frescura y agilidad en la experiencia. |
+| **Acento** | Lima Suave | `#B8E986` | Resaltado de ofertas y ahorros logrados. |
+| **Fondo** | Blanco Nieve | `#FFFFFF` | Limpieza visual y legibilidad. |
+
+**C. Tipografía (Typography)**
+* **Títulos:** *Montserrat* (Bold) - Proporciona un aspecto moderno y sólido.
+* **Cuerpo de texto:** *Roboto* (Regular) - Siguiendo los estándares de Material Design para máxima legibilidad en dispositivos móviles.
+
+**D. Espaciado (Spacing)**
+Se aplicará un sistema de rejilla de 8dp (8pt grid) para mantener la consistencia en los márgenes y paddings de todos los componentes UI.
+
+### 3.1.2. Information Architecture
+
+En esta sección se documentan las **decisiones y el criterio** con que se organizará el contenido en la **experiencia web** (sitio estático y aplicación web Merchant) y en las **aplicaciones móviles** (Buyer y Merchant), de forma que visitantes y usuarios se adapten con rapidez al producto y encuentren lo necesario sin esfuerzo. Se abordan de manera integrada los **sistemas de organización**, **etiquetado**, **navegación** y **búsqueda**, alineados al **Ubiquitous Language** (sección 2.3.6) y a los segmentos objetivo definidos en el capítulo I.
+
+#### 3.1.2.1. Organization Systems
+
+Se distingue **organización visual** (cómo se dispone la información en pantalla) y **esquemas de categorización** (criterio lógico que agrupa los contenidos).
+
+**Organización visual**
+
+| Tipo | Cuándo se usa en SmartCart | Ejemplos concretos |
+| --- | --- | --- |
+| **Jerárquica** | Cuando un bloque debe comunicar importancia relativa (lo más relevante arriba o primero). | Landing: héroe con propuesta de valor → beneficios → prueba social → CTA. Merchant web: panel con KPIs arriba y detalle en bloques debajo. |
+| **Secuencial (paso a paso)** | Cuando el usuario debe completar un orden fijo para evitar errores de negocio o datos incompletos. | Buyer: asistente “Lista → Presupuesto → Ruta sugerida → Confirmar recorrido”. Post-compra: “Ver ahorro → Calificar → (opcional) Reseña → Reportar precio”. |
+| **Matricial** | Cuando el mismo contenido admite **dos o más dimensiones** que el usuario quiere comparar a la vez. | Buyer: grilla de productos con ejes implícitos *categoría × precio* o *tienda × distancia*; tablero Merchant: *producto × estado de precio × vigencia de oferta*. |
+
+**Esquemas de categorización**
+
+| Esquema | Cuándo se usa | Ejemplos en el producto |
+| --- | --- | --- |
+| **Alfabético** | Listas largas donde el usuario conoce el nombre del ítem. | Listado de productos en backoffice Merchant ordenado A–Z; resultados de búsqueda con opción “Ordenar A–Z”. |
+| **Cronológico** | Cuando el tiempo define el valor de la información. | Historial de recorridos del Buyer (más reciente primero); log de cambios de precio u ofertas en Merchant. |
+| **Por tema (tópico)** | Cuando el dominio del supermercado agrupa mejor por pasillo o familia de producto. | Navegación del catálogo por categorías (abarrotes, limpieza, etc.); agrupación de ayudas en la landing por “Ahorro”, “Rutas”, “Confianza”. |
+| **Por audiencia** | Cuando el mensaje o el menú cambia según el rol. | Separación explícita **Buyer** vs **Merchant** (apps y CTAs distintos en la landing); dentro de Merchant, secciones “Operaciones de piso” vs “Marketing” si el rol lo permite. |
+
+**Resumen por superficie (combinación de criterios)**  
+
+| Superficie | Organización visual predominante | Esquemas de categorización que más se usan |
+| --- | --- | --- |
+| Landing | Jerárquica (prioridad visual del mensaje) | Por tema (bloques temáticos), por audiencia (CTA Buyer vs Merchant) |
+| Buyer (app) | Secuencial en flujos críticos; matricial en exploración de catálogo | Tópico (categorías), cronológico (historial), alfabético (ordenar resultados) |
+| Merchant (web/app) | Jerárquica en panel; matricial en tableros y tablas | Alfabético y por estado en catálogo; cronológico en historial de cambios |
+
+#### 3.1.2.2. Labelling Systems
+
+Los datos se representan con **etiquetas cortas** (mínimo número de palabras) para reducir ambigüedad. Cada etiqueta se asocia a un **conjunto de información** del dominio; no se mezclan sinónimos casualmente (“Recorrido” no alterna con “viaje” en la misma tarea).
+
+**Principios:** una etiqueta ↔ un concepto del lenguaje ubicuo; verbos concisos en acciones; estados en lenguaje natural (no códigos internos); métricas con unidad o escala visible (“S/”, “km”, “0–5”).
+
+**Etiquetas principales y asociaciones**
+
+| Etiqueta (UI) | Conjunto / asociación | Nota de brevedad |
+| --- | --- | --- |
+| Lista | Productos planificados (`ShoppingList`) | Sustantivo único en navegación. |
+| Presupuesto | Límite del ciclo + estado vs proyección | Evitar “Presupuesto máximo del usuario para este recorrido”. |
+| Ruta | Paradas ordenadas (`ShoppingRoute`) | “Ruta sugerida” solo donde haya alternativa. |
+| Recorrido | Sesión de compra activa o cerrada | Diferencia semántica respecto a “Ruta”. |
+| Tiendas | Sedes elegibles o cercanas | No “Establecimientos comerciales participantes”. |
+| Ahorro | Monto y moneda post-compra | Siempre con símbolo o código PEN. |
+| Confianza | `TrustProfile` (score + señales) | Opción corta en inglés solo si se unifica: “Confianza”. |
+| Reportar precio | Flujo `ErrorDePrecio` | Verbo + objeto; sin jerga legal. |
+| Catálogo / Ofertas / Reportes | Módulos Merchant | Tres palabras máximo por ítem de menú. |
+| Cuenta | Datos de perfil, seguridad, preferencias de notificación | No confundir con “Perfil” del Buyer si ese término reserva preferencias de compra. |
+| Ayuda / Soporte | Enlaces a FAQ, contacto, versión de la app | Una sola entrada en menú secundario. |
+
+**Microcopy y errores:** mensajes de validación en una frase (“Ingresa un monto mayor a 0”); estados de carga con verbo (“Guardando…”, “Calculando ruta…”).
+
+#### 3.1.2.3. SEO Tags and Meta Tags
+
+**Sitio web estático — Landing Page (página principal)**  
+Valores propuestos para los requisitos mínimos (Title, Description, Keywords, Author):
+
+| Meta / etiqueta | Valor propuesto |
+| --- | --- |
+| **`<title>`** | `SmartCart \| Ahorra en tu canasta con rutas multi-tienda y precios de góndola` |
+| **`<meta name="description">`** | `Planifica tu lista, respeta tu presupuesto y recorre las tiendas con la ruta más eficiente. Compara precios reales en Lima y compra con SmartCart, de FlowState Tech.` |
+| **`<meta name="keywords">`** | `SmartCart, compras inteligentes, presupuesto familiar, comparar precios supermercado, ruta de compras, ahorro Lima, lista de compras, precio góndola, retail Perú` |
+| **`<meta name="author">`** | `FlowState Tech — SmartCart` |
+
+Complementos recomendados: `<link rel="canonical" href="https://www.smartcart.pe/">` (URL final a definir en despliegue), `<meta name="robots" content="index, follow">`, Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type=website`) alineados al `title` y `description`, y Twitter Card `summary_large_image`. Incluir **JSON-LD** (`Organization` + `SoftwareApplication`) con nombre, URL y oferta de la app.
+
+**Aplicación web — Merchant (página principal tras autenticación, vista “Inicio / Panel”)**  
+Misma base mínima de meta por plantilla HTML (si la SPA inyecta metas por ruta, aplicar al *shell* principal):
+
+| Meta / etiqueta | Valor propuesto |
+| --- | --- |
+| **`<title>`** | `SmartCart Merchant \| Catálogo, precios y ofertas` |
+| **`<meta name="description">`** | `Administra productos, precios de góndola y promociones de tu sede. Sincroniza la información que ven los compradores en SmartCart.` |
+| **`<meta name="keywords">`** | `SmartCart Merchant, gestión catálogo retail, precios tienda, ofertas supermercado, administración sede, FlowState Tech` |
+| **`<meta name="author">`** | `FlowState Tech — SmartCart` |
+
+Las vistas internas (detalle de producto, reportes) deben actualizar dinámicamente `title` y `description` con el nombre del recurso y `noindex` si la política de seguridad lo exige.
+
+**Otras páginas web estáticas (mínimo recomendado)**  
+
+| Página | `<title>` (ejemplo) | Indexación sugerida | Notas |
+| --- | --- | --- | --- |
+| Política de privacidad | `Política de privacidad \| SmartCart` | `index, follow` o `noindex` según estrategia legal | Mantiene coherencia de marca en la pestaña del navegador. |
+| Términos de uso | `Términos de uso \| SmartCart` | Igual que la anterior | Keywords opcionales y específicas del documento. |
+| Contacto / Soporte | `Contacto \| SmartCart — FlowState Tech` | `index, follow` | Description breve con canal de contacto. |
+
+**Social preview (valores ejemplo alineados a la home)**  
+
+| Etiqueta | Valor propuesto |
+| --- | --- |
+| `og:title` | `SmartCart — Listas, presupuesto y rutas multi-tienda` |
+| `og:description` | `Optimiza tu canasta en Lima: compara precios de góndola y recorre las tiendas con la ruta más eficiente.` |
+| `og:type` | `website` |
+| `twitter:card` | `summary_large_image` |
+
+**ASO — App Store / Google Play**  
+Dos listados alineados a las audiencias (valores orientativos; ajustar límites de caracteres de cada tienda al publicar).
+
+**App Buyer — “SmartCart” (consumidor)**
+
+| Campo ASO | Valor propuesto |
+| --- | --- |
+| **Título de la app** | `SmartCart — Compras y ahorro` |
+| **Subtítulo** (donde aplique) | `Listas, presupuesto y rutas` |
+| **Palabras clave** (iOS, separadas por coma o según guía de la tienda) | `compras, lista, supermercado, ahorro, precios, presupuesto, ruta, Lima, góndola` |
+| **Descripción corta** (preview) | `Tu lista, tu tope de gasto y la mejor ruta entre tiendas. Precios transparentes y ahorro al cerrar el recorrido.` |
+| **Descripción larga** (texto para tienda; editable al publicar) | `SmartCart te ayuda a planificar tu compra con una lista clara y un presupuesto que puedes respetar. Compara precios entre tiendas, obtén una ruta sugerida para ahorrar tiempo y, al terminar tu recorrido, revisa cuánto ahorraste. Después de comprar, califica la tienda, deja una reseña opcional y reporta diferencias de precio si las encuentras; así toda la comunidad gana transparencia. La ubicación solo se usa si activas funciones que mejoran la ruta. Consulta la política de privacidad en smartcart.pe antes de registrarte.` |
+
+**App Merchant — “SmartCart Tiendas” (nombre sugerido para diferenciar listados)**
+
+| Campo ASO | Valor propuesto |
+| --- | --- |
+| **Título de la app** | `SmartCart Tiendas` |
+| **Subtítulo** | `Catálogo y precios en vivo` |
+| **Palabras clave** | `retail, catálogo, precios, ofertas, inventario tienda, merchant, sede, SmartCart` |
+| **Descripción corta** | `Actualiza precios y ofertas para que los compradores planifiquen con datos reales de tu sede.` |
+| **Descripción larga** | `SmartCart Tiendas es la app para equipos de retail que necesitan mantener catálogo, precios de góndola y promociones alineados con lo que el comprador ve antes de visitar la sede. Reduce reclamos por discrepancias, lanza ofertas con vigencia clara y consulta reportes de uso. Trabaja en conjunto con la app SmartCart del consumidor para cerrar la brecha entre el digital y el punto de venta.` |
+
+#### 3.1.2.4. Searching Systems
+
+Las herramientas de búsqueda evitan que el usuario se sienta perdido ante catálogos extensos o listas largas.
+
+**Opciones de búsqueda**
+
+| Producto / contexto | Qué se puede buscar | Tipo de entrada |
+| --- | --- | --- |
+| Buyer — catálogo | Productos por nombre; opcionalmente por marca o código si se muestra | Campo de texto global + sugerencias |
+| Buyer — tiendas | Por nombre de sede o cadena | Mismo patrón o entrada desde el mapa/lista |
+| Buyer — mi lista | Ítems ya agregados | Barra de filtro local (no remota) |
+| Merchant — backoffice | Productos, SKUs, ofertas | Búsqueda en tabla con operadores simples |
+
+**Alcance y comportamiento**
+
+* **Alcance (Buyer):** conmutador o pestañas “En esta tienda” / “En todas las tiendas” cuando el usuario ya eligió sede para el recorrido; por defecto “todas” en modo exploración.  
+* **Sugerencias:** lista desplegable bajo el campo a partir de 2 caracteres; resultados remotos con indicador de carga.  
+* **Ordenación de resultados:** relevancia por texto; alternativas “Menor precio”, “Más cercano” (si aplica ubicación), “Mejor valoración de tienda” (si hay dato de confianza).  
+* **Paginación:** desplazamiento infinito o “Cargar más” en catálogo móvil; paginación numérica opcional en Merchant web para tablas largas.  
+* **Persistencia:** la consulta activa puede conservarse al volver atrás en el stack; al cambiar de tab principal se limpia o se mantiene según prueba de usabilidad.
+
+**Filtros disponibles según el caso**
+
+| Caso | Filtros |
+| --- | --- |
+| Resultados de producto (Buyer) | Categoría, rango de precio, tienda o cadena, distancia aproximada (si hay ubicación), solo “con precio verificado” (si aplica). |
+| Lista de tiendas (Buyer) | Distancia, cadena, horario o “abierto ahora” (si hay datos). |
+| Lista interna (Buyer) | Sin filtros complejos; solo texto. |
+| Inventario / ofertas (Merchant) | Estado (activo/inactivo), categoría, vigencia de oferta, discrepancias reportadas. |
+
+**Aspecto de los resultados**
+
+* **Productos:** lista vertical de **tarjetas** con imagen miniatura, nombre en una línea, precio destacado, tienda o “desde X tiendas”, distancia opcional y acción primaria (“Agregar”).  
+* **Tiendas:** tarjeta con nombre, distancia, indicador de **confianza** resumido y CTA “Ver catálogo” o “Elegir para ruta”.  
+* **Merchant:** **tabla** con columnas configurables (nombre, SKU, precio actual, estado, última actualización) y resaltado de fila en ofertas próximas a vencer.  
+* **Vacío:** ilustración o icono + mensaje breve + acción (“Limpiar filtros”, “Ampliar radio”).  
+* **Carga:** esqueleto de lista para mantener el contexto espacial del usuario.  
+* **Privacidad:** la búsqueda no expone datos personales de terceros; solo catálogo y tiendas públicas.
+
+#### 3.1.2.5. Navigation Systems
+
+Se especifican las **formas concretas** en que el usuario recorre y se desplaza por la Landing, la web Merchant y las apps.
+
+**Mapa jerárquico (primer nivel y ramas frecuentes)**  
+
+* **Landing (web estática):** Inicio → secciones ancladas (Producto, Cómo funciona, Descargar, Contacto) → pie (Privacidad, Términos, redes).  
+* **Buyer (app):** Tabs: **Inicio** (accesos y resumen) · **Lista** (ítems, presupuesto) · **Recorrido** (ruta activa o estado vacío) · **Perfil** (cuenta, preferencias, ayuda). Flujos en stack desde Inicio/Lista: *Catálogo → Detalle producto → Agregar*; *Tiendas → Detalle sede → Elegir para ruta*; *Post-compra (notificación o historial) → Resumen de ahorro → Calificar → Reseña / Reportar precio*.  
+* **Merchant (web):** *Autenticación (login / recuperación)* → **Panel** → módulos *Catálogo* (lista → detalle / edición), *Ofertas*, *Reportes*, *Cuenta / Sede*.  
+* **Merchant (app):** mismo modelo que la web con drawer; profundidad máxima recomendada de tres niveles antes de mostrar breadcrumb o título compuesto.
+
+| Superficie | Técnicas de navegación |
+| --- | --- |
+| **Landing** | Barra superior **fija** con anclas a secciones (#producto, #cómo-funciona, #descargar, #contacto); desplazamiento suave; **CTA duplicado** al cierre de cada bloque; pie con enlaces legales y tiendas de apps. |
+| **Buyer (móvil)** | **Navegación primaria por tabs inferiores** (p. ej. Inicio, Lista, Recorrido, Perfil); **stack modal** para detalle de producto y hojas de edición; **asistente secuencial** con pasos numerados en planificación de ruta; **deep link** desde notificación de fin de recorrido hacia resumen y feedback. |
+| **Merchant (web)** | **Menú lateral persistente** o **pestañas superiores** por módulo (Catálogo, Ofertas, Reportes, Cuenta); **breadcrumbs** en vistas de detalle profundo; **barra superior** con sede activa y usuario. |
+| **Merchant (móvil)** | **Drawer** con la misma jerarquía que la web; tabs solo si el número de módulos es reducido. |
+
+**Recuperación de contexto:** botón atrás del sistema respeta el stack; formularios largos conservan borrador local cuando sea posible; el título de cada pantalla repite la **etiqueta** del módulo (coherencia con 3.1.2.2).
+
+Esta arquitectura cierra el ciclo entre **descubrimiento** (SEO/ASO + landing), **ejecución** (búsqueda + navegación + etiquetas) y **operación** (Merchant), alineada a los objetivos del producto SmartCart.
+
+### 3.1.3. Landing Page UI Design
+
+En esta sección se detalla el proceso de diseño de la interfaz de usuario para la landing page de SmartCart, mostrando la evolución desde la planificación estructural hasta el diseño final de alta fidelidad.
+
+#### 3.1.3.1. Landing Page Wireframe
+
+Los wireframes de baja fidelidad que se presentan a continuación definen la disposición estructural y la arquitectura de la información de la página. Al utilizar una paleta de escala de grises y marcadores de posición para las imágenes, el enfoque se mantiene exclusivamente en el flujo del usuario y la jerarquía del contenido.
+
+<div align="center">
+
+  <img src="assets/imagenes/parte1.png" alt="Estructura de la Landing Page de SmartCart (Vista Superior - Baja Fidelidad)" width="100%">
+  <p><i>Figura 1.3.1: Estructura de la Landing Page (Vista Superior - Baja Fidelidad)</i></p>
+
+  <br>
+
+  <img src="assets/imagenes/parte2.png" alt="Estructura de la Landing Page de SmartCart (Vista Inferior - Baja Fidelidad)" width="100%">
+  <p><i>Figura 1.3.2: Estructura de la Landing Page (Vista Inferior - Baja Fidelidad)</i></p>
+
+</div>
+
+#### 3.1.3.2. Landing Page Mock-up
+
+En esta sección se presenta el diseño de alta fidelidad (Mock-up) de la Landing Page. A diferencia del wireframe, aquí se aplican los colores de marca, tipografías finales, imágenes reales y mockups de dispositivos para representar el producto final tal como lo verá el usuario.
+
+<div align="center">
+  <img src="assets/imagenes/Landing%20Page%20U.png" alt="Mock-up de alta fidelidad de la Landing Page SmartCart" width="100%">
+  <p><i>Figura 1.3.3: Diseño final de alta fidelidad de la Landing Page (Vista Completa)</i></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 3.1.4. Mobile Applications UX/UI Design
+
+#### 3.1.4.1. Mobile Applications Wireframes
+
+La presente sección documenta los wireframes de baja fidelidad desarrollados para SmartCart, representando la estructura funcional de las interfaces antes de la aplicación de identidad visual. Se han diseñado dos aplicaciones diferenciadas: la **App Móvil** para usuarios consumidores (10 pantallas) y la **App Tablet** para comerciantes y administradores de tiendas (8 pantallas).
+
+El diseño sigue los principios de usabilidad establecidos en las Style Guidelines, empleando una escala de grises, iconos placeholder, texto mínimo limitado a labels y placeholders genéricos, y considerando touch targets mínimos de 44px para garantizar la accesibilidad.
+
+---
+
+##### App Móvil (Consumidores)
+
+**1. Splash**
+
+Pantalla inicial con logo centrado, barra de progreso inferior indicando carga y versión de aplicación en footer.
+
+![Splash](./assets/wireframes/m_splash.png)
+
+---
+
+**2. Login**
+
+Formulario de autenticación con campos de email y contraseña, botones de acceso social (Google, Apple), y enlaces de recuperación de contraseña.
+
+![Login](./assets/wireframes/m_login.png)
+
+---
+
+**3. Registro**
+
+Formulario de creación de cuenta con 4 inputs (nombre, email, contraseña, confirmación), checkbox de términos y condiciones, y botón de registro principal.
+
+![Registro](./assets/wireframes/m_registro.png)
+
+---
+
+**4. Home**
+
+Vista principal de lista de compras con items editables, botones de agregar/eliminar productos, resumen total de gasto proyectado, y botones de acción inferior (continuar compra, guardar lista).
+
+![Home](./assets/wireframes/m_home.png)
+
+---
+
+**5. Comparador**
+
+Interfaz con mapa interactivo mostrando pins de establecimientos cercanos, lista ranking de precios por producto, y filtros en chips horizontales (categoría, distancia, precio).
+
+![Comparador](./assets/wireframes/m_comparador.png)
+
+---
+
+**6. Navegación**
+
+Mapa con ruta de compra optimizada numerada, brújula de orientación, y lista de productos con checkbox para seguimiento del recorrido.
+
+![Navegación](./assets/wireframes/m_nav.png)
+
+---
+
+**7. Validación**
+
+Interfaz con tabs para cambiar entre modos de validación (por producto individual o por ticket de compra completo), botones de confirmar precio o reportar discrepancia.
+
+![Validación](./assets/wireframes/m_validacion.png)
+
+---
+
+**8. Perfil**
+
+Sección de gestión de usuario con avatar, múltiples secciones con iconos (datos personales, preferencias, seguridad), toggles de configuración, y estadísticas de ahorro acumuladas.
+
+![Perfil](./assets/wireframes/m_perfil.png)
+
+---
+
+**9. Notificaciones**
+
+Lista de alertas con iconos representativos, timestamps de recepción, y badges indicando elementos no leídos.
+
+![Notificaciones](./assets/wireframes/m_noti.png)
+
+---
+
+**10. Eliminar Cuenta**
+
+Pantalla de advertencia con icono de precaución, campos de confirmación de acción, y botón de acción danger para confirmar eliminación permanente.
+
+![Eliminar Cuenta](./assets/wireframes/m_elim_cuenta.png)
+
+La navegación inferior contiene 5 ítems principales: Inicio, Comparar, Rutas, Validar y Perfil, cumpliendo con los estándares de navegación móvil.
+
+---
+
+##### App Tablet (Comerciantes y Administradores)
+
+**1. Login Comerciante**
+
+Formulario de autenticación simplificado con logo centrado, campos de email y contraseña, y botón de acceso.
+
+![Login Comerciante](./assets/wireframes/t_login.png)
+
+---
+
+**2. Registro Comerciante**
+
+Formulario de registro en columna con campos de información empresarial, términos y condiciones checkbox, y botón de crear cuenta.
+
+![Registro Comerciante](./assets/wireframes/t_registro.png)
+
+---
+
+**3. Registro Sucursal**
+
+Wizard de 3 pasos numerados para el alta de nueva sucursal, con mapa interactivo para ubicación geográfica, y toggles de servicios disponibles.
+
+![Registro Sucursal](./assets/wireframes/t_registro_sucursal.png)
+
+---
+
+**4. Dashboard**
+
+Panel principal con 4 cards de métricas clave (visitas, ofertas activas, productos escaneados, conversiones), 3 secciones inferiores conteniendo tablas de datos y gráficos de tendencias.
+
+![Dashboard](./assets/wireframes/t_dashboard.png)
+
+---
+
+**5. Gestión Catálogo**
+
+Interfaz con tabs de categorías de productos, tabla editable con listados de productos, y drag handles para reordenar elementos dentro del catálogo.
+
+![Gestión Catálogo](./assets/wireframes/t_gest_catalogo.png)
+
+---
+
+**6. Gestión Ofertas**
+
+Vista de cards de ofertas activas con información de vigencia, modal flotante para crear nuevas ofertas, y temporizadores visuales de tiempo restante.
+
+![Gestión Ofertas](./assets/wireframes/t_gest_ofertas.png)
+
+---
+
+**7. QR Tienda**
+
+Generación de código QR de la tienda en tamaño ampliado, panel de estadísticas de escaneos diarios, y toggles de configuración de alertas.
+
+![QR Tienda](./assets/wireframes/t_qr.png)
+
+---
+
+**8. Soporte**
+
+Formulario de reporte de incidentes, lista de tickets abiertos con estados (pendiente, en proceso, resuelto), y información de contacto de soporte técnico.
+
+![Soporte](./assets/wireframes/t_soporte.png)
+
+El diseño de la App Tablet utiliza un layout con sidebar lateral o sistema de tabs para la navegación principal entre módulos.
+
+---
+
+##### Especificaciones de Diseño Aplicadas
+
+Los wireframes fueron desarrollados siguiendo las siguientes especificaciones técnicas:
+
+- **Paleta cromática:** Escala de grises (blanco, gris claro #F5F5F5, gris medio #9E9E9E, gris oscuro #424242, negro #212121)
+- **Elementos gráficos:** Cajas grises placeholder para iconos, sin imágenes, fotos ni logos reales
+- **Tipografía:** Solo labels y placeholders genéricos, texto mínimo indispensable
+- **Componentes UI:** Bordes simples de 1px, sombras mínimas de 2px, sin decoraciones adicionales
+- **Interactivity:** Touch targets mínimos de 44px para todos los elementos interactivos
+- **Navegación móvil:** Bottom navigation bar con 5 ítems (Inicio, Comparar, Rutas, Validar, Perfil)
+- **Navegación tablet:** Sidebar lateral o sistema de tabs para navegación entre módulos
+
+Estos wireframes constituyen la base funcional sobre la cual se construirán los mockups de alta fidelidad en la siguiente sección (3.1.4.3), manteniendo coherencia con la arquitectura de información definida en el sistema de organización (3.1.2.1).
+
+#### 3.1.4.2. Mobile Applications Wireflow Diagrams
+
+Los diagramas de wireflow ilustran la conexión y navegación entre las pantallas de cada aplicación, mostrando cómo el usuario se desplaza de un screen a otro mediante las acciones definidas en los User Goals.
+
+---
+
+**App Móvil (Usuario Consumidor)**
+
+**Goal 1: Autenticación y Registro**
+
+El usuario debe poder registrarse mediante email/contraseña o redes sociales (Google, Apple), aceptar términos y condiciones, y recuperar contraseña si es necesario.
+
+![Wireflow G1](./assets/wireflows/m_ug1.png)
+
+---
+
+**Goal 2: Gestión de Lista de Compras**
+
+El consumidor crea, edita y mantiene listas de productos. Agrega items con cantidad y categoría, modifica o elimina, guarda para uso futuro, repite compras anteriores, comparte con familia y exporta en PDF.
+
+![Wireflow G2](./assets/wireflows/m_ug2.png)
+
+---
+
+**Goal 3: Comparación de Precios**
+
+El usuario compara precios entre establecimientos cercanos. Interfaz con mapa, ranking de precios, filtros por formato (supermercado/conveniencia), categoría y distancia. Compara por unidad de medida ($/kg), recibe sugerencias de marca blanca y marca tiendas favoritas. 
+
+![Wireflow G3](./assets/wireflows/m_ug3.png)
+
+---
+
+**Goal 4: Optimización de Ruta de Compra**
+
+El usuario obtiene una ruta optimizada para minimizar tiempo y transporte. Mapa con puntos numerados, cálculo de tiempo estimado, brújula de orientación, lista de productos con checkboxes, filtro de tiendas 24h.
+
+![Wireflow G4](./assets/wireflows/m_ug4.png)
+
+---
+
+**Goal 5: Validación de Precios en Punto de Venta**
+
+El usuario valida precios escaneando productos por código de barras o subiendo foto del ticket completo. Reporta discrepancias o ofertas falsas para actualizar la base de datos comunitaria y ganar puntos. 
+
+![Wireflow G5](./assets/wireflows/m_ug5.png)
+
+---
+
+**Goal 6: Gestión de Perfil y Personalización**
+
+El usuario administra datos personales, configura preferencias de marcas y categorías, ajusta interfaz (modo oscuro), visualiza estadísticas de ahorro acumulado, revisa logros y canjea puntos por vales de descuento.
+
+![Wireflow G6](./assets/wireflows/m_ug6.png)
+
+---
+
+**Goal 7: Notificaciones y Alertas**
+
+El consumidor recibe alertas cuando su lista está más barato en otra cadena, notificaciones de ofertas flash, y avisos de afluencia en supermercados. Puede marcar como leídas y configurar preferencias. 
+
+![Wireflow G7](./assets/wireflows/m_ug7.png)
+
+---
+
+**Goal 8: Eliminación de Cuenta**
+
+El usuario solicita eliminación permanente de su cuenta con confirmación explícita mediante campos de texto, evitando eliminaciones accidentales. 
+
+![Wireflow G8](./assets/wireflows/m_ug8.png)
+
+---
+
+**App Tablet (Comerciante)**
+
+**Goal 1: Registro de Comerciante**
+
+El administrador crea cuenta empresarial con información de la empresa (nombre, RUC, dirección, categoría), datos de contacto y acepta términos y condiciones. 
+
+![Wireflow G1](./assets/wireflows/t_ug1.png)
+
+---
+
+**Goal 2: Registro de Sucursal(es)**
+
+El comerciante da de alta sucursales mediante proceso guiado: ubicación en mapa interactivo, selección de servicios (delivery, pickup, horario) y gestión de horarios especiales. 
+
+![Wireflow G2](./assets/wireflows/t_ug2.png)
+
+---
+
+**Goal 3: Gestión del Catálogo de Productos**
+
+El usuario administra el inventario: agregar, editar y eliminar productos; organizar por categorías; actualizar precios individuales o masivos por CSV; gestionar stock. 
+
+![Wireflow G3](./assets/wireflows/t_ug3.png)
+
+---
+
+**Goal 4: Gestión de Ofertas Promocionales**
+
+El comerciante crea ofertas relámpago o promociones temporales definiendo descuento, fechas de vigencia, productos afectados y visualiza temporizadores de tiempo restante. 
+
+![Wireflow G4](./assets/wireflows/t_ug4.png)
+
+---
+
+**Goal 5: Monitoreo de Métricas del Dashboard**
+
+Panel con indicadores clave: visitas diarias, ofertas activas, productos más escaneados, análisis de demanda por zona, comparación con competidores y alertas de posicionamiento. 
+
+![Wireflow G5](./assets/wireflows/t_ug5.png)
+
+---
+
+**Goal 6: Gestión del Código QR de Tienda**
+
+Código QR único para que clientes accedan a información de la tienda. El comerciante descarga en alta resolución, configura alertas de escaneo y visualiza estadísticas de uso. 
+
+![Wireflow G6](./assets/wireflows/t_ug6.png)
+
+---
+
+**Goal 7: Soporte Técnico y Gestión de Incidentes**
+
+Usuario reporta problemas mediante tickets de soporte, consulta estado (pendiente, en proceso, resuelto) y accede a contacto del equipo de soporte. 
+
+![Wireflow G7](./assets/wireflows/t_ug7.png)
+
+Los wireflows demuestran el flujo de navegación entre pantallas, conectando los wireframes documentados en la sección anterior mediante flechas que representan las acciones del usuario para alcanzar cada objetivo.
+
+#### 3.1.4.3. Mobile Applications Mock-ups
+
+La presente sección documenta los mockups de alta fidelidad para SmartCart, representando el diseño visual final de las interfaces con la identidad de marca aplicada. A diferencia de los wireframes (escala de grises), los mockups incorporan la paleta cromática, tipografía, iconografía y elementos de navegación definitivos.
+
+Se han diseñado dos aplicaciones con identidad visual diferenciada: la **App Móvil** para consumidores y la **App Tablet** para comerciantes.
+
+---
+
+**App Móvil (Usuario Consumidor)**
+
+**1. Splash**
+
+Pantalla de inicio con logo de SmartCart, barra de progreso de carga y versión de la aplicación en la parte inferior. Presentación profesional con colores de marca.
+
+![Splash](./assets/mockups/m_splash.png)
+
+---
+
+**2. Login**
+
+Interfaz de autenticación con campos para email y contraseña, botones de acceso mediante redes sociales (Google, Apple), y enlaces para recuperación de contraseña. Diseño limpio y orientado a la conversión.
+
+![Login](./assets/mockups/m_login.png)
+
+---
+
+**3. Registro**
+
+Formulario de creación de cuenta con campos para nombre, email, contraseña y confirmación de contraseña. Checkbox de términos y condiciones, y botón principal de registro. Diseño que minimiza la fricción de registro.
+
+![Registro](./assets/mockups/m_registro.png)
+
+---
+
+**4. Home**
+
+Vista principal de lista de compras con items visualmente atractivos, botones para agregar y eliminar productos, resumen total de gasto proyectado con formato destacado, y botones de acción inferior para continuar compra o guardar lista.
+
+![Home](./assets/mockups/m_home.png)
+
+---
+
+**5. Comparador**
+
+Interfaz de comparación de precios con mapa interactivo mostrando pins de establecimientos cercanos, lista ranking de precios por producto, y filtros en chips horizontales (categoría, distancia, precio). Visualización clara de ahorros.
+
+![Comparador](./assets/mockups/m_comparador.png)
+
+---
+
+**6. Navegación**
+
+Pantalla de ruta de compra optimizada con mapa detallado, puntos numerados en orden de visita, brújula de orientación, y lista de productos con checkboxes para seguimiento del recorrido.
+
+![Navegación](./assets/mockups/m_nav.png)
+
+---
+
+**7. Validación**
+
+Interfaz de validación de precios con tabs para cambiar entre modos (producto individual o ticket completo). Botones prominentes para confirmar precio o reportar discrepancia.
+
+![Validación](./assets/mockups/m_validacion.png)
+
+![Validación 2](./assets/mockups/m_validacion2.png)
+
+---
+
+**8. Perfil**
+
+Sección de gestión de usuario con avatar, secciones organizadas con iconografía, toggles de configuración, y panel de estadísticas de ahorro acumulado. Diseño que transmite confianza y control al usuario.
+
+![Perfil](./assets/mockups/m_perfil.png)
+
+---
+
+**9. Notificaciones**
+
+Lista de alertas con iconos representativos diferenciados por tipo, timestamps de recepción, y badges de no leídos. Diseño que prioriza la legibilidad y acciones rápidas.
+
+![Notificaciones](./assets/mockups/m_notificacion.png)
+
+---
+
+**10. Eliminar Cuenta**
+
+Pantalla de advertencia con icono de precaución, campos de confirmación que requieren acción explícita del usuario, y botón de acción danger para eliminación permanente. Diseño que previene eliminaciones accidentales.
+
+![Eliminar Cuenta](./assets/mockups/m_eliminar_cuenta.png)
+
+La navegación inferior mantiene los 5 ítems principales: Inicio, Comparar, Rutas, Validar y Perfil, ahora con iconografía de marca.
+
+---
+
+**App Tablet (Comerciantes y Administradores)**
+
+**1. Login Comerciante**
+
+Formulario de autenticación simplificado con logo centrado, campos de email y contraseña, y botón de acceso. Diseño profesional orientado a eficiencia.
+
+![Login Comerciante](./assets/mockups/t_login.png)
+
+---
+
+**2. Registro Comerciante**
+
+Formulario de registro en columna con campos de información empresarial, términos y condiciones checkbox, y botón de crear cuenta. Diseño que transmite seriedad empresarial.
+
+![Registro Comerciante](./assets/mockups/t_registro.png)
+
+---
+
+**3. Registro Sucursal**
+
+Wizard de 3 pasos numerados para el alta de nueva sucursal, con mapa interactivo para ubicación geográfica, toggles de servicios disponibles (delivery, pickup, horario). Interfaz que guía al usuario en el proceso.
+
+![Registro Sucursal](./assets/mockups/t_registro_sucursal.png)
+
+---
+
+**4. Dashboard**
+
+Panel principal con 4 cards de métricas clave en formato visual atractivo (visitas, ofertas activas, productos escaneados, conversiones), 3 secciones inferiores con tablas de datos y gráficos de tendencias. Dashboard orientado a toma de decisiones.
+
+![Dashboard](./assets/mockups/t_dashboard.png)
+
+---
+
+**5. Gestión Catálogo**
+
+Interfaz con tabs de categorías de productos, tabla editable con listados de productos, y drag handles para reordenar elementos. Diseño funcional para gestión eficiente del inventario.
+
+![Gestión Catálogo](./assets/mockups/t_gest_catalogo.png)
+
+---
+
+**6. Gestión Ofertas**
+
+Vista de cards de ofertas activas con información de vigencia y temporizadores visuales de tiempo restante, modal flotante para crear nuevas ofertas. Diseño que incentiva la creación de promociones.
+
+![Gestión Ofertas](./assets/mockups/t_gest_ofertas.png)
+
+---
+
+**7. QR Tienda**
+
+Código QR de la tienda en tamaño destacado, panel de estadísticas de escaneos diarios con gráficos, toggles de configuración de alertas. Elemento de marketing para el establecimiento.
+
+![QR Tienda](./assets/mockups/t_qr_tienda.png)
+
+---
+
+**8. Soporte**
+
+Formulario de reporte de incidentes con campos estructurados, lista de tickets abiertos con indicadores de estado (pendiente, en proceso, resuelto), y información de contacto del equipo de soporte. Diseño que transmite soporte confiable.
+
+![Soporte](./assets/mockups/t_soporte.png)
+
+El diseño de la App Tablet utiliza un layout con sidebar lateral y sistema de tabs para navegación entre módulos, adaptándose al contexto de uso profesional.
+
+---
+
+#### 3.1.4.4. Mobile Applications User Flow Diagrams
+App Móvil (Usuario Consumidor)
+Goal 1: Autenticación y Registro
+El usuario debe poder registrarse mediante email/contraseña o redes sociales (Google, Apple), aceptar términos y condiciones, y recuperar contraseña si es necesario.
+
+![UserFlow](./assets/user-flow-diagram/apgoal1.png)
+
+Goal 2: Gestión de Lista de Compras
+El consumidor crea, edita y mantiene listas de productos. Agrega items con cantidad y categoría, modifica o elimina, guarda para uso futuro, repite compras anteriores, comparte con familia y exporta en PDF.
+
+![UserFlow](./assets/user-flow-diagram/apgoal2.png)
+
+Goal 3: Comparación de Precios
+El usuario compara precios entre establecimientos cercanos. Interfaz con mapa, ranking de precios, filtros por formato (supermercado/conveniencia), categoría y distancia. Compara por unidad de medida ($/kg), recibe sugerencias de marca blanca y marca tiendas favoritas.
+
+![UserFlow](./assets/user-flow-diagram/apgoal3.png)
+
+Goal 4: Optimización de Ruta de Compra
+El usuario obtiene una ruta optimizada para minimizar tiempo y transporte. Mapa con puntos numerados, cálculo de tiempo estimado, brújula de orientación, lista de productos con checkboxes, filtro de tiendas 24h.
+
+![UserFlow](./assets/user-flow-diagram/apgoal4.png)
+
+Goal 5: Validación de Precios en Punto de Venta
+El usuario valida precios escaneando productos por código de barras o subiendo foto del ticket completo. Reporta discrepancias o ofertas falsas para actualizar la base de datos comunitaria y ganar puntos.
+
+![UserFlow](./assets/user-flow-diagram/apgoal5.png)
+
+Goal 6: Gestión de Perfil y Personalización
+El usuario administra datos personales, configura preferencias de marcas y categorías, ajusta interfaz (modo oscuro), visualiza estadísticas de ahorro acumulado, revisa logros y canjea puntos por vales de descuento.
+
+![UserFlow](./assets/user-flow-diagram/apgoal6.png)
+
+Goal 7: Notificaciones y Alertas
+El consumidor recibe alertas cuando su lista está más barato en otra cadena, notificaciones de ofertas flash, y avisos de afluencia en supermercados. Puede marcar como leídas y configurar preferencias.
+
+![UserFlow](./assets/user-flow-diagram/apgoal7.png)
+
+Goal 8: Eliminación de Cuenta
+El usuario solicita eliminación permanente de su cuenta con confirmación explícita mediante campos de texto, evitando eliminaciones accidentales.
+
+![UserFlow](./assets/user-flow-diagram/apgoal8.png)
+
+App Tablet (Comerciante)
+Goal 1: Registro de Comerciante
+El administrador crea cuenta empresarial con información de la empresa (nombre, RUC, dirección, categoría), datos de contacto y acepta términos y condiciones.
+
+![UserFlow](./assets/user-flow-diagram/atgoal1.png)
+
+Goal 2: Registro de Sucursal(es)
+El comerciante da de alta sucursales mediante proceso guiado: ubicación en mapa interactivo, selección de servicios (delivery, pickup, horario) y gestión de horarios especiales.
+
+![UserFlow](./assets/user-flow-diagram/atgoal2.png)
+
+Goal 3: Gestión del Catálogo de Productos
+El usuario administra el inventario: agregar, editar y eliminar productos; organizar por categorías; actualizar precios individuales o masivos por CSV; gestionar stock.
+
+![UserFlow](./assets/user-flow-diagram/atgoal3.png)
+
+Goal 4: Gestión de Ofertas Promocionales
+El comerciante crea ofertas relámpago o promociones temporales definiendo descuento, fechas de vigencia, productos afectados y visualiza temporizadores de tiempo restante.
+
+![UserFlow](./assets/user-flow-diagram/atgoal4.png)
+
+Goal 5: Monitoreo de Métricas del Dashboard
+Panel con indicadores clave: visitas diarias, ofertas activas, productos más escaneados, análisis de demanda por zona, comparación con competidores y alertas de posicionamiento.
+
+![UserFlow](./assets/user-flow-diagram/atgoal5.png)
+
+Goal 6: Gestión del Código QR de Tienda
+Código QR único para que clientes accedan a información de la tienda. El comerciante descarga en alta resolución, configura alertas de escaneo y visualiza estadísticas de uso.
+
+![UserFlow](./assets/user-flow-diagram/atgoal6.png)
+
+Goal 7: Soporte Técnico y Gestión de Incidentes
+Usuario reporta problemas mediante tickets de soporte, consulta estado (pendiente, en proceso, resuelto) y accede a contacto del equipo de soporte.
+
+![UserFlow](./assets/user-flow-diagram/atgoal7.png)
+
+#### 3.1.4.5. Mobile Applications Prototyping
+Esta sección presenta los prototipos de alta fidelidad para las dos aplicaciones que conforman el ecosistema de SmartCart. Se han diseñado considerando los principios de usabilidad, accesibilidad y las necesidades específicas de cada segmento de usuario identificado en las etapas previas del proyecto.
+Las decisiones de diseño para ambos prototipos se basaron en los siguientes criterios técnicos:
+- Se estructuró el contenido priorizando las tareas frecuentes (Búsqueda y Comparación para el usuario; Monitoreo de Ventas para el comercio), reduciendo la profundidad de los clics necesarios para alcanzar los User Goals.
+- Sistema de Navegación:
+Mobile: Se implementó un Tab Bar inferior para facilitar el alcance ergonómico en dispositivos móviles (Ley de Fitts).
+Tablet: Se optó por un Navigation Drawer (Sidebar) lateral para aprovechar el ancho de pantalla y permitir el cambio rápido de contexto administrativo.
+- Affordance y Visibilidad del Estado: Se utilizaron microinteracciones y estados visuales (como etiquetas de color en ofertas y sombras en botones) para que el usuario reciba retroalimentación inmediata sobre sus acciones.
+- Consistencia Visual: Ambos sistemas comparten una identidad visual basada en el "Azul SmartCart", garantizando una experiencia de marca unificada pero adaptada a la densidad de datos que requiere cada plataforma.
+#### Prototipo App Móvil (Segmento 1: Consumidor Final)
+El prototipo móvil se enfoca en la agilidad y el ahorro. Permite al usuario planificar sus compras y validar información en tiempo real.
+![prototyping interviews](./assets/prototyping-interviews/segmento1.png)
+[Enlace al video]([https://tu-enlace.com](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a118_upc_edu_pe/IQDZqH9c9gE6Tr8sBL5FrYt1AeGTpwKbWwN7fyumcZQ_z4I?e=ZZTv4L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))
+#### Prototipo SmartCart Business (Segmento 2: Comerciante) 
+La aplicación para tablet/web está diseñada para la gestión operativa y el análisis de datos estratégicos.
+![prototyping interviews](./assets/prototyping-interviews/segmento2.png)
+[Enlace al video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a118_upc_edu_pe/IQAkLCdqe41DQLNvTpn6faDXAbNv4ebR3DVq_l5XkrNmnIA?e=nTh7NC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+<hr class="page-break">
+
+# Capítulo IV: Product Implementation & Validation
+
+Este capítulo aborda la implementación y validación de la plataforma SmartCart. Se detallan las herramientas y tecnologías empleadas en el desarrollo del software, además de los procesos de configuración y administración del proyecto. Asimismo, se presentan los sprints ejecutados, las funcionalidades desarrolladas y los resultados alcanzados.
+
+## 4.1. Software Configuration Management
+
+En esta sección se detallan las herramientas y procedimientos empleados para la gestión de la configuración del software, abarcando el control de versiones, la configuración de entornos y el proceso de despliegue.
+
+### 4.1.1. Software Development Environment Configuration
+
+En esta sección se describen las herramientas de software seleccionadas para dar soporte a las distintas fases del ciclo de vida del producto digital. Se incluyen sus nombres, objetivos específicos dentro del proyecto y los enlaces de acceso o descarga, diferenciando entre soluciones SaaS y aplicaciones instalables.
+
+**Project Management**
+
+| **Herramienta** | **Uso Principal**                                                                                                            | **Enlace / Ruta de Acceso**              |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
+| **Trello**      | Plataforma utilizada para organizar y administrar tareas, entregables y actividades del equipo mediante metodologías ágiles. | [https://trello.com](https://trello.com) |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta** | **Uso Principal**                                                                                                              | **Enlace / Ruta de Acceso**                    |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **UXPressia**   | Herramienta empleada para elaborar User Personas, Empathy Maps, Journey Maps e Impact Maps orientados al análisis de usuarios. | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Uso Principal**                                                                                                                                                            | **Enlace / Ruta de Acceso**                    |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **Miro**        | Plataforma colaborativa utilizada para desarrollar artefactos: Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases and Context Maps. | [https://miro.com](https://miro.com)           |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta**          | **Propósito**                                                                                                  | **Enlace / Ruta de Acceso**                                                            |
+|--------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **Structurizr DSL**      | Herramienta orientada a la creación de diagramas de arquitectura basados en el modelo C4 mediante código.      | [https://structurizr.com/dsl](https://structurizr.com/dsl)                             |
+| **PlantUML**             | Software utilizado para generar diagramas UML a partir de sintaxis textual integrada en documentación técnica. | [https://plantuml.com](https://plantuml.com)                                           |
+| **Redgate Data MOdeler** | Plataforma visual utilizada para modelar y estructurar bases de datos relacionales de forma profesional.       | [https://datamodeler.redgate-platform.com/](https://datamodeler.redgate-platform.com/) |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta** | **Propósito**                                                                                                | **Enlace / Ruta de Acceso**                      |
+|-----------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| **Figma**       | Herramienta colaborativa empleada para diseñar wireframes, mockups y prototipos interactivos de la interfaz. | [https://figma.com](https://figma.com)           |
+| **Lucidchart**  | Plataforma utilizada para elaborar wireflows y diagramas de flujo de usuarios.                               | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                                | **Enlace / Ruta de Descarga**                                                                          |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **WebStorm**                 | Entorno de desarrollo empleado para construir la landing pagedel proyecto utilizando HTML5, CSS3, JavaScript y Tailwind CSS. | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm)                               |
+| **IntelliJ IDEA**            | IDE utilizado para desarrollar el servicio REST API con Java y Spring Boot.                                                  | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                       |
+| **Android Studio**           | Entorno de desarrollo utilizado para crear la aplicación móvil nativa para Android con Kotlin y Jetpack Compose.             | [https://developer.android.com/studio](https://developer.android.com/studio)                           |
+| **HTML5**                    | Lenguaje de marcado utilizado para definir la estructura semántica del contenido en la landing page.                         | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML)             |
+| **CSS3**                     | Lenguaje de estilos utilizado para definir la apariencia visual de la landing page.                                          | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS)               |
+| **JavaScript**               | Lenguaje de programación usado para manipular el DOM y permitir la internacionalización del contenido en la landing page.    | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Java**                     | Lenguaje de programación utilizado para desarrollar el backend del servicio REST API.                                        | [https://www.oracle.com/java](https://www.oracle.com/java)                                             |
+| **Spring Boot**              | Framework basado en Java utilizado para implementar el servicio REST API de manera eficiente.                                | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)                       |
+| **Kotlin**                   | Lenguaje de programación utilizado para el desarrollo de la aplicación móvil nativa en Android.                              | [https://kotlinlang.org](https://kotlinlang.org)                                                       |
+| **Jetpack Compose**          | Toolkit moderno utilizado para crear interfaces declarativas en aplicaciones Android.                                        | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)         |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                | **Enlace / Ruta de Descarga**                                        |
+|------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **Gherkin**                  | Lenguaje utilizado para redactar criterios de aceptación de las User Stories de manera clara y estructurada. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Propósito**                                                                                         | **Enlace / Ruta de Acceso**                        |
+|------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| **Netlify**                  | Plataforma utilizada para realizar el despliegue automático y gratuito de la landing page.            | [https://www.netlify.com](https://www.netlify.com) |
+| **Railway**                  | Servicio empleado para desplegar automáticamente el servicio REST API mediante un entorno en la nube. | [https://railway.app](https://railway.app)         |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Propósito**                                                                                                                                                                        | **Enlace / Ruta de Acceso**                                                                                        |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **IntelliJ IDEA**         | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensiones para visualización previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                                   |
+| **Visual Studio Code**    | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensión para exportación formateada de Markdown a PDF.     | [https://code.visualstudio.com](https://code.visualstudio.com)                                                     |
+| **Markdown**              | Lenguaje de marcado ligero utilizado para redactar la documentación técnica del proyecto.                                                                                            | [https://www.markdownguide.org](https://www.markdownguide                                                          |
+| **Git**                   | Sistema de control de versiones empleado para gestionar y registrar cambios en el código fuente.                                                                                     | [https://git-scm.com](https://git-scm.com)                                                                         |
+| **GitHub**                | Plataforma de alojamiento de repositorios utilizada para el control de versiones y la documentación colaborativa.                                                                    | [https://github.com](https://github.com)                                                                           |
+| **GitFlow Workflow**      | Estrategia de ramificación utilizada para mantener organizados el desarrollo y la documentación del proyecto.                                                                        | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits**  | Convención de nomenclatura de commits utilizada para mejorar la trazabilidad y generación de changelogs.                                                                             | [https://www.conventionalcommits.org](https://www.conventionalcommits.org)                                         |
+| **Semantic Versioning**   | Sistema de versionado utilizado para asignar versiones coherentes a las releases del software.                                                                                       | [https://semver.org](https://semver.org)                                                                           |
+
+
+
+### 4.1.2. Source Code Management
+
+El equipo empleará GitHub como repositorio de alojamiento y Git como sistema de control de versiones para todos los entregables del proyecto SmartCart. Se aplicará la estrategia de ramificación GitFlow Workflow, con el uso de Semantic Versioning y mensajes estructurados bajo la convención de Conventional Commits.
+
+**Repositorios del Proyecto**
+
+| **Producto**                | **Repositorio GitHub**                                                                                       |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------|
+| Organización Flowstate Tech | [https://github.com/orgs/FlowState-Tech/repositories](https://github.com/orgs/FlowState-Tech/repositories)   |
+| Report                      | [https://github.com/FlowState-Tech/smartcart-report](https://github.com/FlowState-Tech/smartcart-report)     | 
+| Landing Page                | [https://github.com/FlowState-Tech/smartcart-landing](https://github.com/FlowState-Tech/smartcart-landing)   |
+| Android Native-Mobile App   | [https://github.com/FlowState-Tech/smartcart-merchant](https://github.com/FlowState-Tech/smartcart-merchant) |
+| RESTful API                 | [https://github.com/FlowState-Tech/smartcart-api](https://github.com/FlowState-Tech/smartcart-api)           |
+
+**Modelo GitFlow**
+Se seguirá el enfoque planteado por Vincent Driessen, el cual define dos ramas principales:
+
+* main: contiene las versiones estables listas para producción.
+* develop: integra nuevas funcionalidades antes de pasar al entorno de producción.
+
+| **Tipo de rama** | **Uso principal**                                | **Convención de nombres**      | **Ejemplo**               |
+|------------------|--------------------------------------------------|--------------------------------|---------------------------|
+| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-salim`   |
+| **release**      | Preparación de una versión previa al despliegue. | `release/vX.Y.Z`               | `release/v1.0.0`          |
+| **hotfix**       | Corrección rápida de errores en producción.      | `hotfix/<problema>`            | `hotfix/fix-crash-navbar` |
+
+**Versionado Semántico**
+
+Se implementará el esquema Semantic Versioning 2.0.0, con el formato:
+
+**MAJOR.MINOR.PATCH**
+
+* **MAJOR**: cambios incompatibles con versiones anteriores.
+
+* **MINOR**: incorporación de nuevas funciones compatibles.
+
+* **PATCH**: corrección de errores o mejoras menores.
+
+#### Conventional Commits
+
+Los mensajes de commit seguirán el estándar Conventional Commits para asegurar trazabilidad y generar changelogs automáticos.
+
+**Formato general:**
+<tipo>(opcional-scope): descripción breve
+
+* Tipos de commit definidos:
+
+* feat: nueva funcionalidad
+
+* fix: corrección de errores
+
+* docs: cambios en documentación
+
+* style: ajustes de formato (espacios, comas, etc.)
+
+* refactor: modificaciones de código sin impacto en funciones o errores
+
+* test: adición o modificación de pruebas
+
+* chore: tareas de mantenimiento o generales
+
+### 4.1.3. Source Code Style Guide & Conventions
+
+Con el objetivo de mantener un código ordenado, consistente y fácil de mantener entre todos los miembros del equipo, se han definido las siguientes convenciones. Todas las variables, funciones, clases, archivos y elementos estarán en inglés.
+
+- Se utilizará **inglés** como idioma único para nombres de variables, funciones, clases, comentarios y documentación.
+- Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
+
+**HTML**
+Atributos en minúsculas y nombres de clase con **kebab-case** (`section-title`, `main-container`).
+- Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangría con 2 espacios.
+- Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
+
+**CSS**
+
+- Para clases personalizadas: usar **kebab-case**.
+- Se agruparán clases de utilidad por orden lógico (layout -> spacing -> color -> typography).
+
+**JavaScript (Google Style Guide)**
+
+Siguiendo los lineamientos de Google para JavaScript, el equipo aplica las siguientes normas para garantizar la legibilidad del código:
+
+* **Nomenclatura y Escritura:** Se emplea **camelCase** para identificar variables y métodos, mientras que las clases y constructores utilizan **PascalCase**. Las constantes de alcance global se definen en `UPPER_CASE_WITH_UNDERSCORES`.
+* **Gestión de Módulos:** Se priorizan las **importaciones explícitas**, organizándolas jerárquicamente (librerías de terceros primero, luego archivos locales). Se restringe el uso de `default exports` en favor de exportaciones con nombre.
+* **Patrones de Desarrollo:** Se fomenta el uso de `const` como opción predeterminada frente a `let`, eliminando el uso de `var`. Asimismo, la lógica compleja se extrae a servicios para mantener los componentes limpios.
+
+**Java & Spring Boot**
+
+Para el desarrollo del Backend (enfocado en los contextos de *Store Management*, *Verification* e *IAM*), se utilizan las convenciones oficiales de Oracle y Spring:
+
+* **Estándares de Sintaxis:** Se aplica **camelCase** para miembros de clase y **PascalCase** para interfaces y clases. Los paquetes deben estructurarse en minúsculas (ej. `com.smartcart.store`).
+* **Arquitectura de Código:** Cada entidad reside en un archivo independiente, promoviendo métodos de responsabilidad única. La configuración y dependencias se gestionan mediante anotaciones nativas de Spring.
+* **Calidad del Servicio:** La lógica de negocio reside exclusivamente en la capa de servicios, no en los controladores. Se requiere el manejo global de errores y la documentación de endpoints mediante Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Para el segmento de comerciantes en la aplicación móvil, se siguen las convenciones oficiales de Kotlin y las mejores prácticas de Android:
+
+* **Reglas de Nombramiento:** Se utiliza **camelCase** para funciones y variables, reservando **PascalCase** para la definición de clases y objetos. Las constantes siguen el formato de `UPPER_CASE_WITH_UNDERSCORES`.
+* **Diseño de UI y Estructura:** Se emplea la anotación `@Composable` para definir los elementos de la interfaz, asegurando que cada función sea breve y específica.
+* **Gestión de Estado:** Se evita incluir lógica compleja dentro de los archivos de UI; esta se delega a los **ViewModels**. Se utiliza `State` y `MutableState` para el manejo reactivo de los datos y KDoc para la documentación técnica.
+
+### 4.1.4. Software Deployment Configuration
+
+En esta sección se describen las herramientas y procedimientos utilizados para configurar el despliegue del software, incluyendo la selección de plataformas de hosting, estrategias de integración continua y entrega continua (CI/CD), así como los pasos específicos para realizar el despliegue de cada componente del proyecto.
+
+| Producto     | Plataforma de despliegue | Propósito                                                                                                                                                          | Enlace / Ruta de acceso                            |
+|--------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Landing Page | Netlify                  | Plataforma utilizada para realizar el despliegue automático y gratuito de la landing page. Permite integración con repositorios GitHub para despliegues continuos. | [https://www.netlify.com](https://www.netlify.com) |
+| REST API     | Railway                  | Servicio empleado para desplegar automáticamente el servicio REST API mediante un entorno en la nube. Permite integración con GitHub para CI/CD.                   | [https://railway.app](https://railway.app)         |
+
+**Netlify (Landing Page)**
+Para el despliegue de la Landing Page, se utiliza Netlify, una plataforma especializada en el alojamiento de aplicaciones frontend y sitios estáticos que permite la integración de despliegue continuo (CD). El flujo de configuración establecido es el siguiente:
+
+1. **Vinculación de Repositorio:** Se conecta la cuenta de Netlify con el repositorio de GitHub donde reside el código de la landing page.
+2. **Creación del Sitio:** Se crea un nuevo proyecto dentro de la plataforma seleccionando el repositorio específico del equipo.
+3. **Control de Versiones:** Se define la rama de producción (comúnmente `main` o `develop`) para activar el despliegue automático tras cada actualización.
+4. **Parámetros de Build:** Se configuran los comandos de construcción (ej. `npm run build`) y se apunta a la carpeta de salida generada (ej. `dist/` o `build/`).
+5. [cite_start]**Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
+
+**Railway (Backend Services)**
+La implementación y gestión de las APIs REST se realiza a través de Railway, una plataforma de infraestructura que simplifica el despliegue de servicios backend para múltiples lenguajes y frameworks. El proceso de despliegue configurado incluye:
+
+1. **Conexión con GitHub:** Se enlaza la plataforma con el repositorio que contiene los servicios del backend (Java/Spring Boot).
+2. **Gestión de Proyectos:** Se inicia un nuevo proyecto en Railway vinculado al código fuente correspondiente.
+3. **Automatización de Despliegues:** Se establece la rama de despliegue para asegurar que los cambios aprobados en el repositorio se reflejen en vivo inmediatamente.
+4. **Configuración de Entorno:** Se definen las variables de entorno críticas (credenciales de base de datos, claves de API) para el funcionamiento correcto de los Bounded Contexts.
+5. **Ejecución y Monitoreo:** Una vez guardados los ajustes, Railway ejecuta el despliegue automático, garantizando que el backend esté disponible para ser consumido por las aplicaciones móviles.
+
+## 4.2. Landing Page & Mobile Application Implementation
+
+### 4.2.1. Sprint 1
+
+#### 4.2.1.1. Sprint Planning 1
+
+
+| Campo | Descripción |
+| :--- | :--- |
+| **Sprint #** | Sprint 1 |
+| **Sprint Planning Background** | |
+| **Date** | 2026-05-12 |
+| **Time** | 03:00 PM (GMT -5) |
+| **Location** | Modalidad remota por Google Meet |
+| **Prepared By** | FlowState Tech |
+| **Attendees (to planning meeting)** | Anjali Amaro Villar, Joseph Manuel Chavez Viera, Katherine Maryory Mejia Aliaga, Kevin Patrick Pardo Chumpitazi, Stephano Renan Valdivia Quispe |
+| **Sprint 0 Review Summary** | Este es el primer sprint, por lo tanto, no hay una revisión de sprint anterior. |
+| **Sprint 0 Retrospective Summary** | Se validaron los 18 wireframes de baja fidelidad para los segmentos de usuarios y comerciantes. Se identificó la necesidad de implementar un diseño responsivo para la Landing Page que capture la propuesta de valor del ahorro de tiempo y dinero. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 1 Goal** | Desplegar una Landing Page funcional con diseño responsivo y habilitar el registro base para el segmento de comerciantes. |
+| **Sprint 1 Velocity** | 35 |
+| **Sum of Story Points** | 35 |
+
+
+
+
+
+
+#### 4.2.1.2. Sprint Backlog 1
+
+El Sprint Backlog 1 representa la ejecución de las tareas planificadas para el primer ciclo de desarrollo de **SmartCart**. Durante este periodo, el equipo se enfocó en consolidar la identidad digital a través de la Landing Page y en establecer los cimientos operativos para el segmento de comerciantes.
+
+El uso de **Trello** como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
+
+**Captura del Tablero Trello (Fin del Sprint 1):**
+
+<div align="center">
+  <img src="assets/imagenes/trello-sprint-1.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+  <p><i>Figura 1.4.1: Estado final de las tareas del Sprint 1 en Trello</i></p>
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US01** | Visualizar beneficios de ahorro en la landing page | T1 | Diseño y maquetación | Desarrollo de la sección de beneficios con comparativa de precios y ahorro inteligente. | 4 | Kevin Patrick Pardo Chumpitazi | Done |
+| **US02** | Conocer el flujo de funcionamiento de SmartCart | T1 | Sección instructiva | Implementación de la guía paso a paso para usuarios finales sobre el uso de la aplicación. | 3 | Kevin Patrick Pardo Chumpitazi | Done |
+| **US03** | Registrar sucursal como socio comercial | T1 | Formulario de registro | Creación del formulario de registro para comerciantes y validación de campos técnicos. | 6 | Katherine Maryory Mejia Aliaga | Done |
+| **US03** | Registrar sucursal como socio comercial | T2 | Lógica de persistencia | Implementación de la lógica de guardado de datos en la base de datos inicial. | 4 | Stephano Renan Valdivia Quispe | Done |
+| **US04** | Visualizar dashboard de métricas comerciales | T1 | Interfaz de dashboard | Diseño de la interfaz de usuario para tablets enfocada en métricas de venta y stock. | 5 | Anjali Amaro Villar | Done |
+| **US04** | Visualizar dashboard de métricas comerciales | T2 | Gráficos base | Implementación de componentes visuales para representación de datos de ventas diarias. | 4 | Joseph Manuel Chavez Viera | Done |
+| **US05** | Gestionar el catálogo inicial de productos | T1 | Modelo de datos | Creación de las tablas y relaciones para el inventario inicial de productos y categorías. | 5 | Stephano Renan Valdivia Quispe | Done |
+| **US05** | Gestionar el catálogo inicial de productos | T2 | Interfaz de carga | Desarrollo de la pantalla básica para que el comerciante pueda listar sus productos. | 6 | Anjali Amaro / Joseph Chavez | Done |
+| **TS01** | Documentar el proceso de despliegue en GitHub Pages | T1 | Guía de despliegue | Redacción de los pasos necesarios para el despliegue automático del proyecto web. | 2 | Kevin Patrick Pardo Chumpitazi | Done |
+| **TS02** | Configuración de entorno de base de datos | T1 | Script SQL | Creación de scripts para la estructura de tablas inicial del segmento de comerciantes. | 4 | Stephano Renan Valdivia Quispe | Done |
+
+
+
+
+
+
+
+
+
+
+
+
+#### 4.2.1.3. Development Evidence for Sprint Review
+
+
+
+
+#### 4.2.1.4. Testing Suite Evidence for Sprint Review
+
+#### 4.2.1.5. Execution Evidence for Sprint Review
+
+#### 4.2.1.6. Services Documentation Evidence for Sprint Review
+
+#### 4.2.1.7. Software Deployment Evidence for Sprint Review
+
+**Landing Page Deployment Evidence:**
+
+A continuación se muestra la evidencia paso a paso del proceso de despliegue de la landing page utilizando Netlify, desde la vinculación del repositorio hasta la confirmación de la URL pública.
+
+1. **Inicio de sesión en Netlify:**
+![img](assets/deployment/landing/1.png)
+
+2. **Dar click en "Add new project:"**
+   ![img](assets/deployment/landing/2.png)
+
+3. **Seleccionar "Import a Git repository":**
+   ![img](assets/deployment/landing/3.png)
+
+4. **Se escoge el repositorio de la Landing Page:**
+   ![img](assets/deployment/landing/4.png)
+
+5. **Se coloca el nombre del sitio y se selecciona la rama de despliegue:**
+   ![img](assets/deployment/landing/5.png)
+
+6. **Esperar a que Netlify realice el despliegue automático:**
+   ![img](assets/deployment/landing/6.png)
+
+7. **Confirmar que el despliegue fue exitoso y obtener la URL pública:**
+   ![img](assets/deployment/landing/7.png)
+
+Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+
+
+**Api REST Deployment Evidence:**
+
+A continución se muestra la evidencia paso a paso del proceso de despliegue del servicio REST API utilizando Railway, desde la vinculación del repositorio hasta la confirmación de que el servicio está en ejecución.
+
+1. **Nos encontramos en la página principal de Railway, damos click en "Deploy":**
+![img](assets/deployment/backend/1.png)
+
+2. **Seleccionamos "Github Repository":**
+   ![img](assets/deployment/backend/2.png)
+
+3. **Seleccionamos el repositorio del servicio REST API:**
+   ![img](assets/deployment/backend/3.png)
+
+4. **Seleccionamos la rama de despliegue:**
+   ![img](assets/deployment/backend/4.png)
+
+5. **El despliegue automatico falla debido a que no encuentra una instancia activa de PostgreSQL**
+   ![img](assets/deployment/backend/5.png)
+
+6. **Creamos una nueva instancia de PostgreSQL en Railway:**
+   ![img](assets/deployment/backend/6.png)
+
+7. **Copiamos las variables de entorno de la base de datos**
+   ![img](assets/deployment/backend/7.png)
+
+8. **Agregamos las variables de entorno a la configuración del proyecto:**
+   ![img](assets/deployment/backend/8.png)
+
+9. **Guardamos los cambios y esperamos a que Railway realice el despliegue automático**
+   ![img](assets/deployment/backend/9.png)
+
+10. **Confirmamos que el despliegue fue exitoso y que el servicio está en ejecución:**
+    ![img](assets/deployment/backend/10.png)
+
+
+Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
+
+#### 4.2.1.8. Team Collaboration Insights during Sprint
+
+## 4.3. Validation Interviews
+
+### 4.3.1. Diseño de Entrevistas
+En esta sección se establece la estructura de las sesiones de validación para SmartCart. El diseño se centra en observar cómo los usuarios interactúan con la interfaz y si logran completar tareas críticas utilizando los prototipos de alta fidelidad, asegurando que la navegación sea intuitiva y lógica.
+#### Elementos de la Sesión de Validación
+Las sesiones se realizarán de manera individual siguiendo esta estructura:
+Exploración de Landing Page: Validación de la arquitectura de información (Secciones: Hero, Beneficios, FAQ, Sobre nosotros y Colaboradores). Se busca confirmar si el usuario entiende el modelo de ahorro y colaboración.
+Validación de User Flows: Ejecución de tareas específicas en los prototipos, donde el equipo observará la facilidad de navegación y la claridad de los botones y alertas.
+Recolección de Feedback: Registro de las apreciaciones del usuario sobre el diseño visual y la utilidad de las funciones presentadas.
+#### Especificación de User Flows para Validación
+Segmento 1: Consumidores Finales (Shoppers Planificadores)
+- Flujo 1: Registro y Gestión de Perfil: El usuario simula el alta en la aplicación y la navegación hacia la configuración de preferencias de marcas y modo oscuro (Goals 1 y 6).
+- Flujo 2: Creación de Lista y Comparativa: El usuario agrega productos a una lista de compras y utiliza la interfaz de ranking para identificar qué establecimiento ofrece el precio más bajo (Goals 2 y 3).
+- Flujo 3: Visualización de Ruta y Simulación de Reporte: El usuario accede al mapa para ver la ruta de compra sugerida y simula el reporte de un precio presionando el botón de "Escanear/Subir Foto", llegando hasta la pantalla de confirmación de "Puntos Ganados" (Goals 4 y 5).
+Segmento 2: Establecimientos de Retail (Comerciantes).
+- Flujo 1: Registro y Alta de Sucursal: El comerciante completa el formulario de datos empresariales (RUC) y simula la ubicación de su tienda en el mapa interactivo (Goals 1 y 2).
+- Flujo 2: Gestión de Catálogo y Ofertas: El usuario navega por la sección de inventario, selecciona un producto para editar su precio y activa una "Oferta Relámpago" configurando el tiempo de vigencia (Goals 3 y 4).
+- Flujo 3: Lectura de Métricas: El usuario accede al Dashboard principal e identifica visualmente cuál es el producto con mayor demanda en su zona según los indicadores presentados (Goal 5).
+#### Metodología de Validación
+Se aplicará la técnica de Escenarios de Uso. En lugar de dar instrucciones directas, se le planteará una situación al usuario (ej. "Deseas saber cuántas personas han visto tus ofertas hoy") para observar si encuentra la sección de métricas de forma natural. Cualquier error o duda del usuario durante el flujo será documentado como un hallazgo para la evaluación heurística posterior.
+
+### 4.3.2. Registro de Entrevistas
+
+### 4.3.3. Evaluaciones según heurísticas
+
+<hr class="page-break">
+
 ## Conclusiones
 
 SmartCart se presenta como una respuesta innovadora frente a las deficiencias del comercio físico tradicional, integrando con éxito la gestión de presupuestos con la asistencia logística en tiempo real. Mediante el análisis de mercado y el feedback directo de los entrevistados, se ha ratificado que la herramienta no solo agiliza el proceso de adquisición, sino que maximiza el ahorro del usuario a través de un sistema de navegación y comparación inteligente. Esta coherencia entre las demandas del sector y las capacidades de la plataforma garantiza un impacto positivo tanto en el ahorro del consumidor como en el posicionamiento estratégico de los establecimientos locales.
@@ -3105,5 +4596,9 @@ Por otro lado, la adopción de una arquitectura basada en Spring Boot y Angular 
 
 
 # Anexos
+
+Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
+
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
