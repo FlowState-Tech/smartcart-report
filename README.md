@@ -4458,7 +4458,7 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 
 #### 4.2.1.3. Development Evidence for Sprint Review
 
-#### 4.2.1.4. Testing Suite Evidence for Sprint Review
+Se presenta la evidencia del dessarrollo mediante commits en los siguientes repositorios: 
 
 **Landing Page**
 
@@ -4466,8 +4466,217 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 
 **SmartCart Merchant**
 
+#### 4.2.1.4. Testing Suite Evidence for Sprint Review
+
+### 4.2.1.4. Testing Suite Evidence for Sprint Review
+
+En esta sección se explica y presenta el conjunto de Unit Tests, Integration Tests y Acceptance Tests automatizados para los Web Services relacionados con las User Stories especificadas en este Sprint. Estas pruebas garantizan la integridad del flujo lógico, el mapeo correcto de datos estructurados complejos y el cumplimiento estricto de las reglas de negocio en el backend.
+
+#### Historial de Commits de Testing
+A continuación, se incluye la relación de los commits registrados en el repositorio de control de versiones que contienen los avances de pruebas automatizadas para este Sprint:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smarcart-api | develop | `9c2e934` | feat: add unit tests for store registration functionality | Implemented unit tests for StoreServiceImpl using Mockito to validate the creation logic and state assignment. | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | `45c75af` | feat: add integration test for store creation endpoint | Configured MockMvc integration tests to verify endpoint routing, HTTP 201 status, and JSON payload response. | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | `ea4ba73` | feat: add feature file for store registration scenarios | Created Gherkin feature file and step definitions mapping acceptance criteria E1, E2, and E3 for US10. | 16/05/2026 |
+
+---
+
+#### 1. Unit Tests (Pruebas Unitarias)
+
+* **Clase Relacionada:** `StoreServiceImpl`
+* **Comportamiento Evaluado:** Verificación aislada de la lógica de negocio al registrar una sucursal empleando estructuras anidadas (`Address` y `OperatingHour`). Valida mediante *mocks* que los datos se procesen de manera íntegra, se invoque la persistencia en el repositorio y se asigne correctamente el estado inicial por defecto `PENDING_VERIFICATION`.
+
+```java
+package com.smartcart.testing;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.util.List;
+
+@ExtendWith(MockitoExtension.class)
+class StoreUnitTesting {
+
+    @Mock
+    private StoreRepository storeRepository;
+
+    @InjectMocks
+    private StoreServiceImpl storeService;
+
+    @Test
+    void givenComplexStoreData_whenRegisterStore_thenReturnSavedStoreWithPendingStatus() {
+        // Arrange
+        Address address = new Address("Av. Prolongación San Juan 456", "San Juan de Miraflores", -12.156, -76.983);
+        List<OperatingHour> hours = List.of(new OperatingHour("Monday", "08:00", "22:00"));
+
+        Store storeInput = new Store("M-999", "Metro - Monterrico", "20100435671", address, hours);
+        Store storeSaved = new Store(101L, "M-999", "Metro - Monterrico", "20100435671", address, hours, "PENDING_VERIFICATION");
+
+        when(storeRepository.save(any(Store.class))).thenReturn(storeSaved);
+
+        // Act
+        Store result = storeService.registerStore(storeInput);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(101L, result.getId());
+        assertEquals("PENDING_VERIFICATION", result.getStatus());
+        assertEquals("San Juan de Miraflores", result.getAddress().getDistrict());
+        verify(storeRepository, times(1)).save(storeInput);
+    }
+}
+```
+
+---
+
+#### 2. Integration Tests (Pruebas de Integración)
+
+* **Endpoint Evaluado:** `POST /api/v1/store-management/stores`
+* **Comportamiento Evaluado:** Validación integral de las rutas de enrutamiento del controlador, políticas de serialización/deserialización Jackson, y seguridad en la capa de transporte HTTP. La prueba simula una petición de red entrante con un objeto JSON jerárquico real y comprueba que la API responda con el código REST `201 Created` y los parámetros esperados en el cuerpo de la respuesta.
+
+```java
+package com.upc.smartcart.testing.integration;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+class StoreIntegrationTesting {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void givenComplexStoreJson_whenPostToStoresEndpoint_thenReturn201Created() throws Exception {
+        // Estructura idéntica al payload real de la documentación
+        String jsonRequestBody = "{\n" +
+                "  \"merchantId\": \"M-999\",\n" +
+                "  \"name\": \"Metro - Monterrico\",\n" +
+                "  \"ruc\": \"20100435671\",\n" +
+                "  \"address\": {\n" +
+                "    \"street\": \"Av. Prolongación San Juan 456\",\n" +
+                "    \"district\": \"San Juan de Miraflores\",\n" +
+                "    \"latitude\": -12.156,\n" +
+                "    \"longitude\": -76.983\n" +
+                "  },\n" +
+                "  \"operatingHours\": [\n" +
+                "    {\n" +
+                "      \"day\": \"Monday\",\n" +
+                "      \"open\": \"08:00\",\n" +
+                "      \"close\": \"22:00\"\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
+
+        mockMvc.perform(post("/api/v1/store-management/stores")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonRequestBody))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.storeId").value(101))
+                .andExpect(jsonPath("$.status").value("PENDING_VERIFICATION"));
+    }
+}
+```
+
+---
+
+#### 3. Acceptance Tests (Pruebas de Aceptación - BDD)
+
+* **User Story Relacionada:** `US10: Registro de Sucursal`
+* **Definición de Escenarios (Gherkin):** Automatización con enfoque de desarrollo guiado por comportamiento para mapear directamente las expectativas comerciales del cliente. Modela la validación inicial del RUC de la empresa (E1), el correcto geoposicionamiento espacial dentro de Lima (E2), y las reglas de seguridad críticas para el negocio que impiden el registro duplicado por colisión de coordenadas espaciales exactas en el mapa (E3).
+
+```gherkin
+# Relacionado con la US10: Registro de Sucursal
+# Actor: Gerente Tienda | Prioridad: Alta | Épica: EP02
+
+Característica: Registro de Sucursal
+  Como gerente de sucursal, deseo registrar mi tienda de conveniencia para que aparezca en el mapa.
+
+  Escenario: E1: Validación de RUC de la cadena
+    Dado que el gerente ingresa el RUC de la cadena
+    Cuando el sistema valida con el cuerpo JSON:
+      """
+      {
+        "merchantId": "M-999",
+        "name": "Metro - Monterrico",
+        "ruc": "20100435671",
+        "address": {
+          "street": "Av. San Jinés 123",
+          "district": "Santiago de Surco",
+          "latitude": -12.112,
+          "longitude": -77.014
+        },
+        "operatingHours": [
+          { "day": "Monday", "open": "08:00", "close": "22:00" }
+        ]
+      }
+      """
+    Entonces permite añadir la ubicación específica de la sucursal.
+
+  Escenario: E2: Posicionamiento geográfico exacto de un local nuevo
+    Dado un local nuevo
+    Cuando se registra la dirección en Surquillo con el cuerpo JSON:
+      """
+      {
+        "merchantId": "M-102",
+        "name": "Tienda Tambo Surquillo",
+        "ruc": "20601234567",
+        "address": {
+          "street": "Av. Angamos Este 456",
+          "district": "Surquillo",
+          "latitude": -12.118,
+          "longitude": -77.021
+        },
+        "operatingHours": [
+          { "day": "Everyday", "open": "00:00", "close": "23:59" }
+        ]
+      }
+      """
+    Entonces el sistema lo posiciona geográficamente de forma exacta.
+
+  Escenario: E3: Denegación de registro por duplicidad de coordenadas
+    Dado que la sucursal ya existe
+    Cuando el sistema detecta la duplicidad por coordenadas con el cuerpo JSON:
+      """
+      {
+        "merchantId": "M-105",
+        "name": "Tienda Clon Coordenadas",
+        "ruc": "20601234567",
+        "address": {
+          "street": "Av. Angamos Este 456",
+          "district": "Surquillo",
+          "latitude": -12.118,
+          "longitude": -77.021
+        },
+        "operatingHours": []
+      }
+      """
+    Entonces deniega el nuevo registro.
+```
 #### 4.2.1.5. Execution Evidence for Sprint Review
 
+
+**Landing Page**
+
+**Api REST**
+
+**SmartCart Merchant**
 
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
