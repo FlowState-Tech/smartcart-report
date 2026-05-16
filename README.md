@@ -4608,6 +4608,59 @@ Se aplicará la técnica de Escenarios de Uso. En lugar de dar instrucciones dir
 
 ### 4.3.2. Registro de Entrevistas
 
+A continuación se presenta el registro de las tres entrevistas realizadas con comerciantes para la validación de la aplicación SmartCart.
+
+---
+
+**Entrevista N°1 - Carlos Mendoza Rivera**
+
+| **Campo** | **Información** |
+|------------|-----------------|
+| **Nombre completo** | Carlos Mendoza Rivera |
+| **Edad** | 38 años |
+| **Distrito** | Surquillo |
+| **Ocupación** | Administrador de tienda de conveniencia (Tambo+) |
+| **Fecha de entrevista** | Abril 2026 |
+| **Duración** | 22 minutos |
+| **Screenshot** | *(Insertar imagen del cuadro de video)* |
+| **URL del video** | https://drive.google.com/drive/folders/1Lfzl5KwwCxDEWqaUkiD3h6g9XGZQz53E |
+| **Timing de inicio** | 00:00 - Introducción |
+| **Timing de duración** | 00:00 - 22:00 |
+
+---
+
+**Entrevista N°2 - Ana Sofía Quiroz Valdez**
+
+| **Campo** | **Información** |
+|------------|-----------------|
+| **Nombre completo** | Ana Sofía Quiroz Valdez |
+| **Edad** | 45 años |
+| **Distrito** | Lince |
+| **Ocupación** | Gerente de tienda (Plaza Vea) |
+| **Fecha de entrevista** | Abril 2026 |
+| **Duración** | 24 minutos |
+| **Screenshot** | *(Insertar imagen del cuadro de video)* |
+| **URL del video** | https://drive.google.com/drive/folders/1Lfzl5KwwCxDEWqaUkiD3h6g9XGZQz53E |
+| **Timing de inicio** | 00:00 - Introducción |
+| **Timing de duración** | 00:00 - 24:00 |
+
+---
+
+**Entrevista N°3 - Miguel Ángel Torres Huamán**
+
+| **Campo** | **Información** |
+|------------|-----------------|
+| **Nombre completo** | Miguel Ángel Torres Huamán |
+| **Edad** | 52 años |
+| **Distrito** | San Juan de Lurigancho |
+| **Ocupación** | Propietario de tienda de abarrotes (Minimarket Miguel) |
+| **Fecha de entrevista** | Abril 2026 |
+| **Duración** | 18 minutos |
+| **Screenshot** | *(Insertar imagen del cuadro de video)* |
+| **URL del video** | https://drive.google.com/drive/folders/1Lfzl5KwwCxDEWqaUkiD3h6g9XGZQz53E |
+| **Timing de inicio** | 00:00 - Introducción |
+| **Timing de duración** | 00:00 - 18:00 |
+
 ### 4.3.3. Evaluaciones según heurísticas
 La evaluación heurística permite identificar problemas de usabilidad en una interfaz mediante el análisis sistemático contra principios establecidos. Para el segmento de comerciantes, se aplicó el método de evaluación de Nielsen con los 10 principios de usabilidad, evaluando los hallazgos recopilados durante las tres entrevistas de validación.
 
