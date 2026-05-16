@@ -1660,7 +1660,6 @@ El flujo de actualización de inventario permite que el Merchant mantenga su ofe
 * Se recalcula el **`StockStatus`**, notificando mediante un servicio de mensajería a los usuarios que tengan el producto en su lista de favoritos si este vuelve a estar disponible.
 
 #### 2.6.3.4. Infrastructure Layer
-#### 2.6.3.4. Infrastructure Layer
 
 La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios, mensajería, persistencia) y la capa anticorrupción (ACL) que aísla a **Store Management** de los modelos externos y servicios gubernamentales.
 
@@ -3388,6 +3387,9 @@ La implementación y gestión de las APIs REST se realiza a través de Railway, 
 #### 4.2.1.2. Sprint Backlog 1
 
 #### 4.2.1.3. Development Evidence for Sprint Review
+
+
+
 
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
 
