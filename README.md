@@ -3438,8 +3438,100 @@ En esta sección se presenta el diseño de alta fidelidad (Mock-up) de la Landin
 #### 3.1.4.3. Mobile Applications Mock-ups
 
 #### 3.1.4.4. Mobile Applications User Flow Diagrams
+App Móvil (Usuario Consumidor)
+Goal 1: Autenticación y Registro
+El usuario debe poder registrarse mediante email/contraseña o redes sociales (Google, Apple), aceptar términos y condiciones, y recuperar contraseña si es necesario.
+
+![UserFlow](./assets/user-flow-diagram/apgoal1.png)
+
+Goal 2: Gestión de Lista de Compras
+El consumidor crea, edita y mantiene listas de productos. Agrega items con cantidad y categoría, modifica o elimina, guarda para uso futuro, repite compras anteriores, comparte con familia y exporta en PDF.
+
+![UserFlow](./assets/user-flow-diagram/apgoal2.png)
+
+Goal 3: Comparación de Precios
+El usuario compara precios entre establecimientos cercanos. Interfaz con mapa, ranking de precios, filtros por formato (supermercado/conveniencia), categoría y distancia. Compara por unidad de medida ($/kg), recibe sugerencias de marca blanca y marca tiendas favoritas.
+
+![UserFlow](./assets/user-flow-diagram/apgoal3.png)
+
+Goal 4: Optimización de Ruta de Compra
+El usuario obtiene una ruta optimizada para minimizar tiempo y transporte. Mapa con puntos numerados, cálculo de tiempo estimado, brújula de orientación, lista de productos con checkboxes, filtro de tiendas 24h.
+
+![UserFlow](./assets/user-flow-diagram/apgoal4.png)
+
+Goal 5: Validación de Precios en Punto de Venta
+El usuario valida precios escaneando productos por código de barras o subiendo foto del ticket completo. Reporta discrepancias o ofertas falsas para actualizar la base de datos comunitaria y ganar puntos.
+
+![UserFlow](./assets/user-flow-diagram/apgoal5.png)
+
+Goal 6: Gestión de Perfil y Personalización
+El usuario administra datos personales, configura preferencias de marcas y categorías, ajusta interfaz (modo oscuro), visualiza estadísticas de ahorro acumulado, revisa logros y canjea puntos por vales de descuento.
+
+![UserFlow](./assets/user-flow-diagram/apgoal6.png)
+
+Goal 7: Notificaciones y Alertas
+El consumidor recibe alertas cuando su lista está más barato en otra cadena, notificaciones de ofertas flash, y avisos de afluencia en supermercados. Puede marcar como leídas y configurar preferencias.
+
+![UserFlow](./assets/user-flow-diagram/apgoal7.png)
+
+Goal 8: Eliminación de Cuenta
+El usuario solicita eliminación permanente de su cuenta con confirmación explícita mediante campos de texto, evitando eliminaciones accidentales.
+
+![UserFlow](./assets/user-flow-diagram/apgoal8.png)
+
+App Tablet (Comerciante)
+Goal 1: Registro de Comerciante
+El administrador crea cuenta empresarial con información de la empresa (nombre, RUC, dirección, categoría), datos de contacto y acepta términos y condiciones.
+
+![UserFlow](./assets/user-flow-diagram/atgoal1.png)
+
+Goal 2: Registro de Sucursal(es)
+El comerciante da de alta sucursales mediante proceso guiado: ubicación en mapa interactivo, selección de servicios (delivery, pickup, horario) y gestión de horarios especiales.
+
+![UserFlow](./assets/user-flow-diagram/atgoal2.png)
+
+Goal 3: Gestión del Catálogo de Productos
+El usuario administra el inventario: agregar, editar y eliminar productos; organizar por categorías; actualizar precios individuales o masivos por CSV; gestionar stock.
+
+![UserFlow](./assets/user-flow-diagram/atgoal3.png)
+
+Goal 4: Gestión de Ofertas Promocionales
+El comerciante crea ofertas relámpago o promociones temporales definiendo descuento, fechas de vigencia, productos afectados y visualiza temporizadores de tiempo restante.
+
+![UserFlow](./assets/user-flow-diagram/atgoal4.png)
+
+Goal 5: Monitoreo de Métricas del Dashboard
+Panel con indicadores clave: visitas diarias, ofertas activas, productos más escaneados, análisis de demanda por zona, comparación con competidores y alertas de posicionamiento.
+
+![UserFlow](./assets/user-flow-diagram/atgoal5.png)
+
+Goal 6: Gestión del Código QR de Tienda
+Código QR único para que clientes accedan a información de la tienda. El comerciante descarga en alta resolución, configura alertas de escaneo y visualiza estadísticas de uso.
+
+![UserFlow](./assets/user-flow-diagram/atgoal6.png)
+
+Goal 7: Soporte Técnico y Gestión de Incidentes
+Usuario reporta problemas mediante tickets de soporte, consulta estado (pendiente, en proceso, resuelto) y accede a contacto del equipo de soporte.
+
+![UserFlow](./assets/user-flow-diagram/atgoal7.png)
 
 #### 3.1.4.5. Mobile Applications Prototyping
+Esta sección presenta los prototipos de alta fidelidad para las dos aplicaciones que conforman el ecosistema de SmartCart. Se han diseñado considerando los principios de usabilidad, accesibilidad y las necesidades específicas de cada segmento de usuario identificado en las etapas previas del proyecto.
+Las decisiones de diseño para ambos prototipos se basaron en los siguientes criterios técnicos:
+- Se estructuró el contenido priorizando las tareas frecuentes (Búsqueda y Comparación para el usuario; Monitoreo de Ventas para el comercio), reduciendo la profundidad de los clics necesarios para alcanzar los User Goals.
+- Sistema de Navegación:
+Mobile: Se implementó un Tab Bar inferior para facilitar el alcance ergonómico en dispositivos móviles (Ley de Fitts).
+Tablet: Se optó por un Navigation Drawer (Sidebar) lateral para aprovechar el ancho de pantalla y permitir el cambio rápido de contexto administrativo.
+- Affordance y Visibilidad del Estado: Se utilizaron microinteracciones y estados visuales (como etiquetas de color en ofertas y sombras en botones) para que el usuario reciba retroalimentación inmediata sobre sus acciones.
+- Consistencia Visual: Ambos sistemas comparten una identidad visual basada en el "Azul SmartCart", garantizando una experiencia de marca unificada pero adaptada a la densidad de datos que requiere cada plataforma.
+#### Prototipo App Móvil (Segmento 1: Consumidor Final)
+El prototipo móvil se enfoca en la agilidad y el ahorro. Permite al usuario planificar sus compras y validar información en tiempo real.
+![prototyping interviews](./assets/prototyping-interviews/segmento1.png)
+[Enlace al video]([https://tu-enlace.com](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a118_upc_edu_pe/IQDZqH9c9gE6Tr8sBL5FrYt1AeGTpwKbWwN7fyumcZQ_z4I?e=ZZTv4L&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))
+#### Prototipo SmartCart Business (Segmento 2: Comerciante) 
+La aplicación para tablet/web está diseñada para la gestión operativa y el análisis de datos estratégicos.
+![prototyping interviews](./assets/prototyping-interviews/segmento2.png)
+[Enlace al video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221a118_upc_edu_pe/IQAkLCdqe41DQLNvTpn6faDXAbNv4ebR3DVq_l5XkrNmnIA?e=nTh7NC&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 <hr class="page-break">
 
@@ -3827,6 +3919,23 @@ Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.ra
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
+En esta sección se establece la estructura de las sesiones de validación para SmartCart. El diseño se centra en observar cómo los usuarios interactúan con la interfaz y si logran completar tareas críticas utilizando los prototipos de alta fidelidad, asegurando que la navegación sea intuitiva y lógica.
+#### Elementos de la Sesión de Validación
+Las sesiones se realizarán de manera individual siguiendo esta estructura:
+Exploración de Landing Page: Validación de la arquitectura de información (Secciones: Hero, Beneficios, FAQ, Sobre nosotros y Colaboradores). Se busca confirmar si el usuario entiende el modelo de ahorro y colaboración.
+Validación de User Flows: Ejecución de tareas específicas en los prototipos, donde el equipo observará la facilidad de navegación y la claridad de los botones y alertas.
+Recolección de Feedback: Registro de las apreciaciones del usuario sobre el diseño visual y la utilidad de las funciones presentadas.
+#### Especificación de User Flows para Validación
+Segmento 1: Consumidores Finales (Shoppers Planificadores)
+- Flujo 1: Registro y Gestión de Perfil: El usuario simula el alta en la aplicación y la navegación hacia la configuración de preferencias de marcas y modo oscuro (Goals 1 y 6).
+- Flujo 2: Creación de Lista y Comparativa: El usuario agrega productos a una lista de compras y utiliza la interfaz de ranking para identificar qué establecimiento ofrece el precio más bajo (Goals 2 y 3).
+- Flujo 3: Visualización de Ruta y Simulación de Reporte: El usuario accede al mapa para ver la ruta de compra sugerida y simula el reporte de un precio presionando el botón de "Escanear/Subir Foto", llegando hasta la pantalla de confirmación de "Puntos Ganados" (Goals 4 y 5).
+Segmento 2: Establecimientos de Retail (Comerciantes).
+- Flujo 1: Registro y Alta de Sucursal: El comerciante completa el formulario de datos empresariales (RUC) y simula la ubicación de su tienda en el mapa interactivo (Goals 1 y 2).
+- Flujo 2: Gestión de Catálogo y Ofertas: El usuario navega por la sección de inventario, selecciona un producto para editar su precio y activa una "Oferta Relámpago" configurando el tiempo de vigencia (Goals 3 y 4).
+- Flujo 3: Lectura de Métricas: El usuario accede al Dashboard principal e identifica visualmente cuál es el producto con mayor demanda en su zona según los indicadores presentados (Goal 5).
+#### Metodología de Validación
+Se aplicará la técnica de Escenarios de Uso. En lugar de dar instrucciones directas, se le planteará una situación al usuario (ej. "Deseas saber cuántas personas han visto tus ofertas hoy") para observar si encuentra la sección de métricas de forma natural. Cualquier error o duda del usuario durante el flujo será documentado como un hallazgo para la evaluación heurística posterior.
 
 ### 4.3.2. Registro de Entrevistas
 
@@ -3882,4 +3991,3 @@ Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.ra
 
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
-* Acceso al 
