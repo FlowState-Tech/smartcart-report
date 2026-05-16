@@ -4458,17 +4458,14 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 
 #### 4.2.1.3. Development Evidence for Sprint Review
 
-Se presenta la evidencia del dessarrollo mediante commits en los siguientes repositorios: 
+En esta seccion se ve la evidencia del desarrollo mediante los commits: 
 
 **Landing Page**
 
-**Api REST**
+**Api Rest** 
 
-**SmartCart Merchant**
 
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
-
-### 4.2.1.4. Testing Suite Evidence for Sprint Review
 
 En esta sección se explica y presenta el conjunto de Unit Tests, Integration Tests y Acceptance Tests automatizados para los Web Services relacionados con las User Stories especificadas en este Sprint. Estas pruebas garantizan la integridad del flujo lógico, el mapeo correcto de datos estructurados complejos y el cumplimiento estricto de las reglas de negocio en el backend.
 
@@ -4669,14 +4666,29 @@ Característica: Registro de Sucursal
       """
     Entonces deniega el nuevo registro.
 ```
+
 #### 4.2.1.5. Execution Evidence for Sprint Review
 
+Se evidencia la ejecucion de los productos
 
 **Landing Page**
 
+![img_5.png](img_5.png)
+![img_6.png](img_6.png)
+![img_7.png](img_7.png)
+
 **Api REST**
 
+![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+
 **SmartCart Merchant**
+
+![img_11.png](img_11.png)
+![img_12.png](img_12.png)
+![img_13.png](img_13.png)
+
 
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
