@@ -4461,8 +4461,59 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 En esta seccion se ve la evidencia del desarrollo mediante los commits: 
 
 **Landing Page**
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-landing | main | `2932d1e` | cambios listos | Ajustes finales en el layout responsivo de la landing page y optimización de recursos gráficos antes del empaquetado. | 15/05/2026 |
+| flowstate-tech/smartcart-landing | main | `4c15730` | ultimo cambio | Corrección de estilos CSS menores en la sección de testimonios y actualización de enlaces de redirección en el footer. | 15/05/2026 |
+| flowstate-tech/smartcart-landing | main | `129c6ed` | Create README.md | Inicialización del archivo de documentación principal del repositorio con la descripción del producto y guías de ejecución local. | 13/05/2026 |
+| flowstate-tech/smartcart-landing | main | `b9dd025` | fix: Navbar bug solved | Solución de un error de alineación en la barra de navegación para resoluciones móviles y corrección del comportamiento del menú desplegable. | 12/05/2026 |
+| flowstate-tech/smartcart-landing | main | `8026f81` | ultimos cambios | Integración de etiquetas de metadatos SEO, Open Graph para redes sociales y estructuración del formulario de contacto. | 12/05/2026 |
+| flowstate-tech/smartcart-landing | main | `6302d59` | initial commit | Configuración inicial de la estructura del proyecto web base, incluyendo archivos de configuración y árbol de directorios de assets. | 12/05/2026 |
+
 
 **Api Rest** 
+
+| flowstate-tech/smarcart-api | develop | 9c2e934 | feat: add unit tests for store registration functionality |  | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | 45c75af | feat: add integration test for store creation endpoint |  | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | ea4ba73 | feat: add feature file for store registration scenarios |  | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | 35da3ec | merge: integrate experience management into develop |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 98390d5 | merge: integrate shopping-journey into develop |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 9d7e06f | merge: integrate store management into develop |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 971c7b5 | feat: implement StoreQueryService and StoreProfileResponse assembler; add repository and SQL for store analytics |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 85ff26d | feat: implement StoreCommandService for store registration and legal status translation; add related DTOs and controller endpoints |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 89bd4c5 | feat: add StoreAnalytics read model and repository; implement response assembler for analytics data |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | e828d65 | feat: implement Store aggregate with RUC and SKU value objects; add StockPoint entity and StoreAnalytics query service |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 8844152 | feat: add product clearance event and stock response models; implement store registration command and request resources |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 619ec6a | feat: add value objects for legal status, money, and opening hours; implement price item and product entities |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 6706809 | feat: add inventory bulk processing and command services with exception handling |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | bb498ea | feat: implement inventory management records and clearance processing |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | b538878 | feat: add Address value object and command classes for product clearance and bulk upload responses |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | d7da2f0 | feat: implement Experience bounded context with endpoints for consumers and merchants |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | a4a55b7 | feat: add experience bounded context folder structure |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 0c6cc49 | chore: integracion de cambios en el repositorio de shopping journey |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 83d3905 | feat(shoppingjourney): implementacion de endpoints POST y GET con arquitectura DDD |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 0f979bb | feat: add development and production server configurations to OpenAPI |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 9aaf4a2 | feat: add Dockerfile and .dockerignore for containerization |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 04ffd2d | merge: integrate develop into main |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | bc37dc1 | feat: update application properties for environment variable configuration |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | bdaf211 | merge: integrate shopping journey management into develop |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | bdaf211 | merge: integrate shopping journey management into develop |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | f12adb2 | merge: insert notification management into develop |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | d013572 | feat: refactor ShoppingCartCommandServiceImpl and ShoppingCartRepository to extend JpaRepository |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | cf4e3a4 | feat(shoppingjourney): implement base layered architecture and shopping cart entity |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | 3846507 | feat: add notification |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4abf5cc | merge: integrate iam-management into develop |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 2c98060 | feat: add iam controllers |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | f5cf317 | feat: enhance auditing and error logging in security filters |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4984a45 | feat: enable security debug logging in application properties |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 5e33845 | chore: rename .gitkeep for IAM directory structure |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4ebc942 | feat: refactor authentication provider initialization in WebSecurityConfiguration |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4bc7572 | feat: implement role management services and event handling |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | c977fd1 | feat: implement JWT authentication and authorization services |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 11b639b | feat: add RoleRepository for role entity operations |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 634ed66 | feat: add UserRepository for user entity operations |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 74a1215 | feat: add command and query services for user and role management |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 9b628bf | feat: add query classes for retrieving users and roles |  | 12/05/2026 |
 
 
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
