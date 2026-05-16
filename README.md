@@ -4459,7 +4459,10 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 
 #### 4.2.1.5. Execution Evidence for Sprint Review
 
-Aqui se presenta la documentación de los endpoints dessarrolllados para este primer entregable: 
+
+#### 4.2.1.6. Services Documentation Evidence for Sprint Review
+
+Aqui se presenta la documentación de los endpoints dessarrolllados para este primer entregable:
 
 | Endpoint (Verbo + Sintaxis) | Acciones Implementadas / Descripción | Enlaces (URL Local Swagger) | Especificación de Parámetros | Ejemplo y Explicación del Response |
 | :--- | :--- | :--- | :--- | :--- |
@@ -4491,7 +4494,6 @@ Aqui se presenta la documentación de los endpoints dessarrolllados para este pr
 | **PATCH** `/api/v1/experience/stores/{storeId}/price-errors/{errorId}/confirm` | Permite resolver una alerta de precio, ya sea aceptando la discrepancia o rechazando el reporte. | `http://localhost:8080/swagger-ui/index.html#/Experience/confirmPriceError` | **Path:** `storeId` (int), `errorId` (int)<br>**Body (JSON):**<br>- `action` (string: CONFIRMED/REJECTED) | <pre>{\n  "errorId": 88,\n  "resolution": "CONFIRMED",\n  "updatedInventoryPrice": 19.90\n}</pre>**Explicación:** Modificación parcial del estado del reporte con código `200 OK`. |
 | **GET** `/api/v1/experience/stores/{storeId}/trust-profile` | Retorna el nivel e insignia de fiabilidad comercial calculado para la sucursal. | `http://localhost:8080/swagger-ui/index.html#/Experience/getTrustProfile` | **Path:** `storeId` (int) | <pre>{\n  "storeId": 101,\n  "tier": "HIGHLY_TRUSTED",\n  "accuracyPercentage": 98.2\n}</pre>**Explicación:** Devuelve el estatus de confianza del local comercial con código `200 OK`. |
 
-#### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
 #### 4.2.1.7. Software Deployment Evidence for Sprint Review
 
