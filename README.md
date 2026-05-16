@@ -241,8 +241,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico                                                                                                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                   | Conclusiones |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Investigué y apliqué la metodología Lean UX para estructurar el Canvas y las hipótesis de solución, basándome en los requerimientos compartidos por el equipo para el proyecto SmartCart.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
-| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto .    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Identifiqué la necesidad de aprender nuevas técnicas de Needfinding para organizar la información recibida del grupo y transformarla en los perfiles de User Personas y la Task Matrix.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *TB1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto .    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *TB1:*Transformé los perfiles de User Personas y la Task Matrix en una API funcional documentada en Swagger, gestionando la creación de endpoints REST y la resolución de conflictos técnicos para asegurar la integridad del repositorio grupal.   <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
 
 <hr class="page-break">
 
@@ -3171,9 +3171,38 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 ## 3.1. Product design
 
+En esta sección, se detalla el diseño del producto como un aspecto fundamental en la estructura del sistema, enfocándose en los elementos clave que definen su forma y funcionamiento. El diseño de SmartCart se ha creado para garantizar que cada parte del software cumpla con las necesidades y metas de ahorro establecidas en las fases anteriores del proyecto.
+
+Con el objetivo de brindar una experiencia de usuario adecuada, se han tomado decisiones relevantes que afectan la interacción entre los usuarios y el sistema, priorizando la claridad en la información financiera y la rapidez en la navegación mediante GPS. Desde un enfoque tecnológico, la implementación visual se fundamenta en el lenguaje de diseño Material Design, lo que permite una transición fluida entre la plataforma web y la aplicación móvil, asegurando la coherencia de las piezas y la identidad de marca de FlowState Tech.
+
+
 ### 3.1.1. Style Guidelines
+En esta sección, el equipo establece las bases para contar con un repositorio central y organizado de recursos visuales de uso común.El objetivo principal es garantizar una presentación consistente y enfocada en todos los productos digitales de SmartCart, facilitando la colaboración entre diseñadores y desarrolladores mediante el uso estandarizado de activos, fuentes y estilos .
 
 #### 3.1.1.1. General Style Guidelines
+
+Estas guías establecen la identidad visual base para todos los productos del ecosistema SmartCart.
+
+**A. Branding & Tono de Comunicación**
+* **Tono:** El lenguaje será **Entusiasta y Sereno**. Queremos que el usuario se sienta motivado por el ahorro pero tranquilo de que la información es veraz.
+* **Lenguaje:** Se utilizará un estilo **Formal/Casual**, directo y fácil de entender para familias y jóvenes profesionales.
+
+**B. Paleta de Colores (Colors)**
+Se ha seleccionado una paleta moderna que evoca tecnología y ahorro inteligente:
+
+| Uso | Color | Hexadecimal | Representación |
+| :--- | :--- | :--- | :--- |
+| **Primario** | Azul Tecnológico | `#4A90E2` | Confianza y estabilidad del sistema. |
+| **Secundario** | Verde Menta | `#50E3C2` | Frescura y agilidad en la experiencia. |
+| **Acento** | Lima Suave | `#B8E986` | Resaltado de ofertas y ahorros logrados. |
+| **Fondo** | Blanco Nieve | `#FFFFFF` | Limpieza visual y legibilidad. |
+
+**C. Tipografía (Typography)**
+* **Títulos:** *Montserrat* (Bold) - Proporciona un aspecto moderno y sólido.
+* **Cuerpo de texto:** *Roboto* (Regular) - Siguiendo los estándares de Material Design para máxima legibilidad en dispositivos móviles.
+
+**D. Espaciado (Spacing)**
+Se aplicará un sistema de rejilla de 8dp (8pt grid) para mantener la consistencia en los márgenes y paddings de todos los componentes UI.
 
 ### 3.1.2. Information Architecture
 
@@ -3361,9 +3390,44 @@ Esta arquitectura cierra el ciclo entre **descubrimiento** (SEO/ASO + landing), 
 
 ### 3.1.3. Landing Page UI Design
 
+En esta sección se detalla el proceso de diseño de la interfaz de usuario para la landing page de SmartCart, mostrando la evolución desde la planificación estructural hasta el diseño final de alta fidelidad.
+
 #### 3.1.3.1. Landing Page Wireframe
 
+Los wireframes de baja fidelidad que se presentan a continuación definen la disposición estructural y la arquitectura de la información de la página. Al utilizar una paleta de escala de grises y marcadores de posición para las imágenes, el enfoque se mantiene exclusivamente en el flujo del usuario y la jerarquía del contenido.
+
+<div align="center">
+
+  <img src="assets/imagenes/parte1.png" alt="Estructura de la Landing Page de SmartCart (Vista Superior - Baja Fidelidad)" width="100%">
+  <p><i>Figura 1.3.1: Estructura de la Landing Page (Vista Superior - Baja Fidelidad)</i></p>
+
+  <br>
+
+  <img src="assets/imagenes/parte2.png" alt="Estructura de la Landing Page de SmartCart (Vista Inferior - Baja Fidelidad)" width="100%">
+  <p><i>Figura 1.3.2: Estructura de la Landing Page (Vista Inferior - Baja Fidelidad)</i></p>
+
+</div>
+
 #### 3.1.3.2. Landing Page Mock-up
+
+En esta sección se presenta el diseño de alta fidelidad (Mock-up) de la Landing Page. A diferencia del wireframe, aquí se aplican los colores de marca, tipografías finales, imágenes reales y mockups de dispositivos para representar el producto final tal como lo verá el usuario.
+
+<div align="center">
+  <img src="assets/imagenes/Landing%20Page%20U.png" alt="Mock-up de alta fidelidad de la Landing Page SmartCart" width="100%">
+  <p><i>Figura 1.3.3: Diseño final de alta fidelidad de la Landing Page (Vista Completa)</i></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 3.1.4. Mobile Applications UX/UI Design
 
@@ -3619,7 +3683,66 @@ La implementación y gestión de las APIs REST se realiza a través de Railway, 
 
 #### 4.2.1.1. Sprint Planning 1
 
+
+| Campo | Descripción |
+| :--- | :--- |
+| **Sprint #** | Sprint 1 |
+| **Sprint Planning Background** | |
+| **Date** | 2026-05-12 |
+| **Time** | 03:00 PM (GMT -5) |
+| **Location** | Modalidad remota por Google Meet |
+| **Prepared By** | FlowState Tech |
+| **Attendees (to planning meeting)** | Anjali Amaro Villar, Joseph Manuel Chavez Viera, Katherine Maryory Mejia Aliaga, Kevin Patrick Pardo Chumpitazi, Stephano Renan Valdivia Quispe |
+| **Sprint 0 Review Summary** | Este es el primer sprint, por lo tanto, no hay una revisión de sprint anterior. |
+| **Sprint 0 Retrospective Summary** | Se validaron los 18 wireframes de baja fidelidad para los segmentos de usuarios y comerciantes. Se identificó la necesidad de implementar un diseño responsivo para la Landing Page que capture la propuesta de valor del ahorro de tiempo y dinero. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 1 Goal** | Desplegar una Landing Page funcional con diseño responsivo y habilitar el registro base para el segmento de comerciantes. |
+| **Sprint 1 Velocity** | 35 |
+| **Sum of Story Points** | 35 |
+
+
+
+
+
+
 #### 4.2.1.2. Sprint Backlog 1
+
+El Sprint Backlog 1 representa la ejecución de las tareas planificadas para el primer ciclo de desarrollo de **SmartCart**. Durante este periodo, el equipo se enfocó en consolidar la identidad digital a través de la Landing Page y en establecer los cimientos operativos para el segmento de comerciantes.
+
+El uso de **Trello** como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
+
+**Captura del Tablero Trello (Fin del Sprint 1):**
+
+<div align="center">
+  <img src="assets/imagenes/trello-sprint-1.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+  <p><i>Figura 1.4.1: Estado final de las tareas del Sprint 1 en Trello</i></p>
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US01** | Visualizar beneficios de ahorro en la landing page | T1 | Diseño y maquetación | Desarrollo de la sección de beneficios con comparativa de precios y ahorro inteligente. | 4 | Kevin Patrick Pardo Chumpitazi | Done |
+| **US02** | Conocer el flujo de funcionamiento de SmartCart | T1 | Sección instructiva | Implementación de la guía paso a paso para usuarios finales sobre el uso de la aplicación. | 3 | Kevin Patrick Pardo Chumpitazi | Done |
+| **US03** | Registrar sucursal como socio comercial | T1 | Formulario de registro | Creación del formulario de registro para comerciantes y validación de campos técnicos. | 6 | Katherine Maryory Mejia Aliaga | Done |
+| **US03** | Registrar sucursal como socio comercial | T2 | Lógica de persistencia | Implementación de la lógica de guardado de datos en la base de datos inicial. | 4 | Stephano Renan Valdivia Quispe | Done |
+| **US04** | Visualizar dashboard de métricas comerciales | T1 | Interfaz de dashboard | Diseño de la interfaz de usuario para tablets enfocada en métricas de venta y stock. | 5 | Anjali Amaro Villar | Done |
+| **US04** | Visualizar dashboard de métricas comerciales | T2 | Gráficos base | Implementación de componentes visuales para representación de datos de ventas diarias. | 4 | Joseph Manuel Chavez Viera | Done |
+| **US05** | Gestionar el catálogo inicial de productos | T1 | Modelo de datos | Creación de las tablas y relaciones para el inventario inicial de productos y categorías. | 5 | Stephano Renan Valdivia Quispe | Done |
+| **US05** | Gestionar el catálogo inicial de productos | T2 | Interfaz de carga | Desarrollo de la pantalla básica para que el comerciante pueda listar sus productos. | 6 | Anjali Amaro / Joseph Chavez | Done |
+| **TS01** | Documentar el proceso de despliegue en GitHub Pages | T1 | Guía de despliegue | Redacción de los pasos necesarios para el despliegue automático del proyecto web. | 2 | Kevin Patrick Pardo Chumpitazi | Done |
+| **TS02** | Configuración de entorno de base de datos | T1 | Script SQL | Creación de scripts para la estructura de tablas inicial del segmento de comerciantes. | 4 | Stephano Renan Valdivia Quispe | Done |
+
+
+
+
+
+
+
+
+
+
+
 
 #### 4.2.1.3. Development Evidence for Sprint Review
 
