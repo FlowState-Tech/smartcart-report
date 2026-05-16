@@ -1660,7 +1660,6 @@ El flujo de actualización de inventario permite que el Merchant mantenga su ofe
 * Se recalcula el **`StockStatus`**, notificando mediante un servicio de mensajería a los usuarios que tengan el producto en su lista de favoritos si este vuelve a estar disponible.
 
 #### 2.6.3.4. Infrastructure Layer
-#### 2.6.3.4. Infrastructure Layer
 
 La capa de infraestructura provee las implementaciones concretas de las interfaces definidas por el dominio (repositorios, mensajería, persistencia) y la capa anticorrupción (ACL) que aísla a **Store Management** de los modelos externos y servicios gubernamentales.
 
@@ -3147,15 +3146,237 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 # Capítulo IV: Product Implementation & Validation
 
+Este capítulo aborda la implementación y validación de la plataforma SmartCart. Se detallan las herramientas y tecnologías empleadas en el desarrollo del software, además de los procesos de configuración y administración del proyecto. Asimismo, se presentan los sprints ejecutados, las funcionalidades desarrolladas y los resultados alcanzados.
+
 ## 4.1. Software Configuration Management
+
+En esta sección se detallan las herramientas y procedimientos empleados para la gestión de la configuración del software, abarcando el control de versiones, la configuración de entornos y el proceso de despliegue.
 
 ### 4.1.1. Software Development Environment Configuration
 
+En esta sección se describen las herramientas de software seleccionadas para dar soporte a las distintas fases del ciclo de vida del producto digital. Se incluyen sus nombres, objetivos específicos dentro del proyecto y los enlaces de acceso o descarga, diferenciando entre soluciones SaaS y aplicaciones instalables.
+
+**Project Management**
+
+| **Herramienta** | **Uso Principal**                                                                                                            | **Enlace / Ruta de Acceso**              |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
+| **Trello**      | Plataforma utilizada para organizar y administrar tareas, entregables y actividades del equipo mediante metodologías ágiles. | [https://trello.com](https://trello.com) |
+
+<br>
+
+**Requirements Management**
+
+| **Herramienta** | **Uso Principal**                                                                                                              | **Enlace / Ruta de Acceso**                    |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **UXPressia**   | Herramienta empleada para elaborar User Personas, Empathy Maps, Journey Maps e Impact Maps orientados al análisis de usuarios. | [https://uxpressia.com](https://uxpressia.com) |
+
+<br>
+
+**Domain-Driven Design Approach**
+
+| **Herramienta** | **Uso Principal**                                                                                                                                                            | **Enlace / Ruta de Acceso**                    |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **Miro**        | Plataforma colaborativa utilizada para desarrollar artefactos: Event Storming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases and Context Maps. | [https://miro.com](https://miro.com)           |
+
+<br>
+
+**Software Architecture Design**
+
+| **Herramienta**          | **Propósito**                                                                                                  | **Enlace / Ruta de Acceso**                                                            |
+|--------------------------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **Structurizr DSL**      | Herramienta orientada a la creación de diagramas de arquitectura basados en el modelo C4 mediante código.      | [https://structurizr.com/dsl](https://structurizr.com/dsl)                             |
+| **PlantUML**             | Software utilizado para generar diagramas UML a partir de sintaxis textual integrada en documentación técnica. | [https://plantuml.com](https://plantuml.com)                                           |
+| **Redgate Data MOdeler** | Plataforma visual utilizada para modelar y estructurar bases de datos relacionales de forma profesional.       | [https://datamodeler.redgate-platform.com/](https://datamodeler.redgate-platform.com/) |
+
+<br>
+
+**Product UX/UI Design**
+
+| **Herramienta** | **Propósito**                                                                                                | **Enlace / Ruta de Acceso**                      |
+|-----------------|--------------------------------------------------------------------------------------------------------------|--------------------------------------------------|
+| **Figma**       | Herramienta colaborativa empleada para diseñar wireframes, mockups y prototipos interactivos de la interfaz. | [https://figma.com](https://figma.com)           |
+| **Lucidchart**  | Plataforma utilizada para elaborar wireflows y diagramas de flujo de usuarios.                               | [https://lucidchart.com](https://lucidchart.com) |
+
+<br>
+
+**Software Development**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                                | **Enlace / Ruta de Descarga**                                                                          |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **WebStorm**                 | Entorno de desarrollo empleado para construir la landing pagedel proyecto utilizando HTML5, CSS3, JavaScript y Tailwind CSS. | [https://www.jetbrains.com/webstorm](https://www.jetbrains.com/webstorm)                               |
+| **IntelliJ IDEA**            | IDE utilizado para desarrollar el servicio REST API con Java y Spring Boot.                                                  | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                       |
+| **Android Studio**           | Entorno de desarrollo utilizado para crear la aplicación móvil nativa para Android con Kotlin y Jetpack Compose.             | [https://developer.android.com/studio](https://developer.android.com/studio)                           |
+| **HTML5**                    | Lenguaje de marcado utilizado para definir la estructura semántica del contenido en la landing page.                         | [https://developer.mozilla.org/docs/Web/HTML](https://developer.mozilla.org/docs/Web/HTML)             |
+| **CSS3**                     | Lenguaje de estilos utilizado para definir la apariencia visual de la landing page.                                          | [https://developer.mozilla.org/docs/Web/CSS](https://developer.mozilla.org/docs/Web/CSS)               |
+| **JavaScript**               | Lenguaje de programación usado para manipular el DOM y permitir la internacionalización del contenido en la landing page.    | [https://developer.mozilla.org/docs/Web/JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) |
+| **Java**                     | Lenguaje de programación utilizado para desarrollar el backend del servicio REST API.                                        | [https://www.oracle.com/java](https://www.oracle.com/java)                                             |
+| **Spring Boot**              | Framework basado en Java utilizado para implementar el servicio REST API de manera eficiente.                                | [https://spring.io/projects/spring-boot](https://spring.io/projects/spring-boot)                       |
+| **Kotlin**                   | Lenguaje de programación utilizado para el desarrollo de la aplicación móvil nativa en Android.                              | [https://kotlinlang.org](https://kotlinlang.org)                                                       |
+| **Jetpack Compose**          | Toolkit moderno utilizado para crear interfaces declarativas en aplicaciones Android.                                        | [https://developer.android.com/jetpack/compose](https://developer.android.com/jetpack/compose)         |
+
+<br>
+
+**Software Testing**
+
+| **Herramienta / Tecnología** | **Propósito**                                                                                                | **Enlace / Ruta de Descarga**                                        |
+|------------------------------|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **Gherkin**                  | Lenguaje utilizado para redactar criterios de aceptación de las User Stories de manera clara y estructurada. | [https://cucumber.io/docs/gherkin](https://cucumber.io/docs/gherkin) |
+
+<br>
+
+**Software Deployment**
+
+| **Herramienta / Plataforma** | **Propósito**                                                                                         | **Enlace / Ruta de Acceso**                        |
+|------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| **Netlify**                  | Plataforma utilizada para realizar el despliegue automático y gratuito de la landing page.            | [https://www.netlify.com](https://www.netlify.com) |
+| **Railway**                  | Servicio empleado para desplegar automáticamente el servicio REST API mediante un entorno en la nube. | [https://railway.app](https://railway.app)         |
+
+<br>
+
+**Software Documentation**
+
+| **Herramienta / Recurso** | **Propósito**                                                                                                                                                                        | **Enlace / Ruta de Acceso**                                                                                        |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **IntelliJ IDEA**         | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensiones para visualización previa de diagramas PlantUML. | [https://www.jetbrains.com/idea](https://www.jetbrains.com/idea)                                                   |
+| **Visual Studio Code**    | Herramienta utilizada para redactar y editar el archivo README.md, relacionada a la documentación del proyecto. Incluye extensión para exportación formateada de Markdown a PDF.     | [https://code.visualstudio.com](https://code.visualstudio.com)                                                     |
+| **Markdown**              | Lenguaje de marcado ligero utilizado para redactar la documentación técnica del proyecto.                                                                                            | [https://www.markdownguide.org](https://www.markdownguide                                                          |
+| **Git**                   | Sistema de control de versiones empleado para gestionar y registrar cambios en el código fuente.                                                                                     | [https://git-scm.com](https://git-scm.com)                                                                         |
+| **GitHub**                | Plataforma de alojamiento de repositorios utilizada para el control de versiones y la documentación colaborativa.                                                                    | [https://github.com](https://github.com)                                                                           |
+| **GitFlow Workflow**      | Estrategia de ramificación utilizada para mantener organizados el desarrollo y la documentación del proyecto.                                                                        | [https://nvie.com/posts/a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model) |
+| **Conventional Commits**  | Convención de nomenclatura de commits utilizada para mejorar la trazabilidad y generación de changelogs.                                                                             | [https://www.conventionalcommits.org](https://www.conventionalcommits.org)                                         |
+| **Semantic Versioning**   | Sistema de versionado utilizado para asignar versiones coherentes a las releases del software.                                                                                       | [https://semver.org](https://semver.org)                                                                           |
+
+
+
 ### 4.1.2. Source Code Management
+
+El equipo empleará GitHub como repositorio de alojamiento y Git como sistema de control de versiones para todos los entregables del proyecto SmartCart. Se aplicará la estrategia de ramificación GitFlow Workflow, con el uso de Semantic Versioning y mensajes estructurados bajo la convención de Conventional Commits.
+
+**Repositorios del Proyecto**
+
+| **Producto**                | **Repositorio GitHub**                                                                                       |
+|-----------------------------|--------------------------------------------------------------------------------------------------------------|
+| Organización Flowstate Tech | [https://github.com/orgs/FlowState-Tech/repositories](https://github.com/orgs/FlowState-Tech/repositories)   |
+| Report                      | [https://github.com/FlowState-Tech/smartcart-report](https://github.com/FlowState-Tech/smartcart-report)     | 
+| Landing Page                | [https://github.com/FlowState-Tech/smartcart-landing](https://github.com/FlowState-Tech/smartcart-landing)   |
+| Android Native-Mobile App   | [https://github.com/FlowState-Tech/smartcart-merchant](https://github.com/FlowState-Tech/smartcart-merchant) |
+| RESTful API                 | [https://github.com/FlowState-Tech/smartcart-api](https://github.com/FlowState-Tech/smartcart-api)           |
+
+**Modelo GitFlow**
+Se seguirá el enfoque planteado por Vincent Driessen, el cual define dos ramas principales:
+
+* main: contiene las versiones estables listas para producción.
+* develop: integra nuevas funcionalidades antes de pasar al entorno de producción.
+
+| **Tipo de rama** | **Uso principal**                                | **Convención de nombres**      | **Ejemplo**               |
+|------------------|--------------------------------------------------|--------------------------------|---------------------------|
+| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-salim`   |
+| **release**      | Preparación de una versión previa al despliegue. | `release/vX.Y.Z`               | `release/v1.0.0`          |
+| **hotfix**       | Corrección rápida de errores en producción.      | `hotfix/<problema>`            | `hotfix/fix-crash-navbar` |
+
+**Versionado Semántico**
+
+Se implementará el esquema Semantic Versioning 2.0.0, con el formato:
+
+**MAJOR.MINOR.PATCH**
+
+* **MAJOR**: cambios incompatibles con versiones anteriores.
+
+* **MINOR**: incorporación de nuevas funciones compatibles.
+
+* **PATCH**: corrección de errores o mejoras menores.
+
+#### Conventional Commits
+
+Los mensajes de commit seguirán el estándar Conventional Commits para asegurar trazabilidad y generar changelogs automáticos.
+
+**Formato general:**
+<tipo>(opcional-scope): descripción breve
+
+* Tipos de commit definidos:
+
+* feat: nueva funcionalidad
+
+* fix: corrección de errores
+
+* docs: cambios en documentación
+
+* style: ajustes de formato (espacios, comas, etc.)
+
+* refactor: modificaciones de código sin impacto en funciones o errores
+
+* test: adición o modificación de pruebas
+
+* chore: tareas de mantenimiento o generales
 
 ### 4.1.3. Source Code Style Guide & Conventions
 
+Con el objetivo de mantener un código ordenado, consistente y fácil de mantener entre todos los miembros del equipo, se han definido las siguientes convenciones. Todas las variables, funciones, clases, archivos y elementos estarán en inglés.
+
+- Se utilizará **inglés** como idioma único para nombres de variables, funciones, clases, comentarios y documentación.
+- Se evitarán abreviaciones innecesarias y nombres genéricos como `data1`, `temp`, `info`, etc.
+
+**HTML**
+Atributos en minúsculas y nombres de clase con **kebab-case** (`section-title`, `main-container`).
+- Estructura semántica clara: uso de etiquetas como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`.
+- Sangría con 2 espacios.
+- Atributos ordenados de manera lógica: `id`, `class`, `type`, `name`, `placeholder`, `value`, `required`, etc.
+
+**CSS**
+
+- Para clases personalizadas: usar **kebab-case**.
+- Se agruparán clases de utilidad por orden lógico (layout -> spacing -> color -> typography).
+
+**JavaScript (Google Style Guide)**
+
+Siguiendo los lineamientos de Google para JavaScript, el equipo aplica las siguientes normas para garantizar la legibilidad del código:
+
+* **Nomenclatura y Escritura:** Se emplea **camelCase** para identificar variables y métodos, mientras que las clases y constructores utilizan **PascalCase**. Las constantes de alcance global se definen en `UPPER_CASE_WITH_UNDERSCORES`.
+* **Gestión de Módulos:** Se priorizan las **importaciones explícitas**, organizándolas jerárquicamente (librerías de terceros primero, luego archivos locales). Se restringe el uso de `default exports` en favor de exportaciones con nombre.
+* **Patrones de Desarrollo:** Se fomenta el uso de `const` como opción predeterminada frente a `let`, eliminando el uso de `var`. Asimismo, la lógica compleja se extrae a servicios para mantener los componentes limpios.
+
+**Java & Spring Boot**
+
+Para el desarrollo del Backend (enfocado en los contextos de *Store Management*, *Verification* e *IAM*), se utilizan las convenciones oficiales de Oracle y Spring:
+
+* **Estándares de Sintaxis:** Se aplica **camelCase** para miembros de clase y **PascalCase** para interfaces y clases. Los paquetes deben estructurarse en minúsculas (ej. `com.smartcart.store`).
+* **Arquitectura de Código:** Cada entidad reside en un archivo independiente, promoviendo métodos de responsabilidad única. La configuración y dependencias se gestionan mediante anotaciones nativas de Spring.
+* **Calidad del Servicio:** La lógica de negocio reside exclusivamente en la capa de servicios, no en los controladores. Se requiere el manejo global de errores y la documentación de endpoints mediante Swagger/OpenAPI.
+
+**Kotlin & Jetpack Compose**
+
+Para el segmento de comerciantes en la aplicación móvil, se siguen las convenciones oficiales de Kotlin y las mejores prácticas de Android:
+
+* **Reglas de Nombramiento:** Se utiliza **camelCase** para funciones y variables, reservando **PascalCase** para la definición de clases y objetos. Las constantes siguen el formato de `UPPER_CASE_WITH_UNDERSCORES`.
+* **Diseño de UI y Estructura:** Se emplea la anotación `@Composable` para definir los elementos de la interfaz, asegurando que cada función sea breve y específica.
+* **Gestión de Estado:** Se evita incluir lógica compleja dentro de los archivos de UI; esta se delega a los **ViewModels**. Se utiliza `State` y `MutableState` para el manejo reactivo de los datos y KDoc para la documentación técnica.
+
 ### 4.1.4. Software Deployment Configuration
+
+En esta sección se describen las herramientas y procedimientos utilizados para configurar el despliegue del software, incluyendo la selección de plataformas de hosting, estrategias de integración continua y entrega continua (CI/CD), así como los pasos específicos para realizar el despliegue de cada componente del proyecto.
+
+| Producto     | Plataforma de despliegue | Propósito                                                                                                                                                          | Enlace / Ruta de acceso                            |
+|--------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| Landing Page | Netlify                  | Plataforma utilizada para realizar el despliegue automático y gratuito de la landing page. Permite integración con repositorios GitHub para despliegues continuos. | [https://www.netlify.com](https://www.netlify.com) |
+| REST API     | Railway                  | Servicio empleado para desplegar automáticamente el servicio REST API mediante un entorno en la nube. Permite integración con GitHub para CI/CD.                   | [https://railway.app](https://railway.app)         |
+
+**Netlify (Landing Page)**
+Para el despliegue de la Landing Page, se utiliza Netlify, una plataforma especializada en el alojamiento de aplicaciones frontend y sitios estáticos que permite la integración de despliegue continuo (CD). El flujo de configuración establecido es el siguiente:
+
+1. **Vinculación de Repositorio:** Se conecta la cuenta de Netlify con el repositorio de GitHub donde reside el código de la landing page.
+2. **Creación del Sitio:** Se crea un nuevo proyecto dentro de la plataforma seleccionando el repositorio específico del equipo.
+3. **Control de Versiones:** Se define la rama de producción (comúnmente `main` o `develop`) para activar el despliegue automático tras cada actualización.
+4. **Parámetros de Build:** Se configuran los comandos de construcción (ej. `npm run build`) y se apunta a la carpeta de salida generada (ej. `dist/` o `build/`).
+5. [cite_start]**Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
+
+**Railway (Backend Services)**
+La implementación y gestión de las APIs REST se realiza a través de Railway, una plataforma de infraestructura que simplifica el despliegue de servicios backend para múltiples lenguajes y frameworks. El proceso de despliegue configurado incluye:
+
+1. **Conexión con GitHub:** Se enlaza la plataforma con el repositorio que contiene los servicios del backend (Java/Spring Boot).
+2. **Gestión de Proyectos:** Se inicia un nuevo proyecto en Railway vinculado al código fuente correspondiente.
+3. **Automatización de Despliegues:** Se establece la rama de despliegue para asegurar que los cambios aprobados en el repositorio se reflejen en vivo inmediatamente.
+4. **Configuración de Entorno:** Se definen las variables de entorno críticas (credenciales de base de datos, claves de API) para el funcionamiento correcto de los Bounded Contexts.
+5. **Ejecución y Monitoreo:** Una vez guardados los ajustes, Railway ejecuta el despliegue automático, garantizando que el backend esté disponible para ser consumido por las aplicaciones móviles.
 
 ## 4.2. Landing Page & Mobile Application Implementation
 
@@ -3167,6 +3388,9 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 #### 4.2.1.3. Development Evidence for Sprint Review
 
+
+
+
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
 
 #### 4.2.1.5. Execution Evidence for Sprint Review
@@ -3174,6 +3398,71 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
 
 #### 4.2.1.7. Software Deployment Evidence for Sprint Review
+
+**Landing Page Deployment Evidence:**
+
+A continuación se muestra la evidencia paso a paso del proceso de despliegue de la landing page utilizando Netlify, desde la vinculación del repositorio hasta la confirmación de la URL pública.
+
+1. **Inicio de sesión en Netlify:**
+![img](assets/deployment/landing/1.png)
+
+2. **Dar click en "Add new project:"**
+   ![img](assets/deployment/landing/2.png)
+
+3. **Seleccionar "Import a Git repository":**
+   ![img](assets/deployment/landing/3.png)
+
+4. **Se escoge el repositorio de la Landing Page:**
+   ![img](assets/deployment/landing/4.png)
+
+5. **Se coloca el nombre del sitio y se selecciona la rama de despliegue:**
+   ![img](assets/deployment/landing/5.png)
+
+6. **Esperar a que Netlify realice el despliegue automático:**
+   ![img](assets/deployment/landing/6.png)
+
+7. **Confirmar que el despliegue fue exitoso y obtener la URL pública:**
+   ![img](assets/deployment/landing/7.png)
+
+Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+
+
+**Api REST Deployment Evidence:**
+
+A continución se muestra la evidencia paso a paso del proceso de despliegue del servicio REST API utilizando Railway, desde la vinculación del repositorio hasta la confirmación de que el servicio está en ejecución.
+
+1. **Nos encontramos en la página principal de Railway, damos click en "Deploy":**
+![img](assets/deployment/backend/1.png)
+
+2. **Seleccionamos "Github Repository":**
+   ![img](assets/deployment/backend/2.png)
+
+3. **Seleccionamos el repositorio del servicio REST API:**
+   ![img](assets/deployment/backend/3.png)
+
+4. **Seleccionamos la rama de despliegue:**
+   ![img](assets/deployment/backend/4.png)
+
+5. **El despliegue automatico falla debido a que no encuentra una instancia activa de PostgreSQL**
+   ![img](assets/deployment/backend/5.png)
+
+6. **Creamos una nueva instancia de PostgreSQL en Railway:**
+   ![img](assets/deployment/backend/6.png)
+
+7. **Copiamos las variables de entorno de la base de datos**
+   ![img](assets/deployment/backend/7.png)
+
+8. **Agregamos las variables de entorno a la configuración del proyecto:**
+   ![img](assets/deployment/backend/8.png)
+
+9. **Guardamos los cambios y esperamos a que Railway realice el despliegue automático**
+   ![img](assets/deployment/backend/9.png)
+
+10. **Confirmamos que el despliegue fue exitoso y que el servicio está en ejecución:**
+    ![img](assets/deployment/backend/10.png)
+
+
+Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
 
 #### 4.2.1.8. Team Collaboration Insights during Sprint
 
@@ -3229,5 +3518,9 @@ Por otro lado, la adopción de una arquitectura basada en Spring Boot y Angular 
 
 
 # Anexos
+
+Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
+
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
