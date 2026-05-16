@@ -186,6 +186,48 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
             - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
             - [2.6.7.5. Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
             - [2.6.7.6. Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
+
+- [Capítulo III: Solution UI/UX Design](#capítulo-iii-solution-uiux-design)
+    - [3.1. Product design](#31-product-design)
+        - [3.1.1. Style Guidelines](#311-style-guidelines)
+            - [3.1.1.1. General Style Guidelines](#3111-general-style-guidelines)
+        - [3.1.2. Information Architecture](#312-information-architecture)
+            - [3.1.2.1. Organization Systems](#3121-organization-systems)
+            - [3.1.2.2. Labelling Systems](#3122-labelling-systems)
+            - [3.1.2.3. SEO Tags and Meta Tags](#3123-seo-tags-and-meta-tags)
+            - [3.1.2.4. Searching Systems](#3124-searching-systems)
+            - [3.1.2.5. Navigation Systems](#3125-navigation-systems)
+        - [3.1.3. Landing Page UI Design](#313-landing-page-ui-design)
+            - [3.1.3.1. Landing Page Wireframe](#3131-landing-page-wireframe)
+            - [3.1.3.2. Landing Page Mock-up](#3132-landing-page-mock-up)
+        - [3.1.4. Mobile Applications UX/UI Design](#314-mobile-applications-uxui-design)
+            - [3.1.4.1. Mobile Applications Wireframes](#3141-mobile-applications-wireframes)
+            - [3.1.4.2. Mobile Applications Wireflow Diagrams](#3142-mobile-applications-wireflow-diagrams)
+            - [3.1.4.3. Mobile Applications Mock-ups](#3143-mobile-applications-mock-ups)
+            - [3.1.4.4. Mobile Applications User Flow Diagrams](#3144-mobile-applications-user-flow-diagrams)
+            - [3.1.4.5. Mobile Applications Prototyping](#3145-mobile-applications-prototyping)
+
+- [Capítulo IV: Product Implementation & Validation](#capítulo-iv-product-implementation--validation)
+    - [4.1. Software Configuration Management](#41-software-configuration-management)
+        - [4.1.1. Software Development Environment Configuration](#411-software-development-environment-configuration)
+        - [4.1.2. Source Code Management](#412-source-code-management)
+        - [4.1.3. Source Code Style Guide & Conventions](#413-source-code-style-guide--conventions)
+        - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
+    - [4.2. Landing Page & Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
+        - [4.2.1. Sprint 1](#421-sprint-1)
+            - [4.2.1.1. Sprint Planning 1](#4211-sprint-planning-1)
+            - [4.2.1.2. Sprint Backlog 1](#4212-sprint-backlog-1)
+            - [4.2.1.3. Development Evidence for Sprint Review](#4213-development-evidence-for-sprint-review)
+            - [4.2.1.4. Testing Suite Evidence for Sprint Review](#4214-testing-suite-evidence-for-sprint-review)
+            - [4.2.1.5. Execution Evidence for Sprint Review](#4215-execution-evidence-for-sprint-review)
+            - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
+            - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
+            - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+    - [4.3. Validation Interviews](#43-validation-interviews)
+        - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
+        - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
+        - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
+
     - [Conclusiones](#conclusiones)
         - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
     - [Bibliografía](#bibliografía)
@@ -199,8 +241,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 | Criterio específico                                                                                                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                   | Conclusiones |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*   Actualicé mis competencias profesionales al aplicar herramientas de análisis competitivo y estrategias frente a competidores para definir los segmentos objetivo del proyecto. Asimismo, integré conocimientos en metodologías ágiles mediante la elaboración de User Stories, Impact Mapping y la gestión del Product Backlog, asegurando que la solución técnica responda directamente a las necesidades del mercado y del usuario final.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Investigué y apliqué la metodología Lean UX para estructurar el Canvas y las hipótesis de solución, basándome en los requerimientos compartidos por el equipo para el proyecto SmartCart.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
-| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *AV1:*  El desarrollo del análisis de competidores y el diseño del backlog me permitieron comprender que la ingeniería de software exige una actualización constante en estrategias de mercado y gestión ágil. Reconozco que el aprendizaje permanente es fundamental para refinar productos digitales en entornos competitivos, comprometiéndome a seguir adquiriendo nuevas metodologías que maximicen el valor de mis futuros proyectos.    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Identifiqué la necesidad de aprender nuevas técnicas de Needfinding para organizar la información recibida del grupo y transformarla en los perfiles de User Personas y la Task Matrix.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Investigué y apliqué la metodología Lean UX para estructurar el Canvas y las hipótesis de solución, basándome en los requerimientos compartidos por el equipo para el proyecto SmartCart.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto .    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *AV1:*Identifiqué la necesidad de aprender nuevas técnicas de Needfinding para organizar la información recibida del grupo y transformarla en los perfiles de User Personas y la Task Matrix.      <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
 
 <hr class="page-break">
 
@@ -3126,6 +3168,260 @@ El diagrama de **diseño de base de datos** del contexto de **Experience** muest
 
 <hr class="page-break">
 
+# Capítulo III: Solution UI/UX Design
+
+## 3.1. Product design
+
+### 3.1.1. Style Guidelines
+
+#### 3.1.1.1. General Style Guidelines
+
+### 3.1.2. Information Architecture
+
+En esta sección se documentan las **decisiones y el criterio** con que se organizará el contenido en la **experiencia web** (sitio estático y aplicación web Merchant) y en las **aplicaciones móviles** (Buyer y Merchant), de forma que visitantes y usuarios se adapten con rapidez al producto y encuentren lo necesario sin esfuerzo. Se abordan de manera integrada los **sistemas de organización**, **etiquetado**, **navegación** y **búsqueda**, alineados al **Ubiquitous Language** (sección 2.3.6) y a los segmentos objetivo definidos en el capítulo I.
+
+#### 3.1.2.1. Organization Systems
+
+Se distingue **organización visual** (cómo se dispone la información en pantalla) y **esquemas de categorización** (criterio lógico que agrupa los contenidos).
+
+**Organización visual**
+
+| Tipo | Cuándo se usa en SmartCart | Ejemplos concretos |
+| --- | --- | --- |
+| **Jerárquica** | Cuando un bloque debe comunicar importancia relativa (lo más relevante arriba o primero). | Landing: héroe con propuesta de valor → beneficios → prueba social → CTA. Merchant web: panel con KPIs arriba y detalle en bloques debajo. |
+| **Secuencial (paso a paso)** | Cuando el usuario debe completar un orden fijo para evitar errores de negocio o datos incompletos. | Buyer: asistente “Lista → Presupuesto → Ruta sugerida → Confirmar recorrido”. Post-compra: “Ver ahorro → Calificar → (opcional) Reseña → Reportar precio”. |
+| **Matricial** | Cuando el mismo contenido admite **dos o más dimensiones** que el usuario quiere comparar a la vez. | Buyer: grilla de productos con ejes implícitos *categoría × precio* o *tienda × distancia*; tablero Merchant: *producto × estado de precio × vigencia de oferta*. |
+
+**Esquemas de categorización**
+
+| Esquema | Cuándo se usa | Ejemplos en el producto |
+| --- | --- | --- |
+| **Alfabético** | Listas largas donde el usuario conoce el nombre del ítem. | Listado de productos en backoffice Merchant ordenado A–Z; resultados de búsqueda con opción “Ordenar A–Z”. |
+| **Cronológico** | Cuando el tiempo define el valor de la información. | Historial de recorridos del Buyer (más reciente primero); log de cambios de precio u ofertas en Merchant. |
+| **Por tema (tópico)** | Cuando el dominio del supermercado agrupa mejor por pasillo o familia de producto. | Navegación del catálogo por categorías (abarrotes, limpieza, etc.); agrupación de ayudas en la landing por “Ahorro”, “Rutas”, “Confianza”. |
+| **Por audiencia** | Cuando el mensaje o el menú cambia según el rol. | Separación explícita **Buyer** vs **Merchant** (apps y CTAs distintos en la landing); dentro de Merchant, secciones “Operaciones de piso” vs “Marketing” si el rol lo permite. |
+
+**Resumen por superficie (combinación de criterios)**  
+
+| Superficie | Organización visual predominante | Esquemas de categorización que más se usan |
+| --- | --- | --- |
+| Landing | Jerárquica (prioridad visual del mensaje) | Por tema (bloques temáticos), por audiencia (CTA Buyer vs Merchant) |
+| Buyer (app) | Secuencial en flujos críticos; matricial en exploración de catálogo | Tópico (categorías), cronológico (historial), alfabético (ordenar resultados) |
+| Merchant (web/app) | Jerárquica en panel; matricial en tableros y tablas | Alfabético y por estado en catálogo; cronológico en historial de cambios |
+
+#### 3.1.2.2. Labelling Systems
+
+Los datos se representan con **etiquetas cortas** (mínimo número de palabras) para reducir ambigüedad. Cada etiqueta se asocia a un **conjunto de información** del dominio; no se mezclan sinónimos casualmente (“Recorrido” no alterna con “viaje” en la misma tarea).
+
+**Principios:** una etiqueta ↔ un concepto del lenguaje ubicuo; verbos concisos en acciones; estados en lenguaje natural (no códigos internos); métricas con unidad o escala visible (“S/”, “km”, “0–5”).
+
+**Etiquetas principales y asociaciones**
+
+| Etiqueta (UI) | Conjunto / asociación | Nota de brevedad |
+| --- | --- | --- |
+| Lista | Productos planificados (`ShoppingList`) | Sustantivo único en navegación. |
+| Presupuesto | Límite del ciclo + estado vs proyección | Evitar “Presupuesto máximo del usuario para este recorrido”. |
+| Ruta | Paradas ordenadas (`ShoppingRoute`) | “Ruta sugerida” solo donde haya alternativa. |
+| Recorrido | Sesión de compra activa o cerrada | Diferencia semántica respecto a “Ruta”. |
+| Tiendas | Sedes elegibles o cercanas | No “Establecimientos comerciales participantes”. |
+| Ahorro | Monto y moneda post-compra | Siempre con símbolo o código PEN. |
+| Confianza | `TrustProfile` (score + señales) | Opción corta en inglés solo si se unifica: “Confianza”. |
+| Reportar precio | Flujo `ErrorDePrecio` | Verbo + objeto; sin jerga legal. |
+| Catálogo / Ofertas / Reportes | Módulos Merchant | Tres palabras máximo por ítem de menú. |
+| Cuenta | Datos de perfil, seguridad, preferencias de notificación | No confundir con “Perfil” del Buyer si ese término reserva preferencias de compra. |
+| Ayuda / Soporte | Enlaces a FAQ, contacto, versión de la app | Una sola entrada en menú secundario. |
+
+**Microcopy y errores:** mensajes de validación en una frase (“Ingresa un monto mayor a 0”); estados de carga con verbo (“Guardando…”, “Calculando ruta…”).
+
+#### 3.1.2.3. SEO Tags and Meta Tags
+
+**Sitio web estático — Landing Page (página principal)**  
+Valores propuestos para los requisitos mínimos (Title, Description, Keywords, Author):
+
+| Meta / etiqueta | Valor propuesto |
+| --- | --- |
+| **`<title>`** | `SmartCart \| Ahorra en tu canasta con rutas multi-tienda y precios de góndola` |
+| **`<meta name="description">`** | `Planifica tu lista, respeta tu presupuesto y recorre las tiendas con la ruta más eficiente. Compara precios reales en Lima y compra con SmartCart, de FlowState Tech.` |
+| **`<meta name="keywords">`** | `SmartCart, compras inteligentes, presupuesto familiar, comparar precios supermercado, ruta de compras, ahorro Lima, lista de compras, precio góndola, retail Perú` |
+| **`<meta name="author">`** | `FlowState Tech — SmartCart` |
+
+Complementos recomendados: `<link rel="canonical" href="https://www.smartcart.pe/">` (URL final a definir en despliegue), `<meta name="robots" content="index, follow">`, Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type=website`) alineados al `title` y `description`, y Twitter Card `summary_large_image`. Incluir **JSON-LD** (`Organization` + `SoftwareApplication`) con nombre, URL y oferta de la app.
+
+**Aplicación web — Merchant (página principal tras autenticación, vista “Inicio / Panel”)**  
+Misma base mínima de meta por plantilla HTML (si la SPA inyecta metas por ruta, aplicar al *shell* principal):
+
+| Meta / etiqueta | Valor propuesto |
+| --- | --- |
+| **`<title>`** | `SmartCart Merchant \| Catálogo, precios y ofertas` |
+| **`<meta name="description">`** | `Administra productos, precios de góndola y promociones de tu sede. Sincroniza la información que ven los compradores en SmartCart.` |
+| **`<meta name="keywords">`** | `SmartCart Merchant, gestión catálogo retail, precios tienda, ofertas supermercado, administración sede, FlowState Tech` |
+| **`<meta name="author">`** | `FlowState Tech — SmartCart` |
+
+Las vistas internas (detalle de producto, reportes) deben actualizar dinámicamente `title` y `description` con el nombre del recurso y `noindex` si la política de seguridad lo exige.
+
+**Otras páginas web estáticas (mínimo recomendado)**  
+
+| Página | `<title>` (ejemplo) | Indexación sugerida | Notas |
+| --- | --- | --- | --- |
+| Política de privacidad | `Política de privacidad \| SmartCart` | `index, follow` o `noindex` según estrategia legal | Mantiene coherencia de marca en la pestaña del navegador. |
+| Términos de uso | `Términos de uso \| SmartCart` | Igual que la anterior | Keywords opcionales y específicas del documento. |
+| Contacto / Soporte | `Contacto \| SmartCart — FlowState Tech` | `index, follow` | Description breve con canal de contacto. |
+
+**Social preview (valores ejemplo alineados a la home)**  
+
+| Etiqueta | Valor propuesto |
+| --- | --- |
+| `og:title` | `SmartCart — Listas, presupuesto y rutas multi-tienda` |
+| `og:description` | `Optimiza tu canasta en Lima: compara precios de góndola y recorre las tiendas con la ruta más eficiente.` |
+| `og:type` | `website` |
+| `twitter:card` | `summary_large_image` |
+
+**ASO — App Store / Google Play**  
+Dos listados alineados a las audiencias (valores orientativos; ajustar límites de caracteres de cada tienda al publicar).
+
+**App Buyer — “SmartCart” (consumidor)**
+
+| Campo ASO | Valor propuesto |
+| --- | --- |
+| **Título de la app** | `SmartCart — Compras y ahorro` |
+| **Subtítulo** (donde aplique) | `Listas, presupuesto y rutas` |
+| **Palabras clave** (iOS, separadas por coma o según guía de la tienda) | `compras, lista, supermercado, ahorro, precios, presupuesto, ruta, Lima, góndola` |
+| **Descripción corta** (preview) | `Tu lista, tu tope de gasto y la mejor ruta entre tiendas. Precios transparentes y ahorro al cerrar el recorrido.` |
+| **Descripción larga** (texto para tienda; editable al publicar) | `SmartCart te ayuda a planificar tu compra con una lista clara y un presupuesto que puedes respetar. Compara precios entre tiendas, obtén una ruta sugerida para ahorrar tiempo y, al terminar tu recorrido, revisa cuánto ahorraste. Después de comprar, califica la tienda, deja una reseña opcional y reporta diferencias de precio si las encuentras; así toda la comunidad gana transparencia. La ubicación solo se usa si activas funciones que mejoran la ruta. Consulta la política de privacidad en smartcart.pe antes de registrarte.` |
+
+**App Merchant — “SmartCart Tiendas” (nombre sugerido para diferenciar listados)**
+
+| Campo ASO | Valor propuesto |
+| --- | --- |
+| **Título de la app** | `SmartCart Tiendas` |
+| **Subtítulo** | `Catálogo y precios en vivo` |
+| **Palabras clave** | `retail, catálogo, precios, ofertas, inventario tienda, merchant, sede, SmartCart` |
+| **Descripción corta** | `Actualiza precios y ofertas para que los compradores planifiquen con datos reales de tu sede.` |
+| **Descripción larga** | `SmartCart Tiendas es la app para equipos de retail que necesitan mantener catálogo, precios de góndola y promociones alineados con lo que el comprador ve antes de visitar la sede. Reduce reclamos por discrepancias, lanza ofertas con vigencia clara y consulta reportes de uso. Trabaja en conjunto con la app SmartCart del consumidor para cerrar la brecha entre el digital y el punto de venta.` |
+
+#### 3.1.2.4. Searching Systems
+
+Las herramientas de búsqueda evitan que el usuario se sienta perdido ante catálogos extensos o listas largas.
+
+**Opciones de búsqueda**
+
+| Producto / contexto | Qué se puede buscar | Tipo de entrada |
+| --- | --- | --- |
+| Buyer — catálogo | Productos por nombre; opcionalmente por marca o código si se muestra | Campo de texto global + sugerencias |
+| Buyer — tiendas | Por nombre de sede o cadena | Mismo patrón o entrada desde el mapa/lista |
+| Buyer — mi lista | Ítems ya agregados | Barra de filtro local (no remota) |
+| Merchant — backoffice | Productos, SKUs, ofertas | Búsqueda en tabla con operadores simples |
+
+**Alcance y comportamiento**
+
+* **Alcance (Buyer):** conmutador o pestañas “En esta tienda” / “En todas las tiendas” cuando el usuario ya eligió sede para el recorrido; por defecto “todas” en modo exploración.  
+* **Sugerencias:** lista desplegable bajo el campo a partir de 2 caracteres; resultados remotos con indicador de carga.  
+* **Ordenación de resultados:** relevancia por texto; alternativas “Menor precio”, “Más cercano” (si aplica ubicación), “Mejor valoración de tienda” (si hay dato de confianza).  
+* **Paginación:** desplazamiento infinito o “Cargar más” en catálogo móvil; paginación numérica opcional en Merchant web para tablas largas.  
+* **Persistencia:** la consulta activa puede conservarse al volver atrás en el stack; al cambiar de tab principal se limpia o se mantiene según prueba de usabilidad.
+
+**Filtros disponibles según el caso**
+
+| Caso | Filtros |
+| --- | --- |
+| Resultados de producto (Buyer) | Categoría, rango de precio, tienda o cadena, distancia aproximada (si hay ubicación), solo “con precio verificado” (si aplica). |
+| Lista de tiendas (Buyer) | Distancia, cadena, horario o “abierto ahora” (si hay datos). |
+| Lista interna (Buyer) | Sin filtros complejos; solo texto. |
+| Inventario / ofertas (Merchant) | Estado (activo/inactivo), categoría, vigencia de oferta, discrepancias reportadas. |
+
+**Aspecto de los resultados**
+
+* **Productos:** lista vertical de **tarjetas** con imagen miniatura, nombre en una línea, precio destacado, tienda o “desde X tiendas”, distancia opcional y acción primaria (“Agregar”).  
+* **Tiendas:** tarjeta con nombre, distancia, indicador de **confianza** resumido y CTA “Ver catálogo” o “Elegir para ruta”.  
+* **Merchant:** **tabla** con columnas configurables (nombre, SKU, precio actual, estado, última actualización) y resaltado de fila en ofertas próximas a vencer.  
+* **Vacío:** ilustración o icono + mensaje breve + acción (“Limpiar filtros”, “Ampliar radio”).  
+* **Carga:** esqueleto de lista para mantener el contexto espacial del usuario.  
+* **Privacidad:** la búsqueda no expone datos personales de terceros; solo catálogo y tiendas públicas.
+
+#### 3.1.2.5. Navigation Systems
+
+Se especifican las **formas concretas** en que el usuario recorre y se desplaza por la Landing, la web Merchant y las apps.
+
+**Mapa jerárquico (primer nivel y ramas frecuentes)**  
+
+* **Landing (web estática):** Inicio → secciones ancladas (Producto, Cómo funciona, Descargar, Contacto) → pie (Privacidad, Términos, redes).  
+* **Buyer (app):** Tabs: **Inicio** (accesos y resumen) · **Lista** (ítems, presupuesto) · **Recorrido** (ruta activa o estado vacío) · **Perfil** (cuenta, preferencias, ayuda). Flujos en stack desde Inicio/Lista: *Catálogo → Detalle producto → Agregar*; *Tiendas → Detalle sede → Elegir para ruta*; *Post-compra (notificación o historial) → Resumen de ahorro → Calificar → Reseña / Reportar precio*.  
+* **Merchant (web):** *Autenticación (login / recuperación)* → **Panel** → módulos *Catálogo* (lista → detalle / edición), *Ofertas*, *Reportes*, *Cuenta / Sede*.  
+* **Merchant (app):** mismo modelo que la web con drawer; profundidad máxima recomendada de tres niveles antes de mostrar breadcrumb o título compuesto.
+
+| Superficie | Técnicas de navegación |
+| --- | --- |
+| **Landing** | Barra superior **fija** con anclas a secciones (#producto, #cómo-funciona, #descargar, #contacto); desplazamiento suave; **CTA duplicado** al cierre de cada bloque; pie con enlaces legales y tiendas de apps. |
+| **Buyer (móvil)** | **Navegación primaria por tabs inferiores** (p. ej. Inicio, Lista, Recorrido, Perfil); **stack modal** para detalle de producto y hojas de edición; **asistente secuencial** con pasos numerados en planificación de ruta; **deep link** desde notificación de fin de recorrido hacia resumen y feedback. |
+| **Merchant (web)** | **Menú lateral persistente** o **pestañas superiores** por módulo (Catálogo, Ofertas, Reportes, Cuenta); **breadcrumbs** en vistas de detalle profundo; **barra superior** con sede activa y usuario. |
+| **Merchant (móvil)** | **Drawer** con la misma jerarquía que la web; tabs solo si el número de módulos es reducido. |
+
+**Recuperación de contexto:** botón atrás del sistema respeta el stack; formularios largos conservan borrador local cuando sea posible; el título de cada pantalla repite la **etiqueta** del módulo (coherencia con 3.1.2.2).
+
+Esta arquitectura cierra el ciclo entre **descubrimiento** (SEO/ASO + landing), **ejecución** (búsqueda + navegación + etiquetas) y **operación** (Merchant), alineada a los objetivos del producto SmartCart.
+
+### 3.1.3. Landing Page UI Design
+
+#### 3.1.3.1. Landing Page Wireframe
+
+#### 3.1.3.2. Landing Page Mock-up
+
+### 3.1.4. Mobile Applications UX/UI Design
+
+#### 3.1.4.1. Mobile Applications Wireframes
+
+#### 3.1.4.2. Mobile Applications Wireflow Diagrams
+
+#### 3.1.4.3. Mobile Applications Mock-ups
+
+#### 3.1.4.4. Mobile Applications User Flow Diagrams
+
+#### 3.1.4.5. Mobile Applications Prototyping
+
+<hr class="page-break">
+
+# Capítulo IV: Product Implementation & Validation
+
+## 4.1. Software Configuration Management
+
+### 4.1.1. Software Development Environment Configuration
+
+### 4.1.2. Source Code Management
+
+### 4.1.3. Source Code Style Guide & Conventions
+
+### 4.1.4. Software Deployment Configuration
+
+## 4.2. Landing Page & Mobile Application Implementation
+
+### 4.2.1. Sprint 1
+
+#### 4.2.1.1. Sprint Planning 1
+
+#### 4.2.1.2. Sprint Backlog 1
+
+#### 4.2.1.3. Development Evidence for Sprint Review
+
+#### 4.2.1.4. Testing Suite Evidence for Sprint Review
+
+#### 4.2.1.5. Execution Evidence for Sprint Review
+
+#### 4.2.1.6. Services Documentation Evidence for Sprint Review
+
+#### 4.2.1.7. Software Deployment Evidence for Sprint Review
+
+#### 4.2.1.8. Team Collaboration Insights during Sprint
+
+## 4.3. Validation Interviews
+
+### 4.3.1. Diseño de Entrevistas
+
+### 4.3.2. Registro de Entrevistas
+
+### 4.3.3. Evaluaciones según heurísticas
+
+<hr class="page-break">
+
 ## Conclusiones
 
 SmartCart se presenta como una respuesta innovadora frente a las deficiencias del comercio físico tradicional, integrando con éxito la gestión de presupuestos con la asistencia logística en tiempo real. Mediante el análisis de mercado y el feedback directo de los entrevistados, se ha ratificado que la herramienta no solo agiliza el proceso de adquisición, sino que maximiza el ahorro del usuario a través de un sistema de navegación y comparación inteligente. Esta coherencia entre las demandas del sector y las capacidades de la plataforma garantiza un impacto positivo tanto en el ahorro del consumidor como en el posicionamiento estratégico de los establecimientos locales.
@@ -3170,3 +3466,4 @@ Por otro lado, la adopción de una arquitectura basada en Spring Boot y Angular 
 # Anexos
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
+* Acceso al 
