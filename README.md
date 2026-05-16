@@ -4524,6 +4524,18 @@ Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.ra
 
 #### 4.2.1.8. Team Collaboration Insights during Sprint
 
+A continuacion se muestran los colaboradores en cada sección: 
+
+**Landing Page**
+![img_2.png](img_2.png)
+
+
+**Api REST**
+![img_3.png](img_3.png)
+
+**SmartCart-Merchant**
+![img_4.png](img_4.png)
+
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
