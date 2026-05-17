@@ -40,10 +40,11 @@
 
 # Registro de Versiones del Informe
 
-| Versión | Fecha    | Autor        | Descripción de modificación      |
-| ------- | -------- | ------------ | -------------------------------- |
-| 1.0     | 09/04/26 | Anjali Amaro | Organización inicial del informe |
+| Versión | Fecha    | Autor        | Descripción de modificación              |
+|---------|----------| ------------ |------------------------------------------|
+| 1.0     | 09/04/26 | Anjali Amaro | Organización inicial del informe         |
 | 1.1     | 23/04/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 1. y Capítulo 2. |
+| 2.0     | 16/05/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 3. y Capítulo 4. |
 
 <hr class="page-break">
 
@@ -86,10 +87,17 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 
 <hr class="page-break">
 
-Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gestión del repositorio.
+A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
 
 ![network-av1](./assets/github-insights/network-av1.png)
 
+
+**TB1**
+A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
+![img_1.png](img_1.png)
+
+A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
+![img.png](img.png)
 <hr class="page-break">
 
 # Contenido
@@ -260,7 +268,6 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
         - [Query Handlers](#query-handlers)
         - [Integración con procesos de Inventario](#integración-con-procesos-de-inventario)
       - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
-      - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer-1)
         - [Repositories (Implementación)](#repositories-implementación)
         - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia)
         - [Consumer (StoreManagementEventConsumer)](#consumer-storemanagementeventconsumer)
@@ -360,10 +367,13 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
       - [3.1.4.3. Mobile Applications Mock-ups](#3143-mobile-applications-mock-ups)
       - [3.1.4.4. Mobile Applications User Flow Diagrams](#3144-mobile-applications-user-flow-diagrams)
       - [3.1.4.5. Mobile Applications Prototyping](#3145-mobile-applications-prototyping)
+      - [Prototipo App Móvil (Segmento 1: Consumidor Final)](#prototipo-app-móvil-segmento-1-consumidor-final)
+      - [Prototipo SmartCart Business (Segmento 2: Comerciante)](#prototipo-smartcart-business-segmento-2-comerciante)
 - [Capítulo IV: Product Implementation \& Validation](#capítulo-iv-product-implementation--validation)
   - [4.1. Software Configuration Management](#41-software-configuration-management)
     - [4.1.1. Software Development Environment Configuration](#411-software-development-environment-configuration)
     - [4.1.2. Source Code Management](#412-source-code-management)
+      - [Conventional Commits](#conventional-commits)
     - [4.1.3. Source Code Style Guide \& Conventions](#413-source-code-style-guide--conventions)
     - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
   - [4.2. Landing Page \& Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
@@ -378,8 +388,15 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
       - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
   - [4.3. Validation Interviews](#43-validation-interviews)
     - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
+      - [Elementos de la Sesión de Validación](#elementos-de-la-sesión-de-validación)
+      - [Especificación de User Flows para Validación](#especificación-de-user-flows-para-validación)
+      - [Metodología de Validación](#metodología-de-validación)
     - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
     - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
+      - [Resultados de la Evaluación Heurística - Comerciantes](#resultados-de-la-evaluación-heurística---comerciantes)
+      - [Resumen Consolidado](#resumen-consolidado)
+      - [Hallazgos Prioritarios a Resolver](#hallazgos-prioritarios-a-resolver)
+      - [Conclusión](#conclusión)
   - [Conclusiones](#conclusiones)
   - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
@@ -388,13 +405,13 @@ Estructura de ramas y flujo de trabajo basado en el modelo GitFlow para la gesti
 
 # Student Outcome
 
-En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 7
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 7: La capacidad de adquirir y aplicar nuevos
+conocimientos según sea necesario, utilizando estrategias de aprendizaje apropiadas.
 
-| Criterio específico                                                                                                                                                                 | Acciones realizadas                                                                                                                                                                                                                                                                   | Conclusiones |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali** <br> *AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.     <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.   <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.   <br>**Pardo Chumpitazi, Kevin Patrick** <br> *TB1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.      |
-| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali** <br> *AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.      <br> **Chavez Viera, Joseph Manueli** <br> *TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto .    <br>**Mejia Aliaga, Katherine Maryory** <br> *AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura me permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.     <br>**Pardo Chumpitazi, Kevin Patrick** <br> *TB1:*Transformé los perfiles de User Personas y la Task Matrix en una API funcional documentada en Swagger, gestionando la creación de endpoints REST y la resolución de conflictos técnicos para asegurar la integridad del repositorio grupal.   <br>**Valdivia Quispe, Stephano Renan** <br> *AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional. <br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.      |
-
+| Criterio específico | Acciones realizadas | Conclusiones |
+| :--- | :--- | :--- |
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali**<br>*AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.<br>*TB1:* Investigué y apliqué buenas prácticas en la gestión de configuración de software (SCM), configurando el entorno de desarrollo, el control de versiones y las guías de estilos de código. Asimismo, actualicé mis conceptos en metodologías ágiles para estructurar el Sprint Planning y recolectar las evidencias de desarrollo (commits) para el Sprint Review.<br><br>**Chavez Viera, Joseph Manueli**<br>*TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.<br>*TB1:* Actualicé mis conocimientos en diseño UX/UI móvil para estructurar wireframes, wireflows, mockups y prototipos interactivos de la aplicación. Adicionalmente, expandí mis competencias técnicas en metodologías de validación mediante el diseño de entrevistas y la aplicación de evaluaciones heurísticas al producto.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>*TB1:* Investigué y apliqué principios de diseño visual contemporáneo para establecer las guías de estilo generales del producto. Asimismo, actualicé mis conocimientos en diseño de interfaces web estructurando los wireframes y mockups de la Landing Page de la solución.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br>*TB1:* Actualicé mis conocimientos en patrones de interacción y diseño de experiencia de usuario para dispositivos móviles, co-diseñando los wireframes, diagramas de wireflow, user flows y prototipos interactivos multiplataforma para las aplicaciones de SmartCart.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.<br><br>*TB1:* El equipo logró consolidar el diseño de interfaz y la arquitectura de información del software aplicando conceptos modernos de diseño UI/UX (móvil y web), guías de estilo y posicionamiento SEO/ASO, en paralelo con una sólida configuración de SCM para los entornos de desarrollo. Esta actualización conceptual permitió materializar los requerimientos técnicos y de negocio en un producto digital coherente, estructurado y listo para el despliegue. |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.** | **Amaro Villar, Anjali**<br>*AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.<br>*TB1:* Entendí que las herramientas de DevOps, control de versiones y políticas de despliegue se actualizan constantemente en la industria. Reconozco que dominar la gestión de configuración y el rastreo de evidencias (commits) requiere un aprendizaje continuo para optimizar los flujos de trabajo en equipos ágiles.<br><br>**Chavez Viera, Joseph Manueli**<br>*TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura mi permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.<br>*TB1:* Comprendí que los estándares de usabilidad móvil y los marcos de validación de software (como las heurísticas) mutan según el comportamiento del usuario. Reconozco la necesidad de educarme continuamente en metodologías de investigación y testing para asegurar que el software responda a problemas reales.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Transformé los perfiles de User Personas y la Task Matrix en una API funcional documentada en Swagger, gestionando la creación de endpoints REST y la resolución de conflictos técnicos para asegurar la integridad del repositorio grupal.<br>*TB1:* Reconocí que las tendencias en diseño visual y la experiencia de usuario web evolucionan rápidamente. Esto me demuestra la necesidad de un aprendizaje constante en sistemas de diseño y guías de estilo para desarrollar interfaces web atractivas, accesibles y competitivas.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional.<br>*TB1:* Asimilé que el diseño de flujos de interacción y prototipos móviles requiere una constante adaptación a los nuevos sistemas operativos y directrices de diseño. Comprendo que el aprendizaje continuo en la optimización de la experiencia móvil es indispensable para crear soluciones eficientes.<br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.<br><br>*TB1:* Se concluye que el equipo reconoce el aprendizaje permanente como un pilar crítico en las áreas de diseño UI/UX y SCM, debido a la velocidad con la que cambian los estándares web/móviles y las tecnologías de integración. El grupo asume la responsabilidad de mantenerse a la vanguardia en patrones de usabilidad y validación heurística para garantizar soluciones de software dinámicas y de alta calidad. |
 <hr class="page-break">
 
 # Objetivos SMART
@@ -4272,7 +4289,7 @@ Se seguirá el enfoque planteado por Vincent Driessen, el cual define dos ramas 
 
 | **Tipo de rama** | **Uso principal**                                | **Convención de nombres**      | **Ejemplo**               |
 |------------------|--------------------------------------------------|--------------------------------|---------------------------|
-| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-salim`   |
+| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-anjali`  |
 | **release**      | Preparación de una versión previa al despliegue. | `release/vX.Y.Z`               | `release/v1.0.0`          |
 | **hotfix**       | Corrección rápida de errores en producción.      | `hotfix/<problema>`            | `hotfix/fix-crash-navbar` |
 
@@ -4369,7 +4386,7 @@ Para el despliegue de la Landing Page, se utiliza Netlify, una plataforma especi
 2. **Creación del Sitio:** Se crea un nuevo proyecto dentro de la plataforma seleccionando el repositorio específico del equipo.
 3. **Control de Versiones:** Se define la rama de producción (comúnmente `main` o `develop`) para activar el despliegue automático tras cada actualización.
 4. **Parámetros de Build:** Se configuran los comandos de construcción (ej. `npm run build`) y se apunta a la carpeta de salida generada (ej. `dist/` o `build/`).
-5. [cite_start]**Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
+5. **Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
 
 **Railway (Backend Services)**
 La implementación y gestión de las APIs REST se realiza a través de Railway, una plataforma de infraestructura que simplifica el despliegue de servicios backend para múltiples lenguajes y frameworks. El proceso de despliegue configurado incluye:
@@ -4439,24 +4456,325 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 
 
 
-
-
-
-
-
-
-
-
 #### 4.2.1.3. Development Evidence for Sprint Review
 
+En esta seccion se ve la evidencia del desarrollo mediante los commits: 
 
+**Landing Page**
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-landing | main | `2932d1e` | cambios listos | Ajustes finales en el layout responsivo de la landing page y optimización de recursos gráficos antes del empaquetado. | 15/05/2026 |
+| flowstate-tech/smartcart-landing | main | `4c15730` | ultimo cambio | Corrección de estilos CSS menores en la sección de testimonios y actualización de enlaces de redirección en el footer. | 15/05/2026 |
+| flowstate-tech/smartcart-landing | main | `129c6ed` | Create README.md | Inicialización del archivo de documentación principal del repositorio con la descripción del producto y guías de ejecución local. | 13/05/2026 |
+| flowstate-tech/smartcart-landing | main | `b9dd025` | fix: Navbar bug solved | Solución de un error de alineación en la barra de navegación para resoluciones móviles y corrección del comportamiento del menú desplegable. | 12/05/2026 |
+| flowstate-tech/smartcart-landing | main | `8026f81` | ultimos cambios | Integración de etiquetas de metadatos SEO, Open Graph para redes sociales y estructuración del formulario de contacto. | 12/05/2026 |
+| flowstate-tech/smartcart-landing | main | `6302d59` | initial commit | Configuración inicial de la estructura del proyecto web base, incluyendo archivos de configuración y árbol de directorios de assets. | 12/05/2026 |
+
+
+**Api Rest** 
+
+| flowstate-tech/smarcart-api | develop | 9c2e934 | feat: add unit tests for store registration functionality |  | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | 45c75af | feat: add integration test for store creation endpoint |  | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | ea4ba73 | feat: add feature file for store registration scenarios |  | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | 35da3ec | merge: integrate experience management into develop |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 98390d5 | merge: integrate shopping-journey into develop |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 9d7e06f | merge: integrate store management into develop |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 971c7b5 | feat: implement StoreQueryService and StoreProfileResponse assembler; add repository and SQL for store analytics |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 85ff26d | feat: implement StoreCommandService for store registration and legal status translation; add related DTOs and controller endpoints |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 89bd4c5 | feat: add StoreAnalytics read model and repository; implement response assembler for analytics data |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | e828d65 | feat: implement Store aggregate with RUC and SKU value objects; add StockPoint entity and StoreAnalytics query service |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 8844152 | feat: add product clearance event and stock response models; implement store registration command and request resources |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 619ec6a | feat: add value objects for legal status, money, and opening hours; implement price item and product entities |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | 6706809 | feat: add inventory bulk processing and command services with exception handling |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | bb498ea | feat: implement inventory management records and clearance processing |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | b538878 | feat: add Address value object and command classes for product clearance and bulk upload responses |  | 15/05/2026 |
+| flowstate-tech/smarcart-api | develop | d7da2f0 | feat: implement Experience bounded context with endpoints for consumers and merchants |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | a4a55b7 | feat: add experience bounded context folder structure |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 0c6cc49 | chore: integracion de cambios en el repositorio de shopping journey |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 83d3905 | feat(shoppingjourney): implementacion de endpoints POST y GET con arquitectura DDD |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 0f979bb | feat: add development and production server configurations to OpenAPI |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 9aaf4a2 | feat: add Dockerfile and .dockerignore for containerization |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | 04ffd2d | merge: integrate develop into main |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | bc37dc1 | feat: update application properties for environment variable configuration |  | 14/05/2026 |
+| flowstate-tech/smarcart-api | develop | bdaf211 | merge: integrate shopping journey management into develop |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | bdaf211 | merge: integrate shopping journey management into develop |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | f12adb2 | merge: insert notification management into develop |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | d013572 | feat: refactor ShoppingCartCommandServiceImpl and ShoppingCartRepository to extend JpaRepository |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | cf4e3a4 | feat(shoppingjourney): implement base layered architecture and shopping cart entity |  | 13/05/2026 |
+| flowstate-tech/smarcart-api | develop | 3846507 | feat: add notification |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4abf5cc | merge: integrate iam-management into develop |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 2c98060 | feat: add iam controllers |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | f5cf317 | feat: enhance auditing and error logging in security filters |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4984a45 | feat: enable security debug logging in application properties |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 5e33845 | chore: rename .gitkeep for IAM directory structure |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4ebc942 | feat: refactor authentication provider initialization in WebSecurityConfiguration |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 4bc7572 | feat: implement role management services and event handling |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | c977fd1 | feat: implement JWT authentication and authorization services |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 11b639b | feat: add RoleRepository for role entity operations |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 634ed66 | feat: add UserRepository for user entity operations |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 74a1215 | feat: add command and query services for user and role management |  | 12/05/2026 |
+| flowstate-tech/smarcart-api | develop | 9b628bf | feat: add query classes for retrieving users and roles |  | 12/05/2026 |
 
 
 #### 4.2.1.4. Testing Suite Evidence for Sprint Review
 
+En esta sección se explica y presenta el conjunto de Unit Tests, Integration Tests y Acceptance Tests automatizados para los Web Services relacionados con las User Stories especificadas en este Sprint. Estas pruebas garantizan la integridad del flujo lógico, el mapeo correcto de datos estructurados complejos y el cumplimiento estricto de las reglas de negocio en el backend.
+
+#### Historial de Commits de Testing
+A continuación, se incluye la relación de los commits registrados en el repositorio de control de versiones que contienen los avances de pruebas automatizadas para este Sprint:
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smarcart-api | develop | `9c2e934` | feat: add unit tests for store registration functionality | Implemented unit tests for StoreServiceImpl using Mockito to validate the creation logic and state assignment. | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | `45c75af` | feat: add integration test for store creation endpoint | Configured MockMvc integration tests to verify endpoint routing, HTTP 201 status, and JSON payload response. | 16/05/2026 |
+| flowstate-tech/smarcart-api | develop | `ea4ba73` | feat: add feature file for store registration scenarios | Created Gherkin feature file and step definitions mapping acceptance criteria E1, E2, and E3 for US10. | 16/05/2026 |
+
+---
+
+#### 1. Unit Tests (Pruebas Unitarias)
+
+* **Clase Relacionada:** `StoreServiceImpl`
+* **Comportamiento Evaluado:** Verificación aislada de la lógica de negocio al registrar una sucursal empleando estructuras anidadas (`Address` y `OperatingHour`). Valida mediante *mocks* que los datos se procesen de manera íntegra, se invoque la persistencia en el repositorio y se asigne correctamente el estado inicial por defecto `PENDING_VERIFICATION`.
+
+```java
+package com.smartcart.testing;
+
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.util.List;
+
+@ExtendWith(MockitoExtension.class)
+class StoreUnitTesting {
+
+    @Mock
+    private StoreRepository storeRepository;
+
+    @InjectMocks
+    private StoreServiceImpl storeService;
+
+    @Test
+    void givenComplexStoreData_whenRegisterStore_thenReturnSavedStoreWithPendingStatus() {
+        // Arrange
+        Address address = new Address("Av. Prolongación San Juan 456", "San Juan de Miraflores", -12.156, -76.983);
+        List<OperatingHour> hours = List.of(new OperatingHour("Monday", "08:00", "22:00"));
+
+        Store storeInput = new Store("M-999", "Metro - Monterrico", "20100435671", address, hours);
+        Store storeSaved = new Store(101L, "M-999", "Metro - Monterrico", "20100435671", address, hours, "PENDING_VERIFICATION");
+
+        when(storeRepository.save(any(Store.class))).thenReturn(storeSaved);
+
+        // Act
+        Store result = storeService.registerStore(storeInput);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals(101L, result.getId());
+        assertEquals("PENDING_VERIFICATION", result.getStatus());
+        assertEquals("San Juan de Miraflores", result.getAddress().getDistrict());
+        verify(storeRepository, times(1)).save(storeInput);
+    }
+}
+```
+
+---
+
+#### 2. Integration Tests (Pruebas de Integración)
+
+* **Endpoint Evaluado:** `POST /api/v1/store-management/stores`
+* **Comportamiento Evaluado:** Validación integral de las rutas de enrutamiento del controlador, políticas de serialización/deserialización Jackson, y seguridad en la capa de transporte HTTP. La prueba simula una petición de red entrante con un objeto JSON jerárquico real y comprueba que la API responda con el código REST `201 Created` y los parámetros esperados en el cuerpo de la respuesta.
+
+```java
+package com.upc.smartcart.testing.integration;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+class StoreIntegrationTesting {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void givenComplexStoreJson_whenPostToStoresEndpoint_thenReturn201Created() throws Exception {
+        // Estructura idéntica al payload real de la documentación
+        String jsonRequestBody = "{\n" +
+                "  \"merchantId\": \"M-999\",\n" +
+                "  \"name\": \"Metro - Monterrico\",\n" +
+                "  \"ruc\": \"20100435671\",\n" +
+                "  \"address\": {\n" +
+                "    \"street\": \"Av. Prolongación San Juan 456\",\n" +
+                "    \"district\": \"San Juan de Miraflores\",\n" +
+                "    \"latitude\": -12.156,\n" +
+                "    \"longitude\": -76.983\n" +
+                "  },\n" +
+                "  \"operatingHours\": [\n" +
+                "    {\n" +
+                "      \"day\": \"Monday\",\n" +
+                "      \"open\": \"08:00\",\n" +
+                "      \"close\": \"22:00\"\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
+
+        mockMvc.perform(post("/api/v1/store-management/stores")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(jsonRequestBody))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.storeId").value(101))
+                .andExpect(jsonPath("$.status").value("PENDING_VERIFICATION"));
+    }
+}
+```
+
+---
+
+#### 3. Acceptance Tests (Pruebas de Aceptación - BDD)
+
+* **User Story Relacionada:** `US10: Registro de Sucursal`
+* **Definición de Escenarios (Gherkin):** Automatización con enfoque de desarrollo guiado por comportamiento para mapear directamente las expectativas comerciales del cliente. Modela la validación inicial del RUC de la empresa (E1), el correcto geoposicionamiento espacial dentro de Lima (E2), y las reglas de seguridad críticas para el negocio que impiden el registro duplicado por colisión de coordenadas espaciales exactas en el mapa (E3).
+
+```gherkin
+# Relacionado con la US10: Registro de Sucursal
+# Actor: Gerente Tienda | Prioridad: Alta | Épica: EP02
+
+Característica: Registro de Sucursal
+  Como gerente de sucursal, deseo registrar mi tienda de conveniencia para que aparezca en el mapa.
+
+  Escenario: E1: Validación de RUC de la cadena
+    Dado que el gerente ingresa el RUC de la cadena
+    Cuando el sistema valida con el cuerpo JSON:
+      """
+      {
+        "merchantId": "M-999",
+        "name": "Metro - Monterrico",
+        "ruc": "20100435671",
+        "address": {
+          "street": "Av. San Jinés 123",
+          "district": "Santiago de Surco",
+          "latitude": -12.112,
+          "longitude": -77.014
+        },
+        "operatingHours": [
+          { "day": "Monday", "open": "08:00", "close": "22:00" }
+        ]
+      }
+      """
+    Entonces permite añadir la ubicación específica de la sucursal.
+
+  Escenario: E2: Posicionamiento geográfico exacto de un local nuevo
+    Dado un local nuevo
+    Cuando se registra la dirección en Surquillo con el cuerpo JSON:
+      """
+      {
+        "merchantId": "M-102",
+        "name": "Tienda Tambo Surquillo",
+        "ruc": "20601234567",
+        "address": {
+          "street": "Av. Angamos Este 456",
+          "district": "Surquillo",
+          "latitude": -12.118,
+          "longitude": -77.021
+        },
+        "operatingHours": [
+          { "day": "Everyday", "open": "00:00", "close": "23:59" }
+        ]
+      }
+      """
+    Entonces el sistema lo posiciona geográficamente de forma exacta.
+
+  Escenario: E3: Denegación de registro por duplicidad de coordenadas
+    Dado que la sucursal ya existe
+    Cuando el sistema detecta la duplicidad por coordenadas con el cuerpo JSON:
+      """
+      {
+        "merchantId": "M-105",
+        "name": "Tienda Clon Coordenadas",
+        "ruc": "20601234567",
+        "address": {
+          "street": "Av. Angamos Este 456",
+          "district": "Surquillo",
+          "latitude": -12.118,
+          "longitude": -77.021
+        },
+        "operatingHours": []
+      }
+      """
+    Entonces deniega el nuevo registro.
+```
+
 #### 4.2.1.5. Execution Evidence for Sprint Review
 
+Se evidencia la ejecucion de los productos
+
+**Landing Page**
+
+![img_5.png](img_5.png)
+![img_6.png](img_6.png)
+![img_7.png](img_7.png)
+
+**Api REST**
+
+![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+
+**SmartCart Merchant**
+
+![img_11.png](img_11.png)
+![img_12.png](img_12.png)
+![img_13.png](img_13.png)
+
+
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
+
+Aqui se presenta la documentación de los endpoints dessarrolllados para este primer entregable:
+
+| Endpoint (Verbo + Sintaxis) | Acciones Implementadas / Descripción | Enlaces (URL Local Swagger) | Especificación de Parámetros | Ejemplo y Explicación del Response |
+| :--- | :--- | :--- | :--- | :--- |
+| **GET** `/api/v1/roles` | Obtiene la lista completa de roles del sistema para la asignación de permisos de usuarios. | `http://localhost:8080/swagger-ui/index.html#/Roles/getAllRoles` | **Ninguno** | <pre>[\n  {"id": 1, "name": "ROLE_CONSUMER"},\n  {"id": 2, "name": "ROLE_MERCHANT"}\n]</pre>**Explicación:** Retorna un array JSON con los roles disponibles y código `200 OK`. |
+| **POST** `/api/v1/authentication/sign-up` | Registra una nueva cuenta de usuario (Consumer o Merchant) cifrando la contraseña. | `http://localhost:8080/swagger-ui/index.html#/Authentication/signUp` | **Body (JSON):**<br>- `username` (string)<br>- `email` (string)<br>- `password` (string)<br>- `roleId` (int) | <pre>{\n  "id": 15,\n  "username": "anjali_amaro",\n  "email": "anjali@upc.edu.pe",\n  "role": "ROLE_CONSUMER"\n}</pre>**Explicación:** Código `201 Created` con el resumen del usuario creado. |
+| **POST** `/api/v1/authentication/sign-in` | Autentica al usuario mediante credenciales y genera un token JWT seguro. | `http://localhost:8080/swagger-ui/index.html#/Authentication/signIn` | **Body (JSON):**<br>- `email` (string)<br>- `password` (string) | <pre>{\n  "token": "eyJhbGciOiJIUzI1...",\n  "type": "Bearer",\n  "username": "anjali_amaro"\n}</pre>**Explicación:** Retorna el token de acceso con código `200 OK` para endpoints protegidos. |
+| **GET** `/api/v1/shopping-carts` | Lista las sesiones activas o históricos de carritos de compra del usuario autenticado. | `http://localhost:8080/swagger-ui/index.html#/Shopping-Carts/getCarts` | **Ninguno** (Obtenido implícitamente por el contexto del token JWT) | <pre>[\n  {"cartId": 45, "userId": 15, "status": "ACTIVE", "itemsCount": 3}\n]</pre>**Explicación:** Código `200 OK` con el estado y conteo de ítems del carrito actual. |
+| **POST** `/api/v1/shopping-carts` | Inicializa un nuevo carrito de compras para el cálculo automatizado de optimización de precios. | `http://localhost:8080/swagger-ui/index.html#/Shopping-Carts/createCart` | **Body (JSON):**<br>- `name` (string, opcional) | <pre>{\n  "cartId": 46,\n  "status": "CREATED",\n  "createdAt": "2026-05-16T10:30:00Z"\n}</pre>**Explicación:** Confirma la inicialización del recorrido con código `201 Created`. |
+| **POST** `/api/v1/notifications/send-test` | Envía una alerta de prueba simulada para validar la conectividad de la red o pasarelas stub. | `http://localhost:8080/swagger-ui/index.html#/Notifications/sendTest` | **Body (JSON):**<br>- `channel` (string)<br>- `recipient` (string) | <pre>{\n  "status": "SUCCESS",\n  "message": "Test notification dispatched via stub gateway."\n}</pre>**Explicación:** Validación exitosa de los canales de comunicación con código `200 OK`. |
+| **POST** `/api/v1/notifications/preferences` | Actualiza las configuraciones de alertas de variaciones de precios del consumidor. | `http://localhost:8080/swagger-ui/index.html#/Notifications/updatePreferences` | **Body (JSON):**<br>- `enableEmail` (bool)<br>- `enablePush` (bool) | <pre>{\n  "userId": 15,\n  "preferences": {"email": true, "push": false}\n}</pre>**Explicación:** Guarda las nuevas preferencias de comunicación con código `200 OK`. |
+| **POST** `/api/v1/store-management/stores` | Permite el alta y registro inicial de una sucursal o establecimiento comercial en Lima. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/registerStore` | **Body (JSON):**<br>- `name` (string)<br>- `address` (string)<br>- `district` (string)<br>- `ruc` (string) | <pre>{\n  "storeId": 101,\n  "name": "Metro - Monterrico",\n  "status": "PENDING_VERIFICATION"\n}</pre>**Explicación:** Registra el local en estado pendiente de validación con código `201 Created`. |
+| **POST** `/api/v1/store-management/stores/{storeId}/inventory/items` | Añade de manera individual un nuevo producto con su respectivo precio base al catálogo del local. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/addInventoryItem` | **Path:** `storeId` (int)<br>**Body (JSON):**<br>- `sku` (string)<br>- `price` (double)<br>- `stock` (int) | <pre>{\n  "itemId": 502,\n  "storeId": 101,\n  "sku": "PROD-743",\n  "price": 14.50\n}</pre>**Explicación:** Código `201 Created` que confirma la inserción del producto en el inventario. |
+| **POST** `/api/v1/store-management/stores/{storeId}/inventory/clearance` | Aplica una política de descuento masivo o liquidación a una categoría completa de productos. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/applyClearance` | **Path:** `storeId` (int)<br>**Body (JSON):**<br>- `categoryId` (int)<br>- `discountPercentage` (double) | <pre>{\n  "storeId": 101,\n  "affectedItems": 24,\n  "status": "CLEARANCE_APPLIED"\n}</pre>**Explicación:** Aplica variaciones de precios promocionales con código `200 OK`. |
+| **POST** `/api/v1/store-management/stores/{storeId}/inventory/bulk` | Sincroniza el inventario completo de la tienda mediante cargas masivas de datos estructurados. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/bulkSync` | **Path:** `storeId` (int)<br>**Body (JSON Array):**<br>- Lista de productos (`sku`, `price`, `stock`) | <pre>{\n  "storeId": 101,\n  "processedRecords": 1450,\n  "errors": 0\n}</pre>**Explicación:** Sincronización masiva completada con éxito retornando código `200 OK`. |
+| **GET** `/api/v1/store-management/stores/{storeId}` | Recupera la información pública, comercial y de geolocalización de un establecimiento. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/getStoreProfile` | **Path:** `storeId` (int) | <pre>{\n  "storeId": 101,\n  "name": "Metro - Monterrico",\n  "district": "Santiago de Surco",\n  "verified": true\n}</pre>**Explicación:** Retorna la ficha general del comercio con código `200 OK`. |
+| **GET** `/api/v1/store-management/stores/{storeId}/inventory` | Devuelve la lista completa de artículos disponibles y precios corrientes del comercio. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/getInventory` | **Path:** `storeId` (int)<br>**Query:** `page`, `size` (opcional) | <pre>[\n  {"sku": "PROD-743", "name": "Arroz 1kg", "price": 14.50, "stock": 50}\n]</pre>**Explicación:** Retorna el inventario de la tienda en un formato paginado con código `200 OK`. |
+| **GET** `/api/v1/store-management/stores/{storeId}/analytics` | Proporciona métricas e indicadores de comportamiento (visitas, reportes de errores) para el Merchant. | `http://localhost:8080/swagger-ui/index.html#/Store-Management/getAnalytics` | **Path:** `storeId` (int) | <pre>{\n  "storeId": 101,\n  "totalViews": 340,\n  "priceErrorsCount": 2,\n  "trustScore": 94.5\n}</pre>**Explicación:** Retorna estadísticas analíticas consolidadas con código `200 OK`. |
+| **GET** `/api/v1/users` | Lista global de todos los usuarios registrados en el sistema (restringido a roles de administración). | `http://localhost:8080/swagger-ui/index.html#/Users/getAllUsers` | **Ninguno** | <pre>[\n  {"id": 15, "username": "anjali_amaro", "email": "anjali@upc.edu.pe"}\n]</pre>**Explicación:** Retorna todos los usuarios de la base de datos centralizada con código `200 OK`. |
+| **GET** `/api/v1/users/{userId}` | Recupera la información detallada del perfil institucional de un usuario según su ID. | `http://localhost:8080/swagger-ui/index.html#/Users/getUserById` | **Path:** `userId` (int) | <pre>{\n  "id": 15,\n  "username": "anjali_amaro",\n  "email": "anjali@upc.edu.pe",\n  "createdAt": "2026-04-12T08:00:00Z"\n}</pre>**Explicación:** Código `200 OK` con los datos demográficos internos asignados al ID consultado. |
+| **GET** `/api/v1/experience/stores/{storeId}/reviews` | Retorna los comentarios y reseñas publicados por consumidores sobre un establecimiento físico. | `http://localhost:8080/swagger-ui/index.html#/Experience/getStoreReviews` | **Path:** `storeId` (int) | <pre>[\n  {"reviewId": 1, "username": "salim_dev", "comment": "Precios reales", "rating": 5}\n]</pre>**Explicación:** Lista de opiniones públicas para la visibilidad de los usuarios (`200 OK`). |
+| **POST** `/api/v1/experience/stores/{storeId}/reviews` | Permite a un consumidor publicar una opinión escrita sobre su experiencia de compra en el local. | `http://localhost:8080/swagger-ui/index.html#/Experience/postReview` | **Path:** `storeId` (int)<br>**Body (JSON):**<br>- `comment` (string)<br>- `rating` (int) | <pre>{\n  "reviewId": 2,\n  "storeId": 101,\n  "status": "PUBLISHED"\n}</pre>**Explicación:** Publicación inmediata de la reseña en la plataforma con código `201 Created`. |
+| **POST** `/api/v1/experience/stores/{storeId}/reviews/{reseñaId}/reply` | Permite a los representantes del comercio responder formalmente a un comentario o reclamo. | `http://localhost:8080/swagger-ui/index.html#/Experience/replyToReview` | **Path:** `storeId` (int), `reseñaId` (int)<br>**Body (JSON):**<br>- `replyMessage` (string) | <pre>{\n  "replyId": 45,\n  "reviewId": 2,\n  "message": "Gracias, corregiremos el stock."\n}</pre>**Explicación:** Guarda la respuesta oficial del Merchant con código `201 Created`. |
+| **GET** `/api/v1/experience/stores/{storeId}/ratings` | Extrae el conjunto de calificaciones numéricas brutas del comercio para procesamiento estadístico. | `http://localhost:8080/swagger-ui/index.html#/Experience/getStoreRatings` | **Path:** `storeId` (int) | <pre>{\n  "storeId": 101,\n  "averageRating": 4.7,\n  "totalVotes": 120\n}</pre>**Explicación:** Retorna el promedio ponderado de estrellas acumuladas con código `200 OK`. |
+| **POST** `/api/v1/experience/stores/{storeId}/ratings` | Envía una puntuación rápida por estrellas (1-5) a la reputación directa de la tienda. | `http://localhost:8080/swagger-ui/index.html#/Experience/rateStore` | **Path:** `storeId` (int)<br>**Body (JSON):**<br>- `ratingValue` (int) | <pre>{\n  "message": "Rating submitted.",\n  "currentAverage": 4.75\n}</pre>**Explicación:** Registra la calificación y recalcula el indicador de confianza con código `201 Created`. |
+| **GET** `/api/v1/experience/stores/{storeId}/price-errors` | Lista las alertas de discrepancia de precios en góndolas reportadas activamente por clientes. | `http://localhost:8080/swagger-ui/index.html#/Experience/getPriceErrors` | **Path:** `storeId` (int) | <pre>[\n  {"errorId": 88, "sku": "PROD-743", "reportedPrice": 19.90, "appPrice": 14.50}\n]</pre>**Explicación:** Devuelve los reportes inconsistentes abiertos para auditoría del Merchant (`200 OK`). |
+| **POST** `/api/v1/experience/stores/{storeId}/price-errors` | Permite denunciar en tiempo real si un producto físico es más costoso en caja que lo indicado en la app. | `http://localhost:8080/swagger-ui/index.html#/Experience/reportPriceError` | **Path:** `storeId` (int)<br>**Body (JSON):**<br>- `sku` (string)<br>- `observedPrice` (double) | <pre>{\n  "errorId": 89,\n  "ticketStatus": "OPENED",\n  "pointsAwarded": 10\n}</pre>**Explicación:** Genera la alerta, asigna puntos de fidelidad y retorna código `201 Created`. |
+| **GET** `/api/v1/experience/journeys/{recorridoId}/savings` | Entrega un informe consolidado del ahorro financiero total en soles que genera la ruta sugerida. | `http://localhost:8080/swagger-ui/index.html#/Experience/getJourneySavings` | **Path:** `recorridoId` (int) | <pre>{\n  "journeyId": 501,\n  "totalSpent": 120.40,\n  "moneySaved": 32.10,\n  "efficiency": "21%"\n}</pre>**Explicación:** Retorna el cálculo matemático de eficiencia de costos con código `200 OK`. |
+| **POST** `/api/v1/experience/journeys/{recorridoId}/savings` | Solicita al motor transaccional del backend procesar y simular las variables óptimas de ahorro. | `http://localhost:8080/swagger-ui/index.html#/Experience/calculateSavings` | **Path:** `recorridoId` (int) | <pre>{\n  "calculationId": 902,\n  "status": "COMPLETED",\n  "timestamp": "2026-05-16T10:31:00Z"\n}</pre>**Explicación:** Ejecuta los cálculos analíticos y los almacena retornando código `201 Created`. |
+| **PATCH** `/api/v1/experience/stores/{storeId}/price-errors/{errorId}/confirm` | Permite resolver una alerta de precio, ya sea aceptando la discrepancia o rechazando el reporte. | `http://localhost:8080/swagger-ui/index.html#/Experience/confirmPriceError` | **Path:** `storeId` (int), `errorId` (int)<br>**Body (JSON):**<br>- `action` (string: CONFIRMED/REJECTED) | <pre>{\n  "errorId": 88,\n  "resolution": "CONFIRMED",\n  "updatedInventoryPrice": 19.90\n}</pre>**Explicación:** Modificación parcial del estado del reporte con código `200 OK`. |
+| **GET** `/api/v1/experience/stores/{storeId}/trust-profile` | Retorna el nivel e insignia de fiabilidad comercial calculado para la sucursal. | `http://localhost:8080/swagger-ui/index.html#/Experience/getTrustProfile` | **Path:** `storeId` (int) | <pre>{\n  "storeId": 101,\n  "tier": "HIGHLY_TRUSTED",\n  "accuracyPercentage": 98.2\n}</pre>**Explicación:** Devuelve el estatus de confianza del local comercial con código `200 OK`. |
+
 
 #### 4.2.1.7. Software Deployment Evidence for Sprint Review
 
@@ -4527,6 +4845,18 @@ Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.ra
 
 #### 4.2.1.8. Team Collaboration Insights during Sprint
 
+A continuacion se muestran los colaboradores en cada sección: 
+
+**Landing Page**
+![img_2.png](img_2.png)
+
+
+**Api REST**
+![img_3.png](img_3.png)
+
+**SmartCart-Merchant**
+![img_4.png](img_4.png)
+
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
@@ -4550,7 +4880,145 @@ Se aplicará la técnica de Escenarios de Uso. En lugar de dar instrucciones dir
 
 ### 4.3.2. Registro de Entrevistas
 
+A continuación se presenta el registro de las tres entrevistas realizadas con comerciantes para la validación de la aplicación SmartCart.
+
+---
+
+**Entrevista N°1 - Carlos Mendoza Rivera**
+
+| **Campo** | **Información** |
+|------------|-----------------|
+| **Nombre completo** | Carlos Mendoza Rivera |
+| **Edad** | 38 años |
+| **Distrito** | Surquillo |
+| **Ocupación** | Administrador de tienda de conveniencia (Tambo+) |
+| **Fecha de entrevista** | Abril 2026 |
+| **Duración** | 22 minutos |
+| **Screenshot** | *(Insertar imagen del cuadro de video)* |
+| **URL del video** | https://drive.google.com/drive/folders/1Lfzl5KwwCxDEWqaUkiD3h6g9XGZQz53E |
+| **Timing de inicio** | 00:00 - Introducción |
+| **Timing de duración** | 00:00 - 22:00 |
+
+---
+
+**Entrevista N°2 - Ana Sofía Quiroz Valdez**
+
+| **Campo** | **Información** |
+|------------|-----------------|
+| **Nombre completo** | Ana Sofía Quiroz Valdez |
+| **Edad** | 45 años |
+| **Distrito** | Lince |
+| **Ocupación** | Gerente de tienda (Plaza Vea) |
+| **Fecha de entrevista** | Abril 2026 |
+| **Duración** | 24 minutos |
+| **Screenshot** | *(Insertar imagen del cuadro de video)* |
+| **URL del video** | https://drive.google.com/drive/folders/1Lfzl5KwwCxDEWqaUkiD3h6g9XGZQz53E |
+| **Timing de inicio** | 00:00 - Introducción |
+| **Timing de duración** | 00:00 - 24:00 |
+
+---
+
+**Entrevista N°3 - Miguel Ángel Torres Huamán**
+
+| **Campo** | **Información** |
+|------------|-----------------|
+| **Nombre completo** | Miguel Ángel Torres Huamán |
+| **Edad** | 52 años |
+| **Distrito** | San Juan de Lurigancho |
+| **Ocupación** | Propietario de tienda de abarrotes (Minimarket Miguel) |
+| **Fecha de entrevista** | Abril 2026 |
+| **Duración** | 18 minutos |
+| **Screenshot** | *(Insertar imagen del cuadro de video)* |
+| **URL del video** | https://drive.google.com/drive/folders/1Lfzl5KwwCxDEWqaUkiD3h6g9XGZQz53E |
+| **Timing de inicio** | 00:00 - Introducción |
+| **Timing de duración** | 00:00 - 18:00 |
+
 ### 4.3.3. Evaluaciones según heurísticas
+La evaluación heurística permite identificar problemas de usabilidad en una interfaz mediante el análisis sistemático contra principios establecidos. Para el segmento de comerciantes, se aplicó el método de evaluación de Nielsen con los 10 principios de usabilidad, evaluando los hallazgos recopilados durante las tres entrevistas de validación.
+
+**Aplicación de las 10 Heurísticas de Nielsen:**
+
+| # | Principio | Descripción |
+|---|-----------|-------------|
+| 1 | Visibilidad del estado del sistema | El sistema debe mantener al usuario informado sobre lo que está acontecendo |
+| 2 | Compatibilidad con el mundo real | El sistema debe hablar el lenguaje del usuario |
+| 3 | Control y libertad del usuario | Funciones de deshacer y rehacer disponibles |
+| 4 | Consistencia y estándares | Uso consistente de convenciones en la interfaz |
+| 5 | Prevención de errores | Diseño que evita que ocurran errores |
+| 6 | Reconocimiento antes que recuerdo | Minimizar la carga de memoria del usuario |
+| 7 | Flexibilidad y eficiencia de uso | Aceleradores para usuarios experimentados |
+| 8 | Diseño estético y minimalista | Eliminar información irrelevante |
+| 9 | Recuperación de errores | Mensajes de error claros y soluciones |
+| 10 | Ayuda y documentación | Sistema autoexplicativo |
+
+**Escala de Severidad:**
+
+- **0 - Sin problema**: No se detecta ningún problema de usabilidad
+- **1 - Problema cosmético**: No requiere ser arreglado
+- **2 - Problema menor**: Debe ser arreglado
+- **3 - Problema grave**: Debe ser arreglado con alta prioridad
+- **4 - Catástrofe**: Debe arreglarse antes del lanzamiento
+
+---
+
+#### Resultados de la Evaluación Heurística - Comerciantes
+
+**Entrevista N°1 - Carlos Mendoza Rivera (Administrador Tambo+, Surquillo)**
+
+| Hallazgo | Heurística | Severidad | Descripción |
+|----------|------------|-----------|-------------|
+| El usuario no encontró inmediatamente la sección de escaneos QR | Visibilidad del estado del sistema | 2 | Los escaneos QR aparecían "más abajo" en el Dashboard, obligando al usuario a hacer scroll |
+| El mapa en el registro de sucursal fue fácil de usar | — | 0 | El usuario pudo ubicar su tienda sin asistencia |
+| El proceso de registro fue directo | Consistencia y estándares | 0 | El flujo fue lógico y sin confusiones |
+
+**Entrevista N°2 - Ana Sofía Quiroz Valdez (Gerenta Plaza Vea, Lince)**
+
+| Hallazgo | Heurística | Severidad | Descripción |
+|----------|------------|-----------|-------------|
+| El mapa en la tablet es muy pequeño | Compatibilidad con el mundo real | 3 | Dificulta precisionar la ubicación exacta de la sucursal |
+| No existe funcionalidad de ofertas masivas | Flexibilidad y eficiencia | 3 | Con 2000 productos, crear ofertas uno por uno es ineficiente |
+| No hay integración con sistemas SAP/Excel | Prevención de errores | 3 | Actualizar precios manualmente es inviable para un supermercado |
+| Preocupación por exposición de precios | Compatibilidad con el mundo real | 2 | El comerciante no quiere que sus precios sean visibles a competidores |
+| Los gráficos en el Dashboard fueron valorados positivamente | — | 0 | La visualización con gráficos fue apreciada |
+
+**Entrevista N°3 - Miguel Ángel Torres Huamán (Dueño Minimarket, SJL)**
+
+| Hallazgo | Heurística | Severidad | Descripción |
+|----------|------------|-----------|-------------|
+| El mapa le costó entenderlo | Compatibilidad con el mundo real | 2 | Usuario de 52 años tuvo dificultades con el mapa interactivo |
+| Sin mensaje de confirmación al guardar | Visibilidad del estado del sistema | 3 | El usuario no sabía si sus cambios se guardaron correctamente |
+| Los números carecen de contexto | Reconocimiento antes que recuerdo | 2 | "89 visitas ¿son muchas o pocas?" - Sin benchmarks comparativos |
+| El usuario pidió actualización automática de precios | Flexibilidad y eficiencia | 2 | Desea que los precios se actualicen automáticamente |
+
+---
+
+#### Resumen Consolidado
+
+| Nivel de Severidad | Cantidad de Hallazgos | Porcentaje |
+|-------------------|----------------------|-------------|
+| Catástrofe (4) | 0 | 0% |
+| Grave (3) | 3 | 30% |
+| Menor (2) | 4 | 40% |
+| Cosmético (1) | 0 | 0% |
+| Sin problema (0) | 3 | 30% |
+
+**Total: 10 hallazgos**
+
+---
+
+#### Hallazgos Prioritarios a Resolver
+
+| # | Hallazgo | Severidad | Recomendación |
+|---|----------|-----------|---------------|
+| 1 | No existe funcionalidad de ofertas masivas | 3 | Implementar carga masiva mediante CSV o selección múltiple |
+| 2 | No hay integración con sistemas externos (SAP/Excel) | 3 | Desarrollar módulo de importación de precios |
+| 3 | Sin mensaje de confirmación al guardar cambios | 3 | Agregar notificaciones toast o modal de confirmación |
+| 4 | Mapa demasiado pequeño en tablets | 3 | Aumentar tamaño del componente de mapa |
+| 5 | Las métricas carecen de contexto comparativo | 2 | Agregar indicadores de tendencia y benchmarks del sector |
+
+---
+
+#### Conclusión
 
 <hr class="page-break">
 
@@ -4597,8 +5065,9 @@ Por otro lado, la adopción de una arquitectura basada en Spring Boot y Angular 
 
 # Anexos
 
-Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
-Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
+* Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+
+* Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
 
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
