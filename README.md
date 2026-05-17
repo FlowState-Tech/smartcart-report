@@ -4289,7 +4289,7 @@ Se seguirá el enfoque planteado por Vincent Driessen, el cual define dos ramas 
 
 | **Tipo de rama** | **Uso principal**                                | **Convención de nombres**      | **Ejemplo**               |
 |------------------|--------------------------------------------------|--------------------------------|---------------------------|
-| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-salim`   |
+| **feature**      | Desarrollo de funcionalidades nuevas.            | `feature/<nombre-descriptivo>` | `feature/sprint1-anjali`  |
 | **release**      | Preparación de una versión previa al despliegue. | `release/vX.Y.Z`               | `release/v1.0.0`          |
 | **hotfix**       | Corrección rápida de errores en producción.      | `hotfix/<problema>`            | `hotfix/fix-crash-navbar` |
 
@@ -4386,7 +4386,7 @@ Para el despliegue de la Landing Page, se utiliza Netlify, una plataforma especi
 2. **Creación del Sitio:** Se crea un nuevo proyecto dentro de la plataforma seleccionando el repositorio específico del equipo.
 3. **Control de Versiones:** Se define la rama de producción (comúnmente `main` o `develop`) para activar el despliegue automático tras cada actualización.
 4. **Parámetros de Build:** Se configuran los comandos de construcción (ej. `npm run build`) y se apunta a la carpeta de salida generada (ej. `dist/` o `build/`).
-5. [cite_start]**Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
+5. **Alojamiento:** Se confirma la configuración para que la plataforma realice el despliegue inicial y proporcione la URL pública necesaria para el hito TB1.
 
 **Railway (Backend Services)**
 La implementación y gestión de las APIs REST se realiza a través de Railway, una plataforma de infraestructura que simplifica el despliegue de servicios backend para múltiples lenguajes y frameworks. El proceso de despliegue configurado incluye:
@@ -5065,8 +5065,9 @@ Por otro lado, la adopción de una arquitectura basada en Spring Boot y Angular 
 
 # Anexos
 
-Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
-Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
+* Enlace de la landing page desplegada: [https://flowstatetech-smartcart.netlify.app/](https://flowstatetech-smartcart.netlify.app/)
+
+* Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
 
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
