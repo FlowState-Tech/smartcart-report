@@ -5020,6 +5020,94 @@ La evaluación heurística permite identificar problemas de usabilidad en una in
 
 #### Conclusión
 
+La evaluación heurística permite identificar problemas de usabilidad en una interfaz mediante el análisis sistemático contra principios establecidos. Para el segmento de comerciantes, se aplicó el método de evaluación de Nielsen con los 10 principios de usabilidad, evaluando los hallazgos recopilados durante las tres entrevistas de validación.
+
+**Aplicación de las 10 Heurísticas de Nielsen:**
+
+| # | Principio | Descripción |
+|---|-----------|-------------|
+| 1 | Visibilidad del estado del sistema | El sistema debe mantener al usuario informado sobre lo que está acontecendo |
+| 2 | Compatibilidad con el mundo real | El sistema debe hablar el lenguaje del usuario |
+| 3 | Control y libertad del usuario | Funciones de deshacer y rehacer disponibles |
+| 4 | Consistencia y estándares | Uso consistente de convenciones en la interfaz |
+| 5 | Prevención de errores | Diseño que evita que ocurran errores |
+| 6 | Reconocimiento antes que recuerdo | Minimizar la carga de memoria del usuario |
+| 7 | Flexibilidad y eficiencia de uso | Aceleradores para usuarios experimentados |
+| 8 | Diseño estético y minimalista | Eliminar información irrelevante |
+| 9 | Recuperación de errores | Mensajes de error claros y soluciones |
+| 10 | Ayuda y documentación | Sistema autoexplicativo |
+
+**Escala de Severidad:**
+
+- **0 - Sin problema**: No se detecta ningún problema de usabilidad
+- **1 - Problema cosmético**: No requiere ser arreglado
+- **2 - Problema menor**: Debe ser arreglado
+- **3 - Problema grave**: Debe ser arreglado con alta prioridad
+- **4 - Catástrofe**: Debe arreglarse antes del lanzamiento
+
+---
+
+#### Resultados de la Evaluación Heurística - Comerciantes
+
+**Entrevista N°1 - Carlos Mendoza Rivera (Administrador Tambo+, Surquillo)**
+
+| Hallazgo | Heurística | Severidad | Descripción |
+|----------|------------|-----------|-------------|
+| El usuario no encontró inmediatamente la sección de escaneos QR | Visibilidad del estado del sistema | 2 | Los escaneos QR aparecían "más abajo" en el Dashboard, obligando al usuario a hacer scroll |
+| El mapa en el registro de sucursal fue fácil de usar | — | 0 | El usuario pudo ubicar su tienda sin asistencia |
+| El proceso de registro fue directo | Consistencia y estándares | 0 | El flujo fue lógico y sin confusiones |
+
+**Entrevista N°2 - Ana Sofía Quiroz Valdez (Gerenta Plaza Vea, Lince)**
+
+| Hallazgo | Heurística | Severidad | Descripción |
+|----------|------------|-----------|-------------|
+| El mapa en la tablet es muy pequeño | Compatibilidad con el mundo real | 3 | Dificulta precisionar la ubicación exacta de la sucursal |
+| No existe funcionalidad de ofertas masivas | Flexibilidad y eficiencia | 3 | Con 2000 productos, crear ofertas uno por uno es ineficiente |
+| No hay integración con sistemas SAP/Excel | Prevención de errores | 3 | Actualizar precios manualmente es inviable para un supermercado |
+| Preocupación por exposición de precios | Compatibilidad con el mundo real | 2 | El comerciante no quiere que sus precios sean visibles a competidores |
+| Los gráficos en el Dashboard fueron valorados positivamente | — | 0 | La visualización con gráficos fue apreciada |
+
+**Entrevista N°3 - Miguel Ángel Torres Huamán (Dueño Minimarket, SJL)**
+
+| Hallazgo | Heurística | Severidad | Descripción |
+|----------|------------|-----------|-------------|
+| El mapa le costó entenderlo | Compatibilidad con el mundo real | 2 | Usuario de 52 años tuvo dificultades con el mapa interactivo |
+| Sin mensaje de confirmación al guardar | Visibilidad del estado del sistema | 3 | El usuario no sabía si sus cambios se guardaron correctamente |
+| Los números carecen de contexto | Reconocimiento antes que recuerdo | 2 | "89 visitas ¿son muchas o pocas?" - Sin benchmarks comparativos |
+| El usuario pidió actualización automática de precios | Flexibilidad y eficiencia | 2 | Desea que los precios se actualicen automáticamente |
+
+---
+
+#### Resumen Consolidado
+
+| Nivel de Severidad | Cantidad de Hallazgos | Porcentaje |
+|-------------------|----------------------|-------------|
+| Catástrofe (4) | 0 | 0% |
+| Grave (3) | 3 | 30% |
+| Menor (2) | 4 | 40% |
+| Cosmético (1) | 0 | 0% |
+| Sin problema (0) | 3 | 30% |
+
+**Total: 10 hallazgos**
+
+---
+
+#### Hallazgos Prioritarios a Resolver
+
+| # | Hallazgo | Severidad | Recomendación |
+|---|----------|-----------|---------------|
+| 1 | No existe funcionalidad de ofertas masivas | 3 | Implementar carga masiva mediante CSV o selección múltiple |
+| 2 | No hay integración con sistemas externos (SAP/Excel) | 3 | Desarrollar módulo de importación de precios |
+| 3 | Sin mensaje de confirmación al guardar cambios | 3 | Agregar notificaciones toast o modal de confirmación |
+| 4 | Mapa demasiado pequeño en tablets | 3 | Aumentar tamaño del componente de mapa |
+| 5 | Las métricas carecen de contexto comparativo | 2 | Agregar indicadores de tendencia y benchmarks del sector |
+
+---
+
+#### Conclusión
+
+La aplicación para comerciantes presenta una base funcional sólida para tiendas pequeñas y medianas. Sin embargo, se requieren mejoras críticas para soportar operaciones de comercios grandes: integración con sistemas externos, operaciones masivas, y mejor retroalimentación del estado del sistema. Las mejoras priorizadas permitirán que SmartCart sea viable para todo tipo de establecimientos de retail.
+
 <hr class="page-break">
 
 ## Conclusiones
