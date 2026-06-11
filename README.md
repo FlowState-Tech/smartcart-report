@@ -94,10 +94,10 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 
 **TB1**
 A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
-![img_1.png](img_1.png)
+![img_1.png](assets/github-insights/img_1.png)
 
 A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
-![img.png](img.png)
+![img.png](assets/github-insights/img.png)
 <hr class="page-break">
 
 # Contenido
@@ -4724,21 +4724,21 @@ Se evidencia la ejecucion de los productos
 
 **Landing Page**
 
-![img_5.png](img_5.png)
-![img_6.png](img_6.png)
-![img_7.png](img_7.png)
+![img_5.png](assets/execution-evidence/img_5.png)
+![img_6.png](assets/execution-evidence/img_6.png)
+![img_7.png](assets/execution-evidence/img_7.png)
 
 **Api REST**
 
-![img_8.png](img_8.png)
-![img_9.png](img_9.png)
-![img_10.png](img_10.png)
+![img_8.png](assets/execution-evidence/img_8.png)
+![img_9.png](assets/execution-evidence/img_9.png)
+![img_10.png](assets/execution-evidence/img_10.png)
 
 **SmartCart Merchant**
 
-![img_11.png](img_11.png)
-![img_12.png](img_12.png)
-![img_13.png](img_13.png)
+![img_11.png](assets/execution-evidence/img_11.png)
+![img_12.png](assets/execution-evidence/img_12.png)
+![img_13.png](assets/execution-evidence/img_13.png)
 
 
 #### 4.2.1.6. Services Documentation Evidence for Sprint Review
@@ -4848,14 +4848,14 @@ Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.ra
 A continuacion se muestran los colaboradores en cada sección: 
 
 **Landing Page**
-![img_2.png](img_2.png)
+![img_2.png](assets/github-insights/img_2.png)
 
 
 **Api REST**
-![img_3.png](img_3.png)
+![img_3.png](assets/github-insights/img_3.png)
 
 **SmartCart-Merchant**
-![img_4.png](img_4.png)
+![img_4.png](assets/github-insights/img_4.png)
 
 ## 4.3. Validation Interviews
 
