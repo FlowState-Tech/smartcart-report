@@ -269,6 +269,15 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
       - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
       - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
       - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+    - [4.2.2. Sprint 2](#422-sprint-2)
+      - [4.2.2.1. Sprint Planning 2](#4221-sprint-planning-2)
+      - [4.2.2.2. Sprint Backlog 2](#4222-sprint-backlog-2)
+      - [4.2.2.3. Development Evidence for Sprint Review](#4223-development-evidence-for-sprint-review)
+      - [4.2.2.4. Testing Suite Evidence for Sprint Review](#4224-testing-suite-evidence-for-sprint-review)
+      - [4.2.2.5. Execution Evidence for Sprint Review](#4225-execution-evidence-for-sprint-review)
+      - [4.2.2.6. Services Documentation Evidence for Sprint Review](#4226-services-documentation-evidence-for-sprint-review)
+      - [4.2.2.7. Software Deployment Evidence for Sprint Review](#4227-software-deployment-evidence-for-sprint-review)
+      - [4.2.2.8. Team Collaboration Insights during Sprint](#4228-team-collaboration-insights-during-sprint)
   - [4.3. Validation Interviews](#43-validation-interviews)
     - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
     - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
@@ -4733,6 +4742,24 @@ A continuacion se muestran los colaboradores en cada sección:
 
 **SmartCart-Merchant**
 ![img_4.png](assets/github-insights/img_4.png)
+
+#### 4.2.2. Sprint 2
+
+#### 4.2.2.1. Sprint Planning 2
+
+#### 4.2.2.2. Sprint Backlog 2
+
+#### 4.2.2.3. Development Evidence for Sprint Review
+
+#### 4.2.2.4. Testing Suite Evidence for Sprint Review
+
+#### 4.2.2.5. Execution Evidence for Sprint Review
+
+#### 4.2.2.6. Services Documentation Evidence for Sprint Review
+
+#### 4.2.2.7. Software Deployment Evidence for Sprint Review
+
+#### 4.2.2.8. Team Collaboration Insights during Sprint
 
 ## 4.3. Validation Interviews
 
