@@ -45,6 +45,8 @@
 | 1.0     | 09/04/26 | Anjali Amaro | Organización inicial del informe         |
 | 1.1     | 23/04/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 1. y Capítulo 2. |
 | 2.0     | 16/05/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 3. y Capítulo 4. |
+| 3.0     | 18/06/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 4 |
+
 
 <hr class="page-break">
 
