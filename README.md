@@ -5237,13 +5237,18 @@ La evaluación heurística permite identificar problemas de usabilidad en una in
 
 ## Conclusiones
 
-SmartCart se presenta como una respuesta innovadora frente a las deficiencias del comercio físico tradicional, integrando con éxito la gestión de presupuestos con la asistencia logística en tiempo real. Mediante el análisis de mercado y el feedback directo de los entrevistados, se ha ratificado que la herramienta no solo agiliza el proceso de adquisición, sino que maximiza el ahorro del usuario a través de un sistema de navegación y comparación inteligente. Esta coherencia entre las demandas del sector y las capacidades de la plataforma garantiza un impacto positivo tanto en el ahorro del consumidor como en el posicionamiento estratégico de los establecimientos locales.
-
-Por otro lado, la adopción de una arquitectura basada en Spring Boot para el ecosistema de microservicios y Flutter para el despliegue del cliente móvil asegura que la solución posea la escalabilidad, portabilidad y el mantenimiento que exige el mercado actual. La solidez técnica bien definido y en la integración modular de APIs de terceros, permite que el sistema soporte un crecimiento constante de usuarios y datos sin perder eficiencia. En definitiva, el proyecto logra un balance ideal entre una experiencia de usuario optimizada y una infraestructura técnica sofisticada, dejando cimentada una base sólida para el escalamiento de la plataforma en el ecosistema del retail digital. 
+Se concluye que SmartCart resuelve de manera efectiva la asimetría de información y la ineficiencia económica que afecta a los consumidores. Las herramientas integradas atacan directamente el mayor punto de dolor identificado en el 100% de los estudiantes y jóvenes profesionales entrevistados: la pérdida de tiempo por desplazamientos innecesarios y la necesidad de un control presupuestal debido a sus ingresos variables.
+Los hallazgos del análisis de entrevistas ratificaron los Problem Statements del segmento de Establecimientos. Los gerentes de sede sufren de "ceguera de datos" al no poder medir el flujo digital hacia la tienda física y experimentan un alto estrés operativo por la inconsistencia de precios. El backend desarrollado resuelve esta problemática al proveer los cimientos para que las tiendas de conveniencia y supermercados gestionen alertas y flujos locales, sentando las bases para eliminar la dependencia de las oficinas centrales.
+El proceso de Lean UX planteó la necesidad de conectar de manera ágil el entorno digital con las tiendas físicas. A través de la implementación del controlador de verificación y los endpoints del recorrido de compra, el sistema valida con éxito los criterios de éxito técnico requeridos: permitir que el consumidor trace trayectos óptimos basados en datos reales y habilitar un canal transparente para que los comercios locales incrementen la rotación de su inventario y reduzcan mermas. 
 
 <hr class="page-break">
 
 ## Recomendaciones
+
+Con base en el reclamo unánime del 100% de los gerentes entrevistados sobre las discrepancias entre precios digitales y flejes físicos, se recomienda priorizar en el Roadmap del Sprint 3 el diseño de las interfaces de carga y actualización exprés de inventario en la aplicación móvil. Esto permitirá sincronizar stocks de forma ágil y evitar fricciones en las cajas de autoservicio o tradicionales.
+Se sugiere incorporar en el backlog de desarrollo un módulo de notificaciones push o integración nativa para alertas geolocalizadas. Esta funcionalidad responderá directamente a la expectativa de los consumidores de recibir ofertas dinámicas por canales móviles y permitirá a los jefes de tienda de descuento liquidar productos perecibles de manera autónoma en un radio menor a 1 km.
+
+<hr class="page-break">
 
 ## Bibliografía
 
