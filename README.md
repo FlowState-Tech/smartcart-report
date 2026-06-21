@@ -102,6 +102,15 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 ![img.png](assets/github-insights/img.png)
 <hr class="page-break">
 
+**AV2**
+
+A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
+
+![img_2.png](assets/github-insights/commits1.png)
+![img_3.png](assets/github-insights/commits2.png)
+![img_4.png](assets/github-insights/commits3.png)
+
+
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
