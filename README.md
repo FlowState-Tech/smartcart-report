@@ -4747,15 +4747,209 @@ A continuacion se muestran los colaboradores en cada sección:
 
 #### 4.2.2.1. Sprint Planning 2
 
+| Campo | Descripción |
+| :--- | :--- |
+| **Sprint #** | Sprint 2 |
+| **Sprint Planning Background** | |
+| **Date** | 2026-05-28 |
+| **Time** | 11:00 AM (GMT -5) |
+| **Location** | Modalidad remota por Google Meet |
+| **Prepared By** | FlowState Tech |
+| **Attendees (to planning meeting)** | Anjali Amaro Villar, Joseph Manuel Chavez Viera, Katherine Maryory Mejia Aliaga, Kevin Patrick Pardo Chumpitazi, Stephano Renan Valdivia Quispe |
+| **Sprint 1 Review Summary** | Se validó el despliegue final de la Landing Page responsiva. El registro base de comerciantes quedó estructurado, pero se identificó la necesidad de integrarlo directamente con el backend definitivo en el siguiente ciclo. |
+| **Sprint 1 Retrospective Summary** | Se concluyó que el equipo domina el flujo de diseño, pero se requiere acelerar la configuración del entorno del servidor. Se acordó priorizar la arquitectura del backend desde el día uno del Sprint 2 para evitar cuellos de botella en la entrega. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 2 Goal** |Desarrollar y desplegar al 100% el backend en producción pública con su respectiva documentación de servicios (API), e implementar las funcionalidades core de SmartCart (gestión de usuarios, mascotas y emparejamiento con servicios). |
+| **Sprint 1 Velocity** | 45 |
+| **Sum of Story Points** | 45 |
+
 #### 4.2.2.2. Sprint Backlog 2
+
+El Sprint Backlog 2 representa la ejecución de las tareas planificadas para el segundo ciclo de desarrollo de **SmartCart**. Tras haber consolidado la Landing Page y el motor de comparación base en el ciclo anterior, durante este periodo el equipo concentró sus esfuerzos en habilitar el shopping journey avanzado, el trazado de rutas eficientes, y la gestión de catálogos para comerciantes.
+
+El uso de **Trello** como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
+
+**Captura del Tablero Trello (Fin del Sprint 2):**
+<div align="center">
+  <img src="assets/imagenes/trellosprint2.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US07** | Armado de Canasta | T7 | Implementación de Canasta Básica | Crear endpoints CRUD para gestionar la canasta por categorías y desarrollar la interfaz para listar e incrementar productos. | 8 | Anjali Amaro  | Done |
+| **US08** | Ruta de Compra Eficiente | T8 | Motor Visual de Trazado de Rutas | Implementar el algoritmo de ruta óptima en el servidor y conectarlo al mapa frontend para trazar el camino más corto. | 4 | Kevin Pardo  | Done |
+| **US09** | Cálculo de Tiempo | T9 | Sistema de Estimación de Permanencia | Programar la lógica de tiempo según el formato de tienda (Express vs Supermercado) y diseñar las etiquetas de tiempo en la app. | 4 | Kevin Pardo  | Done |
+| **US010** | Registro de Sucursal | T10 | Registro Geográfico de Tiendas | Crear el modelo de datos con validación de coordenadas y diseñar el formulario web para registrar la ubicación y RUC del local. | 5 | Kevin Pardo  | Done |
+| **US011** | Carga de Catálogo | T11 | Gestión Completa de Carga de Precios | Desarrollar el procesamiento de archivos, la asignación automática de etiquetas de oferta y la interfaz de subida para el comerciante. | 5 | Stephano Valdivia  | Done |
+| **US014** | Validación Comunitaria | T14 | Reporte y Puntos por GPS | Desarrollar el módulo backend para otorgar 10 puntos al perfil e implementar la restricción por GPS para validar precios en tienda. | 5 | Kevin Pardo  | Done |
+| **TS03** | API Carga Catálogo | T3 | Optimización y Validación de CSV | Crear un servicio REST optimizado para procesar listas de precios en bloque y configurar middlewares que validen duplicados. | 5 | Stephano Valdivia | Done |
+| **TS04** | API Motor de Rutas | T4 | Endpoint y Excepciones de Ruta | Desarrollar el servicio que ordene las coordenadas eficientemente y controlar las excepciones geográficas con respuestas HTTP 422. | 5 | Anjali Amaro | Done |
+| **TS05** | API Notificaciones Push | T5 | Alertas por Proximidad | Implementar consultas espaciales en la BD para segmentar usuarios en un radio de 5km y configurar el sistema de colas de envío. | 5 | Stephano Valdivia | Done |
+
 
 #### 4.2.2.3. Development Evidence for Sprint Review
 
+Durante el Sprint 2, el equipo adoptó la estrategia de control de versiones GitFlow para asegurar una integración limpia y organizada de las nuevas funcionalidades core del backend y frontend de SmartCart.
+A continuación, se presentan las evidencias de desarrollo de software correspondientes a este entrega.
+
+**Landing Page**
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-api | develop | `b8a7f1e` | feat: add merchantId to Merchant model and update related methods | 21/06/2026 |
+| flowstate-tech/smartcart-api | develop | `c3d4e5f` | feat: implement MerchantProfile feature with query and response models | 21/06/2026 |
+| flowstate-tech/smartcart-api | main | `a1b2c3d` | feat: update Hibernate ddl-auto setting to update in application-prod.properties | 20/06/2026 |
+| flowstate-tech/smartcart-api | main | `7e8f9a0` | merge: integrate develop into main | 20/06/2026 |
+| flowstate-tech/smartcart-api | develop | `f2g3h4i` | Merge branch 'feature/fin-del-back' into develop | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `5j6k7l8` | feat: add Spring @Autowired annotation to GoogleMapsRoutingAdapter constructor | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `9m0n1o2` | feat: cambios finales del backend | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `3p4q5r6` | feat: cambios finales | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `7s8t9u0` | chore: add a blank line for improved readability in application.properties | 18/06/2026 |
+| flowstate-tech/smartcart-api | main | `1v2w3x4` | merge: insert develop into main | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `5y6z7a8` | merge: integrate feature/verification into develop | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `9b0c1d2` | feat: add VerificationController and VerificationApplicationResponse for application registration | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `3e4f5g6` | feat: implement DecolectaSunatAdapter and SunatService for RUC validation | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `7h8i9j0` | feat: implement verification application model with RUC validation | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `1k2l3m4` | feat: add decolecta api configuration to application properties | 18/06/2026 |
+| flowstate-tech/smartcart-consumer | main | `2n3o4p5` | feat: setup initial Flutter project with DDD architecture | 20/06/2026 |
+
 #### 4.2.2.4. Testing Suite Evidence for Sprint Review
+
+En esta sección se presenta el conjunto de Unit Tests e Integration Tests automatizados en el backend de **SmartCart** (`smartcart-api`) para el Sprint 2. Estas pruebas garantizan la integridad matemática del algoritmo de enrutamiento, el parseo de datos de mapas de terceros y el cumplimiento estricto de las reglas de georreferenciación por hardware.
+
+#### Historial de Commits de Testing
+A continuación, se detalla la relación de commits del repositorio dedicados al aseguramiento de la calidad y despliegue del entorno de pruebas controlado:
+
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-api | develop | `5j6k7l8` | feat: add Spring @Autowired annotation to GoogleMapsRoutingAdapter constructor | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `1k2l3m4` | feat: add decolecta api configuration to application properties | 18/06/2026 |
+
+---
+
+#### 1. Unit Tests (Pruebas Unitarias)
+
+A nivel de dominio e infraestructura externa, se implementaron pruebas de caja blanca utilizando la librería **JUnit 5** para aislar y certificar el comportamiento de los componentes matemáticos y adaptadores de red de SmartCart.
+
+* **Clase Evaluada 1:** `GeofencingServiceTest`
+* **Comportamiento:** Comprueba la lógica de restricción por cercanía espacial (`US14`). El test valida que el sistema acepte correctamente ubicaciones dentro del radio de 500 metros y rechace de forma tajante peticiones de usuarios lejanos a la tienda física.
+
+java
+package com.smartcart.shoppingjourney.domain.services;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class GeofencingServiceTest {
+
+    private final GeofencingService geofencing = new GeofencingService();
+
+    @Test
+    void acceptsLocationWithin500Meters() {
+        assertTrue(geofencing.isWithinStoreRadius(-12.0464, -77.0428, -12.0464, -77.0428));
+    }
+
+    @Test
+    void rejectsLocationFarFromStore() {
+        assertFalse(geofencing.isWithinStoreRadius(-12.0464, -77.0428, -12.1000, -77.1000));
+    }
+}
+
+* **Clase Evaluada 2:** `RouteOptimizationServiceTest`
+* **Comportamiento:** Certifica el correcto funcionamiento del algoritmo de optimización de paradas combinadas (US08, TS04). Asegura mediante coordenadas geográficas que el algoritmo ordene los destinos basándose en el principio del vecino más cercano (Nearest Neighbor), mapeando correctamente la secuencia de visitas.
+
+java
+package com.smartcart.shoppingjourney.domain.services;
+
+import com.smartcart.shoppingjourney.domain.model.valueobjects.RouteStop;
+import org.junit.jupiter.api.Test;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class RouteOptimizationServiceTest {
+
+    private final RouteOptimizationService service = new RouteOptimizationService();
+
+    @Test
+    void ordersStopsByNearestNeighbor() {
+        var stops = List.of(
+                new RouteStop(1L, "Far", -12.05, -77.05, 0),
+                new RouteStop(2L, "Near", -12.0465, -77.0430, 0));
+        var ordered = service.optimize(-12.0464, -77.0428, stops);
+        assertEquals(2L, ordered.getFirst().storeId());
+        assertEquals(1, ordered.getFirst().sequence());
+        assertEquals(1L, ordered.get(1).storeId());
+    }
+}
+
+* **Clase Evaluada 3:** `GoogleMapsRoutingAdapterTest`
+* **Comportamiento:** Valida la deserialización segura mediante Jackson de los payloads JSON provenientes del servicio de Google Maps (TS04, US09). Verifica que la suma agregada de las distancias en metros y la duración en segundos de múltiples tramos (legs) se calcule de forma precisa sin desbordamientos de datos.
+
+java
+package com.smartcart.shoppingjourney.infrastructure.external.maps;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class GoogleMapsRoutingAdapterTest {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+
+    @Test
+    void parseRoute_sumsAllLegs() throws Exception {
+        var json = """
+                {
+                  "routes": [{
+                    "overview_polyline": { "points": "abc123" },
+                    "legs": [
+                      { "distance": { "value": 1000 }, "duration": { "value": 120 } },
+                      { "distance": { "value": 500 }, "duration": { "value": 60 } }
+                    ]
+                  }]
+                }
+                """;
+        var path = GoogleMapsRoutingAdapter.parseRoute(MAPPER.readTree(json), "google");
+        assertEquals("abc123", path.encodedPolyline());
+        assertEquals(1500, path.distanceMeters());
+        assertEquals(180, path.durationSeconds());
+        assertEquals("google", path.provider());
+    }
+}
+
+#### 2. Integration Tests (Pruebas de Integración y Entorno)
+* **Clase Evaluada:** `SmartcartApiApplicationTests`
+* **Comportamiento:** Asegura la inicialización e integridad del contexto completo del framework Spring Boot (contextLoads()) bajo un perfil controlado de pruebas denominado test.
+# Archivo src/test/resources/application-test.properties
+spring.datasource.url=jdbc:h2:mem:smartcart_test;DB_CLOSE_DELAY=-1
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+authorization.jwt.secret=test-secret-key-for-unit-tests-only-32chars
+authorization.jwt.expiration.days=1
+decolecta.api.token=test-token
+smartcart.maps.provider=fallback
 
 #### 4.2.2.5. Execution Evidence for Sprint Review
 
 #### 4.2.2.6. Services Documentation Evidence for Sprint Review
+
+Aquí se presenta la documentación técnica de los nuevos contratos de servicios y endpoints expuestos en el backend de SmartCart (`smartcart-api`) desarrollados e integrados para este segundo entregable (Sprint 2):
+
+| Endpoint (Verbo + Sintaxis) | Acciones Implementadas / Descripción | Enlaces (URL Local Swagger) | Especificación de Parámetros | Ejemplo y Explicación del Response |
+| :--- | :--- | :--- | :--- | :--- |
+| **POST** `/api/v1/verification/applications` | Registra una solicitud de verificación corporativa de una empresa evaluando su RUC antes del alta de sucursales. | `http://localhost:8080/swagger-ui/index.html#/Verification/registerApplication` | **Body (JSON):**<br>- `merchantId` (string)<br>- `ruc` (string) | <pre>{\n  "id": 501,\n  "merchantId": "M-102",\n  "ruc": "20601234567",\n  "companyName": "Tiendas Tambo S.A.C.",\n  "status": "APPROVED"\n}</pre>**Explicación:** Retorna el estado de la aplicación procesada contra SUNAT con código `201 Created`. |
+| **POST** `/api/v1/journey/routes` | Inicializa y crea una nueva ruta de compra vinculada a un comprador y su lista de artículos. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/createRoute` | **Body (JSON):**<br>- `buyerId` (long)<br>- `listId` (long) | <pre>{\n  "id": "R-901",\n  "buyerId": 15,\n  "listId": 45,\n  "status": "CREATED",\n  "stops": []\n}</pre>**Explicación:** Crea la entidad base del recorrido en el sistema con código `201 Created`. |
+| **GET** `/api/v1/journey/routes` | Filtra y recupera la lista de rutas planificadas de un consumidor específico con opción de filtrar por lista. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/findRoutes` | **Query Params:**<br>- `buyerId` (long, requerido)<br>- `listId` (long, opcional) | <pre>[\n  {\n    "id": "R-901",\n    "buyerId": 15,\n    "listId": 45,\n    "status": "CREATED"\n  }\n]</pre>**Explicación:** Lista las rutas coincidentes en el historial de navegación con código `200 OK`. |
+| **GET** `/api/v1/journey/routes/{routeId}/optimal-view` | Extrae la perspectiva optimizada y el trazado geométrico detallado de la ruta calculado por Google Maps. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/optimalView` | **Path Param:**<br>- `routeId` (string) | <pre>{\n  "routeId": "R-901",\n  "status": "OPTIMIZED",\n  "encodedPolyline": "abc123",\n  "distanceMeters": 1500,\n  "durationSeconds": 180,\n  "mapsProvider": "google",\n  "stops": [\n    {"storeId": 101, "storeName": "Tambo", "latitude": -12.04, "longitude": -77.04, "sequence": 1}\n  ]\n}</pre>**Explicación:** Proporciona los metadatos de enrutamiento y la polilínea para renderizado gráfico en Flutter (`200 OK`). |
+| **POST** `/api/v1/journey/routes/{routeId}/residence` | Establece las coordenadas GPS del punto de partida u hogar del consumidor dentro del recorrido. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/defineResidence` | **Path Param:** `routeId` (string)<br>**Body (JSON):**<br>- `latitude` (double)<br>- `longitude` (double) | <pre>{\n  "id": "R-901",\n  "residenceLat": -12.123,\n  "residenceLng": -77.012,\n  "status": "RESIDENCE_DEFINED"\n}</pre>**Explicación:** Registra el origen del trayecto de forma exitosa retornando código `200 OK`. |
+| **POST** `/api/v1/journey/routes/{routeId}/optimize` | Ejecuta el algoritmo del vecino más cercano para ordenar una lista multi-parada de tiendas físicas. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/optimizeRoute` | **Path Param:** `routeId` (string)<br>**Body (JSON):**<br>- `storeIds` (array de longs) | <pre>{\n  "id": "R-901",\n  "status": "OPTIMIZED",\n  "distanceMeters": 3400,\n  "mapsProvider": "google"\n}</pre>**Explicación:** Ordena y recalcula la ruta según criterios de proximidad geográfica con código `200 OK`. |
+| **POST** `/api/v1/journey/routes/{routeId}/register-arrival` | Registra la llegada a un establecimiento físico comprobando restricciones de hardware (Geofencing GPS). | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/registerArrival` | **Path Param:** `routeId` (string)<br>**Body (JSON):**<br>- `latitude` (double)<br>- `longitude` (double) | <pre>{\n  "id": "R-901",\n  "status": "STOP_ARRIVED",\n  "mapsProvider": "fallback"\n}</pre>**Explicación:** Modifica el estado del flujo si el usuario se halla a menos de 500 metros de la sucursal (`200 OK`). |
+| **POST** `/api/v1/journey/routes/{routeId}/finish` | Cierra y consolida el ciclo de vida del trayecto de compras actual del consumidor. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/finish` | **Path Param:** `routeId` (string) | <pre>{\n  "id": "R-901",\n  "status": "FINISHED"\n}</pre>**Explicación:** Finaliza de manera formal la navegación del Shopping Journey con código `200 OK`. |
 
 #### 4.2.2.7. Software Deployment Evidence for Sprint Review
 
