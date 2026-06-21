@@ -4947,6 +4947,28 @@ smartcart.maps.provider=fallback
 
 #### 4.2.2.5. Execution Evidence for Sprint Review
 
+Se evidencia la ejecucion de los productos
+
+Api REST
+
+![img_1.png](assets/evidence-sprint/api1.jpeg)
+![img_2.png](assets/evidence-sprint/api2.jpeg)
+![img_3.png](assets/evidence-sprint/api3.jpeg)
+
+SmartCart Merchant
+
+![img_4.png](assets/evidence-sprint/merchant1.jpeg)
+![img_5.png](assets/evidence-sprint/merchant2.jpeg)
+![img_6.png](assets/evidence-sprint/merchant3.jpeg)
+![img_7.png](assets/evidence-sprint/merchant4.jpeg)
+![img_8.png](assets/evidence-sprint/merchant5.jpeg)
+![img_9.png](assets/evidence-sprint/merchant6.jpeg)
+![img_10.png](assets/evidence-sprint/merchant7.jpeg)
+![img_11.png](assets/evidence-sprint/merchant8.jpeg)
+![img_12.png](assets/evidence-sprint/merchant9.jpeg)
+![img_13.png](assets/evidence-sprint/merchant10.jpeg)
+
+
 #### 4.2.2.6. Services Documentation Evidence for Sprint Review
 
 Aquí se presenta la documentación técnica de los nuevos contratos de servicios y endpoints expuestos en el backend de SmartCart (`smartcart-api`) desarrollados e integrados para este segundo entregable (Sprint 2):
