@@ -4946,6 +4946,14 @@ SmartCart Merchant
 ![img_12.png](assets/evidence-sprint/merchant9.jpeg)
 ![img_13.png](assets/evidence-sprint/merchant10.jpeg)
 
+SmartCart Comsumer
+
+![img_14.png](assets/evidence-sprint/consumerapp1.png)
+![img_15.png](assets/evidence-sprint/consumerapp2.png)
+![img_16.png](assets/evidence-sprint/consumerapp3.png)
+![img_17.png](assets/evidence-sprint/consumerapp4.png)
+![img_18.png](assets/evidence-sprint/consumerapp5.png)
+![img_19.png](assets/evidence-sprint/consumerapp6.png)
 
 #### 4.2.2.6. Services Documentation Evidence for Sprint Review
 
@@ -5354,5 +5362,12 @@ Se sugiere incorporar en el backlog de desarrollo un módulo de notificaciones p
 
 * Enlace del servicio REST API desplegado: [https://smartcart-api-production.up.railway.app/swagger-ui/index.html](https://smartcart-api-production.up.railway.app/swagger-ui/index.html)
 
-
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
+
+## About the Product 
+
+[https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IgBCt0H4NUvNRq_gc9IdJ-3qAeK0-XF3xrxi-EeBqqCDYCk?e=3QCdYG](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IgBCt0H4NUvNRq_gc9IdJ-3qAeK0-XF3xrxi-EeBqqCDYCk?e=3QCdYG)
+
+## About the Team
+
+[https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IgAVBKI_ofkuQonYoXwyTn-0AZTt7nf8IpshjkiT1reU7iI?e=GQJNMq](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IgAVBKI_ofkuQonYoXwyTn-0AZTt7nf8IpshjkiT1reU7iI?e=GQJNMq)
