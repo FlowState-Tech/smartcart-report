@@ -4946,6 +4946,14 @@ SmartCart Merchant
 ![img_12.png](assets/evidence-sprint/merchant9.jpeg)
 ![img_13.png](assets/evidence-sprint/merchant10.jpeg)
 
+SmartCart Comsumer
+
+![img_14.png](assets/evidence-sprint/consumerapp1.png)
+![img_15.png](assets/evidence-sprint/consumerapp2.png)
+![img_16.png](assets/evidence-sprint/consumerapp3.png)
+![img_17.png](assets/evidence-sprint/consumerapp4.png)
+![img_18.png](assets/evidence-sprint/consumerapp5.png)
+![img_19.png](assets/evidence-sprint/consumerapp6.png)
 
 #### 4.2.2.6. Services Documentation Evidence for Sprint Review
 
