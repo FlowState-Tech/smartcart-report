@@ -45,6 +45,8 @@
 | 1.0     | 09/04/26 | Anjali Amaro | Organización inicial del informe         |
 | 1.1     | 23/04/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 1. y Capítulo 2. |
 | 2.0     | 16/05/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 3. y Capítulo 4. |
+| 3.0     | 21/06/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 4.2.2.           |
+
 
 <hr class="page-break">
 
@@ -72,7 +74,7 @@ Las principales ramas del repositorio son las siguientes:
 * `main`: Rama principal que contiene la versión estable del proyecto.
 * `develop`: Rama de desarrollo donde se integran las nuevas características antes de ser fusionadas a `main`.
 * `feature/X-anjali`: Rama utilizada por Anjali para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
-* `feature/X-(joseph)`: Rama utilizada por Joseph para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
+* `feature/X-joseph`: Rama utilizada por Joseph para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
 * `feature/X-katherine`: Rama utilizada por Katherine para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
 * `feature/X-kevin`: Rama utilizada por Kevin para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
 * `feature/X-stephano`: Rama utilizada por Stephano para el desarrollo de la tareas correspondientes a una determinada entrega. (av1,tb1,av2,tb2)
@@ -100,6 +102,14 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 ![img.png](assets/github-insights/img.png)
 <hr class="page-break">
 
+**AV2**
+
+A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
+
+![img_2.png](assets/github-insights/img_5.png)
+![img_4.png](assets/github-insights/commits3.png)
+
+
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
@@ -113,13 +123,6 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
     - [1.1.2. Perfiles de los integrantes del equipo](#112-perfiles-de-los-integrantes-del-equipo)
   - [1.2. Solution Profile](#12-solution-profile)
     - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
-      - [What? (¿Qué?)](#what-qué)
-      - [When? (¿Cuándo?)](#when-cuándo)
-      - [Where? (¿Dónde?)](#where-dónde)
-      - [Who? (¿Quién?)](#who-quién)
-      - [Why? (¿Por qué?)](#why-por-qué)
-      - [How? (¿Cómo?)](#how-cómo)
-      - [How much? (¿Cuánto?)](#how-much-cuánto)
     - [1.2.2. Lean UX Process](#122-lean-ux-process)
       - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
       - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
@@ -127,110 +130,33 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
       - [1.2.2.3. Lean UX Hypothesis](#1223-lean-ux-hypothesis)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-    - [Segmentación del Dominio del Problema](#segmentación-del-dominio-del-problema)
-      - [1. Consumidores Finales (Shoppers Planificadores)](#1-consumidores-finales-shoppers-planificadores)
-      - [2. Establecimientos de Retail (Supermercados y Tiendas de Conveniencia)](#2-establecimientos-de-retail-supermercados-y-tiendas-de-conveniencia)
 - [Capítulo II: Requirements Development and Software Solution Design](#capítulo-ii-requirements-development-and-software-solution-design)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
-- [Competitive Analysis Landscape - SmartCart](#competitive-analysis-landscape---smartcart)
     - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
   - [2.2. Entrevistas](#22-entrevistas)
     - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
-      - [Segmento 1: Usuarios Consumidores](#segmento-1-usuarios-consumidores)
-      - [A. Información Demográfica y Antecedentes](#a-información-demográfica-y-antecedentes)
-      - [B. Objetivos y Frustraciones](#b-objetivos-y-frustraciones)
-      - [C. Tecnología y Canales de Interacción](#c-tecnología-y-canales-de-interacción)
-      - [D. Comportamiento frente a la solución](#d-comportamiento-frente-a-la-solución)
-      - [Segmento 2: Establecimientos de Consumo Masivo](#segmento-2-establecimientos-de-consumo-masivo)
-      - [A. Gestión de Catálogo y Visibilidad Digital](#a-gestión-de-catálogo-y-visibilidad-digital)
-      - [B. Atracción y Eventos Promocionales](#b-atracción-y-eventos-promocionales)
-      - [C. Engagement y Analítica de Datos](#c-engagement-y-analítica-de-datos)
-      - [D. Objetivos de Conversión y SmartPrice](#d-objetivos-de-conversión-y-smartprice)
     - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
-      - [Segmento de Consumidores:](#segmento-de-consumidores)
-      - [Entrevista 1:](#entrevista-1)
-      - [Entrevista 2:](#entrevista-2)
-      - [Entrevista 3:](#entrevista-3)
-      - [Segmento de Comerciantes:](#segmento-de-comerciantes)
-      - [Entrevista 1:](#entrevista-1-1)
-      - [Entrevista 2:](#entrevista-2-1)
-      - [Entrevista 3:](#entrevista-3-1)
-    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
-      - [**Características Objetivas**](#características-objetivas)
-      - [**Características Subjetivas**](#características-subjetivas)
-      - [**Características Objetivas**](#características-objetivas-1)
-      - [**Características Subjetivas**](#características-subjetivas-1)
-  - [2.3. Needfinding](#23-needfinding)
-      - [Segmento #1: Consumidores (Hogares y Jefes de Familia)](#segmento-1-consumidores-hogares-y-jefes-de-familia)
-      - [Segmento #2: Establecimientos de Consumo Masivo (Gerentes de Sede)](#segmento-2-establecimientos-de-consumo-masivo-gerentes-de-sede)
-    - [2.3.1. User Personas](#231-user-personas)
-        - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto)
-        - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia)
-    - [2.3.2. User Task Matrix](#232-user-task-matrix)
-    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
-      - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-1)
-      - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-1)
-    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
-      - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-2)
-      - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-2)
-    - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
-    - [1. Open:](#1-open)
-    - [2. Explore:](#2-explore)
-    - [3. Close:](#3-close)
-    - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas) 
+- [2.3. Needfinding](#23-needfinding)
+  - [2.3.1. User Personas](#231-user-personas)
+  - [2.3.2. User Task Matrix](#232-user-task-matrix)
+  - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+  - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+  - [2.3.5. Big Picture EventStorming](#235-big-picture-eventstorming)
+  - [2.3.6. Ubiquitous Language](#236-ubiquitous-language)
   - [2.4. Requirements specification](#24-requirements-specification)
     - [2.4.1. User Stories](#241-user-stories)
     - [2.4.2. Impact Mapping](#242-impact-mapping)
-  - [Segmento #1: Consumidor - Jorge Retuerto](#segmento-1-consumidor---jorge-retuerto-3)
-  - [Segmento #2: Establecimiento Masivo - Carlos Valdivia](#segmento-2-establecimiento-masivo---carlos-valdivia-3)
     - [2.4.3. Product Backlog](#243-product-backlog)
   - [2.5. Strategic-Level Domain-Driven Design](#25-strategic-level-domain-driven-design)
     - [2.5.1. EventStorming](#251-eventstorming)
   - [2.5.1.1. Candidate Context Discovery](#2511-candidate-context-discovery)
-    - [Preparación de la sesión](#preparación-de-la-sesión)
-    - [Técnica aplicada: Start-with-Value](#técnica-aplicada-start-with-value)
-    - [Candidate Contexts identificados](#candidate-contexts-identificados)
-    - [Clasificación Estratégica](#clasificación-estratégica)
       - [2.5.1.2. Domain Message Flows Modeling](#2512-domain-message-flows-modeling)
-      - [Escenario 1: Registro y verificación de tienda](#escenario-1-registro-y-verificación-de-tienda)
-      - [Escenario 2: Planificación de compra del consumidor](#escenario-2-planificación-de-compra-del-consumidor)
-      - [Escenario 3: Ejecución del recorrido de compra](#escenario-3-ejecución-del-recorrido-de-compra)
-      - [Escenario 4: Calificación y experiencia post-compra](#escenario-4-calificación-y-experiencia-post-compra)
-      - [Escenario 5: Gestión de inventario y precios de tienda](#escenario-5-gestión-de-inventario-y-precios-de-tienda)
-      - [Escenario 6: Cálculo de ahorro y análisis de compra](#escenario-6-cálculo-de-ahorro-y-análisis-de-compra)
-      - [Escenario 7: Sistema de alertas y notificaciones de ofertas](#escenario-7-sistema-de-alertas-y-notificaciones-de-ofertas)
       - [2.5.1.3. Bounded Context Canvases](#2513-bounded-context-canvases)
-      - [IAM](#iam)
-      - [Verification](#verification)
-      - [Store Management](#store-management)
-      - [Shopping Planning](#shopping-planning)
-      - [Shopping Journey](#shopping-journey)
-      - [Experience](#experience)
-      - [Notification](#notification)
     - [2.5.2. Context Mapping](#252-context-mapping)
-        - [1. IAM -\> Verification](#1-iam---verification)
-        - [2. Verification -\> Store Management](#2-verification---store-management)
-        - [3. Store Management -\> Notification](#3-store-management---notification)
-        - [4.  Shopping Planning → Shopping journey](#4--shopping-planning--shopping-journey)
-        - [5. Shopping journey → Experience](#5-shopping-journey--experience)
-      - [Análisis de alternativas y preguntas clave:](#análisis-de-alternativas-y-preguntas-clave)
-    - [1. ¿Qué pasaría si Verification y Store Management compartieran la misma](#1-qué-pasaría-si-verification-y-store-management-compartieran-la-misma)
-      - [Alternativa A: Customer/Supplier + ACL (Modelo Actual)](#alternativa-a-customersupplier--acl-modelo-actual)
-      - [Alternativa B: Shared Kernel](#alternativa-b-shared-kernel)
-      - [Decisión Sustentada: Mantener Customer/Supplier + ACL.](#decisión-sustentada-mantener-customersupplier--acl)
-    - [2. ¿Qué pasaría si Store Management llamara directamente a los servicios de](#2-qué-pasaría-si-store-management-llamara-directamente-a-los-servicios-de)
-      - [Alternativa A: Publisher/Subscriber + OHS (Modelo Actual)](#alternativa-a-publishersubscriber--ohs-modelo-actual)
-      - [Alternativa B: Integración directa (Llamada síncrona)](#alternativa-b-integración-directa-llamada-síncrona)
-      - [Decisión Sustentada: Mantener Publisher/Subscriber.](#decisión-sustentada-mantener-publishersubscriber)
-    - [3. ¿Qué pasaría si Shopping Planning y Shopping journey fueran un solo](#3-qué-pasaría-si-shopping-planning-y-shopping-journey-fueran-un-solo)
-      - [Alternativa A: Contextos separados (Modelo Actual)](#alternativa-a-contextos-separados-modelo-actual)
-      - [Alternativa B: Unificar en un solo Bounded Context ("Shopping")](#alternativa-b-unificar-en-un-solo-bounded-context-shopping)
-      - [Decisión Sustentada: Mantener contextos separados.](#decisión-sustentada-mantener-contextos-separados)
-      - [Decisión Final](#decisión-final)
     - [2.5.3. Software Architecture](#253-software-architecture)
       - [2.5.3.1. Software Architecture Context Level Diagrams](#2531-software-architecture-context-level-diagrams)
-      - [Descripción de los elementos:](#descripción-de-los-elementos)
       - [2.5.3.2. Software Architecture Container Level Diagrams](#2532-software-architecture-container-level-diagrams)
       - [2.5.3.3. Software Architecture Deployment Diagrams](#2533-software-architecture-deployment-diagrams)
   - [2.6. Tactical-Level Domain-Driven Design](#26-tactical-level-domain-driven-design)
@@ -254,51 +180,18 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
         - [2.6.2.6.2. Bounded Context Database Design Diagram](#26262-bounded-context-database-design-diagram)
     - [2.6.3. Bounded Context: Store Management](#263-bounded-context-store-management)
       - [2.6.3.1. Domain Layer](#2631-domain-layer)
-        - [Aggregates](#aggregates)
-        - [Entities](#entities)
-        - [Value Objects](#value-objects)
-        - [Domain Events](#domain-events)
-        - [Domain Services](#domain-services)
       - [2.6.3.2. Interface Layer](#2632-interface-layer)
-        - [StoreManagementController](#storemanagementcontroller)
-        - [DTOs de Request y Response](#dtos-de-request-y-response)
       - [2.6.3.3. Application Layer](#2633-application-layer)
-        - [Application Services](#application-services)
-        - [Command Handlers](#command-handlers)
-        - [Query Handlers](#query-handlers)
-        - [Integración con procesos de Inventario](#integración-con-procesos-de-inventario)
       - [2.6.3.4. Infrastructure Layer](#2634-infrastructure-layer)
-        - [Repositories (Implementación)](#repositories-implementación)
-        - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia)
-        - [Consumer (StoreManagementEventConsumer)](#consumer-storemanagementeventconsumer)
-      - [Anti-Corruption Layer (ACL) — Integración con External Legal API \& Merchant Systems](#anti-corruption-layer-acl--integración-con-external-legal-api--merchant-systems)
-        - [Estructura de la ACL](#estructura-de-la-acl)
-      - [Contrato de traducción del ACL](#contrato-de-traducción-del-acl)
-      - [Implementación del ACL](#implementación-del-acl)
     - [2.6.3.5. Bounded Context Software Architecture Component Level Diagrams](#2635-bounded-context-software-architecture-component-level-diagrams)
     - [2.6.3.6. Bounded Context Software Architecture Code Level Diagrams](#2636-bounded-context-software-architecture-code-level-diagrams)
       - [2.6.3.6.1. Bounded Context Domain Layer Class Diagrams](#26361-bounded-context-domain-layer-class-diagrams)
       - [2.6.3.6.2. Bounded Context Database Design Diagram](#26362-bounded-context-database-design-diagram)
     - [2.6.4. Bounded Context: Notification](#264-bounded-context-notification)
-    - [2.6.4.1. Domain Layer](#2641-domain-layer)
-      - [Aggregates](#aggregates-1)
-      - [Entities](#entities-1)
-      - [Value Objects](#value-objects-1)
-      - [Domain Events](#domain-events-1)
-      - [Domain Services](#domain-services-1)
-    - [2.6.4.2. Interface Layer](#2642-interface-layer)
-      - [NotificationController](#notificationcontroller)
-      - [DTOs de Request y Response](#dtos-de-request-y-response-1)
-    - [2.6.4.3. Application Layer](#2643-application-layer)
-      - [Application Services](#application-services-1)
-      - [Command Handlers](#command-handlers-1)
-      - [Query Handlers](#query-handlers-1)
-      - [Integración con el evento de finalización de recorrido](#integración-con-el-evento-de-finalización-de-recorrido)
-    - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
-      - [Repositories (Implementación)](#repositories-implementación-1)
-      - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia-1)
-      - [Integración con RabbitMQ (Mensajería Asíncrona)](#integración-con-rabbitmq-mensajería-asíncrona)
-      - [Anti-Corruption Layer (ACL) — Integración con Shopping Journey](#anti-corruption-layer-acl--integración-con-shopping-journey)
+      - [2.6.4.1. Domain Layer](#2641-domain-layer)
+      - [2.6.4.2. Interface Layer](#2642-interface-layer)
+      - [2.6.4.3. Application Layer](#2643-application-layer)
+      - [2.6.4.4. Infrastructure Layer](#2644-infrastructure-layer)
       - [2.6.4.5. Bounded Context Software Architecture Component Level Diagrams](#2645-bounded-context-software-architecture-component-level-diagrams)
       - [2.6.4.6. Bounded Context Software Architecture Code Level Diagrams](#2646-bounded-context-software-architecture-code-level-diagrams)
         - [2.6.4.6.1. Bounded Context Domain Layer Class Diagrams](#26461-bounded-context-domain-layer-class-diagrams)
@@ -323,24 +216,9 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
         - [2.6.6.6.2. Bounded Context Database Design Diagram](#26662-bounded-context-database-design-diagram)
     - [2.6.7. Bounded Context: Experience](#267-bounded-context-experience)
       - [2.6.7.1. Domain Layer](#2671-domain-layer)
-        - [Aggregates](#aggregates-2)
-        - [Entities](#entities-2)
-        - [Value Objects](#value-objects-2)
-        - [Domain Events](#domain-events-2)
-        - [Domain Services](#domain-services-2)
       - [2.6.7.2. Interface Layer](#2672-interface-layer)
-        - [ExperienceController](#experiencecontroller)
-        - [DTOs de Request y Response](#dtos-de-request-y-response-2)
       - [2.6.7.3. Application Layer](#2673-application-layer)
-        - [Application Services](#application-services-2)
-        - [Command Handlers](#command-handlers-2)
-        - [Query Handlers](#query-handlers-2)
-        - [Integración con el evento de finalización de recorrido](#integración-con-el-evento-de-finalización-de-recorrido-1)
       - [2.6.7.4. Infrastructure Layer](#2674-infrastructure-layer)
-        - [Repositories (Implementación)](#repositories-implementación-2)
-        - [Mapeo a Base de Datos (Persistencia)](#mapeo-a-base-de-datos-persistencia-2)
-        - [Integración con RabbitMQ (Mensajería Asíncrona)](#integración-con-rabbitmq-mensajería-asíncrona-1)
-        - [Anti-Corruption Layer (ACL) — Integración con Shopping Journey](#anti-corruption-layer-acl--integración-con-shopping-journey-1)
       - [2.6.7.5. Bounded Context Software Architecture Component Level Diagrams](#2675-bounded-context-software-architecture-component-level-diagrams)
       - [2.6.7.6. Bounded Context Software Architecture Code Level Diagrams](#2676-bounded-context-software-architecture-code-level-diagrams)
         - [2.6.7.6.1. Bounded Context Domain Layer Class Diagrams](#26761-bounded-context-domain-layer-class-diagrams)
@@ -360,20 +238,14 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
       - [3.1.3.2. Landing Page Mock-up](#3132-landing-page-mock-up)
     - [3.1.4. Mobile Applications UX/UI Design](#314-mobile-applications-uxui-design)
       - [3.1.4.1. Mobile Applications Wireframes](#3141-mobile-applications-wireframes)
-        - [App Móvil (Consumidores)](#app-móvil-consumidores)
-        - [App Tablet (Comerciantes y Administradores)](#app-tablet-comerciantes-y-administradores)
-        - [Especificaciones de Diseño Aplicadas](#especificaciones-de-diseño-aplicadas)
       - [3.1.4.2. Mobile Applications Wireflow Diagrams](#3142-mobile-applications-wireflow-diagrams)
       - [3.1.4.3. Mobile Applications Mock-ups](#3143-mobile-applications-mock-ups)
       - [3.1.4.4. Mobile Applications User Flow Diagrams](#3144-mobile-applications-user-flow-diagrams)
       - [3.1.4.5. Mobile Applications Prototyping](#3145-mobile-applications-prototyping)
-      - [Prototipo App Móvil (Segmento 1: Consumidor Final)](#prototipo-app-móvil-segmento-1-consumidor-final)
-      - [Prototipo SmartCart Business (Segmento 2: Comerciante)](#prototipo-smartcart-business-segmento-2-comerciante)
 - [Capítulo IV: Product Implementation \& Validation](#capítulo-iv-product-implementation--validation)
   - [4.1. Software Configuration Management](#41-software-configuration-management)
     - [4.1.1. Software Development Environment Configuration](#411-software-development-environment-configuration)
     - [4.1.2. Source Code Management](#412-source-code-management)
-      - [Conventional Commits](#conventional-commits)
     - [4.1.3. Source Code Style Guide \& Conventions](#413-source-code-style-guide--conventions)
     - [4.1.4. Software Deployment Configuration](#414-software-deployment-configuration)
   - [4.2. Landing Page \& Mobile Application Implementation](#42-landing-page--mobile-application-implementation)
@@ -386,18 +258,21 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
       - [4.2.1.6. Services Documentation Evidence for Sprint Review](#4216-services-documentation-evidence-for-sprint-review)
       - [4.2.1.7. Software Deployment Evidence for Sprint Review](#4217-software-deployment-evidence-for-sprint-review)
       - [4.2.1.8. Team Collaboration Insights during Sprint](#4218-team-collaboration-insights-during-sprint)
+    - [4.2.2. Sprint 2](#422-sprint-2)
+      - [4.2.2.1. Sprint Planning 2](#4221-sprint-planning-2)
+      - [4.2.2.2. Sprint Backlog 2](#4222-sprint-backlog-2)
+      - [4.2.2.3. Development Evidence for Sprint Review](#4223-development-evidence-for-sprint-review)
+      - [4.2.2.4. Testing Suite Evidence for Sprint Review](#4224-testing-suite-evidence-for-sprint-review)
+      - [4.2.2.5. Execution Evidence for Sprint Review](#4225-execution-evidence-for-sprint-review)
+      - [4.2.2.6. Services Documentation Evidence for Sprint Review](#4226-services-documentation-evidence-for-sprint-review)
+      - [4.2.2.7. Software Deployment Evidence for Sprint Review](#4227-software-deployment-evidence-for-sprint-review)
+      - [4.2.2.8. Team Collaboration Insights during Sprint](#4228-team-collaboration-insights-during-sprint)
   - [4.3. Validation Interviews](#43-validation-interviews)
     - [4.3.1. Diseño de Entrevistas](#431-diseño-de-entrevistas)
-      - [Elementos de la Sesión de Validación](#elementos-de-la-sesión-de-validación)
-      - [Especificación de User Flows para Validación](#especificación-de-user-flows-para-validación)
-      - [Metodología de Validación](#metodología-de-validación)
     - [4.3.2. Registro de Entrevistas](#432-registro-de-entrevistas)
     - [4.3.3. Evaluaciones según heurísticas](#433-evaluaciones-según-heurísticas)
-      - [Resultados de la Evaluación Heurística - Comerciantes](#resultados-de-la-evaluación-heurística---comerciantes)
-      - [Resumen Consolidado](#resumen-consolidado)
-      - [Hallazgos Prioritarios a Resolver](#hallazgos-prioritarios-a-resolver)
-      - [Conclusión](#conclusión)
   - [Conclusiones](#conclusiones)
+  - [Recomendaciones](#recomendaciones)
   - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 
@@ -408,10 +283,10 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 7: La capacidad de adquirir y aplicar nuevos
 conocimientos según sea necesario, utilizando estrategias de aprendizaje apropiadas.
 
-| Criterio específico | Acciones realizadas | Conclusiones |
-| :--- | :--- | :--- |
-| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali**<br>*AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.<br>*TB1:* Investigué y apliqué buenas prácticas en la gestión de configuración de software (SCM), configurando el entorno de desarrollo, el control de versiones y las guías de estilos de código. Asimismo, actualicé mis conceptos en metodologías ágiles para estructurar el Sprint Planning y recolectar las evidencias de desarrollo (commits) para el Sprint Review.<br><br>**Chavez Viera, Joseph Manueli**<br>*TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.<br>*TB1:* Actualicé mis conocimientos en diseño UX/UI móvil para estructurar wireframes, wireflows, mockups y prototipos interactivos de la aplicación. Adicionalmente, expandí mis competencias técnicas en metodologías de validación mediante el diseño de entrevistas y la aplicación de evaluaciones heurísticas al producto.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>*TB1:* Investigué y apliqué principios de diseño visual contemporáneo para establecer las guías de estilo generales del producto. Asimismo, actualicé mis conocimientos en diseño de interfaces web estructurando los wireframes y mockups de la Landing Page de la solución.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br>*TB1:* Actualicé mis conocimientos en patrones de interacción y diseño de experiencia de usuario para dispositivos móviles, co-diseñando los wireframes, diagramas de wireflow, user flows y prototipos interactivos multiplataforma para las aplicaciones de SmartCart.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.<br><br>*TB1:* El equipo logró consolidar el diseño de interfaz y la arquitectura de información del software aplicando conceptos modernos de diseño UI/UX (móvil y web), guías de estilo y posicionamiento SEO/ASO, en paralelo con una sólida configuración de SCM para los entornos de desarrollo. Esta actualización conceptual permitió materializar los requerimientos técnicos y de negocio en un producto digital coherente, estructurado y listo para el despliegue. |
-| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.** | **Amaro Villar, Anjali**<br>*AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.<br>*TB1:* Entendí que las herramientas de DevOps, control de versiones y políticas de despliegue se actualizan constantemente en la industria. Reconozco que dominar la gestión de configuración y el rastreo de evidencias (commits) requiere un aprendizaje continuo para optimizar los flujos de trabajo en equipos ágiles.<br><br>**Chavez Viera, Joseph Manueli**<br>*TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura mi permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.<br>*TB1:* Comprendí que los estándares de usabilidad móvil y los marcos de validación de software (como las heurísticas) mutan según el comportamiento del usuario. Reconozco la necesidad de educarme continuamente en metodologías de investigación y testing para asegurar que el software responda a problemas reales.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Transformé los perfiles de User Personas y la Task Matrix en una API funcional documentada en Swagger, gestionando la creación de endpoints REST y la resolución de conflictos técnicos para asegurar la integridad del repositorio grupal.<br>*TB1:* Reconocí que las tendencias en diseño visual y la experiencia de usuario web evolucionan rápidamente. Esto me demuestra la necesidad de un aprendizaje constante en sistemas de diseño y guías de estilo para desarrollar interfaces web atractivas, accesibles y competitivas.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional.<br>*TB1:* Asimilé que el diseño de flujos de interacción y prototipos móviles requiere una constante adaptación a los nuevos sistemas operativos y directrices de diseño. Comprendo que el aprendizaje continuo en la optimización de la experiencia móvil es indispensable para crear soluciones eficientes.<br> | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.<br><br>*TB1:* Se concluye que el equipo reconoce el aprendizaje permanente como un pilar crítico en las áreas de diseño UI/UX y SCM, debido a la velocidad con la que cambian los estándares web/móviles y las tecnologías de integración. El grupo asume la responsabilidad de mantenerse a la vanguardia en patrones de usabilidad y validación heurística para garantizar soluciones de software dinámicas y de alta calidad. |
+| Criterio específico | Acciones realizadas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Conclusiones |
+| :--- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| :--- |
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali**<br>*AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.<br>*TB1:* Investigué y apliqué buenas prácticas en la gestión de configuración de software (SCM), configurando el entorno de desarrollo, el control de versiones y las guías de estilos de código. Asimismo, actualicé mis conceptos en metodologías ágiles para estructurar el Sprint Planning y recolectar las evidencias de desarrollo (commits) para el Sprint Review.<br> *AV2:* Investigué y actualicé mis conocimientos en tecnologías de desarrollo móvil nativo mediante el uso de Jetpack Compose y Kotlin para el desarrollo de la aplicación adaptada a entornos de tablet. Asimismo, expandí mis competencias técnicas en el ciclo de vida de despliegue de software, aprendiendo a generar un almacén de claves criptográficas (Key Store / Signed Release) y configurando el entorno de pruebas en Firebase App Distribution para la distribución controlada hacia los evaluadores y testers. <br><br>**Chavez Viera, Joseph Manueli**<br>*TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representación técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.<br>*TB1:* Actualicé mis conocimientos en diseño UX/UI móvil para estructurar wireframes, wireflows, mockups y prototipos interactivos de la aplicación. Adicionalmente, expandí mis competencias técnicas en metodologías de validación mediante el diseño de entrevistas y la aplicación de evaluaciones heurísticas al producto.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>*TB1:* Investigué y apliqué principios de diseño visual contemporáneo para establecer las guías de estilo generales del producto. Asimismo, actualicé mis conocimientos en diseño de interfaces web estructurando los wireframes y mockups de la Landing Page de la solución.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Definí el **Ubiquitous Language** para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de **Domain Message Flows Modeling** y **Bounded Context Canvases** para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context **Experience**, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br>*TB1:* Actualicé mis conocimientos en patrones de interacción y diseño de experiencia de usuario para dispositivos móviles, co-diseñando los wireframes, diagramas de wireflow, user flows y prototipos interactivos multiplataforma para las aplicaciones de SmartCart.<br> | *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.<br><br>*TB1:* El equipo logró consolidar el diseño de interfaz y la arquitectura de información del software aplicando conceptos modernos de diseño UI/UX (móvil y web), guías de estilo y posicionamiento SEO/ASO, en paralelo con una sólida configuración de SCM para los entornos de desarrollo. Esta actualización conceptual permitió materializar los requerimientos técnicos y de negocio en un producto digital coherente, estructurado y listo para el despliegue. |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.** | **Amaro Villar, Anjali**<br>*AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.<br>*TB1:* Entendí que las herramientas de DevOps, control de versiones y políticas de despliegue se actualizan constantemente en la industria. Reconozco que dominar la gestión de configuración y el rastreo de evidencias (commits) requiere un aprendizaje continuo para optimizar los flujos de trabajo en equipos ágiles.<br> *AV2:* El proceso de compilación y distribución me demostró que el ecosistema móvil y los mecanismos de despliegue (Deployment) evolucionan drásticamente frente a las políticas de las tiendas oficiales. Reconozco la necesidad de un aprendizaje permanente en herramientas de integración y distribución automatizada para optimizar los tiempos de entrega y garantizar la disponibilidad continua del artefacto de software en entornos reales. <br><br>**Chavez Viera, Joseph Manueli**<br>*TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura mi permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.<br>*TB1:* Comprendí que los estándares de usabilidad móvil y los marcos de validación de software (como las heurísticas) mutan según el comportamiento del usuario. Reconozco la necesidad de educarme continuamente en metodologías de investigación y testing para asegurar que el software responda a problemas reales.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Transformé los perfiles de User Personas y la Task Matrix en una API funcional documentada en Swagger, gestionando la creación de endpoints REST y la resolución de conflictos técnicos para asegurar la integridad del repositorio grupal.<br>*TB1:* Reconocí que las tendencias en diseño visual y la experiencia de usuario web evolucionan rápidamente. Esto me demuestra la necesidad de un aprendizaje constante en sistemas de diseño y guías de estilo para desarrollar interfaces web atractivas, accesibles y competitivas.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Reconocí la importancia de la evolución técnica al adoptar **Domain-Driven Design (DDD)** y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de **Experience** sean escalables y mantengan su relevancia técnica profesional.<br>*TB1:* Asimilé que el diseño de flujos de interacción y prototipos móviles requiere una constante adaptación a los nuevos sistemas operativos y directrices de diseño. Comprendo que el aprendizaje continuo en la optimización de la experiencia móvil es indispensable para crear soluciones eficientes.<br>                                                                                                                                                                                                                                                                               | *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.<br><br>*TB1:* Se concluye que el equipo reconoce el aprendizaje permanente como un pilar crítico en las áreas de diseño UI/UX y SCM, debido a la velocidad con la que cambian los estándares web/móviles y las tecnologías de integración. El grupo asume la responsabilidad de mantenerse a la vanguardia en patrones de usabilidad y validación heurística para garantizar soluciones de software dinámicas y de alta calidad. |
 <hr class="page-break">
 
 # Objetivos SMART
@@ -4857,6 +4732,334 @@ A continuacion se muestran los colaboradores en cada sección:
 **SmartCart-Merchant**
 ![img_4.png](assets/github-insights/img_4.png)
 
+#### 4.2.2. Sprint 2
+
+#### 4.2.2.1. Sprint Planning 2
+
+| Campo | Descripción |
+| :--- | :--- |
+| **Sprint #** | Sprint 2 |
+| **Sprint Planning Background** | |
+| **Date** | 2026-05-28 |
+| **Time** | 11:00 AM (GMT -5) |
+| **Location** | Modalidad remota por Google Meet |
+| **Prepared By** | FlowState Tech |
+| **Attendees (to planning meeting)** | Anjali Amaro Villar, Joseph Manuel Chavez Viera, Katherine Maryory Mejia Aliaga, Kevin Patrick Pardo Chumpitazi, Stephano Renan Valdivia Quispe |
+| **Sprint 1 Review Summary** | Se validó el despliegue final de la Landing Page responsiva. El registro base de comerciantes quedó estructurado, pero se identificó la necesidad de integrarlo directamente con el backend definitivo en el siguiente ciclo. |
+| **Sprint 1 Retrospective Summary** | Se concluyó que el equipo domina el flujo de diseño, pero se requiere acelerar la configuración del entorno del servidor. Se acordó priorizar la arquitectura del backend desde el día uno del Sprint 2 para evitar cuellos de botella en la entrega. |
+| **Sprint Goal & User Stories** | |
+| **Sprint 2 Goal** |Desarrollar y desplegar al 100% el backend en producción pública con su respectiva documentación de servicios (API), e implementar las funcionalidades core de SmartCart (gestión de usuarios, mascotas y emparejamiento con servicios). |
+| **Sprint 1 Velocity** | 45 |
+| **Sum of Story Points** | 45 |
+
+#### 4.2.2.2. Sprint Backlog 2
+
+El Sprint Backlog 2 representa la ejecución de las tareas planificadas para el segundo ciclo de desarrollo de **SmartCart**. Tras haber consolidado la Landing Page y el motor de comparación base en el ciclo anterior, durante este periodo el equipo concentró sus esfuerzos en habilitar el shopping journey avanzado, el trazado de rutas eficientes, y la gestión de catálogos para comerciantes.
+
+El uso de **Trello** como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
+
+**Captura del Tablero Trello (Fin del Sprint 2):**
+<div align="center">
+  <img src="assets/imagenes/trellosprint2.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US07** | Armado de Canasta | T7 | Implementación de Canasta Básica | Crear endpoints CRUD para gestionar la canasta por categorías y desarrollar la interfaz para listar e incrementar productos. | 8 | Stephano Valdivia  | Done |
+| **US30** | Interfaz Adaptativa | T8 | Implementación de Tema y Dark Mode Dynamic | Configurar el tema global azul y desarrollar la funcionalidad de modo oscuro dinámico unificado con fondo 1C1C1C a través de todas las vistas de la app. | 4 | Stephano Valdivia | Done |
+| **US18** | Perfil de Consumo | T9 | Desarrollo de Login, Register y Perfil | Diseñar la UI de alta fidelidad para autenticación, implementar la lógica de validación de credenciales y estructurar la navegación principal con la página de perfil. | 4 | Stephano Valdivia  | Done |
+| **US010** | Registro de Sucursal | T10 | Registro Geográfico de Tiendas | Crear el modelo de datos con validación de coordenadas y diseñar el formulario web para registrar la ubicación y RUC del local. | 5 | Kevin Pardo  | Done |
+| **US011** | Carga de Catálogo | T11 | Gestión Completa de Carga de Precios | Desarrollar el procesamiento de archivos, la asignación automática de etiquetas de oferta y la interfaz de subida para el comerciante. | 5 | Kevin Pardo  | Done |
+| **US014** | Validación Comunitaria | T14 | Reporte y Puntos por GPS | Desarrollar el módulo backend para otorgar 10 puntos al perfil e implementar la restricción por GPS para validar precios en tienda. | 5 | Kevin Pardo  | Done |
+| **TS03** | API Carga Catálogo | T3 | Optimización y Validación de CSV | Crear un servicio REST optimizado para procesar listas de precios en bloque y configurar middlewares que validen duplicados. | 5 | Anjali Amaro | Done |
+| **TS04** | API Motor de Rutas | T4 | Endpoint y Excepciones de Ruta | Desarrollar el servicio que ordene las coordenadas eficientemente y controlar las excepciones geográficas con respuestas HTTP 422. | 5 | Anjali Amaro | Done |
+| **TS05** | API Notificaciones Push | T5 | Alertas por Proximidad | Implementar consultas espaciales en la BD para segmentar usuarios en un radio de 5km y configurar el sistema de colas de envío. | 5 | Anjali Amaro | Done |
+
+
+#### 4.2.2.3. Development Evidence for Sprint Review
+
+Durante el Sprint 2, el equipo adoptó la estrategia de control de versiones GitFlow para asegurar una integración limpia y organizada de las nuevas funcionalidades core del backend y frontend de SmartCart.
+A continuación, se presentan las evidencias de desarrollo de software correspondientes a este entrega.
+
+**Landing Page**
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-api | develop | `b8a7f1e` | feat: add merchantId to Merchant model and update related methods | 21/06/2026 |
+| flowstate-tech/smartcart-api | develop | `c3d4e5f` | feat: implement MerchantProfile feature with query and response models | 21/06/2026 |
+| flowstate-tech/smartcart-api | main | `a1b2c3d` | feat: update Hibernate ddl-auto setting to update in application-prod.properties | 20/06/2026 |
+| flowstate-tech/smartcart-api | main | `7e8f9a0` | merge: integrate develop into main | 20/06/2026 |
+| flowstate-tech/smartcart-api | develop | `f2g3h4i` | Merge branch 'feature/fin-del-back' into develop | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `5j6k7l8` | feat: add Spring @Autowired annotation to GoogleMapsRoutingAdapter constructor | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `9m0n1o2` | feat: cambios finales del backend | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `3p4q5r6` | feat: cambios finales | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `7s8t9u0` | chore: add a blank line for improved readability in application.properties | 18/06/2026 |
+| flowstate-tech/smartcart-api | main | `1v2w3x4` | merge: insert develop into main | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `5y6z7a8` | merge: integrate feature/verification into develop | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `9b0c1d2` | feat: add VerificationController and VerificationApplicationResponse for application registration | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `3e4f5g6` | feat: implement DecolectaSunatAdapter and SunatService for RUC validation | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `7h8i9j0` | feat: implement verification application model with RUC validation | 18/06/2026 |
+| flowstate-tech/smartcart-api | develop | `1k2l3m4` | feat: add decolecta api configuration to application properties | 18/06/2026 |
+| flowstate-tech/smartcart-consumer | main | `2n3o4p5` | feat: setup initial Flutter project with DDD architecture | 20/06/2026 |
+
+#### 4.2.2.4. Testing Suite Evidence for Sprint Review
+
+En esta sección se presenta el conjunto de Unit Tests e Integration Tests automatizados en el backend de **SmartCart** (`smartcart-api`) para el Sprint 2. Estas pruebas garantizan la integridad matemática del algoritmo de enrutamiento, el parseo de datos de mapas de terceros y el cumplimiento estricto de las reglas de georreferenciación por hardware.
+
+#### Historial de Commits de Testing
+A continuación, se detalla la relación de commits del repositorio dedicados al aseguramiento de la calidad y despliegue del entorno de pruebas controlado:
+
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-api | develop | `5j6k7l8` | feat: add Spring @Autowired annotation to GoogleMapsRoutingAdapter constructor | 19/06/2026 |
+| flowstate-tech/smartcart-api | develop | `1k2l3m4` | feat: add decolecta api configuration to application properties | 18/06/2026 |
+
+---
+
+#### 1. Unit Tests (Pruebas Unitarias)
+
+A nivel de dominio e infraestructura externa, se implementaron pruebas de caja blanca utilizando la librería **JUnit 5** para aislar y certificar el comportamiento de los componentes matemáticos y adaptadores de red de SmartCart.
+
+* **Clase Evaluada 1:** `GeofencingServiceTest`
+* **Comportamiento:** Comprueba la lógica de restricción por cercanía espacial (`US14`). El test valida que el sistema acepte correctamente ubicaciones dentro del radio de 500 metros y rechace de forma tajante peticiones de usuarios lejanos a la tienda física.
+
+java
+package com.smartcart.shoppingjourney.domain.services;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class GeofencingServiceTest {
+
+    private final GeofencingService geofencing = new GeofencingService();
+
+    @Test
+    void acceptsLocationWithin500Meters() {
+        assertTrue(geofencing.isWithinStoreRadius(-12.0464, -77.0428, -12.0464, -77.0428));
+    }
+
+    @Test
+    void rejectsLocationFarFromStore() {
+        assertFalse(geofencing.isWithinStoreRadius(-12.0464, -77.0428, -12.1000, -77.1000));
+    }
+}
+
+* **Clase Evaluada 2:** `RouteOptimizationServiceTest`
+* **Comportamiento:** Certifica el correcto funcionamiento del algoritmo de optimización de paradas combinadas (US08, TS04). Asegura mediante coordenadas geográficas que el algoritmo ordene los destinos basándose en el principio del vecino más cercano (Nearest Neighbor), mapeando correctamente la secuencia de visitas.
+
+java
+package com.smartcart.shoppingjourney.domain.services;
+
+import com.smartcart.shoppingjourney.domain.model.valueobjects.RouteStop;
+import org.junit.jupiter.api.Test;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class RouteOptimizationServiceTest {
+
+    private final RouteOptimizationService service = new RouteOptimizationService();
+
+    @Test
+    void ordersStopsByNearestNeighbor() {
+        var stops = List.of(
+                new RouteStop(1L, "Far", -12.05, -77.05, 0),
+                new RouteStop(2L, "Near", -12.0465, -77.0430, 0));
+        var ordered = service.optimize(-12.0464, -77.0428, stops);
+        assertEquals(2L, ordered.getFirst().storeId());
+        assertEquals(1, ordered.getFirst().sequence());
+        assertEquals(1L, ordered.get(1).storeId());
+    }
+}
+
+* **Clase Evaluada 3:** `GoogleMapsRoutingAdapterTest`
+* **Comportamiento:** Valida la deserialización segura mediante Jackson de los payloads JSON provenientes del servicio de Google Maps (TS04, US09). Verifica que la suma agregada de las distancias en metros y la duración en segundos de múltiples tramos (legs) se calcule de forma precisa sin desbordamientos de datos.
+
+java
+package com.smartcart.shoppingjourney.infrastructure.external.maps;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class GoogleMapsRoutingAdapterTest {
+
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+
+    @Test
+    void parseRoute_sumsAllLegs() throws Exception {
+        var json = """
+                {
+                  "routes": [{
+                    "overview_polyline": { "points": "abc123" },
+                    "legs": [
+                      { "distance": { "value": 1000 }, "duration": { "value": 120 } },
+                      { "distance": { "value": 500 }, "duration": { "value": 60 } }
+                    ]
+                  }]
+                }
+                """;
+        var path = GoogleMapsRoutingAdapter.parseRoute(MAPPER.readTree(json), "google");
+        assertEquals("abc123", path.encodedPolyline());
+        assertEquals(1500, path.distanceMeters());
+        assertEquals(180, path.durationSeconds());
+        assertEquals("google", path.provider());
+    }
+}
+
+#### 2. Integration Tests (Pruebas de Integración y Entorno)
+* **Clase Evaluada:** `SmartcartApiApplicationTests`
+* **Comportamiento:** Asegura la inicialización e integridad del contexto completo del framework Spring Boot (contextLoads()) bajo un perfil controlado de pruebas denominado test.
+# Archivo src/test/resources/application-test.properties
+spring.datasource.url=jdbc:h2:mem:smartcart_test;DB_CLOSE_DELAY=-1
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+authorization.jwt.secret=test-secret-key-for-unit-tests-only-32chars
+authorization.jwt.expiration.days=1
+decolecta.api.token=test-token
+smartcart.maps.provider=fallback
+
+#### 4.2.2.5. Execution Evidence for Sprint Review
+
+Se evidencia la ejecucion de los productos
+
+Api REST
+
+![img_1.png](assets/evidence-sprint/api1.jpeg)
+![img_2.png](assets/evidence-sprint/api2.jpeg)
+![img_3.png](assets/evidence-sprint/api3.jpeg)
+
+SmartCart Merchant
+
+![img_4.png](assets/evidence-sprint/merchant1.jpeg)
+![img_5.png](assets/evidence-sprint/merchant2.jpeg)
+![img_6.png](assets/evidence-sprint/merchant3.jpeg)
+![img_7.png](assets/evidence-sprint/merchant4.jpeg)
+![img_8.png](assets/evidence-sprint/merchant5.jpeg)
+![img_9.png](assets/evidence-sprint/merchant6.jpeg)
+![img_10.png](assets/evidence-sprint/merchant7.jpeg)
+![img_11.png](assets/evidence-sprint/merchant8.jpeg)
+![img_12.png](assets/evidence-sprint/merchant9.jpeg)
+![img_13.png](assets/evidence-sprint/merchant10.jpeg)
+
+SmartCart Comsumer
+
+![img_14.png](assets/evidence-sprint/consumerapp1.png)
+![img_15.png](assets/evidence-sprint/consumerapp2.png)
+![img_16.png](assets/evidence-sprint/consumerapp3.png)
+![img_17.png](assets/evidence-sprint/consumerapp4.png)
+![img_18.png](assets/evidence-sprint/consumerapp5.png)
+![img_19.png](assets/evidence-sprint/consumerapp6.png)
+
+#### 4.2.2.6. Services Documentation Evidence for Sprint Review
+
+Aquí se presenta la documentación técnica de los nuevos contratos de servicios y endpoints expuestos en el backend de SmartCart (`smartcart-api`) desarrollados e integrados para este segundo entregable (Sprint 2):
+
+| Endpoint (Verbo + Sintaxis) | Acciones Implementadas / Descripción | Enlaces (URL Local Swagger) | Especificación de Parámetros | Ejemplo y Explicación del Response |
+| :--- | :--- | :--- | :--- | :--- |
+| **POST** `/api/v1/verification/applications` | Registra una solicitud de verificación corporativa de una empresa evaluando su RUC antes del alta de sucursales. | `http://localhost:8080/swagger-ui/index.html#/Verification/registerApplication` | **Body (JSON):**<br>- `merchantId` (string)<br>- `ruc` (string) | <pre>{\n  "id": 501,\n  "merchantId": "M-102",\n  "ruc": "20601234567",\n  "companyName": "Tiendas Tambo S.A.C.",\n  "status": "APPROVED"\n}</pre>**Explicación:** Retorna el estado de la aplicación procesada contra SUNAT con código `201 Created`. |
+| **POST** `/api/v1/journey/routes` | Inicializa y crea una nueva ruta de compra vinculada a un comprador y su lista de artículos. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/createRoute` | **Body (JSON):**<br>- `buyerId` (long)<br>- `listId` (long) | <pre>{\n  "id": "R-901",\n  "buyerId": 15,\n  "listId": 45,\n  "status": "CREATED",\n  "stops": []\n}</pre>**Explicación:** Crea la entidad base del recorrido en el sistema con código `201 Created`. |
+| **GET** `/api/v1/journey/routes` | Filtra y recupera la lista de rutas planificadas de un consumidor específico con opción de filtrar por lista. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/findRoutes` | **Query Params:**<br>- `buyerId` (long, requerido)<br>- `listId` (long, opcional) | <pre>[\n  {\n    "id": "R-901",\n    "buyerId": 15,\n    "listId": 45,\n    "status": "CREATED"\n  }\n]</pre>**Explicación:** Lista las rutas coincidentes en el historial de navegación con código `200 OK`. |
+| **GET** `/api/v1/journey/routes/{routeId}/optimal-view` | Extrae la perspectiva optimizada y el trazado geométrico detallado de la ruta calculado por Google Maps. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/optimalView` | **Path Param:**<br>- `routeId` (string) | <pre>{\n  "routeId": "R-901",\n  "status": "OPTIMIZED",\n  "encodedPolyline": "abc123",\n  "distanceMeters": 1500,\n  "durationSeconds": 180,\n  "mapsProvider": "google",\n  "stops": [\n    {"storeId": 101, "storeName": "Tambo", "latitude": -12.04, "longitude": -77.04, "sequence": 1}\n  ]\n}</pre>**Explicación:** Proporciona los metadatos de enrutamiento y la polilínea para renderizado gráfico en Flutter (`200 OK`). |
+| **POST** `/api/v1/journey/routes/{routeId}/residence` | Establece las coordenadas GPS del punto de partida u hogar del consumidor dentro del recorrido. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/defineResidence` | **Path Param:** `routeId` (string)<br>**Body (JSON):**<br>- `latitude` (double)<br>- `longitude` (double) | <pre>{\n  "id": "R-901",\n  "residenceLat": -12.123,\n  "residenceLng": -77.012,\n  "status": "RESIDENCE_DEFINED"\n}</pre>**Explicación:** Registra el origen del trayecto de forma exitosa retornando código `200 OK`. |
+| **POST** `/api/v1/journey/routes/{routeId}/optimize` | Ejecuta el algoritmo del vecino más cercano para ordenar una lista multi-parada de tiendas físicas. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/optimizeRoute` | **Path Param:** `routeId` (string)<br>**Body (JSON):**<br>- `storeIds` (array de longs) | <pre>{\n  "id": "R-901",\n  "status": "OPTIMIZED",\n  "distanceMeters": 3400,\n  "mapsProvider": "google"\n}</pre>**Explicación:** Ordena y recalcula la ruta según criterios de proximidad geográfica con código `200 OK`. |
+| **POST** `/api/v1/journey/routes/{routeId}/register-arrival` | Registra la llegada a un establecimiento físico comprobando restricciones de hardware (Geofencing GPS). | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/registerArrival` | **Path Param:** `routeId` (string)<br>**Body (JSON):**<br>- `latitude` (double)<br>- `longitude` (double) | <pre>{\n  "id": "R-901",\n  "status": "STOP_ARRIVED",\n  "mapsProvider": "fallback"\n}</pre>**Explicación:** Modifica el estado del flujo si el usuario se halla a menos de 500 metros de la sucursal (`200 OK`). |
+| **POST** `/api/v1/journey/routes/{routeId}/finish` | Cierra y consolida el ciclo de vida del trayecto de compras actual del consumidor. | `http://localhost:8080/swagger-ui/index.html#/Shopping%20Journey/finish` | **Path Param:** `routeId` (string) | <pre>{\n  "id": "R-901",\n  "status": "FINISHED"\n}</pre>**Explicación:** Finaliza de manera formal la navegación del Shopping Journey con código `200 OK`. |
+
+#### 4.2.2.7. Software Deployment Evidence for Sprint Review
+
+**Generación del Artefacto de Software y Evidencias de Despliegue en Firebase**
+
+1. **Inicio del asistente de firmado en Android Studio para generar el APK de producción.**
+
+Se accede a la opción "Build > Generate Signed Bundle / APK" para iniciar el proceso de empaquetado del archivo APK listo para distribución.
+![img_1.png](assets/deployment/appandroid/img.png)
+
+2. **Selección de la opción "APK" y configuración del keystore para la firma digital.**
+![img_2.png](assets/deployment/appandroid/img_1.png)
+![img_3.png](assets/deployment/appandroid/img_2.png)
+
+3. **Configuración de credenciales del KeyStore**
+Se ingresan los datos del keystore previamente creado, incluyendo la ruta del archivo, la contraseña del almacén, el alias de la clave y su contraseña.
+![img_4.png](assets/deployment/appandroid/img_3.png)
+
+4. **Selección del tipo de build "release" y generación del APK firmado.**
+![img_5.png](assets/deployment/appandroid/img_4.png)
+![img_6.png](assets/deployment/appandroid/img_5.png)
+
+
+**Despligue en Firebase para Android**
+
+1. **Acceso a la consola de Firebase**
+![img_7.png](assets/deployment/appandroid/img_6.png)
+
+2. **Creación de un nuevo proyecto en Firebase**
+![img_8.png](assets/deployment/appandroid/img_7.png)
+![img_9.png](assets/deployment/appandroid/img_8.png)
+
+3. **Confirmación de la creación del proyecto y acceso al panel de control.**
+![img_10.png](assets/deployment/appandroid/img_9.png)
+![img_11.png](assets/deployment/appandroid/img_10.png)
+
+4. **Seleccionar agregar una nueva aplicación Android al proyecto.**
+![img_12.png](assets/deployment/appandroid/img_11.png)
+
+5. **Registrar paquete de la aplicación.**
+![img_13.png](assets/deployment/appandroid/img_12.png)
+
+6. **Agregar el archivo de configuración `google-services.json` al proyecto Android.**
+![img_14.png](assets/deployment/appandroid/img_13.png)
+
+7. **Agregar el SDK de Firebase al proyecto Android y sincronizar.**
+![img_15.png](assets/deployment/appandroid/img_14.png)
+
+8. **Finalizar la configuració e ir a la consola**
+![img_16.png](assets/deployment/appandroid/img_15.png)
+
+9. **Iniciar configuración de App Distribution**
+![img_17.png](assets/deployment/appandroid/img_16.png)
+
+10. **Subir el APK generado a Firebase App Distribution**
+![img_18.png](assets/deployment/appandroid/img_17.png)
+
+11. **Archivo subido correctamente.**
+![img_19.png](assets/deployment/appandroid/img_18.png)
+
+12. **Agregar testers para distribución**
+En este caso, se le envio a los miembros del equipo para que puedan descargar la aplicación en sus dispositivos y realizar pruebas.
+![img_20.png](assets/deployment/appandroid/img_19.png)
+
+13. **Añadir notas de la versión"**
+![img_21.png](assets/deployment/appandroid/img_20.png)
+
+14. **Enviar la aplicación a los testers**
+![img_22.png](assets/deployment/appandroid/img_21.png)
+
+15. **Confirmación de que la aplicación ha sido enviada a los testers**
+![img_23.png](assets/deployment/appandroid/img_22.png)
+![img_24.png](assets/deployment/appandroid/img_23.png)
+
+#### 4.2.2.8. Team Collaboration Insights during Sprint
+
+A continuacion se muestran los colaboradores en cada sección:
+
+Api REST
+
+![img_api.png](assets/insights/apisprint2.png)
+![img_api1.png](assets/insights/apis1print2.png)
+
+Merchant
+
+![img_api1.png](assets/insights/merchantsprint2.png)
+
+Consumer
+
+![img_api1.png](assets/insights/consumersprint2.png)
+
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
@@ -5104,16 +5307,18 @@ La evaluación heurística permite identificar problemas de usabilidad en una in
 
 ---
 
-#### Conclusión
+## Conclusiones
 
-La aplicación para comerciantes presenta una base funcional sólida para tiendas pequeñas y medianas. Sin embargo, se requieren mejoras críticas para soportar operaciones de comercios grandes: integración con sistemas externos, operaciones masivas, y mejor retroalimentación del estado del sistema. Las mejoras priorizadas permitirán que SmartCart sea viable para todo tipo de establecimientos de retail.
+Se concluye que SmartCart resuelve de manera efectiva la asimetría de información y la ineficiencia económica que afecta a los consumidores. Las herramientas integradas atacan directamente el mayor punto de dolor identificado en el 100% de los estudiantes y jóvenes profesionales entrevistados: la pérdida de tiempo por desplazamientos innecesarios y la necesidad de un control presupuestal debido a sus ingresos variables.
+Los hallazgos del análisis de entrevistas ratificaron los Problem Statements del segmento de Establecimientos. Los gerentes de sede sufren de "ceguera de datos" al no poder medir el flujo digital hacia la tienda física y experimentan un alto estrés operativo por la inconsistencia de precios. El backend desarrollado resuelve esta problemática al proveer los cimientos para que las tiendas de conveniencia y supermercados gestionen alertas y flujos locales, sentando las bases para eliminar la dependencia de las oficinas centrales.
+El proceso de Lean UX planteó la necesidad de conectar de manera ágil el entorno digital con las tiendas físicas. A través de la implementación del controlador de verificación y los endpoints del recorrido de compra, el sistema valida con éxito los criterios de éxito técnico requeridos: permitir que el consumidor trace trayectos óptimos basados en datos reales y habilitar un canal transparente para que los comercios locales incrementen la rotación de su inventario y reduzcan mermas. 
 
 <hr class="page-break">
 
-## Conclusiones
+## Recomendaciones
 
-SmartCart se presenta como una respuesta innovadora frente a las deficiencias del comercio físico tradicional, integrando con éxito la gestión de presupuestos con la asistencia logística en tiempo real. Mediante el análisis de mercado y el feedback directo de los entrevistados, se ha ratificado que la herramienta no solo agiliza el proceso de adquisición, sino que maximiza el ahorro del usuario a través de un sistema de navegación y comparación inteligente. Esta coherencia entre las demandas del sector y las capacidades de la plataforma garantiza un impacto positivo tanto en el ahorro del consumidor como en el posicionamiento estratégico de los establecimientos locales.
-Por otro lado, la adopción de una arquitectura basada en Spring Boot y Angular bajo estándares de alta calidad asegura que la solución posea la escalabilidad y el mantenimiento que exige el mercado actual. La solidez técnica, evidenciada en un diseño de contextos bien definido y en la gestión de eventos asíncronos, permite que el sistema soporte un crecimiento constante de usuarios y datos sin perder eficiencia. En definitiva, el proyecto logra un balance ideal entre una experiencia de usuario optimizada y una infraestructura técnica sofisticada, dejando cimentada una base sólida para el escalamiento de la plataforma en el ecosistema del retail digital. 
+Con base en el reclamo unánime del 100% de los gerentes entrevistados sobre las discrepancias entre precios digitales y flejes físicos, se recomienda priorizar en el Roadmap del Sprint 3 el diseño de las interfaces de carga y actualización exprés de inventario en la aplicación móvil. Esto permitirá sincronizar stocks de forma ágil y evitar fricciones en las cajas de autoservicio o tradicionales.
+Se sugiere incorporar en el backlog de desarrollo un módulo de notificaciones push o integración nativa para alertas geolocalizadas. Esta funcionalidad responderá directamente a la expectativa de los consumidores de recibir ofertas dinámicas por canales móviles y permitirá a los jefes de tienda de descuento liquidar productos perecibles de manera autónoma en un radio menor a 1 km.
 
 <hr class="page-break">
 
