@@ -5059,6 +5059,21 @@ En este caso, se le envio a los miembros del equipo para que puedan descargar la
 
 #### 4.2.2.8. Team Collaboration Insights during Sprint
 
+A continuacion se muestran los colaboradores en cada sección:
+
+Api REST
+
+![img_api.png](assets/insights/apisprint2.png)
+![img_api1.png](assets/insights/apis1print2.png)
+
+Merchant
+
+![img_api1.png](assets/insights/merchantsprint2.png)
+
+Consumer
+
+![img_api1.png](assets/insights/consumersprint2.png)
+
 ## 4.3. Validation Interviews
 
 ### 4.3.1. Diseño de Entrevistas
