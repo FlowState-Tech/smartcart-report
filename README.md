@@ -4349,7 +4349,8 @@ En esta seccion se ve la evidencia del desarrollo mediante los commits:
 
 
 **Api Rest** 
-
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | flowstate-tech/smarcart-api | develop | 9c2e934 | feat: add unit tests for store registration functionality |  | 16/05/2026 |
 | flowstate-tech/smarcart-api | develop | 45c75af | feat: add integration test for store creation endpoint |  | 16/05/2026 |
 | flowstate-tech/smarcart-api | develop | ea4ba73 | feat: add feature file for store registration scenarios |  | 16/05/2026 |
@@ -5371,7 +5372,7 @@ Se sugiere incorporar en el backlog de desarrollo un módulo de notificaciones p
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
 
-* Validación de la aplicación android: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g044_upc_edu_pe/IQDNZHNBrKaDSoVSb763qYpAAUaINppIGLUidV7yXXjSgkQ?e=Jn2bca](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g044_upc_edu_pe/IQDNZHNBrKaDSoVSb763qYpAAUaINppIGLUidV7yXXjSgkQ?e=Jn2bca)
+* Validación de la aplicación android: [https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IQDNZHNBrKaDSoVSb763qYpAAUaINppIGLUidV7yXXjSgkQ?e=Jn2bca](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IQDNZHNBrKaDSoVSb763qYpAAUaINppIGLUidV7yXXjSgkQ?e=Jn2bca)
 
 ## About the Product 
 
