@@ -4986,6 +4986,77 @@ Aquí se presenta la documentación técnica de los nuevos contratos de servicio
 
 #### 4.2.2.7. Software Deployment Evidence for Sprint Review
 
+**Generación del Artefacto de Software y Evidencias de Despliegue en Firebase**
+
+1. **Inicio del asistente de firmado en Android Studio para generar el APK de producción.**
+
+Se accede a la opción "Build > Generate Signed Bundle / APK" para iniciar el proceso de empaquetado del archivo APK listo para distribución.
+![img_1.png](assets/deployment/appandroid/img.png)
+
+2. **Selección de la opción "APK" y configuración del keystore para la firma digital.**
+![img_2.png](assets/deployment/appandroid/img_1.png)
+![img_3.png](assets/deployment/appandroid/img_2.png)
+
+3. **Configuración de credenciales del KeyStore**
+Se ingresan los datos del keystore previamente creado, incluyendo la ruta del archivo, la contraseña del almacén, el alias de la clave y su contraseña.
+![img_4.png](assets/deployment/appandroid/img_3.png)
+
+4. **Selección del tipo de build "release" y generación del APK firmado.**
+![img_5.png](assets/deployment/appandroid/img_4.png)
+![img_6.png](assets/deployment/appandroid/img_5.png)
+
+
+**Despligue en Firebase para Android**
+
+1. **Acceso a la consola de Firebase**
+![img_7.png](assets/deployment/appandroid/img_6.png)
+
+2. **Creación de un nuevo proyecto en Firebase**
+![img_8.png](assets/deployment/appandroid/img_7.png)
+![img_9.png](assets/deployment/appandroid/img_8.png)
+
+3. **Confirmación de la creación del proyecto y acceso al panel de control.**
+![img_10.png](assets/deployment/appandroid/img_9.png)
+![img_11.png](assets/deployment/appandroid/img_10.png)
+
+4. **Seleccionar agregar una nueva aplicación Android al proyecto.**
+![img_12.png](assets/deployment/appandroid/img_11.png)
+
+5. **Registrar paquete de la aplicación.**
+![img_13.png](assets/deployment/appandroid/img_12.png)
+
+6. **Agregar el archivo de configuración `google-services.json` al proyecto Android.**
+![img_14.png](assets/deployment/appandroid/img_13.png)
+
+7. **Agregar el SDK de Firebase al proyecto Android y sincronizar.**
+![img_15.png](assets/deployment/appandroid/img_14.png)
+
+8. **Finalizar la configuració e ir a la consola**
+![img_16.png](assets/deployment/appandroid/img_15.png)
+
+9. **Iniciar configuración de App Distribution**
+![img_17.png](assets/deployment/appandroid/img_16.png)
+
+10. **Subir el APK generado a Firebase App Distribution**
+![img_18.png](assets/deployment/appandroid/img_17.png)
+
+11. **Archivo subido correctamente.**
+![img_19.png](assets/deployment/appandroid/img_18.png)
+
+12. **Agregar testers para distribución**
+En este caso, se le envio a los miembros del equipo para que puedan descargar la aplicación en sus dispositivos y realizar pruebas.
+![img_20.png](assets/deployment/appandroid/img_19.png)
+
+13. **Añadir notas de la versión"**
+![img_21.png](assets/deployment/appandroid/img_20.png)
+
+14. **Enviar la aplicación a los testers**
+![img_22.png](assets/deployment/appandroid/img_21.png)
+
+15. **Confirmación de que la aplicación ha sido enviada a los testers**
+![img_23.png](assets/deployment/appandroid/img_22.png)
+![img_24.png](assets/deployment/appandroid/img_23.png)
+
 #### 4.2.2.8. Team Collaboration Insights during Sprint
 
 ## 4.3. Validation Interviews
