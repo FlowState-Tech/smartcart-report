@@ -4767,15 +4767,15 @@ El uso de **Trello** como herramienta de gestión visual permitió al equipo man
 
 | User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
 | :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
-| **US07** | Armado de Canasta | T7 | Implementación de Canasta Básica | Crear endpoints CRUD para gestionar la canasta por categorías y desarrollar la interfaz para listar e incrementar productos. | 8 | Anjali Amaro  | Done |
-| **US08** | Ruta de Compra Eficiente | T8 | Motor Visual de Trazado de Rutas | Implementar el algoritmo de ruta óptima en el servidor y conectarlo al mapa frontend para trazar el camino más corto. | 4 | Kevin Pardo  | Done |
-| **US09** | Cálculo de Tiempo | T9 | Sistema de Estimación de Permanencia | Programar la lógica de tiempo según el formato de tienda (Express vs Supermercado) y diseñar las etiquetas de tiempo en la app. | 4 | Kevin Pardo  | Done |
+| **US07** | Armado de Canasta | T7 | Implementación de Canasta Básica | Crear endpoints CRUD para gestionar la canasta por categorías y desarrollar la interfaz para listar e incrementar productos. | 8 | Stephano Valdivia  | Done |
+| **US30** | Interfaz Adaptativa | T8 | Implementación de Tema y Dark Mode Dynamic | Configurar el tema global azul y desarrollar la funcionalidad de modo oscuro dinámico unificado con fondo 1C1C1C a través de todas las vistas de la app. | 4 | Stephano Valdivia | Done |
+| **US18** | Perfil de Consumo | T9 | Desarrollo de Login, Register y Perfil | Diseñar la UI de alta fidelidad para autenticación, implementar la lógica de validación de credenciales y estructurar la navegación principal con la página de perfil. | 4 | Stephano Valdivia  | Done |
 | **US010** | Registro de Sucursal | T10 | Registro Geográfico de Tiendas | Crear el modelo de datos con validación de coordenadas y diseñar el formulario web para registrar la ubicación y RUC del local. | 5 | Kevin Pardo  | Done |
-| **US011** | Carga de Catálogo | T11 | Gestión Completa de Carga de Precios | Desarrollar el procesamiento de archivos, la asignación automática de etiquetas de oferta y la interfaz de subida para el comerciante. | 5 | Stephano Valdivia  | Done |
+| **US011** | Carga de Catálogo | T11 | Gestión Completa de Carga de Precios | Desarrollar el procesamiento de archivos, la asignación automática de etiquetas de oferta y la interfaz de subida para el comerciante. | 5 | Kevin Pardo  | Done |
 | **US014** | Validación Comunitaria | T14 | Reporte y Puntos por GPS | Desarrollar el módulo backend para otorgar 10 puntos al perfil e implementar la restricción por GPS para validar precios en tienda. | 5 | Kevin Pardo  | Done |
-| **TS03** | API Carga Catálogo | T3 | Optimización y Validación de CSV | Crear un servicio REST optimizado para procesar listas de precios en bloque y configurar middlewares que validen duplicados. | 5 | Stephano Valdivia | Done |
+| **TS03** | API Carga Catálogo | T3 | Optimización y Validación de CSV | Crear un servicio REST optimizado para procesar listas de precios en bloque y configurar middlewares que validen duplicados. | 5 | Anjali Amaro | Done |
 | **TS04** | API Motor de Rutas | T4 | Endpoint y Excepciones de Ruta | Desarrollar el servicio que ordene las coordenadas eficientemente y controlar las excepciones geográficas con respuestas HTTP 422. | 5 | Anjali Amaro | Done |
-| **TS05** | API Notificaciones Push | T5 | Alertas por Proximidad | Implementar consultas espaciales en la BD para segmentar usuarios en un radio de 5km y configurar el sistema de colas de envío. | 5 | Stephano Valdivia | Done |
+| **TS05** | API Notificaciones Push | T5 | Alertas por Proximidad | Implementar consultas espaciales en la BD para segmentar usuarios en un radio de 5km y configurar el sistema de colas de envío. | 5 | Anjali Amaro | Done |
 
 
 #### 4.2.2.3. Development Evidence for Sprint Review
