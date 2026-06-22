@@ -5364,6 +5364,8 @@ Se sugiere incorporar en el backlog de desarrollo un módulo de notificaciones p
 
 * Acceso al [EventStorming](https://miro.com/app/board/uXjVGgNF4CQ=/?share_link_id=538020705214)
 
+* Validación de la aplicación android: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g044_upc_edu_pe/IQDNZHNBrKaDSoVSb763qYpAAUaINppIGLUidV7yXXjSgkQ?e=Jn2bca](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g044_upc_edu_pe/IQDNZHNBrKaDSoVSb763qYpAAUaINppIGLUidV7yXXjSgkQ?e=Jn2bca)
+
 ## About the Product 
 
 [https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IgBCt0H4NUvNRq_gc9IdJ-3qAeK0-XF3xrxi-EeBqqCDYCk?e=3QCdYG](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g044_upc_edu_pe/IgBCt0H4NUvNRq_gc9IdJ-3qAeK0-XF3xrxi-EeBqqCDYCk?e=3QCdYG)
