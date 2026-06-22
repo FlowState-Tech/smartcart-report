@@ -109,6 +109,8 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 ![img_2.png](assets/github-insights/img_5.png)
 ![img_4.png](assets/github-insights/commits3.png)
 
+<hr class="page-break">
+
 
 # Contenido
 
