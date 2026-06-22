@@ -34,7 +34,7 @@
 
 <br>
 
-<h5 style="text-align: center; font-style: italic;"> Abril 2026 </h5>
+<h5 style="text-align: center; font-style: italic;"> Junio 2026 </h5>
 
 <hr class="page-break">
 
@@ -4824,7 +4824,7 @@ A nivel de dominio e infraestructura externa, se implementaron pruebas de caja b
 * **Clase Evaluada 1:** `GeofencingServiceTest`
 * **Comportamiento:** Comprueba la lógica de restricción por cercanía espacial (`US14`). El test valida que el sistema acepte correctamente ubicaciones dentro del radio de 500 metros y rechace de forma tajante peticiones de usuarios lejanos a la tienda física.
 
-java
+```java
 package com.smartcart.shoppingjourney.domain.services;
 
 import org.junit.jupiter.api.Test;
@@ -4845,11 +4845,12 @@ class GeofencingServiceTest {
         assertFalse(geofencing.isWithinStoreRadius(-12.0464, -77.0428, -12.1000, -77.1000));
     }
 }
+```
 
 * **Clase Evaluada 2:** `RouteOptimizationServiceTest`
 * **Comportamiento:** Certifica el correcto funcionamiento del algoritmo de optimización de paradas combinadas (US08, TS04). Asegura mediante coordenadas geográficas que el algoritmo ordene los destinos basándose en el principio del vecino más cercano (Nearest Neighbor), mapeando correctamente la secuencia de visitas.
 
-java
+```java
 package com.smartcart.shoppingjourney.domain.services;
 
 import com.smartcart.shoppingjourney.domain.model.valueobjects.RouteStop;
@@ -4872,11 +4873,12 @@ class RouteOptimizationServiceTest {
         assertEquals(1L, ordered.get(1).storeId());
     }
 }
+```
 
 * **Clase Evaluada 3:** `GoogleMapsRoutingAdapterTest`
 * **Comportamiento:** Valida la deserialización segura mediante Jackson de los payloads JSON provenientes del servicio de Google Maps (TS04, US09). Verifica que la suma agregada de las distancias en metros y la duración en segundos de múltiples tramos (legs) se calcule de forma precisa sin desbordamientos de datos.
 
-java
+```java
 package com.smartcart.shoppingjourney.infrastructure.external.maps;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -4907,11 +4909,13 @@ class GoogleMapsRoutingAdapterTest {
         assertEquals("google", path.provider());
     }
 }
+```
 
 #### 2. Integration Tests (Pruebas de Integración y Entorno)
 * **Clase Evaluada:** `SmartcartApiApplicationTests`
 * **Comportamiento:** Asegura la inicialización e integridad del contexto completo del framework Spring Boot (contextLoads()) bajo un perfil controlado de pruebas denominado test.
-# Archivo src/test/resources/application-test.properties
+* **Archivo:** `src/test/resources/application-test.properties`
+```properties
 spring.datasource.url=jdbc:h2:mem:smartcart_test;DB_CLOSE_DELAY=-1
 spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.username=sa
@@ -4922,6 +4926,7 @@ authorization.jwt.secret=test-secret-key-for-unit-tests-only-32chars
 authorization.jwt.expiration.days=1
 decolecta.api.token=test-token
 smartcart.maps.provider=fallback
+``` 
 
 #### 4.2.2.5. Execution Evidence for Sprint Review
 
