@@ -5266,6 +5266,56 @@ void main() {
 }
 ```
 
+#### 4.2.3.5. Execution Evidence for Sprint Review
+
+Se evidencia la ejecución de los productos
+
+Se evidencia la ejecucion de los productos
+
+Api REST
+
+![img_1.png](assets/evidence-sprint/api1.jpeg)
+![img_2.png](assets/evidence-sprint/api2.jpeg)
+![img_3.png](assets/evidence-sprint/api3.jpeg)
+
+SmartCart Merchant
+
+![img_4.png](assets/evidence-sprint/merchant1.jpeg)
+![img_5.png](assets/evidence-sprint/merchant2.jpeg)
+![img_6.png](assets/evidence-sprint/merchant3.jpeg)
+![img_7.png](assets/evidence-sprint/merchant4.jpeg)
+![img_8.png](assets/evidence-sprint/merchant5.jpeg)
+![img_9.png](assets/evidence-sprint/merchant6.jpeg)
+![img_10.png](assets/evidence-sprint/merchant7.jpeg)
+![img_11.png](assets/evidence-sprint/merchant8.jpeg)
+![img_12.png](assets/evidence-sprint/merchant9.jpeg)
+![img_13.png](assets/evidence-sprint/merchant10.jpeg)
+
+SmartCart Comsumer
+
+![img_14.png](assets/sprint3/consumer0.png)
+![img_15.png](assets/sprint3/consumer1.png)
+![img_16.png](assets/sprint3/consumer2.png)
+![img_17.png](assets/sprint3/consumer3.png)
+![img_18.png](assets/sprint3/consumer4.png)
+![img_19.png](assets/sprint3/consumer5.png)
+![img_20.png](assets/sprint3/consumer6.png)
+![img_21.png](assets/sprint3/consumer7.png)
+![img_22.png](assets/sprint3/consumer8.png)
+![img_23.png](assets/sprint3/consumer9.png)
+![img_24.png](assets/sprint3/consumer10.png)
+![img_25.png](assets/sprint3/consumer11.png)
+![img_26.png](assets/sprint3/consumer12.png)
+![img_27.png](assets/sprint3/consumer13.png)
+![img_28.png](assets/sprint3/consumer14.png)
+![img_29.png](assets/sprint3/consumer15.png)
+![img_30.png](assets/sprint3/consumer16.png)
+![img_31.png](assets/sprint3/consumer17.png)
+![img_32.png](assets/sprint3/consumer18.png)
+![img_33.png](assets/sprint3/consumer19.png)
+![img_34.png](assets/sprint3/consumer20.png)
+![img_35.png](assets/sprint3/consumer21.png)
+
 
 
 
