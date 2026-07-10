@@ -5098,20 +5098,28 @@ Consumer
 | **Sum of Story Points** | 45 |
 
 #### 4.2.3.2. Sprint Backlog 3
-#### 4.2.3.3. Development Evidence for Sprint Review
-#### 4.2.3.4. Testing Suite Evidence for Sprint Review
-#### 4.2.3.5. Execution Evidence for Sprint Review
 
-Se evidencia la ejecución de los productos
+El Sprint Backlog 3 representa la ejecución de las tareas planificadas para el segundo ciclo de desarrollo de SmartCart.
 
-Api REST
-SmartCart Merchant
-SmartCart Comsumer
+El uso de Trello como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
 
+Captura del Tablero Trello (Fin del Sprint 3):
 
-#### 4.2.3.6. Services Documentation Evidence for Sprint Review
-#### 4.2.3.7. Software Deployment Evidence for Sprint Review
-#### 4.2.3.8. Team Collaboration Insights during Sprint 
+<div align="center">
+  <img src="assets/imagenes/sprint3/trellosprint3.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US27** | Tiendas Favoritas | T15 | Priorización de Cadena en Home | Desarrollar la lógica e interfaz para que el consumidor marque su "supermercado de confianza", permitiendo al sistema priorizar sus precios en la pantalla de inicio. | 6 | Stephano Valdivia  | Done |
+| **US36** | Filtro 24 Horas | T16 | Filtro por Horario Nocturno | Implementar el switch "Abierto ahora" en el mapa para que a altas horas de la madrugada solo se rendericen las tiendas de conveniencia con horario extendido. | 4 | Stephano Valdivia | Done |
+| **US38** | Ubicaciones de Rutina | T17 | Almacenamiento de Local Base | Diseñar el botón para guardar el local donde siempre se compra ("Mi Super") como punto de referencia fijo para comparaciones rápidas de canastas. | 4 | Stephano Valdivia  | Done |
+| **US034** | Logros de Comprador | T18 | Vista de Insignias y Perfil | Implementar la sección visual en el perfil del consumidor para mostrar las medallas obtenidas (ej: "Explorador de Retail") tras validar tiendas en Lince y Surquillo. | 5 | Kevin Pardo  | Done |
+| **TS05** | Configuración de Plataforma | T5 | Build Gradle y Variables de Entorno | Ajustar las dependencias multiplataforma, compresión de assets visuales y configuración de llaves de mapas en Flutter para el empaquetado final de la app. | 5 | Anjali Amaro | Done |
+| **TS06** | Data Seed Scripts | T6 | Build Gradle y Variables de Entorno | Ejecución de scripts automáticos de inserción (seeding) en la base de datos para cargar las coordenadas reales de Lince/Surquillo y testear los nuevos filtros de mapas. | 5 | Anjali Amaro | Done |
+
 
 ## 4.3. Validation Interviews
 
