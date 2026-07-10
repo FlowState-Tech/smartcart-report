@@ -5130,6 +5130,143 @@ A continuación, se presentan las evidencias de desarrollo de software correspon
 | flowstate-tech/smartcart-consumer | develop | `68907de` | chore: Add platform configurations and backend seed scripts | 9/07/2026 |
 | flowstate-tech/smartcart-consumer | develop | `4f18e9e` | feat: Implement IAM, Experience, and Journey modules | 9/07/2026 |
 
+#### 4.2.3.4. Testing Suite Evidence for Sprint Review
+
+En esta sección se explica y presenta el conjunto de Unit Tests, Widget Tests y Acceptance Tests automatizados en el entorno cliente móvil, enfocados en las User Stories especificadas para este Sprint 3. Estas pruebas garantizan la integridad del flujo lógico en la persistencia local, el renderizado correcto de componentes adaptativos en Flutter y el cumplimiento estricto de las reglas de negocio en la aplicación del consumidor final.
+
+Historial de Commits de Testing e Integración
+
+A continuación, se incluye la relación de los commits registrados en el repositorio de control de versiones que contienen el set de pruebas unitarias, de interfaz y de integración unificados para el cierre de este Sprint:
+
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-consumer | develop | `68907de` | chore: Add platform configurations and backend seed scripts | 9/07/2026 |
+| flowstate-tech/smartcart-consumer | develop | `4f18e9e` | feat: Implement IAM, Experience, and Journey modules | 9/07/2026 |
+
+#### 1. Unit Tests (Pruebas Unitarias)
+
+Clase Evaluada 1: StoreFilterNotifierTest
+
+```
+import 'package:flutter_test/flutter_test.dart';
+import 'package:smartcart/experience/domain/models/store.dart';
+import 'package:smartcart/experience/presentation/providers/store_filter_provider.dart';
+
+void main() {
+  group('StoreFilterNotifier Tests - US36', () {
+    late StoreFilterNotifier filterNotifier;
+    final mockStores = [
+      Store(id: '1', name: 'Tambo Lince 24h', isAlwaysOpen: true),
+      Store(id: '2', name: 'Plaza Vea Lince', isAlwaysOpen: false),
+    ];
+
+    setUp(() {
+      filterNotifier = StoreFilterNotifier(allStores: mockStores);
+    });
+
+    test('should return only 24h stores when night filter is enabled', () {
+      filterNotifier.toggleOpenNowFilter(true);
+
+      expect(filterNotifier.state.filteredStores.length, 1);
+      expect(filterNotifier.state.filteredStores.first.name, 'Tambo Lince 24h');
+    });
+
+    test('should return all stores when night filter is disabled', () {
+      filterNotifier.toggleOpenNowFilter(false);
+      expect(filterNotifier.state.filteredStores.length, 2);
+    });
+  });
+}
+```
+
+Clase Evaluada 2: FavoriteStoreWidgetTest
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:smartcart/experience/presentation/widgets/store_card.dart';
+
+void main() {
+  testWidgets('FavoriteStoreWidget updates icon state on tap - US27', (WidgetTester tester) async {
+    bool wasTapped = false;
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: StoreCard(
+            storeName: 'Metro Surquillo',
+            isFavorite: false,
+            onFavoriteTap: () {
+              wasTapped = true;
+            },
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byIcon(Icons.favorite_border), findsOneWidget);
+    expect(find.byIcon(Icons.favorite), findsNothing);
+
+    await tester.tap(find.byType(IconButton));
+    await tester.pump(); // Re-renderizar el frame
+
+    expect(wasTapped, true);
+  });
+}
+```
+
+Clase Evaluada 3: RoutineLocationServiceTest
+
+```
+import 'package:flutter_test/flutter_test.dart';
+import 'package:smartcart/journey/infrastructure/local/database_helper.dart';
+import 'package:smartcart/journey/domain/models/routine_location.dart';
+
+void main() {
+  group('RoutineLocationService Tests - US38', () {
+    late DatabaseHelper dbHelper;
+
+    setUp(() async {
+      dbHelper = DatabaseHelper.private(inMemory: true);
+      await dbHelper.initDatabase();
+    });
+
+    tearDown(() async {
+      await dbHelper.close();
+    });
+
+    test('should save and retrieve the user home base location correctly', () async {
+      final baseLocation = RoutineLocation(
+        id: 'home_base',
+        name: 'Mi Super Lince',
+        latitude: -12.0844,
+        longitude: -77.0352,
+      );
+
+      await dbHelper.saveRoutineLocation(baseLocation);
+      final retrieved = await dbHelper.getRoutineLocation('home_base');
+
+      expect(retrieved, isNotNull);
+      expect(retrieved!.name, 'Mi Super Lince');
+      expect(retrieved.latitude, -12.0844);
+      expect(retrieved.longitude, -77.0352);
+    });
+  });
+}
+```
+
+#### 2. Integration Tests (Pruebas de integración)
+```
+{
+  "api_base_url": "http://localhost:8080/api/v1",
+  "google_maps_api_key": "test-key-for-mobile-integration-only-flutter-32chars",
+  "is_testing_environment": true,
+  "offline_database_name": "smartcart_integration_test.db",
+  "enable_mock_seed_data": true
+}
+```
+
+
 
 
 
