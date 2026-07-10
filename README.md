@@ -5120,6 +5120,18 @@ Captura del Tablero Trello (Fin del Sprint 3):
 | **TS05** | Configuración de Plataforma | T5 | Build Gradle y Variables de Entorno | Ajustar las dependencias multiplataforma, compresión de assets visuales y configuración de llaves de mapas en Flutter para el empaquetado final de la app. | 5 | Anjali Amaro | Done |
 | **TS06** | Data Seed Scripts | T6 | Build Gradle y Variables de Entorno | Ejecución de scripts automáticos de inserción (seeding) en la base de datos para cargar las coordenadas reales de Lince/Surquillo y testear los nuevos filtros de mapas. | 5 | Anjali Amaro | Done |
 
+#### 4.2.3.3. Development Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo consolidó la fase de cierre, estabilización y despliegue multiplataforma de SmartCart. Siguiendo la estrategia de control de versiones GitFlow, los esfuerzos se concentraron en el repositorio del cliente móvil para realizar la integración de extremo a extremo de las últimas historias de usuario priorizadas, así como la automatización de la carga de datos de prueba para los distritos de cobertura.
+
+A continuación, se presentan las evidencias de desarrollo de software correspondientes a esta entrega final:
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-consumer | develop | `68907de` | chore: Add platform configurations and backend seed scripts | 9/07/2026 |
+| flowstate-tech/smartcart-consumer | develop | `4f18e9e` | feat: Implement IAM, Experience, and Journey modules | 9/07/2026 |
+
+
+
 
 ## 4.3. Validation Interviews
 
