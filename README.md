@@ -5316,6 +5316,17 @@ SmartCart Comsumer
 ![img_34.png](assets/sprint3/consumer20.png)
 ![img_35.png](assets/sprint3/consumer21.png)
 
+#### 4.2.3.6. Services Documentation Evidence for Sprint Review
+
+Aquí se presenta la documentación técnica de los nuevos contratos de servicios, adaptadores de persistencia local y APIs de infraestructura integrados en la aplicación móvil de **SmartCart** (`smartcart-consumer`) desarrollados e integrados para este tercer y último entregable (Sprint 3):
+
+| Componente / Servicio (Dart / Local) | Acciones Implementadas / Descripción | Capa Arquitectónica (DDD) | Especificación de Parámetros | Ejemplo y Explicación del Payload / Modelo |
+| :--- | :--- | :--- | :--- | :--- |
+| **Service:** `RoutineLocationRepository` | Almacena y recupera las coordenadas geográficas fijas del supermercado de rutina del consumidor (`US38`). | `Infrastructure` | **Método:** `saveRoutineLocation()` <br>- `id` (string)<br>- `name` (string)<br>- `latitude` (double)<br>- `longitude` (double) | <pre>{\n  "id": "home_base",\n  "name": "Mi Super Lince",\n  "latitude": -12.0844,\n  "longitude": -77.0352\n}</pre>**Explicación:** Persiste de forma local la ubicación de referencia fija del usuario en SQLite (`Success`). |
+| **Provider:** `StoreFilterNotifier` | Controla la lógica de estado para aplicar el filtro de establecimientos 24 horas en el mapa dinámico (`US36`). | `Presentation` | **Método:** `toggleOpenNowFilter()` <br>- `isOpenNowActive` (boolean) | <pre>{\n  "filterActive": true,\n  "appliedDistrict": "Surquillo",\n  "visibleStoresCount": 1\n}</pre>**Explicación:** Re-renderiza el mapa de Flutter mostrando exclusivamente tiendas de conveniencia de horario nocturno. |
+| **Service:** `ConsumerPreferencesService` | Gestiona la priorización de catálogos y cadenas de supermercados favoritos en el Home del usuario (`US27`). | `Domain / Application` | **Método:** `setFavoriteChain()` <br>- `buyerId` (string)<br>- `preferredChainId` (string) | <pre>{\n  "buyerId": "C-402",\n  "preferredChainId": "CH-TAMBO",\n  "isPrioritizedInHome": true\n}</pre>**Explicación:** Guarda la preferencia del cliente y reorganiza la cuadrícula de visualización de precios destacados. |
+| **Script:** `DataSeedAutomator` | Script automático de inicialización de base de datos para poblar coordenadas reales de Lince y Surquillo (`TS06`). | `Infrastructure` | **Método:** `executeSeed()` <br>- `environment` (string: "test") | <pre>{\n  "status": "SEED_COMPLETED",\n  "recordsInserted": 45,\n  "targetDistricts": ["Lince", "Surquillo"]\n}</pre>**Explicación:** Script en consola backend ejecutado para simular el entorno geográfico real previo al despliegue móvil. |#### 4.2.3.7. Software Deployment Evidence for Sprint Review
+
 
 
 
