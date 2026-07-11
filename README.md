@@ -46,6 +46,7 @@
 | 1.1     | 23/04/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 1. y Capítulo 2. |
 | 2.0     | 16/05/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 3. y Capítulo 4. |
 | 3.0     | 21/06/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 4.2.2.           |
+| 4.0     | 05/07/26 | Anjali Amaro, Joseph Chavez, Katherine Mejia, Kevin Pardo, Stephano Valdivia  | Elaboración de Capitulo 4.2.3.           |
 
 
 <hr class="page-break">
@@ -103,6 +104,15 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 <hr class="page-break">
 
 **AV2**
+
+A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
+
+![img_2.png](assets/github-insights/img_5.png)
+![img_4.png](assets/github-insights/commits3.png)
+
+<hr class="page-break">
+
+**TB2**
 
 A continuación, se muestran los gráficos con el análisis de los commits realizados en el repositorio. Estos reflejan tanto la cantidad de líneas de código añadidas por cada integrante del equipo como la actividad de commits registrada.
 
@@ -284,6 +294,11 @@ A continuación, se muestran los gráficos con el análisis de los commits reali
 
 En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 7: La capacidad de adquirir y aplicar nuevos
 conocimientos según sea necesario, utilizando estrategias de aprendizaje apropiadas.
+
+| Criterio específico | Acciones realizadas | Conclusiones|
+|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Actualiza conceptos y**<br> **conocimientos necesarios**<br> **para su desarrollo**<br> **profesional y en especial**<br> **para su proyecto en**<br> **soluciones de software.** | **Amaro Villar, Anjali**<br>*AV1:* Investigué antecedentes y problemática para fundamentar la solución, integrando la metodología Tactical Domain-Driven Design en el diseño de la arquitectura. Este proceso me permitió actualizar mis conocimientos técnicos y aplicar herramientas de análisis avanzadas en las entrevistas, alineando el software con las exigencias actuales de la industria.<br>*TB1:* Investigué y apliqué buenas prácticas en la gestión de configuración de software (SCM), configurando el entorno de desarrollo, el control de versiones y las guías de estilos de código. Asimismo, actualicé mis conceptos en metodologías ágiles para estructurar el Sprint Planning y recolectar las evidencias de desarrollo (commits) para el Sprint Review.<br> *AV2:* Investigué y actualicé mis conocimientos en tecnologías de desarrollo móvil nativo mediante el uso de Jetpack Compose y Kotlin para el desarrollo de la aplicación adaptada a entornos de tablet. Asimismo, expandí mis competencias técnicas en el ciclo de vida de despliegue de software, aprendiendo a generar un almacén de claves criptográficas (Key Store / Signed Release) y configurando el entorno de pruebas en Firebase App Distribution para la distribución controlada hacia los evaluadores y testers.<br>*TB2:* Consolidé mi desarrollo profesional mediante el planeamiento del Sprint 3 bajo metodologías ágiles, asegurando el cumplimiento de los entregables del equipo. En el ámbito técnico de la aplicación nativa, profundicé en la optimización del rendimiento y renderizado en Jetpack Compose, implementando validaciones estrictas en tiempo de ejecución para los flujos de sincronización de datos locales y remotos. Asimismo, ejecuté pruebas funcionales de caja negra y brindé soporte técnico continuo a mis compañeros para la integración de módulos, garantizando la consistencia de la solución en entornos nativos y de tablet.<br><br>**Chavez Viera, Joseph Manuel**<br>*TB1:* Actualicé conocimientos aplicados al proyecto al documentar la arquitectura de información de SmartCart: criterios de organización (jerárquica, secuencial y matricial), esquemas de categorización, sistema de etiquetas breves alineado al lenguaje ubicuo, metadatos web para la landing y la aplicación Merchant, ASO para las apps Buyer y Merchant, patrones de búsqueda con filtros y presentación de resultados, y navegación con mapa jerárquico por superficie. Eso permitió traducir requisitos de la rúbrica en decisiones concretas de producto y de descubrimiento (SEO/ASO) coherentes con la solución.<br>*AV2:* Investigué y actualicé mis conocimientos en el desarrollo de componentes del lado del cliente e integración de servicios API REST para la aplicación móvil de SmartCart. Expandí mis competencias técnicas en la implementación de lógicas de consumo asíncrono y manejo de respuestas HTTP, asegurando el flujo correcto de datos hacia las vistas de la aplicación. Asimismo, profundicé en los estándares de control de versiones y flujos de trabajo en Git (GitFlow), asimilando buenas prácticas para la resolución de conflictos de código en entornos de integración y la preparación de ramas de lanzamiento (release branches) previas al despliegue.<br>*TB2:* Consolidé mi desarrollo profesional mediante la gestión estratégica y el planeamiento del Sprint 3, asegurando el cumplimiento de los objetivos del equipo a través del uso de metodologías ágiles. En el ámbito técnico, profundicé en la verificación de la arquitectura del software en entornos móviles, implementando el desarrollo de la aplicación con Flutter y robusteciendo la lógica de negocio mediante la creación de validaciones de datos estrictas en los formularios y la consistencia de los componentes. Adicionalmente, ejecuté pruebas de caja negra para detectar y corregir errores puntuales en las rutas dinámicas, a la par de actuar como soporte técnico de código para mis compañeros de equipo, empleando los entornos de desarrollo pertinentes para optimizar la coherencia global de la solución de software.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Investigué y apliqué el modelo C4 para desarrollar los diagramas de Contexto, Contenedor y Despliegue, logrando una representation técnica profesional del sistema. Asimismo, actualicé mis conocimientos en Domain-Driven Design (DDD) para elaborar el Context Mapping y determinar las relaciones entre los Bounded Contexts de SmartCart.<br>*TB1:* Actualicé mis conocimientos en diseño UX/UI móvil para estructurar wireframes, wireflows, mockups y prototipos interactivos de la aplicación. Adicionalmente, expandí mis competencias técnicas en metodologías de validación mediante el diseño de entrevistas y la aplicación de evaluaciones heurísticas al producto.<br>*AV2:* Investigué y actualicé mi conocimiento en el desarrollo de aplicaciones multiplataforma mediante el framework Flutter, asimilando conceptos de tematización dinámica (Dynamic Dark Mode con fondos personalizados 1C1C1C) y la estructuración de vistas móviles de alta fidelidad para el flujo del consumidor. Asimismo, expandí mis competencias técnicas en la evaluación de la salud de proyectos de software mediante el análisis de analíticas de repositorios utilizando GitHub Insights, lo que nos permitió medir objetivamente el impacto, la frecuencia y la distribución de las contribuciones del equipo durante el Sprint 2.<br>*TB2:* Consolidé mi desarrollo profesional mediante la gestión estratégica y el planeamiento del Sprint 3, asegurando el cumplimiento de los objetivos del equipo a través del uso de metodologías ágiles. En el ámbito técnico, profundicé en la verificación de la arquitectura del software, ejecutando pruebas de caja negra para detectar y corregir errores puntuales en las rutas dinámicas del programa. Adicionalmente, actué como soporte técnico de código para mis compañeros de equipo, empleando los entornos de desarrollo pertinentes para optimizar la coherencia global de la solución de software.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Apliqué la metodología Lean UX para estructurar el Canvas de hipótesis y las bases del diseño web, logrando integrar estos requerimientos en la implementación técnica del módulo "Shopping Journey" mediante arquitectura DDD y persistencia de datos.<br>*TB1:* Investigué y apliqué principios de diseño visual contemporáneo para establecer las guías de estilo generales del producto. Asimismo, actualicé mis conocimientos en diseño de interfaces web estructurando los wireframes y mockups de la Landing Page de la solución.<br>*AV2:* Implementé la arquitectura base del proyecto en Flutter siguiendo principios de Domain-Driven Design (DDD), mapeando las capas conceptuales (Domain, Infrastructure, Application, Interfaces) hacia la estructura del proyecto y estableciendo la modularidad de Login y Registro bajo flujos colaborativos de GitFlow.<br>*TB2:* Consolidé mis competencias técnicas en Flutter mediante la codificación avanzada de la lógica de negocio y consumo de servicios para los flujos esenciales (Autenticación y Catálogo). Durante el Sprint 3, enfoqué mis esfuerzos en asegurar la consistencia arquitectónica DDD en el front-end y en realizar pruebas de caja negra sobre el comportamiento de la UI frente a errores de la red, garantizando un manejo robusto de excepciones en el lado del cliente.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Definí el Ubiquitous Language para estandarizar la comunicación del equipo. Investigué y apliqué técnicas de Domain Message Flows Modeling y Bounded Context Canvases para el diseño estratégico. Además, desarrollé íntegramente la arquitectura del Bounded Context Experience, diseñando diagramas de clases de dominio y modelos de bases de datos relacionales.<br>*TB1:* Actualicé mis conocimientos en patrones de interacción y diseño de experiencia de usuario para dispositivos móviles, co-diseñando los wireframes, diagramas de wireflow, user flows y prototipos interactivos multiplataforma para las aplicaciones de SmartCart.<br>*AV2:* Actualicé y apliqué mis conocimientos en el desarrollo de aplicaciones móviles multiplataforma utilizando Flutter y Dart. Implementé vistas de alta fidelidad (Login, Registro, Home con carrito funcional y Perfil), integré un sistema de gestión de estado global con ValueNotifier para soportar un modo oscuro dinámico (Dark Mode) y refiné la experiencia de usuario (UX/UI) siguiendo lineamientos modernos y control de versiones.<br>*TB2:* Profundicé en el desarrollo móvil multiplataforma con Flutter, liderando el diseño técnico de la reactividad del software y la persistencia de estados de usuario. En el Sprint 3, optimicé la arquitectura del front-end mediante la estructuración de interceptores HTTP y el manejo granular de excepciones de API REST. Adicionalmente, ejecuté pruebas unitarias básicas sobre componentes críticos de la UI y colaboré activamente como soporte técnico para la resolución de conflictos complejos en ramas GitFlow, asegurando la robustez de la solución multiplataforma.<| *AV1:* El equipo integró exitosamente metodologías avanzadas de diseño de software como Tactical Domain-Driven Design (DDD) y el modelo C4, complementándolas con enfoques ágiles (Impact Mapping) y de experiencia de usuario (Lean UX). Esta combinación de conocimientos permitió diseñar una arquitectura técnica profesional y escalable para SmartPrice, asegurando que la solución responda directamente a las exigencias actuales de la industria y a las necesidades reales del mercado.<br><br>*TB1:* El equipo logró consolidar el diseño de interfaz y la arquitectura de información del software aplicando conceptos modernos de diseño UI/UX (móvil y web), guías de estilo y posicionamiento SEO/ASO, en paralelo con una sólida configuración de SCM para los entornos de desarrollo. Esta actualización conceptual permitió materializar los requerimientos técnicos y de negocio en un producto digital coherente, estructurado y listo para el despliegue. <br><br>*AV2:* Se concluye que el equipo consolidó la transición del diseño conceptual a la construcción del software mediante el dominio de tecnologías modernas como Flutter (multiplataforma), Jetpack Compose con Kotlin (nativo) e integración asíncrona con APIs REST en Spring Boot. El proceso evidenció que el desarrollo de software profesional exige un aprendizaje permanente en la gestión de estados globales, el uso estricto de flujos de trabajo colaborativos (GitFlow) y la analítica de repositorios (GitHub Insights). Esto garantizó la consistencia del código, una resolución eficiente de conflictos y una distribución controlada y segura de los artefactos a través de entornos de prueba como Firebase App Distribution.<br><br>*TB2:* El equipo evidenció una sólida madurez profesional al unificar el desarrollo bajo metodologías ágiles en el Sprint 3 con la validación rigurosa de la solución. El proceso de soporte técnico mutuo, la resolución avanzada de conflictos en repositorios de producción y la ejecución exhaustiva de pruebas de caja negra y de enrutamiento dinámico en entornos móviles (tanto multiplataforma en Flutter como nativos en Jetpack Compose) consolidaron un software técnico coherente, estable y con altos estándares de calidad arquitectónica en su fase final. |
+| **Reconoce la necesidad del**<br> **aprendizaje permanente**<br> **para el desempeño**<br> **profesional y el desarrollo de**<br> **proyectos en soluciones de**<br> **software.**  | **Amaro Villar, Anjali**<br>*AV1:* La aplicación de DDD y el análisis de entrevistas me demostraron que la ingeniería de software requiere una evolución constante. Reconozco que el autoaprendizaje es vital para enfrentar retos complejos, por lo que asumo el compromiso de mantenerme en formación continua para asegurar la vigencia y calidad de mis soluciones profesionales.<br>*TB1:* Entendí que las herramientas de DevOps, control de versiones y políticas de despliegue se actualizan constantemente en la industria. Reconozco que dominar la gestión de configuración y el rastreo de evidencias (commits) requiere un aprendizaje continuo para optimizar los flujos de trabajo en equipos ágiles.<br> *AV2:* El proceso de compilación y distribución me demostró que el ecosistema móvil y los mecanismos de despliegue (Deployment) evolucionan drásticamente frente a las políticas de las tiendas oficiales. Reconozco la necesidad de un aprendizaje permanente en herramientas de integración y distribución automatizada para optimizar los tiempos de entrega y garantizar la disponibilidad continua del artefacto de software en entornos reales.<br>*TB2:* La optimización del rendimiento en entornos nativos táctiles me enseñó que el ecosistema de UI móvil se sofistica constantemente para mejorar la experiencia de usuario. Reconozco la necesidad de aprendizaje continuo en pruebas de integración automatizadas y control de calidad de software para reaccionar eficazmente ante actualizaciones en los frameworks nativos y asegurar la robustez de las soluciones.<br><br>**Chavez Viera, Joseph Manuel**<br> *AV1:* El proceso de abstracción del negocio mediante el diseño estratégico de DDD y la delimitación de contextos me demostraron que las dinámicas comerciales y las necesidades de los usuarios cambian constantemente, impactando directamente en la estructura del software. Reconozco que las metodologías de diseño y los patrones de arquitectura evolucionan para resolver problemas de alta complejidad, por lo que asumo el compromiso de mantenerme en constante formación para dominar nuevas herramientas de modelado conceptual que garanticen soluciones de software profesionales, adaptables y escalables.<br>*TB1:* Elaborar esta sección mostró que la capa de “contenido y encuentro” (cómo se organiza, nombra, busca y recorre la información) cambia con las guías de tiendas, las prácticas de SEO/ASO y las expectativas de usuarios móviles; por ello reconozco la necesidad de aprendizaje continuo en UX, accesibilidad y posicionamiento para mantener SmartCart usable y visible frente a competidores y a futuras iteraciones del informe y del producto.<br>*AV2:* El proceso de integración de servicios y la resolución de conflictos en el repositorio grupal me demostraron que las arquitecturas de software y los flujos de trabajo colaborativos exigen una sincronización técnica constante. Reconozco que las herramientas de desarrollo y los paradigmas de comunicación asíncrona evolucionan a un ritmo acelerado, por lo que asumo la necesidad de un aprendizaje permanente en patrones de integración y arquitecturas limpias para mantener las soluciones de software robustas, escalables y eficientes ante los cambios del entorno tecnológico.<br>*TB2:* El desarrollo del Sprint 3 consolidó mi convicción sobre la importancia del aprendizaje permanente, al enfrentarme a la necesidad de diagnosticar y corregir de forma inmediata fallas en el flujo de enrutamiento y en la reactividad de la interfaz en Flutter. Esta experiencia evidenció que el éxito de un proyecto no depende solo del dominio técnico inicial, sino de la capacidad autodidacta para investigar e implementar reglas de validación y manejo de excepciones en tiempo real. Asimismo, brindar soporte técnico a mis compañeros en la resolución de conflictos de código y configuraciones del SDK me demostró que actualizar constantemente mis competencias en herramientas de desarrollo móvil y colaborativo es indispensable para mantener la cohesión del equipo y la continuidad operativa del proyecto.<br><br>**Mejia Aliaga, Katherine Maryory**<br>*AV1:* Comprendí que para resolver problemas de negocio complejos es vital ir más allá de la programación básica. Mi participación en el Event Storming y el diseño de la arquitectura mi permitió reconocer que la investigación constante de nuevas metodologías es la única forma de garantizar que una solución de software sea escalable, segura y profesional.<br>*TB1:* Comprendí que los estándares de usabilidad móvil y los marcos de validación de software (como las heurísticas) mutan según el comportamiento del usuario. Reconozco la necesidad de educarme continuamente en metodologías de investigación y testing para asegurar que el software responda a problemas reales.<br>*AV2:* El proceso de integración entre las interfaces móviles adaptativas en Flutter y la lógica de negocio expuesta por la API REST en Spring Boot me demostró que los patrones de arquitectura limpia y la gestión de estados móviles cambian de forma constante para optimizar la experiencia del usuario final. Reconozco la necesidad de mantener un aprendizaje permanente en flujos de trabajo ágiles (Git/GitHub) y control de versiones, ya que es la única manera de coordinar con éxito desarrollos paralelos y asegurar la consistencia del código en soluciones de software modernas.<br>*TB2:* El desarrollo del Sprint 3 consolidó mi convicción sobre la importancia del aprendizaje permanente, al enfrentarme a la necesidad de diagnosticar y corregir de forma inmediata fallas en el flujo de enrutamiento del software. Esta experiencia evidenció que el éxito de un proyecto no depende solo del dominio técnico inicial, sino de la capacidad autodidacta para resolver anomalías en tiempo real. Asimismo, brindar soporte técnico a mis compañeros en la resolución de conflictos de código me demostró que actualizar constantemente mis competencias en herramientas de desarrollo colaborativo es indispensable para mantener la cohesión del equipo y la continuidad operativa del proyecto.<br><br>**Pardo Chumpitazi, Kevin Patrick**<br>*AV1:* Convertí los requerimientos de la Task Matrix y los perfiles de User Personas en una API operativa con documentación en Swagger, encargándome de estructurar los endpoints REST y solucionar conflictos técnicos para mantener la estabilidad del repositorio del equipo.<br>*TB1:* Comprendí que la experiencia de usuario y el diseño visual en la web cambian constantemente. Por ello, reafirmé la importancia de actualizarme de forma continua en guías de estilo y sistemas de diseño para crear interfaces modernas, accesibles y eficientes.<br>*AV2:* El desarrollo de la estructura móvil bajo DDD evidenció que los frameworks multiplataforma evolucionan con rapidez en la organización de sus componentes de arquitectura. Reconozco que requiero mantener un autoaprendizaje continuo en patrones de separación de capas para asegurar que el código fuente del lado del cliente sea mantenible a gran escala.<br>*TB2:* Enfrentar pruebas funcionales de caja negra en el Sprint 3 y optimizar el flujo de catálogo bajo la arquitectura establecida me demostró que la estabilidad de un software reside en un manejo de errores predictivo. Reconozco la necesidad del aprendizaje permanente en técnicas de depuración y testing para anticipar fallos y asegurar que el producto responda fluidamente ante fallas del entorno de red.<br><br>**Valdivia Quispe, Stephano Renan**<br>*AV1:* Reconocí la importancia de la evolución técnica al adoptar Domain-Driven Design (DDD) y herramientas de modelado *as-code*. Entiendo que el aprendizaje continuo en patrones de arquitectura y diseño estratégico es fundamental para garantizar que soluciones como el contexto de Experience sean escalables y mantengan su relevancia técnica profesional.<br>*TB1:* Asimilé que el diseño de flujos de interacción y prototipos móviles requiere una constante adaptación a los nuevos sistemas operativos y directrices de diseño. Comprendo que el aprendizaje continuo en la optimización de la experiencia móvil es indispensable para crear soluciones eficientes.<br>*AV2:* A través de la implementación técnica de la aplicación móvil, reconocí que el ecosistema de desarrollo multiplataforma y la gestión de estados globales evolucionan velozmente. Comprendo la necesidad del aprendizaje continuo en frameworks modernos como Flutter y en patrones de diseño responsivos para asegurar la creación de interfaces escalables, mantenibles y de calidad profesional.<br>*TB2:* El control de excepciones complejas de red y la resolución de inconsistencias en el repositorio técnico del equipo me hicieron entender que el entorno del desarrollo colaborativo exige una sincronización de competencias continua. Reconozco que para liderar el soporte técnico del código es vital un autoaprendizaje constante en arquitecturas de integración y análisis preventivo de conflictos en GitFlow.<| *AV1:* Se concluye que el equipo identifica la ingeniería de software como una disciplina en evolución constante, donde el autoaprendizaje y la investigación de nuevas tendencias (como Event Storming y modelado as-code) son indispensables. El grupo asume el compromiso de mantener una formación continua para transformar la información técnica en soluciones de valor, garantizando que el desarrollo de sus proyectos futuros mantenga siempre su vigencia, seguridad y calidad profesional.<br><br>*TB1:* Se concluye que el equipo reconoce el aprendizaje permanente como un pilar crítico en las áreas de diseño UI/UX y SCM, debido a la velocidad con la que cambian los estándares web/móviles y las tecnologías de integración. El grupo asume la responsabilidad de mantenerse a la vanguardia en patrones de usabilidad y validación heurística para garantizar soluciones de software dinámicas y de alta calidad. <br><br>*AV2:* Se concluye que el equipo logró materializar los requerimientos de negocio en interfaces de alta fidelidad, aplicando criterios avanzados de tematización dinámica (Dynamic Dark Mode) y componentes adaptativos para diversos entornos de dispositivos (móviles y tablets). La implementación técnica demostró la necesidad de asimilar continuamente lineamientos de diseño UI/UX contemporáneos y patrones de interacción responsivos para refinar los flujos del consumidor, asegurando un producto final que no solo es funcionalmente robusto bajo principios de Domain-Driven Design (DDD), sino también intuitivo, escalable y con calidad de nivel de producción.<br><br>*TB2:* Se concluye que el equipo internaliza el aprendizaje permanente como una competencia crítica para la resiliencia técnica y la continuidad operativa. El hito evidenció que el éxito del proyecto dependió de la capacidad autónoma para investigar y resolver anomalías en tiempo real (rutas, reactividad, sincronización e interceptores HTTP). Además, el soporte de código interpares y la gestión proactiva de ramas de Git demostraron que mantenerse actualizados en herramientas colaborativas es vital para el éxito colectivo y la entrega de soluciones robustas ante la volatilidad tecnológica. |
 
 <hr class="page-break">
 
@@ -5063,6 +5078,334 @@ Merchant
 Consumer
 
 ![img_api1.png](assets/insights/consumersprint2.png)
+
+#### 4.2.3. Sprint 3
+#### 4.2.3.1. Sprint Planning 3
+
+| Campo | Descripción |
+| :--- | :--- |
+| **Sprint #** | Sprint 3 |
+| **Sprint Planning Background** | |
+| **Date** | 2026-06-04 |
+| **Time** | 15:00 PM (GMT -5) |
+| **Location** | Modalidad remota por Google Meet |
+| **Prepared By** | FlowState Tech |
+| **Attendees (to planning meeting)** | Anjali Amaro Villar, Joseph Manuel Chavez Viera, Katherine Maryory Mejia Aliaga, Kevin Patrick Pardo Chumpitazi, Stephano Renan Valdivia Quispe |
+| **Sprint 2 Review Summary** | Se validó con éxito el despliegue del backend en producción pública junto con la documentación completa de la API. Las funcionalidades core de gestión y lógica base quedaron operativas, sentando las bases para la fase final de integración.  |
+| **Sprint 2 Retrospective Summary** | El equipo demostró un gran avance en la arquitectura del servidor y el cumplimiento de los Story Points. Para este sprint de cierre, se acordó intensificar las pruebas funcionales de extremo a extremo y brindar soporte colaborativo inmediato en el código para asegurar la estabilidad total de las rutas de navegación.  |
+| **Sprint Goal & User Stories** | |
+| **Sprint 3 Goal** | Lograr la integración total (Frontend-Backend) al 100%, optimizar los flujos y rutas críticas de navegación del consumidor, realizar el despliegue definitivo en producción y asegurar la operatividad y estabilidad completa de la aplicación funcional para la entrega final.  |
+| **Sprint 3 Velocity** | 45 |
+| **Sum of Story Points** | 45 |
+
+#### 4.2.3.2. Sprint Backlog 3
+
+El Sprint Backlog 3 representa la ejecución de las tareas planificadas para el segundo ciclo de desarrollo de SmartCart.
+
+El uso de Trello como herramienta de gestión visual permitió al equipo mantener un flujo de trabajo constante, asegurando que cada historia de usuario cumpliera con los criterios de aceptación antes de ser movida a la columna de finalizados.
+
+Captura del Tablero Trello (Fin del Sprint 3):
+
+<div align="center">
+  <img src="assets/imagenes/sprint3/trellosprint3.png" alt="Tablero Trello Final Sprint 1 SmartCart" width="100%">
+</div>
+
+**Desglose Detallado del Sprint Backlog:**
+
+| User Story Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status (To-do/In-Process/To-Review/Done) |
+| :--- | :--- | :--- | :--- | :--- | :---: | :--- | :---: |
+| **US27** | Tiendas Favoritas | T15 | Priorización de Cadena en Home | Desarrollar la lógica e interfaz para que el consumidor marque su "supermercado de confianza", permitiendo al sistema priorizar sus precios en la pantalla de inicio. | 6 | Stephano Valdivia  | Done |
+| **US36** | Filtro 24 Horas | T16 | Filtro por Horario Nocturno | Implementar el switch "Abierto ahora" en el mapa para que a altas horas de la madrugada solo se rendericen las tiendas de conveniencia con horario extendido. | 4 | Stephano Valdivia | Done |
+| **US38** | Ubicaciones de Rutina | T17 | Almacenamiento de Local Base | Diseñar el botón para guardar el local donde siempre se compra ("Mi Super") como punto de referencia fijo para comparaciones rápidas de canastas. | 4 | Stephano Valdivia  | Done |
+| **US034** | Logros de Comprador | T18 | Vista de Insignias y Perfil | Implementar la sección visual en el perfil del consumidor para mostrar las medallas obtenidas (ej: "Explorador de Retail") tras validar tiendas en Lince y Surquillo. | 5 | Kevin Pardo  | Done |
+| **TS05** | Configuración de Plataforma | T5 | Build Gradle y Variables de Entorno | Ajustar las dependencias multiplataforma, compresión de assets visuales y configuración de llaves de mapas en Flutter para el empaquetado final de la app. | 5 | Anjali Amaro | Done |
+| **TS06** | Data Seed Scripts | T6 | Build Gradle y Variables de Entorno | Ejecución de scripts automáticos de inserción (seeding) en la base de datos para cargar las coordenadas reales de Lince/Surquillo y testear los nuevos filtros de mapas. | 5 | Anjali Amaro | Done |
+
+#### 4.2.3.3. Development Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo consolidó la fase de cierre, estabilización y despliegue multiplataforma de SmartCart. Siguiendo la estrategia de control de versiones GitFlow, los esfuerzos se concentraron en el repositorio del cliente móvil para realizar la integración de extremo a extremo de las últimas historias de usuario priorizadas, así como la automatización de la carga de datos de prueba para los distritos de cobertura.
+
+A continuación, se presentan las evidencias de desarrollo de software correspondientes a esta entrega final:
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-consumer | develop | `68907de` | chore: Add platform configurations and backend seed scripts | 9/07/2026 |
+| flowstate-tech/smartcart-consumer | develop | `4f18e9e` | feat: Implement IAM, Experience, and Journey modules | 9/07/2026 |
+
+#### 4.2.3.4. Testing Suite Evidence for Sprint Review
+
+En esta sección se explica y presenta el conjunto de Unit Tests, Widget Tests y Acceptance Tests automatizados en el entorno cliente móvil, enfocados en las User Stories especificadas para este Sprint 3. Estas pruebas garantizan la integridad del flujo lógico en la persistencia local, el renderizado correcto de componentes adaptativos en Flutter y el cumplimiento estricto de las reglas de negocio en la aplicación del consumidor final.
+
+Historial de Commits de Testing e Integración
+
+A continuación, se incluye la relación de los commits registrados en el repositorio de control de versiones que contienen el set de pruebas unitarias, de interfaz y de integración unificados para el cierre de este Sprint:
+
+| Repository | Branch | Commit Id | Commit Message  | Commited on (Date) |
+| :--- | :--- | :--- | :--- | :--- |
+| flowstate-tech/smartcart-consumer | develop | `68907de` | chore: Add platform configurations and backend seed scripts | 9/07/2026 |
+| flowstate-tech/smartcart-consumer | develop | `4f18e9e` | feat: Implement IAM, Experience, and Journey modules | 9/07/2026 |
+
+#### 1. Unit Tests (Pruebas Unitarias)
+
+Clase Evaluada 1: StoreFilterNotifierTest
+
+```
+import 'package:flutter_test/flutter_test.dart';
+import 'package:smartcart/experience/domain/models/store.dart';
+import 'package:smartcart/experience/presentation/providers/store_filter_provider.dart';
+
+void main() {
+  group('StoreFilterNotifier Tests - US36', () {
+    late StoreFilterNotifier filterNotifier;
+    final mockStores = [
+      Store(id: '1', name: 'Tambo Lince 24h', isAlwaysOpen: true),
+      Store(id: '2', name: 'Plaza Vea Lince', isAlwaysOpen: false),
+    ];
+
+    setUp(() {
+      filterNotifier = StoreFilterNotifier(allStores: mockStores);
+    });
+
+    test('should return only 24h stores when night filter is enabled', () {
+      filterNotifier.toggleOpenNowFilter(true);
+
+      expect(filterNotifier.state.filteredStores.length, 1);
+      expect(filterNotifier.state.filteredStores.first.name, 'Tambo Lince 24h');
+    });
+
+    test('should return all stores when night filter is disabled', () {
+      filterNotifier.toggleOpenNowFilter(false);
+      expect(filterNotifier.state.filteredStores.length, 2);
+    });
+  });
+}
+```
+
+Clase Evaluada 2: FavoriteStoreWidgetTest
+
+```
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:smartcart/experience/presentation/widgets/store_card.dart';
+
+void main() {
+  testWidgets('FavoriteStoreWidget updates icon state on tap - US27', (WidgetTester tester) async {
+    bool wasTapped = false;
+
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: StoreCard(
+            storeName: 'Metro Surquillo',
+            isFavorite: false,
+            onFavoriteTap: () {
+              wasTapped = true;
+            },
+          ),
+        ),
+      ),
+    );
+
+    expect(find.byIcon(Icons.favorite_border), findsOneWidget);
+    expect(find.byIcon(Icons.favorite), findsNothing);
+
+    await tester.tap(find.byType(IconButton));
+    await tester.pump(); // Re-renderizar el frame
+
+    expect(wasTapped, true);
+  });
+}
+```
+
+Clase Evaluada 3: RoutineLocationServiceTest
+
+```
+import 'package:flutter_test/flutter_test.dart';
+import 'package:smartcart/journey/infrastructure/local/database_helper.dart';
+import 'package:smartcart/journey/domain/models/routine_location.dart';
+
+void main() {
+  group('RoutineLocationService Tests - US38', () {
+    late DatabaseHelper dbHelper;
+
+    setUp(() async {
+      dbHelper = DatabaseHelper.private(inMemory: true);
+      await dbHelper.initDatabase();
+    });
+
+    tearDown(() async {
+      await dbHelper.close();
+    });
+
+    test('should save and retrieve the user home base location correctly', () async {
+      final baseLocation = RoutineLocation(
+        id: 'home_base',
+        name: 'Mi Super Lince',
+        latitude: -12.0844,
+        longitude: -77.0352,
+      );
+
+      await dbHelper.saveRoutineLocation(baseLocation);
+      final retrieved = await dbHelper.getRoutineLocation('home_base');
+
+      expect(retrieved, isNotNull);
+      expect(retrieved!.name, 'Mi Super Lince');
+      expect(retrieved.latitude, -12.0844);
+      expect(retrieved.longitude, -77.0352);
+    });
+  });
+}
+```
+
+#### 2. Integration Tests (Pruebas de integración)
+```
+{
+  "api_base_url": "http://localhost:8080/api/v1",
+  "google_maps_api_key": "test-key-for-mobile-integration-only-flutter-32chars",
+  "is_testing_environment": true,
+  "offline_database_name": "smartcart_integration_test.db",
+  "enable_mock_seed_data": true
+}
+```
+
+#### 4.2.3.5. Execution Evidence for Sprint Review
+
+Se evidencia la ejecución de los productos
+
+Se evidencia la ejecucion de los productos
+
+Api REST
+
+![img_1.png](assets/evidence-sprint/api1.jpeg)
+![img_2.png](assets/evidence-sprint/api2.jpeg)
+![img_3.png](assets/evidence-sprint/api3.jpeg)
+
+SmartCart Merchant
+
+![img_4.png](assets/evidence-sprint/merchant1.jpeg)
+![img_5.png](assets/evidence-sprint/merchant2.jpeg)
+![img_6.png](assets/evidence-sprint/merchant3.jpeg)
+![img_7.png](assets/evidence-sprint/merchant4.jpeg)
+![img_8.png](assets/evidence-sprint/merchant5.jpeg)
+![img_9.png](assets/evidence-sprint/merchant6.jpeg)
+![img_10.png](assets/evidence-sprint/merchant7.jpeg)
+![img_11.png](assets/evidence-sprint/merchant8.jpeg)
+![img_12.png](assets/evidence-sprint/merchant9.jpeg)
+![img_13.png](assets/evidence-sprint/merchant10.jpeg)
+
+SmartCart Comsumer
+
+![img_14.png](assets/sprint3/consumer0.png)
+![img_15.png](assets/sprint3/consumer1.png)
+![img_16.png](assets/sprint3/consumer2.png)
+![img_17.png](assets/sprint3/consumer3.png)
+![img_18.png](assets/sprint3/consumer4.png)
+![img_19.png](assets/sprint3/consumer5.png)
+![img_20.png](assets/sprint3/consumer6.png)
+![img_21.png](assets/sprint3/consumer7.png)
+![img_22.png](assets/sprint3/consumer8.png)
+![img_23.png](assets/sprint3/consumer9.png)
+![img_24.png](assets/sprint3/consumer10.png)
+![img_25.png](assets/sprint3/consumer11.png)
+![img_26.png](assets/sprint3/consumer12.png)
+![img_27.png](assets/sprint3/consumer13.png)
+![img_28.png](assets/sprint3/consumer14.png)
+![img_29.png](assets/sprint3/consumer15.png)
+![img_30.png](assets/sprint3/consumer16.png)
+![img_31.png](assets/sprint3/consumer17.png)
+![img_32.png](assets/sprint3/consumer18.png)
+![img_33.png](assets/sprint3/consumer19.png)
+![img_34.png](assets/sprint3/consumer20.png)
+![img_35.png](assets/sprint3/consumer21.png)
+
+#### 4.2.3.6. Services Documentation Evidence for Sprint Review
+
+Aquí se presenta la documentación técnica de los nuevos contratos de servicios, adaptadores de persistencia local y APIs de infraestructura integrados en la aplicación móvil de **SmartCart** (`smartcart-consumer`) desarrollados e integrados para este tercer y último entregable (Sprint 3):
+
+| Componente / Servicio (Dart / Local) | Acciones Implementadas / Descripción | Capa Arquitectónica (DDD) | Especificación de Parámetros | Ejemplo y Explicación del Payload / Modelo |
+| :--- | :--- | :--- | :--- | :--- |
+| **Service:** `RoutineLocationRepository` | Almacena y recupera las coordenadas geográficas fijas del supermercado de rutina del consumidor (`US38`). | `Infrastructure` | **Método:** `saveRoutineLocation()` <br>- `id` (string)<br>- `name` (string)<br>- `latitude` (double)<br>- `longitude` (double) | <pre>{\n  "id": "home_base",\n  "name": "Mi Super Lince",\n  "latitude": -12.0844,\n  "longitude": -77.0352\n}</pre>**Explicación:** Persiste de forma local la ubicación de referencia fija del usuario en SQLite (`Success`). |
+| **Provider:** `StoreFilterNotifier` | Controla la lógica de estado para aplicar el filtro de establecimientos 24 horas en el mapa dinámico (`US36`). | `Presentation` | **Método:** `toggleOpenNowFilter()` <br>- `isOpenNowActive` (boolean) | <pre>{\n  "filterActive": true,\n  "appliedDistrict": "Surquillo",\n  "visibleStoresCount": 1\n}</pre>**Explicación:** Re-renderiza el mapa de Flutter mostrando exclusivamente tiendas de conveniencia de horario nocturno. |
+| **Service:** `ConsumerPreferencesService` | Gestiona la priorización de catálogos y cadenas de supermercados favoritos en el Home del usuario (`US27`). | `Domain / Application` | **Método:** `setFavoriteChain()` <br>- `buyerId` (string)<br>- `preferredChainId` (string) | <pre>{\n  "buyerId": "C-402",\n  "preferredChainId": "CH-TAMBO",\n  "isPrioritizedInHome": true\n}</pre>**Explicación:** Guarda la preferencia del cliente y reorganiza la cuadrícula de visualización de precios destacados. |
+| **Script:** `DataSeedAutomator` | Script automático de inicialización de base de datos para poblar coordenadas reales de Lince y Surquillo (`TS06`). | `Infrastructure` | **Método:** `executeSeed()` <br>- `environment` (string: "test") | <pre>{\n  "status": "SEED_COMPLETED",\n  "recordsInserted": 45,\n  "targetDistricts": ["Lince", "Surquillo"]\n}</pre>**Explicación:** Script en consola backend ejecutado para simular el entorno geográfico real previo al despliegue móvil. |#### 4.2.3.7. Software Deployment Evidence for Sprint Review
+
+#### 4.2.3.7. Software Deployment Evidence for Sprint Review
+
+**Generación del Artefacto de Software y Evidencias de Despliegue en Firebase**
+
+1. **Configuración de credenciales del KeyStore**
+Se ingresan los datos del keystore previamente creado, incluyendo la ruta del archivo, la contraseña del almacén, el alias de la clave y su contraseña.
+![img_4.png](assets/deployment/appandroid/img_3.png)
+
+2. **Selección del tipo de build "release" y generación del APK firmado.**
+![img_5.png](assets/deployment/appandroid/img_4.png)
+![img_6.png](assets/deployment/appandroid/img_5.png)
+
+
+**Despligue en Firebase para Android**
+
+1. **Acceso a la consola de Firebase**
+![img_7.png](assets/deployment/appandroid/img_6.png)
+
+2. **Creación de un nuevo proyecto en Firebase**
+![img_8.png](assets/deployment/appandroid/img_7.png)
+![img_9.png](assets/deployment/appandroid/img_8.png)
+
+3. **Confirmación de la creación del proyecto y acceso al panel de control.**
+![img_10.png](assets/deployment/appandroid/img_9.png)
+![img_11.png](assets/deployment/appandroid/img_10.png)
+
+4. **Seleccionar agregar una nueva aplicación Android al proyecto.**
+![img_12.png](assets/deployment/appandroid/img_11.png)
+
+5. **Registrar paquete de la aplicación.**
+![img_13.png](assets/deployment/appandroid/img_12.png)
+
+6. **Agregar el archivo de configuración `google-services.json` al proyecto Android.**
+![img_14.png](assets/deployment/appandroid/img_13.png)
+
+7. **Agregar el SDK de Firebase al proyecto Android y sincronizar.**
+![img_15.png](assets/deployment/appandroid/img_14.png)
+
+8. **Finalizar la configuració e ir a la consola**
+![img_16.png](assets/deployment/appandroid/img_15.png)
+
+9. **Iniciar configuración de App Distribution**
+![img_17.png](assets/deployment/appandroid/img_16.png)
+
+10. **Archivo subido correctamente.**
+![img_19.png](assets/deployment/appandroid/img_18.png)
+
+11. **Agregar testers para distribución**
+En este caso, se le envio a los miembros del equipo para que puedan descargar la aplicación en sus dispositivos y realizar pruebas.
+![img_20.png](assets/deployment/appandroid/img_19.png)
+
+12. **Añadir notas de la versión"**
+![img_21.png](assets/deployment/appandroid/img_20.png)
+
+13. **Enviar la aplicación a los testers**
+![img_22.png](assets/deployment/appandroid/img_21.png)
+
+14. **Confirmación de que la aplicación ha sido enviada a los testers**
+![img_23.png](assets/deployment/appandroid/img_22.png)
+![img_24.png](assets/deployment/appandroid/img_23.png)
+
+#### 4.2.3.8. Team Collaboration Insights during Sprint 
+
+A continuacion se muestran los colaboradores en cada sección:
+
+Api REST
+
+![img_api.png](assets/insights/apisprint2.png)
+![img_api1.png](assets/insights/apis1print2.png)
+
+Merchant
+
+![img_api1.png](assets/insights/merchantsprint2.png)
+
+Consumer
+
+![img_api1.png](assets/sprint3/commitsconsumersprint3.png)
+
 
 ## 4.3. Validation Interviews
 
